@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WILLPOWER | Brands, Performance, Wellness</title>
+    <title>Wellness House 2026 | SXSW Austin — By Willpower</title>
+    <meta name="description" content="A one-day, invite-led wellness experience at the intersection of performance, consumer brands, and culture. March 13, 2026 — Austin, TX during SXSW.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,262 +23,734 @@
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: #EFEEDF; color: #1F231A; }
         .font-display { font-family: 'Playfair Display', serif; }
-        .mesh-gradient-hero {
-            background: 
-                radial-gradient(ellipse at 0% 0%, #9DC1F6 0%, transparent 50%),
-                radial-gradient(ellipse at 100% 0%, #FFBFCC 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 100%, #FCD6A6 0%, transparent 60%),
-                radial-gradient(ellipse at 0% 100%, #EA8376 0%, transparent 40%),
-                linear-gradient(135deg, #9DC1F6 0%, #FCD6A6 50%, #FFBFCC 100%);
+
+        /* Hero gradient — strong blue/coral/peach presence */
+        .hero-gradient {
+            background:
+                radial-gradient(ellipse at 0% 0%, rgba(157,193,246,0.9) 0%, transparent 50%),
+                radial-gradient(ellipse at 100% 0%, rgba(255,191,204,0.8) 0%, transparent 45%),
+                radial-gradient(ellipse at 50% 100%, rgba(252,214,166,0.7) 0%, transparent 55%),
+                radial-gradient(ellipse at 0% 100%, rgba(234,131,118,0.6) 0%, transparent 40%),
+                linear-gradient(160deg, #9DC1F6 0%, #FFBFCC 40%, #FCD6A6 70%, #EA8376 100%);
         }
-        .mesh-gradient-alt {
-            background: 
-                radial-gradient(ellipse at 20% 50%, #EA8376 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 30%, #FCD6A6 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 80%, #9DC1F6 0%, transparent 50%),
+
+        .section-gradient {
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(234,131,118,0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 30%, rgba(157,193,246,0.15) 0%, transparent 50%),
                 #EFEEDF;
         }
-        .btn-wh {
+
+        /* Buttons */
+        .btn-primary {
             background-color: #1F231A;
             color: #EFEEDF;
             border-radius: 999px;
-            padding: 16px 40px;
+            padding: 16px 44px;
             font-weight: 700;
             font-size: 14px;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
             transition: all 0.3s;
             display: inline-block;
+            text-decoration: none;
         }
-        .btn-wh:hover { background-color: #EA8376; color: #1F231A; }
-        .btn-outline {
+        .btn-primary:hover { background-color: #EA8376; color: #1F231A; transform: translateY(-1px); }
+
+        .btn-secondary {
             border: 2px solid #1F231A;
             color: #1F231A;
             border-radius: 999px;
-            padding: 14px 38px;
+            padding: 14px 42px;
             font-weight: 700;
             font-size: 14px;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
             transition: all 0.3s;
             display: inline-block;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
         }
-        .btn-outline:hover { background-color: #1F231A; color: #EFEEDF; }
-        .sponsor-logo {
-            height: 40px;
+        .btn-secondary:hover { background-color: #1F231A; color: #EFEEDF; transform: translateY(-1px); }
+
+        .btn-white {
+            background: white;
+            color: #1F231A;
+            border-radius: 999px;
+            padding: 16px 44px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-white:hover { background: #FCD6A6; transform: translateY(-1px); }
+
+        /* Logo styling */
+        .brand-logo {
+            height: 28px;
             width: auto;
             filter: grayscale(100%);
-            opacity: 0.7;
+            opacity: 0.6;
             transition: all 0.3s;
         }
-        .sponsor-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-        .sponsor-logo-light {
-            height: 40px;
+        .brand-logo:hover { filter: grayscale(0%); opacity: 1; }
+
+        .brand-logo-light {
+            height: 28px;
             width: auto;
-            filter: grayscale(100%) brightness(10);
+            filter: brightness(10) grayscale(100%);
             opacity: 0.5;
             transition: all 0.3s;
         }
-        .sponsor-logo-light:hover {
-            filter: grayscale(0%) brightness(1);
-            opacity: 1;
+        .brand-logo-light:hover { filter: brightness(1) grayscale(0%); opacity: 1; }
+
+        .sponsor-logo-large {
+            height: 48px;
+            width: auto;
+            filter: brightness(10) grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s;
+        }
+        .sponsor-logo-large:hover { filter: brightness(1) grayscale(0%); opacity: 1; }
+
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid rgba(31,35,26,0.1); }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-answer.open { max-height: 500px; }
+        .faq-toggle { cursor: pointer; }
+        .faq-icon { transition: transform 0.3s ease; }
+        .faq-icon.open { transform: rotate(45deg); }
+
+        /* Schedule time accent */
+        .schedule-time {
+            color: #EA8376;
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: 0.02em;
+            min-width: 100px;
+        }
+
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+
+        /* Pillar icon circles */
+        .pillar-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Nav -->
+    <!-- ============ NAV ============ -->
     <nav class="fixed w-full z-50 backdrop-blur-md bg-wh-cream/80 border-b border-wh-dark/5">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <img src="img/willpower-full.png" alt="Willpower" class="h-10">
-            </div>
-            <div class="hidden md:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest text-wh-dark/60">
-                <a href="#event" class="hover:text-wh-dark transition-colors">Wellness House</a>
-                <a href="#sectors" class="hover:text-wh-dark transition-colors">Ecosystem</a>
+            <a href="#" class="flex items-center gap-3">
+                <img src="img/willpower-full.png" alt="Willpower" class="h-8">
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-[11px] font-bold uppercase tracking-[0.15em] text-wh-dark/50">
                 <a href="#about" class="hover:text-wh-dark transition-colors">About</a>
+                <a href="#brands" class="hover:text-wh-dark transition-colors">Brands</a>
+                <a href="#speakers" class="hover:text-wh-dark transition-colors">Speakers</a>
+                <a href="#schedule" class="hover:text-wh-dark transition-colors">Schedule</a>
+                <a href="#faq" class="hover:text-wh-dark transition-colors">FAQ</a>
             </div>
-            <a href="https://luma.com/WellnessHouse" target="_blank" class="btn-wh text-xs !py-2.5 !px-6">Join the Waitlist</a>
+            <a href="#apply" class="btn-primary !py-2.5 !px-6 !text-[11px]">Apply to Attend</a>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="min-h-screen mesh-gradient-hero flex flex-col justify-center items-center px-6 pt-24 text-center relative overflow-hidden">
+    <!-- ============ HERO ============ -->
+    <section class="hero-gradient min-h-screen flex flex-col justify-center items-center px-6 pt-20 pb-16 text-center relative overflow-hidden">
         <div class="max-w-4xl relative z-10">
-            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/30 backdrop-blur-sm border border-white/40 text-xs font-bold uppercase tracking-widest text-wh-dark/70 mb-10">
-                <span>March 13, 2026</span>
-                <span class="w-1 h-1 rounded-full bg-wh-dark/40"></span>
+            <!-- Date/Location pill -->
+            <div class="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/25 backdrop-blur-sm border border-white/30 text-[11px] font-bold uppercase tracking-[0.15em] text-wh-dark/70 mb-10">
+                <span>Friday, March 13, 2026</span>
+                <span class="w-1 h-1 rounded-full bg-wh-dark/30"></span>
                 <span>Austin, TX</span>
-                <span class="w-1 h-1 rounded-full bg-wh-dark/40"></span>
+                <span class="w-1 h-1 rounded-full bg-wh-dark/30"></span>
                 <span>SXSW</span>
             </div>
-            <div class="mb-8">
-                <img src="img/wh-lockup-dark.png" alt="Wellness House 2026" class="h-32 md:h-48 mx-auto">
+
+            <!-- Lockup -->
+            <div class="mb-6">
+                <img src="img/wh-lockup-dark.png" alt="Wellness House 2026" class="h-28 md:h-44 mx-auto">
             </div>
-            <p class="text-lg md:text-xl text-wh-dark/60 max-w-2xl mx-auto mb-12 leading-relaxed">
-                A full-day gathering centered around thoughtful conversation, meaningful connection, and the future of wellness and consumer brands.
+
+            <!-- Time -->
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-wh-dark/50 mb-6">9:00 AM – 4:00 PM</p>
+
+            <!-- Tagline -->
+            <p class="text-lg md:text-xl text-wh-dark/65 max-w-2xl mx-auto mb-10 leading-relaxed">
+                A one-day, invite-led summit at the intersection of wellness, performance, and consumer brands. Now in its 3rd year at SXSW.
             </p>
-            <div class="flex flex-col md:flex-row gap-5 justify-center">
-                <a href="https://luma.com/WellnessHouse" target="_blank" class="btn-wh">Reserve Your Spot</a>
-                <a href="#sectors" class="btn-outline">Explore Willpower</a>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#apply" class="btn-primary">Apply to Attend</a>
+                <a href="#partners" class="btn-secondary">Partner / Get Involved</a>
             </div>
         </div>
     </section>
 
-    <!-- Event Details -->
-    <section id="event" class="py-28 px-6 bg-wh-dark text-wh-cream">
-        <div class="max-w-6xl mx-auto">
-            <p class="text-xs font-bold uppercase tracking-[0.3em] text-wh-blue mb-4">Featured Activation</p>
-            <h2 class="font-display text-4xl md:text-5xl font-bold mb-16 tracking-tight">What Awaits You.</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-8 rounded-3xl bg-wh-dark border border-wh-cream/10 hover:border-wh-coral/40 transition-colors">
-                    <div class="text-3xl mb-4">💪</div>
-                    <h3 class="font-bold text-lg mb-3 text-wh-peach">Morning Movement</h3>
-                    <p class="text-sm text-wh-cream/50 leading-relaxed mb-4">Wellness workout feat. LSKD. Limited-edition tees for the first 50.</p>
-                    <img src="img/lskd.png" alt="LSKD" class="sponsor-logo-light h-6">
-                </div>
-                <div class="p-8 rounded-3xl bg-wh-dark border border-wh-cream/10 hover:border-wh-coral/40 transition-colors">
-                    <div class="text-3xl mb-4">🧊</div>
-                    <h3 class="font-bold text-lg mb-3 text-wh-peach">Recovery Zone</h3>
-                    <p class="text-sm text-wh-cream/50 leading-relaxed mb-4">San Antonio Spurs x KANE Footwear. Event-exclusive collaboration shoe.</p>
-                    <img src="img/kane.png" alt="KANE" class="sponsor-logo-light h-6">
-                </div>
-                <div class="p-8 rounded-3xl bg-wh-dark border border-wh-cream/10 hover:border-wh-coral/40 transition-colors">
-                    <div class="text-3xl mb-4">🔥</div>
-                    <h3 class="font-bold text-lg mb-3 text-wh-peach">Pitch Roast Live</h3>
-                    <p class="text-sm text-wh-cream/50 leading-relaxed mb-4">Noah Obstfeld roasts Jake DeCicco & Steve Tidball. Zero mercy.</p>
-                    <div class="flex gap-2 items-center">
-                        <img src="img/supercoffee.png" alt="SuperCoffee" class="sponsor-logo-light h-6">
-                        <img src="img/vollebak.png" alt="Vollebak" class="sponsor-logo-light h-6">
+    <!-- ============ WHAT IS WELLNESS HOUSE ============ -->
+    <section id="about" class="py-24 px-6 bg-wh-dark text-wh-cream">
+        <div class="max-w-5xl mx-auto">
+            <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-wh-blue mb-4">The Experience</p>
+            <h2 class="font-display text-3xl md:text-5xl font-bold mb-6 tracking-tight">What is Wellness House?</h2>
+            <p class="text-base md:text-lg text-wh-cream/60 max-w-3xl leading-relaxed mb-14">
+                Wellness House is a curated, one-day experience blending programming, movement, recovery, and brand discovery into a single, fluid environment. Every element is intentional — from who's in the room to how the day unfolds.
+            </p>
+
+            <!-- Pillar grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-white/5 border border-white/5">
+                    <div class="pillar-icon bg-wh-coral/20">🎤</div>
+                    <div>
+                        <h3 class="font-bold text-sm mb-1 text-wh-peach">Executive-Led Panels</h3>
+                        <p class="text-xs text-wh-cream/40 leading-relaxed">Candid conversations with founders and operators building modern wellness brands.</p>
                     </div>
                 </div>
-                <div class="p-8 rounded-3xl bg-wh-dark border border-wh-cream/10 hover:border-wh-coral/40 transition-colors">
-                    <div class="text-3xl mb-4">🧠</div>
-                    <h3 class="font-bold text-lg mb-3 text-wh-peach">Founder Panels</h3>
-                    <p class="text-sm text-wh-cream/50 leading-relaxed mb-4">Future of Wellness, Performance, and CPG with industry leaders.</p>
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-white/5 border border-white/5">
+                    <div class="pillar-icon bg-wh-blue/20">🤝</div>
+                    <div>
+                        <h3 class="font-bold text-sm mb-1 text-wh-peach">Networking-First Format</h3>
+                        <p class="text-xs text-wh-cream/40 leading-relaxed">Real conversation and meaningful connection, without the noise or transactional energy.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-white/5 border border-white/5">
+                    <div class="pillar-icon bg-wh-pink/20">💪</div>
+                    <div>
+                        <h3 class="font-bold text-sm mb-1 text-wh-peach">Morning Workout + Recovery</h3>
+                        <p class="text-xs text-wh-cream/40 leading-relaxed">Community run, movement, and recovery lounges with best-in-class wellness partners.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-white/5 border border-white/5">
+                    <div class="pillar-icon bg-wh-peach/20">✨</div>
+                    <div>
+                        <h3 class="font-bold text-sm mb-1 text-wh-peach">VIP Lounge / Curated Room</h3>
+                        <p class="text-xs text-wh-cream/40 leading-relaxed">A brands-first room of founders, operators, athletes, and creators shaping performance culture.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-white/5 border border-white/5">
+                    <div class="pillar-icon bg-wh-coral/20">🏷️</div>
+                    <div>
+                        <h3 class="font-bold text-sm mb-1 text-wh-peach">Brand Discovery</h3>
+                        <p class="text-xs text-wh-cream/40 leading-relaxed">Vendor village highlighting standout wellness, health tech, and better-for-you CPG brands.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-6 rounded-2xl bg-white/5 border border-white/5">
+                    <div class="pillar-icon bg-wh-blue/20">🎾</div>
+                    <div>
+                        <h3 class="font-bold text-sm mb-1 text-wh-peach">Community Energy</h3>
+                        <p class="text-xs text-wh-cream/40 leading-relaxed">Padel courts, live music, light bites, and social moments throughout the day.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Who it's for -->
+            <div class="mt-12 pt-10 border-t border-wh-cream/10">
+                <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-wh-cream/30 mb-5">Who It's For</p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-wh-cream/60">Founders & CEOs</span>
+                    <span class="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-wh-cream/60">Brand Operators</span>
+                    <span class="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-wh-cream/60">Athletes & Creators</span>
+                    <span class="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-wh-cream/60">CPG & DTC Leaders</span>
+                    <span class="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-wh-cream/60">Retail & Investment Partners</span>
+                    <span class="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-wh-cream/60">Media Partners</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Speakers -->
-    <section class="py-28 px-6 bg-wh-cream">
-        <div class="max-w-6xl mx-auto">
-            <p class="text-xs font-bold uppercase tracking-[0.3em] text-wh-coral mb-4">On Stage</p>
-            <h2 class="font-display text-4xl md:text-5xl font-bold mb-16 tracking-tight text-wh-dark">Speaker Lineup</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white/60 rounded-3xl p-8 text-center border border-wh-dark/5">
-                    <img src="img/supercoffee.png" alt="SuperCoffee" class="h-12 mx-auto mb-4">
-                    <h3 class="font-bold text-lg text-wh-dark">Jake DeCicco</h3>
-                    <p class="text-sm text-wh-dark/50">Founder, SuperCoffee</p>
-                </div>
-                <div class="bg-white/60 rounded-3xl p-8 text-center border border-wh-dark/5">
-                    <img src="img/vollebak.png" alt="Vollebak" class="h-12 mx-auto mb-4">
-                    <h3 class="font-bold text-lg text-wh-dark">Steve Tidball</h3>
-                    <p class="text-sm text-wh-dark/50">Founder, Vollebak</p>
-                </div>
-                <div class="bg-white/60 rounded-3xl p-8 text-center border border-wh-dark/5">
-                    <div class="h-12 flex items-center justify-center mb-4"><span class="text-3xl">🎤</span></div>
-                    <h3 class="font-bold text-lg text-wh-dark">Noah Obstfeld</h3>
-                    <p class="text-sm text-wh-dark/50">Host, Pitch Roast Live</p>
-                </div>
+    <!-- ============ BRANDS ATTENDING ============ -->
+    <section id="brands" class="py-24 px-6 section-gradient">
+        <div class="max-w-5xl mx-auto text-center">
+            <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-wh-coral mb-4">The Room</p>
+            <h2 class="font-display text-3xl md:text-5xl font-bold mb-6 tracking-tight text-wh-dark">Brands Attending</h2>
+            <p class="text-sm text-wh-dark/50 mb-14 max-w-xl mx-auto">A curated community of founders and operators from the most exciting brands in wellness, performance, and consumer.</p>
+
+            <!-- Brand logos as text badges (since we don't have all logo files) -->
+            <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Bloom Nutrition</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">WHOOP</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">AG1</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Eight Sleep</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Peloton</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">OURA</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Hyperice</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Tecovas</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">YETI</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Outdoor Voices</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">adidas</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Olipop</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">David</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">LSKD</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Promix</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Dollar Shave Club</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">FORM</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Goodwipes</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Vivobarefoot</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Super Coffee</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Vollebak</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">KANE Footwear</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Throne Science</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Sweatpals</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">It's Skinny</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Cadillac</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">tinyhealth</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Truemed</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">rythm</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Function</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Gardencup</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">WELL</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Kohler</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Plunge</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Everyday Dose</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">KetoneIQ</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">San Antonio Spurs</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Superpower</span>
+                <span class="px-5 py-2.5 rounded-full bg-white/70 border border-wh-dark/5 text-xs font-bold text-wh-dark/70">Dunkin'</span>
             </div>
-            <p class="text-center mt-10 text-sm font-bold italic text-wh-coral">+ more speakers to be announced</p>
+            <p class="mt-8 text-xs font-semibold italic text-wh-coral/70">+ more brands to be announced</p>
         </div>
     </section>
 
-    <!-- Ecosystem Pillars -->
-    <section id="sectors" class="py-28 px-6 mesh-gradient-alt">
-        <div class="max-w-6xl mx-auto">
-            <p class="text-xs font-bold uppercase tracking-[0.3em] text-wh-dark/50 mb-4">The Collective</p>
-            <h2 class="font-display text-4xl md:text-5xl font-bold mb-16 tracking-tight text-wh-dark">Our Ecosystem.</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-10 bg-white/60 backdrop-blur-sm rounded-3xl border border-white/80 hover:shadow-xl transition-shadow">
-                    <h3 class="font-display text-2xl font-bold italic mb-4 text-wh-dark">Willpower Brands</h3>
-                    <p class="text-sm text-wh-dark/60 leading-relaxed mb-6">Uniting innovative CPG & e-commerce companies to spark growth and deep community engagement.</p>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-wh-coral">Brand Growth</span>
+    <!-- ============ KEYNOTE SPOTLIGHT ============ -->
+    <section class="py-24 px-6 bg-wh-dark text-wh-cream">
+        <div class="max-w-5xl mx-auto">
+            <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-wh-peach mb-4">Keynote Speaker</p>
+            <div class="flex flex-col md:flex-row gap-10 items-center">
+                <div class="w-48 h-48 rounded-3xl bg-gradient-to-br from-wh-coral to-wh-peach flex items-center justify-center text-6xl flex-shrink-0 overflow-hidden">
+                    <!-- Placeholder for Greg's headshot -->
+                    <span class="text-white/80 text-7xl">🎙️</span>
                 </div>
-                <div class="p-10 bg-white/60 backdrop-blur-sm rounded-3xl border border-white/80 hover:shadow-xl transition-shadow">
-                    <h3 class="font-display text-2xl font-bold italic mb-4 text-wh-dark">Willpower Performance</h3>
-                    <p class="text-sm text-wh-dark/60 leading-relaxed mb-6">Connecting elite innovators with billions in U.S. federal R&D funding and leadership labs.</p>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-wh-blue">Innovation</span>
-                </div>
-                <div class="p-10 bg-white/60 backdrop-blur-sm rounded-3xl border border-white/80 hover:shadow-xl transition-shadow">
-                    <h3 class="font-display text-2xl font-bold italic mb-4 text-wh-dark">Willpower Wellness</h3>
-                    <p class="text-sm text-wh-dark/60 leading-relaxed mb-6">Curated community gatherings built around human health, recovery, and physical performance.</p>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-wh-pink">Gathering</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sponsors -->
-    <section class="py-28 px-6 bg-wh-dark text-wh-cream">
-        <div class="max-w-6xl mx-auto text-center">
-            <p class="text-xs font-bold uppercase tracking-[0.3em] text-wh-peach mb-4">Strategic Partners</p>
-            <h2 class="font-display text-4xl font-bold mb-16 tracking-tight">Backed By The Best.</h2>
-            <div class="flex flex-wrap justify-center gap-16 items-center">
-                <div class="flex flex-col items-center gap-3">
-                    <img src="img/shopify.png" alt="Shopify" class="sponsor-logo-light">
-                    <span class="text-[10px] uppercase tracking-widest text-wh-cream/30">Shopify</span>
-                </div>
-                <div class="flex flex-col items-center gap-3">
-                    <img src="img/postpilot.png" alt="PostPilot" class="sponsor-logo-light">
-                    <span class="text-[10px] uppercase tracking-widest text-wh-cream/30">PostPilot</span>
-                </div>
-                <div class="flex flex-col items-center gap-3">
-                    <img src="img/hotspex.png" alt="Hotspex Media" class="sponsor-logo-light">
-                    <span class="text-[10px] uppercase tracking-widest text-wh-cream/30">Hotspex Media</span>
-                </div>
-                <div class="flex flex-col items-center gap-3">
-                    <img src="img/vivobarefoot.png" alt="Vivobarefoot" class="sponsor-logo-light">
-                    <span class="text-[10px] uppercase tracking-widest text-wh-cream/30">Vivobarefoot</span>
-                </div>
-                <div class="flex flex-col items-center gap-3">
-                    <img src="img/throne.png" alt="Throne Science" class="sponsor-logo-light">
-                    <span class="text-[10px] uppercase tracking-widest text-wh-cream/30">Throne Science</span>
+                <div>
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-2 tracking-tight">Greg Lavecchia</h2>
+                    <p class="text-sm font-bold text-wh-coral mb-1">Co-Founder & CEO</p>
+                    <p class="text-sm font-bold text-wh-peach mb-5">Bloom Nutrition</p>
+                    <p class="text-base text-wh-cream/50 leading-relaxed max-w-xl">
+                        Closing out the day with "Founder Mode in Health & Wellness" — leading with integrity, performance, and long-term vision. Greg has built Bloom into one of the fastest-growing wellness brands in the country.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About / CTA -->
-    <section id="about" class="py-28 px-6 bg-wh-cream">
-        <div class="max-w-3xl mx-auto text-center">
-            <img src="img/willpower-full.png" alt="Willpower" class="h-16 mx-auto mb-10">
-            <h2 class="font-display text-4xl md:text-5xl font-bold mb-8 tracking-tight text-wh-dark">About Willpower</h2>
-            <p class="text-lg text-wh-dark/60 leading-relaxed mb-12">
-                Willpower brings together performance, wellness, and community through curated events and high-impact collaborations. We create spaces where ambitious individuals and brands can connect, grow, and push boundaries together — building ecosystems that inspire lasting progress.
-            </p>
-            <a href="https://luma.com/WellnessHouse" target="_blank" class="btn-wh">Join the Waitlist</a>
+    <!-- ============ SPEAKERS ============ -->
+    <section id="speakers" class="py-24 px-6 bg-wh-cream">
+        <div class="max-w-5xl mx-auto">
+            <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-wh-coral mb-4">On Stage</p>
+            <h2 class="font-display text-3xl md:text-5xl font-bold mb-14 tracking-tight text-wh-dark">Guest Speakers</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+                <!-- Greg Lavecchia -->
+                <div class="bg-white/80 rounded-2xl p-6 text-center border border-wh-dark/5 hover:shadow-lg transition-shadow">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-wh-blue to-wh-pink mx-auto mb-4 flex items-center justify-center text-3xl">👤</div>
+                    <h3 class="font-bold text-sm text-wh-dark leading-tight">Greg Lavecchia</h3>
+                    <p class="text-[11px] text-wh-dark/50 mt-1">Co-Founder & CEO</p>
+                    <p class="text-[11px] font-semibold text-wh-coral mt-0.5">Bloom Nutrition</p>
+                </div>
+                <!-- Sam Nebel -->
+                <div class="bg-white/80 rounded-2xl p-6 text-center border border-wh-dark/5 hover:shadow-lg transition-shadow">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-wh-coral to-wh-peach mx-auto mb-4 flex items-center justify-center text-3xl">👤</div>
+                    <h3 class="font-bold text-sm text-wh-dark leading-tight">Sam Nebel</h3>
+                    <p class="text-[11px] text-wh-dark/50 mt-1">Co-Founder & CCO</p>
+                    <p class="text-[11px] font-semibold text-wh-coral mt-0.5">Goodwipes</p>
+                </div>
+                <!-- Bryan Guadagno -->
+                <div class="bg-white/80 rounded-2xl p-6 text-center border border-wh-dark/5 hover:shadow-lg transition-shadow">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-wh-peach to-wh-blue mx-auto mb-4 flex items-center justify-center text-3xl">👤</div>
+                    <h3 class="font-bold text-sm text-wh-dark leading-tight">Bryan Guadagno</h3>
+                    <p class="text-[11px] text-wh-dark/50 mt-1">Co-Founder & CEO</p>
+                    <p class="text-[11px] font-semibold text-wh-coral mt-0.5">It's Skinny</p>
+                </div>
+                <!-- Scott Hickle -->
+                <div class="bg-white/80 rounded-2xl p-6 text-center border border-wh-dark/5 hover:shadow-lg transition-shadow">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-wh-pink to-wh-coral mx-auto mb-4 flex items-center justify-center text-3xl">👤</div>
+                    <h3 class="font-bold text-sm text-wh-dark leading-tight">Scott Hickle</h3>
+                    <p class="text-[11px] text-wh-dark/50 mt-1">Co-Founder</p>
+                    <p class="text-[11px] font-semibold text-wh-coral mt-0.5">Throne Science</p>
+                </div>
+                <!-- Nicholas Charlier -->
+                <div class="bg-white/80 rounded-2xl p-6 text-center border border-wh-dark/5 hover:shadow-lg transition-shadow">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-wh-blue to-wh-peach mx-auto mb-4 flex items-center justify-center text-3xl">👤</div>
+                    <h3 class="font-bold text-sm text-wh-dark leading-tight">Nicholas Charlier</h3>
+                    <p class="text-[11px] text-wh-dark/50 mt-1">GM, Americas</p>
+                    <p class="text-[11px] font-semibold text-wh-coral mt-0.5">Vivobarefoot</p>
+                </div>
+                <!-- Salar Shahini -->
+                <div class="bg-white/80 rounded-2xl p-6 text-center border border-wh-dark/5 hover:shadow-lg transition-shadow">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-wh-coral to-wh-blue mx-auto mb-4 flex items-center justify-center text-3xl">👤</div>
+                    <h3 class="font-bold text-sm text-wh-dark leading-tight">Salar Shahini</h3>
+                    <p class="text-[11px] text-wh-dark/50 mt-1">Founder & CEO</p>
+                    <p class="text-[11px] font-semibold text-wh-coral mt-0.5">Sweatpals</p>
+                </div>
+                <!-- Jake DeCicco -->
+                <div class="bg-white/80 rounded-2xl p-6 text-center border border-wh-dark/5 hover:shadow-lg transition-shadow">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-wh-peach to-wh-pink mx-auto mb-4 flex items-center justify-center text-3xl">👤</div>
+                    <h3 class="font-bold text-sm text-wh-dark leading-tight">Jake DeCicco</h3>
+                    <p class="text-[11px] text-wh-dark/50 mt-1">Chief Revenue Officer</p>
+                    <p class="text-[11px] font-semibold text-wh-coral mt-0.5">Super Coffee</p>
+                </div>
+                <!-- Steve Tidball -->
+                <div class="bg-white/80 rounded-2xl p-6 text-center border border-wh-dark/5 hover:shadow-lg transition-shadow">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-wh-pink to-wh-blue mx-auto mb-4 flex items-center justify-center text-3xl">👤</div>
+                    <h3 class="font-bold text-sm text-wh-dark leading-tight">Steve Tidball</h3>
+                    <p class="text-[11px] text-wh-dark/50 mt-1">Founder & CEO</p>
+                    <p class="text-[11px] font-semibold text-wh-coral mt-0.5">Vollebak</p>
+                </div>
+            </div>
+            <p class="text-center mt-10 text-sm font-bold italic text-wh-coral">+ more speakers to be announced soon</p>
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="py-20 px-6 mesh-gradient-hero">
+    <!-- ============ PROGRAMMING / SCHEDULE ============ -->
+    <section id="schedule" class="py-24 px-6 bg-wh-dark text-wh-cream">
+        <div class="max-w-5xl mx-auto">
+            <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-wh-blue mb-4">Friday, March 13</p>
+            <h2 class="font-display text-3xl md:text-5xl font-bold mb-4 tracking-tight">Event Flow</h2>
+            <p class="text-sm text-wh-cream/40 mb-14">All times Central (CT). Schedule subject to updates.</p>
+
+            <div class="space-y-0">
+                <!-- 9:00 AM -->
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 py-6 border-b border-wh-cream/10">
+                    <div class="schedule-time">9:00 AM</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-base text-wh-cream mb-1">Wellness House Kickoff</h3>
+                        <p class="text-sm text-wh-cream/40 mb-3">Community run, workout & recovery w/ coffee</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">LSKD</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Everyday Dose</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">HYROX</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">KetoneIQ</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Spurs</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">KANE</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Hyperice</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10:00 AM -->
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 py-6 border-b border-wh-cream/10">
+                    <div class="schedule-time">10:00 AM</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-base text-wh-cream mb-1">Founders Rebuilding the Future of Health</h3>
+                        <p class="text-sm text-wh-cream/40 mb-3">Reimagining accessible, proactive health, shaping the future of performance and preventive care.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">tinyhealth</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Truemed</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Throne</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">WHOOP</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">rythm</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Function</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10:35 AM -->
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 py-6 border-b border-wh-cream/10">
+                    <div class="schedule-time">10:35 AM</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-base text-wh-cream mb-1">The Power of Routine</h3>
+                        <p class="text-sm text-wh-cream/40 mb-3">How leading wellness brands build habit ecosystems, turning daily routines into deeper engagement.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">AG1</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Eight Sleep</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Peloton</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">OURA</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">FORM</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Hyperice</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11:30 AM — Lunch -->
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 py-6 border-b border-wh-cream/10 bg-white/5 rounded-2xl px-6 -mx-6">
+                    <div class="schedule-time">11:30 AM</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-base text-wh-peach mb-1">🎤 Recharging Lunch + Pitch Roast Live</h3>
+                        <p class="text-sm text-wh-cream/40 mb-3">CPG Roast hosted by Noah Obstfeld. Lunch by Gardencup + WELL.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Gardencup</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">WELL</span>
+                            <span class="px-3 py-1 rounded-full bg-wh-coral/20 border border-wh-coral/30 text-[10px] font-semibold text-wh-coral">Pitch Roast Live</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12:45 PM -->
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 py-6 border-b border-wh-cream/10">
+                    <div class="schedule-time">12:45 PM</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-base text-wh-cream mb-1">Building Worlds Through Sports</h3>
+                        <p class="text-sm text-wh-cream/40 mb-3">Sports storytelling goes beyond the game — helping brands build loyalty, culture, and fan-driven worlds.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Spurs</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">adidas</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Cadillac</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1:15 PM -->
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 py-6 border-b border-wh-cream/10">
+                    <div class="schedule-time">1:15 PM</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-base text-wh-cream mb-1">Wellness at the Core of Community</h3>
+                        <p class="text-sm text-wh-cream/40 mb-3">Leaders share how authentic wellness communities are built through connection, rituals, and experiences.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Superpower</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">YETI</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">LSKD</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Sweatpals</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Dunkin'</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1:45 PM -->
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 py-6 border-b border-wh-cream/10">
+                    <div class="schedule-time">1:45 PM</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-base text-wh-cream mb-1">The New Rules of CPG</h3>
+                        <p class="text-sm text-wh-cream/40 mb-3">Turning customers into loyalists across the modern CPG lifecycle through data, channels, and storytelling.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Bloom</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Olipop</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">David</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Tecovas</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Promix</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Dollar Shave Club</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Goodwipes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2:30 PM — Keynote -->
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 py-6 border-b border-wh-cream/10 bg-gradient-to-r from-wh-coral/10 to-transparent rounded-2xl px-6 -mx-6">
+                    <div class="schedule-time">2:30 PM</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-base text-wh-peach mb-1">🔥 Final Keynote: Founder Mode in Health & Wellness</h3>
+                        <p class="text-sm text-wh-cream/40 mb-3">Leading with integrity, performance, and long-term vision.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-wh-coral/20 border border-wh-coral/30 text-[10px] font-semibold text-wh-coral">Greg Lavecchia — Bloom</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Outdoor Voices</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3:30 PM — Social -->
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 py-6 bg-white/5 rounded-2xl px-6 -mx-6">
+                    <div class="schedule-time">3:30 PM</div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-base text-wh-peach mb-1">🎉 Evening Social + Wellness Party on the Lawn</h3>
+                        <p class="text-sm text-wh-cream/40 mb-3">Music, light bites, recovery activations, casual play & open networking.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Hyperice</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Kohler</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-wh-cream/50">Plunge</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Discovery + Activations -->
+            <div class="mt-14 pt-10 border-t border-wh-cream/10">
+                <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-wh-cream/30 mb-6">Ongoing Throughout the Day</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="text-center p-5 rounded-2xl bg-white/5 border border-white/5">
+                        <span class="text-2xl block mb-2">🏪</span>
+                        <p class="text-xs font-bold text-wh-cream/60">Vendor Village + Recovery Lounge</p>
+                    </div>
+                    <div class="text-center p-5 rounded-2xl bg-white/5 border border-white/5">
+                        <span class="text-2xl block mb-2">🎵</span>
+                        <p class="text-xs font-bold text-wh-cream/60">Live Music & Light Bites</p>
+                    </div>
+                    <div class="text-center p-5 rounded-2xl bg-white/5 border border-white/5">
+                        <span class="text-2xl block mb-2">🎾</span>
+                        <p class="text-xs font-bold text-wh-cream/60">Open Padel Play & Court Sessions</p>
+                    </div>
+                    <div class="text-center p-5 rounded-2xl bg-white/5 border border-white/5">
+                        <span class="text-2xl block mb-2">🤝</span>
+                        <p class="text-xs font-bold text-wh-cream/60">Open Networking</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SPONSORS ============ -->
+    <section class="py-24 px-6 bg-wh-cream">
+        <div class="max-w-5xl mx-auto text-center">
+            <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-wh-dark/40 mb-4">Strategic Partners</p>
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-14 tracking-tight text-wh-dark">Backed By</h2>
+            <div class="flex flex-wrap justify-center gap-12 md:gap-16 items-center">
+                <div class="flex flex-col items-center gap-3">
+                    <img src="img/shopify.png" alt="Shopify" class="h-12 w-auto brand-logo">
+                    <span class="text-[10px] uppercase tracking-widest text-wh-dark/25 font-bold">Shopify</span>
+                </div>
+                <div class="flex flex-col items-center gap-3">
+                    <img src="img/postpilot.png" alt="PostPilot" class="h-12 w-auto brand-logo">
+                    <span class="text-[10px] uppercase tracking-widest text-wh-dark/25 font-bold">PostPilot</span>
+                </div>
+                <div class="flex flex-col items-center gap-3">
+                    <img src="img/hotspex.png" alt="Hotspex Media" class="h-12 w-auto brand-logo">
+                    <span class="text-[10px] uppercase tracking-widest text-wh-dark/25 font-bold">Hotspex Media</span>
+                </div>
+                <div class="flex flex-col items-center gap-3">
+                    <img src="img/vivobarefoot.png" alt="Vivobarefoot" class="h-12 w-auto brand-logo">
+                    <span class="text-[10px] uppercase tracking-widest text-wh-dark/25 font-bold">Vivobarefoot</span>
+                </div>
+                <div class="flex flex-col items-center gap-3">
+                    <img src="img/throne.png" alt="Throne Science" class="h-12 w-auto brand-logo">
+                    <span class="text-[10px] uppercase tracking-widest text-wh-dark/25 font-bold">Throne Science</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq" class="py-24 px-6 section-gradient">
+        <div class="max-w-3xl mx-auto">
+            <p class="text-[11px] font-bold uppercase tracking-[0.3em] text-wh-coral mb-4">Questions?</p>
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-12 tracking-tight text-wh-dark">FAQ</h2>
+
+            <div class="space-y-0">
+                <div class="faq-item py-5">
+                    <div class="faq-toggle flex justify-between items-center" onclick="toggleFaq(this)">
+                        <h3 class="font-bold text-sm text-wh-dark pr-4">What is Wellness House?</h3>
+                        <span class="faq-icon text-wh-coral text-xl font-light flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-sm text-wh-dark/50 pt-3 leading-relaxed">Wellness House is Willpower's flagship SXSW gathering — a full-day, invite-led experience at the intersection of wellness, performance, and consumer brands. Now in its 3rd year, it brings together founders, operators, athletes, and brand leaders for panels, movement, recovery, and community.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-5">
+                    <div class="faq-toggle flex justify-between items-center" onclick="toggleFaq(this)">
+                        <h3 class="font-bold text-sm text-wh-dark pr-4">When and where is the event?</h3>
+                        <span class="faq-icon text-wh-coral text-xl font-light flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-sm text-wh-dark/50 pt-3 leading-relaxed">Friday, March 13, 2026 in Austin, TX during SXSW. Full day event running 9:00 AM to 4:00 PM, followed by an evening social.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-5">
+                    <div class="faq-toggle flex justify-between items-center" onclick="toggleFaq(this)">
+                        <h3 class="font-bold text-sm text-wh-dark pr-4">How do I attend?</h3>
+                        <span class="faq-icon text-wh-coral text-xl font-light flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-sm text-wh-dark/50 pt-3 leading-relaxed">Attendance is approval-based. Click "Apply to Attend" to submit your application. General Admission is $300, with limited Early Bird tickets at $150.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-5">
+                    <div class="faq-toggle flex justify-between items-center" onclick="toggleFaq(this)">
+                        <h3 class="font-bold text-sm text-wh-dark pr-4">Who should attend?</h3>
+                        <span class="faq-icon text-wh-coral text-xl font-light flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-sm text-wh-dark/50 pt-3 leading-relaxed">Founders, senior operators, and leaders from high-growth wellness, CPG, and consumer brands. Athletes, creators, and teams shaping performance culture. Retail, investment, and media partners.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-5">
+                    <div class="faq-toggle flex justify-between items-center" onclick="toggleFaq(this)">
+                        <h3 class="font-bold text-sm text-wh-dark pr-4">What's the vibe?</h3>
+                        <span class="faq-icon text-wh-coral text-xl font-light flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-sm text-wh-dark/50 pt-3 leading-relaxed">Think premium, not stuffy. The room is curated for quality over quantity — real conversations, not sales pitches. Start the morning moving, spend the day learning from founders, and end the afternoon connecting over music and recovery activations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-5">
+                    <div class="faq-toggle flex justify-between items-center" onclick="toggleFaq(this)">
+                        <h3 class="font-bold text-sm text-wh-dark pr-4">How can my brand get involved?</h3>
+                        <span class="faq-icon text-wh-coral text-xl font-light flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-sm text-wh-dark/50 pt-3 leading-relaxed">We collaborate with a select group of brands, speakers, and partners. Interested in sponsorships, programming, or media collaboration? Reach out via the "Partner / Get Involved" button or email us directly.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item py-5">
+                    <div class="faq-toggle flex justify-between items-center" onclick="toggleFaq(this)">
+                        <h3 class="font-bold text-sm text-wh-dark pr-4">What is Willpower?</h3>
+                        <span class="faq-icon text-wh-coral text-xl font-light flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-sm text-wh-dark/50 pt-3 leading-relaxed">Willpower brings together performance, wellness, and community through curated events and high-impact collaborations. With 4,000+ leaders across Austin and NYC and 24+ curated gatherings hosted, Wellness House is our flagship annual gathering.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ APPLY TO ATTEND ============ -->
+    <section id="apply" class="py-24 px-6 hero-gradient">
         <div class="max-w-2xl mx-auto text-center">
-            <h3 class="font-display text-3xl font-bold mb-4 text-wh-dark">Stay in the Loop</h3>
-            <p class="text-sm text-wh-dark/60 mb-8">Get early access, announcements, and ways to get involved.</p>
-            <a href="https://luma.com/WellnessHouse" target="_blank" class="btn-wh">Sign Up for Updates</a>
+            <img src="img/wh-lockup-dark.png" alt="Wellness House" class="h-20 mx-auto mb-8">
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-4 tracking-tight text-wh-dark">Ready?</h2>
+            <p class="text-base text-wh-dark/55 mb-3 leading-relaxed">
+                Attendance is approval-based. Apply now to secure your spot at the most anticipated wellness gathering during SXSW 2026.
+            </p>
+            <p class="text-sm text-wh-dark/40 mb-10">
+                Friday, March 13, 2026 · Austin, TX · 9 AM – 4 PM
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://lu.ma/WellnessHouse" target="_blank" class="btn-primary">Apply to Attend</a>
+                <a href="mailto:bill@willpowerhq.com" id="partners" class="btn-secondary">Partner / Get Involved</a>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-12 px-6 bg-wh-dark text-center">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <img src="img/willpower-full.png" alt="Willpower" class="h-8 brightness-[10]">
-            <div class="flex gap-6">
-                <a href="https://www.instagram.com/willpowerhq/" target="_blank" class="text-xs font-bold uppercase tracking-widest text-wh-cream/40 hover:text-wh-cream transition-colors">Instagram</a>
-                <a href="https://www.linkedin.com/company/willpowerd/" target="_blank" class="text-xs font-bold uppercase tracking-widest text-wh-cream/40 hover:text-wh-cream transition-colors">LinkedIn</a>
-                <a href="https://willpower.community/" target="_blank" class="text-xs font-bold uppercase tracking-widest text-wh-cream/40 hover:text-wh-cream transition-colors">Community</a>
+    <!-- ============ FOOTER ============ -->
+    <footer class="py-12 px-6 bg-wh-dark">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-4">
+                    <img src="img/willpower-full.png" alt="Willpower" class="h-7 brightness-[10]">
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-wh-cream/20">×</span>
+                    <img src="img/wh-logo-white.png" alt="Wellness House" class="h-7 opacity-40">
+                </div>
+                <div class="flex gap-8">
+                    <a href="https://www.instagram.com/willpowerhq/" target="_blank" class="text-[11px] font-bold uppercase tracking-widest text-wh-cream/30 hover:text-wh-cream transition-colors">Instagram</a>
+                    <a href="https://www.linkedin.com/company/willpowerd/" target="_blank" class="text-[11px] font-bold uppercase tracking-widest text-wh-cream/30 hover:text-wh-cream transition-colors">LinkedIn</a>
+                    <a href="https://willpower.community/" target="_blank" class="text-[11px] font-bold uppercase tracking-widest text-wh-cream/30 hover:text-wh-cream transition-colors">Community</a>
+                </div>
+                <p class="text-[10px] uppercase tracking-[0.2em] text-wh-cream/15">&copy; 2026 Willpower</p>
             </div>
-            <p class="text-[10px] uppercase tracking-[0.3em] text-wh-cream/20">&copy; 2026 Willpower</p>
         </div>
     </footer>
+
+    <!-- FAQ Toggle Script -->
+    <script>
+        function toggleFaq(el) {
+            const answer = el.nextElementSibling;
+            const icon = el.querySelector('.faq-icon');
+            answer.classList.toggle('open');
+            icon.classList.toggle('open');
+        }
+    </script>
 
 </body>
 </html>
