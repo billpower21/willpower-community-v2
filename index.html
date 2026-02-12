@@ -5,110 +5,222 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WILLPOWER | Brands, Performance, Wellness</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Inter:wght@400;600&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; }
-        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
-        .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
-        .hero-mesh {
-            background-color: #000;
-            background-image: 
-                radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
-                radial-gradient(at 50% 0%, hsla(225,39%,30%,0.2) 0, transparent 50%), 
-                radial-gradient(at 100% 0%, hsla(339,49%,30%,0.1) 0, transparent 50%);
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'wh-dark': '#1F231A',
+                        'wh-coral': '#EA8376',
+                        'wh-peach': '#FCD6A6',
+                        'wh-cream': '#EFEEDF',
+                        'wh-pink': '#FFBFCC',
+                        'wh-blue': '#9DC1F6',
+                    }
+                }
+            }
         }
-        .text-glow { text-shadow: 0 0 20px rgba(255,255,255,0.2); }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #EFEEDF; color: #1F231A; }
+        .font-display { font-family: 'Playfair Display', serif; }
+        .mesh-gradient-hero {
+            background: 
+                radial-gradient(ellipse at 0% 0%, #9DC1F6 0%, transparent 50%),
+                radial-gradient(ellipse at 100% 0%, #FFBFCC 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 100%, #FCD6A6 0%, transparent 60%),
+                radial-gradient(ellipse at 0% 100%, #EA8376 0%, transparent 40%),
+                linear-gradient(135deg, #9DC1F6 0%, #FCD6A6 50%, #FFBFCC 100%);
+        }
+        .mesh-gradient-alt {
+            background: 
+                radial-gradient(ellipse at 20% 50%, #EA8376 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 30%, #FCD6A6 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, #9DC1F6 0%, transparent 50%),
+                #EFEEDF;
+        }
+        .btn-wh {
+            background-color: #1F231A;
+            color: #EFEEDF;
+            border-radius: 999px;
+            padding: 16px 40px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.02em;
+            transition: all 0.3s;
+        }
+        .btn-wh:hover { background-color: #EA8376; color: #1F231A; }
+        .btn-outline {
+            border: 2px solid #1F231A;
+            color: #1F231A;
+            border-radius: 999px;
+            padding: 14px 38px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.02em;
+            transition: all 0.3s;
+        }
+        .btn-outline:hover { background-color: #1F231A; color: #EFEEDF; }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Nav -->
-    <nav class="fixed w-full z-50 p-6 flex justify-between items-center backdrop-blur-md border-b border-white/5">
-        <div class="font-bold text-2xl tracking-tighter italic">WILLPOWER</div>
-        <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest opacity-70">
-            <a href="#sectors" class="hover:opacity-100 transition-opacity">Sectors</a>
-            <a href="#event" class="hover:opacity-100 transition-opacity">Wellness House</a>
-            <a href="#about" class="hover:opacity-100 transition-opacity">About</a>
+    <nav class="fixed w-full z-50 backdrop-blur-md bg-wh-cream/80 border-b border-wh-dark/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-display font-bold text-2xl italic text-wh-dark">WILLPOWER</div>
+            <div class="hidden md:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest text-wh-dark/60">
+                <a href="#event" class="hover:text-wh-dark transition-colors">Wellness House</a>
+                <a href="#sectors" class="hover:text-wh-dark transition-colors">Ecosystem</a>
+                <a href="#about" class="hover:text-wh-dark transition-colors">About</a>
+            </div>
+            <a href="https://luma.com/WellnessHouse" target="_blank" class="btn-wh text-xs !py-2.5 !px-6">Join the Waitlist</a>
         </div>
-        <a href="https://luma.com/WellnessHouse" target="_blank" class="bg-white text-black text-xs font-bold px-5 py-2.5 rounded-full hover:bg-gray-200 transition-colors uppercase tracking-tight">Apply to Enter</a>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen hero-mesh flex flex-col justify-center items-center px-6 pt-20 text-center">
-        <div class="max-w-4xl">
-            <span class="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-white/50 mb-8">Ecosystem for Bold Consumer Brands</span>
-            <h1 class="text-6xl md:text-8xl font-bold tracking-tighter mb-8 text-glow">
-                SHAPING WHAT <br/><span class="italic font-light">COMES NEXT.</span>
+    <!-- Hero -->
+    <section class="min-h-screen mesh-gradient-hero flex flex-col justify-center items-center px-6 pt-24 text-center relative overflow-hidden">
+        <div class="max-w-4xl relative z-10">
+            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/30 backdrop-blur-sm border border-white/40 text-xs font-bold uppercase tracking-widest text-wh-dark/70 mb-10">
+                <span>March 13, 2026</span>
+                <span class="w-1 h-1 rounded-full bg-wh-dark/40"></span>
+                <span>Austin, TX</span>
+                <span class="w-1 h-1 rounded-full bg-wh-dark/40"></span>
+                <span>SXSW</span>
+            </div>
+            <h1 class="font-display text-6xl md:text-8xl font-bold tracking-tight mb-4 text-wh-dark">
+                Wellness<br/>House <span class="inline-block border-2 border-wh-dark/80 rounded-full px-4 py-1 text-3xl md:text-4xl align-middle font-sans font-bold">2026</span>
             </h1>
-            <p class="text-lg md:text-xl text-white/40 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
-                A community platform uniting performance, wellness, and CPG through curated high-impact events and strategic collaborations.
+            <p class="text-lg md:text-xl text-wh-dark/60 max-w-2xl mx-auto mb-12 leading-relaxed">
+                A full-day gathering centered around thoughtful conversation, meaningful connection, and the future of wellness and consumer brands.
             </p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <a href="#event" class="bg-white text-black px-10 py-5 rounded-full font-bold text-sm uppercase tracking-tighter hover:scale-105 transition-transform shadow-xl shadow-white/5">Wellness House '26</a>
-                <a href="#sectors" class="bg-white/5 border border-white/10 px-10 py-5 rounded-full font-bold text-sm uppercase tracking-tighter hover:bg-white/10 transition-colors">Explore the Collective</a>
+            <div class="flex flex-col md:flex-row gap-5 justify-center">
+                <a href="https://luma.com/WellnessHouse" target="_blank" class="btn-wh">Reserve Your Spot</a>
+                <a href="#sectors" class="btn-outline">Explore Willpower</a>
             </div>
         </div>
     </section>
 
-    <!-- The Event Feature -->
-    <section id="event" class="py-32 px-6 border-t border-white/5">
+    <!-- Event Details -->
+    <section id="event" class="py-28 px-6 bg-wh-dark text-wh-cream">
         <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="glass-card p-12 rounded-[40px] relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
-                    <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-4">Featured Activation • Austin TX</p>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Wellness House <br/><span class="opacity-50 font-light">SXSW Weekend</span></h2>
-                    <p class="text-white/60 leading-relaxed mb-10">Our most critical event of the year. A full-day gathering centered around thoughtful conversation, curated VIP flow, and the future of wellness brands.</p>
-                    <ul class="space-y-4 mb-10">
-                        <li class="flex items-start gap-3 text-sm font-medium"><span class="text-white/20">01</span> LSKD Workout & Recovery Zone</li>
-                        <li class="flex items-start gap-3 text-sm font-medium"><span class="text-white/20">02</span> Pitch Roast Live w/ Noah Obstfeld</li>
-                        <li class="flex items-start gap-3 text-sm font-medium"><span class="text-white/20">03</span> Future of CPG Founder Panels</li>
-                    </ul>
-                    <a href="https://billpower21.github.io/wellness-house-sxsw-2026/" target="_blank" class="inline-flex items-center gap-2 group-hover:gap-4 transition-all font-bold text-xs uppercase tracking-widest">View Microsite <span>→</span></a>
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-wh-blue mb-4">Featured Activation</p>
+            <h2 class="font-display text-4xl md:text-5xl font-bold mb-16 tracking-tight">What Awaits You.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-8 rounded-3xl bg-wh-dark border border-wh-cream/10 hover:border-wh-coral/40 transition-colors">
+                    <div class="text-3xl mb-4">💪</div>
+                    <h3 class="font-bold text-lg mb-3 text-wh-peach">Morning Movement</h3>
+                    <p class="text-sm text-wh-cream/50 leading-relaxed">Wellness workout feat. LSKD. Limited-edition tees for the first 50.</p>
                 </div>
-                <div class="space-y-12">
-                    <h3 class="text-3xl font-bold tracking-tight px-4 border-l-2 border-white">The standard for brand <br/>connection in 2026.</h3>
-                    <div class="grid grid-cols-2 gap-8 grayscale opacity-50 contrast-125">
-                        <div class="text-sm font-bold tracking-tighter uppercase leading-none">Shopify</div>
-                        <div class="text-sm font-bold tracking-tighter uppercase leading-none">PostPilot</div>
-                        <div class="text-sm font-bold tracking-tighter uppercase leading-none">LSKD</div>
-                        <div class="text-sm font-bold tracking-tighter uppercase leading-none">KANE</div>
-                    </div>
+                <div class="p-8 rounded-3xl bg-wh-dark border border-wh-cream/10 hover:border-wh-coral/40 transition-colors">
+                    <div class="text-3xl mb-4">🧊</div>
+                    <h3 class="font-bold text-lg mb-3 text-wh-peach">Recovery Zone</h3>
+                    <p class="text-sm text-wh-cream/50 leading-relaxed">San Antonio Spurs x KANE Footwear. Event-exclusive collaboration shoe.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-wh-dark border border-wh-cream/10 hover:border-wh-coral/40 transition-colors">
+                    <div class="text-3xl mb-4">🔥</div>
+                    <h3 class="font-bold text-lg mb-3 text-wh-peach">Pitch Roast Live</h3>
+                    <p class="text-sm text-wh-cream/50 leading-relaxed">Noah Obstfeld roasts Jake DeCicco (SuperCoffee) & Steve Tidball (Vollebak).</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-wh-dark border border-wh-cream/10 hover:border-wh-coral/40 transition-colors">
+                    <div class="text-3xl mb-4">🧠</div>
+                    <h3 class="font-bold text-lg mb-3 text-wh-peach">Founder Panels</h3>
+                    <p class="text-sm text-wh-cream/50 leading-relaxed">Future of Wellness, Performance, and CPG with industry leaders.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sectors -->
-    <section id="sectors" class="py-32 bg-[#050505] px-6">
+    <!-- Speakers -->
+    <section class="py-28 px-6 bg-wh-cream">
         <div class="max-w-6xl mx-auto">
-            <div class="mb-20">
-                <h2 class="text-sm font-bold uppercase tracking-[0.3em] text-white/20 mb-4 uppercase">The Pillars</h2>
-                <h3 class="text-4xl font-bold tracking-tight">Our Ecosystem.</h3>
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-wh-coral mb-4">On Stage</p>
+            <h2 class="font-display text-4xl md:text-5xl font-bold mb-16 tracking-tight text-wh-dark">Speaker Lineup</h2>
+            <div class="flex flex-wrap gap-4">
+                <span class="px-6 py-3 bg-wh-dark text-wh-cream rounded-full text-sm font-bold">Jake DeCicco — SuperCoffee</span>
+                <span class="px-6 py-3 bg-wh-dark text-wh-cream rounded-full text-sm font-bold">Steve Tidball — Vollebak</span>
+                <span class="px-6 py-3 bg-wh-dark text-wh-cream rounded-full text-sm font-bold">Noah Obstfeld — Host</span>
+                <span class="px-6 py-3 bg-wh-coral/20 text-wh-dark rounded-full text-sm font-bold italic">+ more to be announced</span>
             </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem Pillars -->
+    <section id="sectors" class="py-28 px-6 mesh-gradient-alt">
+        <div class="max-w-6xl mx-auto">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-wh-dark/50 mb-4">The Collective</p>
+            <h2 class="font-display text-4xl md:text-5xl font-bold mb-16 tracking-tight text-wh-dark">Our Ecosystem.</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-10 glass-card rounded-3xl hover:bg-white/5 transition-colors cursor-default">
-                    <h4 class="text-xl font-bold mb-4 italic">Willpower Brands</h4>
-                    <p class="text-sm text-white/40 leading-relaxed mb-8">Uniting innovative CPG & e-commerce companies to spark growth and deep engagement.</p>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-white/20">Brand Growth Focus</span>
+                <div class="p-10 bg-white/60 backdrop-blur-sm rounded-3xl border border-white/80 hover:shadow-xl transition-shadow">
+                    <h3 class="font-display text-2xl font-bold italic mb-4 text-wh-dark">Willpower Brands</h3>
+                    <p class="text-sm text-wh-dark/60 leading-relaxed mb-6">Uniting innovative CPG & e-commerce companies to spark growth and deep community engagement.</p>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-wh-coral">Brand Growth</span>
                 </div>
-                <div class="p-10 glass-card rounded-3xl hover:bg-white/5 transition-colors cursor-default">
-                    <h4 class="text-xl font-bold mb-4 italic">Willpower Performance</h4>
-                    <p class="text-sm text-white/40 leading-relaxed mb-8">Connecting elite innovators with U.S. federal R&D funding and leadership labs.</p>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-white/20">Innovation Focus</span>
+                <div class="p-10 bg-white/60 backdrop-blur-sm rounded-3xl border border-white/80 hover:shadow-xl transition-shadow">
+                    <h3 class="font-display text-2xl font-bold italic mb-4 text-wh-dark">Willpower Performance</h3>
+                    <p class="text-sm text-wh-dark/60 leading-relaxed mb-6">Connecting elite innovators with billions in U.S. federal R&D funding and leadership labs.</p>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-wh-blue">Innovation</span>
                 </div>
-                <div class="p-10 glass-card rounded-3xl hover:bg-white/5 transition-colors cursor-default">
-                    <h4 class="text-xl font-bold mb-4 italic">Willpower Wellness</h4>
-                    <p class="text-sm text-white/40 leading-relaxed mb-8">Curated community gatherings built around human health and physical performance.</p>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-white/20">Gathering Focus</span>
+                <div class="p-10 bg-white/60 backdrop-blur-sm rounded-3xl border border-white/80 hover:shadow-xl transition-shadow">
+                    <h3 class="font-display text-2xl font-bold italic mb-4 text-wh-dark">Willpower Wellness</h3>
+                    <p class="text-sm text-wh-dark/60 leading-relaxed mb-6">Curated community gatherings built around human health, recovery, and physical performance.</p>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-wh-pink">Gathering</span>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Sponsors -->
+    <section class="py-28 px-6 bg-wh-dark text-wh-cream">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-wh-peach mb-4">Strategic Partners</p>
+            <h2 class="font-display text-4xl font-bold mb-16 tracking-tight">Backed By The Best.</h2>
+            <div class="flex flex-wrap justify-center gap-12 items-center opacity-70">
+                <span class="text-xl font-bold tracking-tight">Shopify</span>
+                <span class="text-xl font-bold tracking-tight">PostPilot</span>
+                <span class="text-xl font-bold tracking-tight">Hotspex Media</span>
+                <span class="text-xl font-bold tracking-tight">Vivobarefoot</span>
+                <span class="text-xl font-bold tracking-tight">Throne Science</span>
+                <span class="text-xl font-bold tracking-tight">LSKD</span>
+                <span class="text-xl font-bold tracking-tight">KANE</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / CTA -->
+    <section id="about" class="py-28 px-6 bg-wh-cream">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="font-display text-4xl md:text-5xl font-bold mb-8 tracking-tight text-wh-dark">About Willpower</h2>
+            <p class="text-lg text-wh-dark/60 leading-relaxed mb-12">
+                Willpower brings together performance, wellness, and community through curated events and high-impact collaborations. We create spaces where ambitious individuals and brands can connect, grow, and push boundaries together — building ecosystems that inspire lasting progress.
+            </p>
+            <div class="flex flex-col md:flex-row gap-5 justify-center">
+                <a href="https://luma.com/WellnessHouse" target="_blank" class="btn-wh">Join the Waitlist</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-20 px-6 mesh-gradient-hero">
+        <div class="max-w-2xl mx-auto text-center">
+            <h3 class="font-display text-3xl font-bold mb-4 text-wh-dark">Stay in the Loop</h3>
+            <p class="text-sm text-wh-dark/60 mb-8">Get early access, announcements, and ways to get involved.</p>
+            <a href="https://luma.com/WellnessHouse" target="_blank" class="btn-wh">Sign Up for Updates</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="p-20 border-t border-white/5 text-center text-[10px] font-bold uppercase tracking-[0.4em] text-white/10">
-        Willpower &copy; 2026. Forward Progress.
+    <footer class="py-12 px-6 bg-wh-dark text-center">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-display font-bold text-xl italic text-wh-cream">WILLPOWER</div>
+            <div class="flex gap-6">
+                <a href="https://www.instagram.com/willpowerhq/" target="_blank" class="text-xs font-bold uppercase tracking-widest text-wh-cream/40 hover:text-wh-cream transition-colors">Instagram</a>
+                <a href="https://www.linkedin.com/company/willpowerd/" target="_blank" class="text-xs font-bold uppercase tracking-widest text-wh-cream/40 hover:text-wh-cream transition-colors">LinkedIn</a>
+                <a href="https://willpower.community/" target="_blank" class="text-xs font-bold uppercase tracking-widest text-wh-cream/40 hover:text-wh-cream transition-colors">Community</a>
+            </div>
+            <p class="text-[10px] uppercase tracking-[0.3em] text-wh-cream/20">&copy; 2026 Willpower</p>
+        </div>
     </footer>
 
 </body>
