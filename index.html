@@ -49,6 +49,7 @@
             font-size: 14px;
             letter-spacing: 0.02em;
             transition: all 0.3s;
+            display: inline-block;
         }
         .btn-wh:hover { background-color: #EA8376; color: #1F231A; }
         .btn-outline {
@@ -60,8 +61,31 @@
             font-size: 14px;
             letter-spacing: 0.02em;
             transition: all 0.3s;
+            display: inline-block;
         }
         .btn-outline:hover { background-color: #1F231A; color: #EFEEDF; }
+        .sponsor-logo {
+            height: 40px;
+            width: auto;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        .sponsor-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        .sponsor-logo-light {
+            height: 40px;
+            width: auto;
+            filter: grayscale(100%) brightness(10);
+            opacity: 0.5;
+            transition: all 0.3s;
+        }
+        .sponsor-logo-light:hover {
+            filter: grayscale(0%) brightness(1);
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -69,7 +93,9 @@
     <!-- Nav -->
     <nav class="fixed w-full z-50 backdrop-blur-md bg-wh-cream/80 border-b border-wh-dark/5">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="font-display font-bold text-2xl italic text-wh-dark">WILLPOWER</div>
+            <div class="flex items-center gap-2">
+                <img src="img/willpower-full.png" alt="Willpower" class="h-10">
+            </div>
             <div class="hidden md:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest text-wh-dark/60">
                 <a href="#event" class="hover:text-wh-dark transition-colors">Wellness House</a>
                 <a href="#sectors" class="hover:text-wh-dark transition-colors">Ecosystem</a>
@@ -89,9 +115,9 @@
                 <span class="w-1 h-1 rounded-full bg-wh-dark/40"></span>
                 <span>SXSW</span>
             </div>
-            <h1 class="font-display text-6xl md:text-8xl font-bold tracking-tight mb-4 text-wh-dark">
-                Wellness<br/>House <span class="inline-block border-2 border-wh-dark/80 rounded-full px-4 py-1 text-3xl md:text-4xl align-middle font-sans font-bold">2026</span>
-            </h1>
+            <div class="mb-8">
+                <img src="img/wh-lockup-dark.png" alt="Wellness House 2026" class="h-32 md:h-48 mx-auto">
+            </div>
             <p class="text-lg md:text-xl text-wh-dark/60 max-w-2xl mx-auto mb-12 leading-relaxed">
                 A full-day gathering centered around thoughtful conversation, meaningful connection, and the future of wellness and consumer brands.
             </p>
@@ -111,22 +137,28 @@
                 <div class="p-8 rounded-3xl bg-wh-dark border border-wh-cream/10 hover:border-wh-coral/40 transition-colors">
                     <div class="text-3xl mb-4">💪</div>
                     <h3 class="font-bold text-lg mb-3 text-wh-peach">Morning Movement</h3>
-                    <p class="text-sm text-wh-cream/50 leading-relaxed">Wellness workout feat. LSKD. Limited-edition tees for the first 50.</p>
+                    <p class="text-sm text-wh-cream/50 leading-relaxed mb-4">Wellness workout feat. LSKD. Limited-edition tees for the first 50.</p>
+                    <img src="img/lskd.png" alt="LSKD" class="sponsor-logo-light h-6">
                 </div>
                 <div class="p-8 rounded-3xl bg-wh-dark border border-wh-cream/10 hover:border-wh-coral/40 transition-colors">
                     <div class="text-3xl mb-4">🧊</div>
                     <h3 class="font-bold text-lg mb-3 text-wh-peach">Recovery Zone</h3>
-                    <p class="text-sm text-wh-cream/50 leading-relaxed">San Antonio Spurs x KANE Footwear. Event-exclusive collaboration shoe.</p>
+                    <p class="text-sm text-wh-cream/50 leading-relaxed mb-4">San Antonio Spurs x KANE Footwear. Event-exclusive collaboration shoe.</p>
+                    <img src="img/kane.png" alt="KANE" class="sponsor-logo-light h-6">
                 </div>
                 <div class="p-8 rounded-3xl bg-wh-dark border border-wh-cream/10 hover:border-wh-coral/40 transition-colors">
                     <div class="text-3xl mb-4">🔥</div>
                     <h3 class="font-bold text-lg mb-3 text-wh-peach">Pitch Roast Live</h3>
-                    <p class="text-sm text-wh-cream/50 leading-relaxed">Noah Obstfeld roasts Jake DeCicco (SuperCoffee) & Steve Tidball (Vollebak).</p>
+                    <p class="text-sm text-wh-cream/50 leading-relaxed mb-4">Noah Obstfeld roasts Jake DeCicco & Steve Tidball. Zero mercy.</p>
+                    <div class="flex gap-2 items-center">
+                        <img src="img/supercoffee.png" alt="SuperCoffee" class="sponsor-logo-light h-6">
+                        <img src="img/vollebak.png" alt="Vollebak" class="sponsor-logo-light h-6">
+                    </div>
                 </div>
                 <div class="p-8 rounded-3xl bg-wh-dark border border-wh-cream/10 hover:border-wh-coral/40 transition-colors">
                     <div class="text-3xl mb-4">🧠</div>
                     <h3 class="font-bold text-lg mb-3 text-wh-peach">Founder Panels</h3>
-                    <p class="text-sm text-wh-cream/50 leading-relaxed">Future of Wellness, Performance, and CPG with industry leaders.</p>
+                    <p class="text-sm text-wh-cream/50 leading-relaxed mb-4">Future of Wellness, Performance, and CPG with industry leaders.</p>
                 </div>
             </div>
         </div>
@@ -137,12 +169,24 @@
         <div class="max-w-6xl mx-auto">
             <p class="text-xs font-bold uppercase tracking-[0.3em] text-wh-coral mb-4">On Stage</p>
             <h2 class="font-display text-4xl md:text-5xl font-bold mb-16 tracking-tight text-wh-dark">Speaker Lineup</h2>
-            <div class="flex flex-wrap gap-4">
-                <span class="px-6 py-3 bg-wh-dark text-wh-cream rounded-full text-sm font-bold">Jake DeCicco — SuperCoffee</span>
-                <span class="px-6 py-3 bg-wh-dark text-wh-cream rounded-full text-sm font-bold">Steve Tidball — Vollebak</span>
-                <span class="px-6 py-3 bg-wh-dark text-wh-cream rounded-full text-sm font-bold">Noah Obstfeld — Host</span>
-                <span class="px-6 py-3 bg-wh-coral/20 text-wh-dark rounded-full text-sm font-bold italic">+ more to be announced</span>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/60 rounded-3xl p-8 text-center border border-wh-dark/5">
+                    <img src="img/supercoffee.png" alt="SuperCoffee" class="h-12 mx-auto mb-4">
+                    <h3 class="font-bold text-lg text-wh-dark">Jake DeCicco</h3>
+                    <p class="text-sm text-wh-dark/50">Founder, SuperCoffee</p>
+                </div>
+                <div class="bg-white/60 rounded-3xl p-8 text-center border border-wh-dark/5">
+                    <img src="img/vollebak.png" alt="Vollebak" class="h-12 mx-auto mb-4">
+                    <h3 class="font-bold text-lg text-wh-dark">Steve Tidball</h3>
+                    <p class="text-sm text-wh-dark/50">Founder, Vollebak</p>
+                </div>
+                <div class="bg-white/60 rounded-3xl p-8 text-center border border-wh-dark/5">
+                    <div class="h-12 flex items-center justify-center mb-4"><span class="text-3xl">🎤</span></div>
+                    <h3 class="font-bold text-lg text-wh-dark">Noah Obstfeld</h3>
+                    <p class="text-sm text-wh-dark/50">Host, Pitch Roast Live</p>
+                </div>
             </div>
+            <p class="text-center mt-10 text-sm font-bold italic text-wh-coral">+ more speakers to be announced</p>
         </div>
     </section>
 
@@ -176,14 +220,27 @@
         <div class="max-w-6xl mx-auto text-center">
             <p class="text-xs font-bold uppercase tracking-[0.3em] text-wh-peach mb-4">Strategic Partners</p>
             <h2 class="font-display text-4xl font-bold mb-16 tracking-tight">Backed By The Best.</h2>
-            <div class="flex flex-wrap justify-center gap-12 items-center opacity-70">
-                <span class="text-xl font-bold tracking-tight">Shopify</span>
-                <span class="text-xl font-bold tracking-tight">PostPilot</span>
-                <span class="text-xl font-bold tracking-tight">Hotspex Media</span>
-                <span class="text-xl font-bold tracking-tight">Vivobarefoot</span>
-                <span class="text-xl font-bold tracking-tight">Throne Science</span>
-                <span class="text-xl font-bold tracking-tight">LSKD</span>
-                <span class="text-xl font-bold tracking-tight">KANE</span>
+            <div class="flex flex-wrap justify-center gap-16 items-center">
+                <div class="flex flex-col items-center gap-3">
+                    <img src="img/shopify.png" alt="Shopify" class="sponsor-logo-light">
+                    <span class="text-[10px] uppercase tracking-widest text-wh-cream/30">Shopify</span>
+                </div>
+                <div class="flex flex-col items-center gap-3">
+                    <img src="img/postpilot.png" alt="PostPilot" class="sponsor-logo-light">
+                    <span class="text-[10px] uppercase tracking-widest text-wh-cream/30">PostPilot</span>
+                </div>
+                <div class="flex flex-col items-center gap-3">
+                    <img src="img/hotspex.png" alt="Hotspex Media" class="sponsor-logo-light">
+                    <span class="text-[10px] uppercase tracking-widest text-wh-cream/30">Hotspex Media</span>
+                </div>
+                <div class="flex flex-col items-center gap-3">
+                    <img src="img/vivobarefoot.png" alt="Vivobarefoot" class="sponsor-logo-light">
+                    <span class="text-[10px] uppercase tracking-widest text-wh-cream/30">Vivobarefoot</span>
+                </div>
+                <div class="flex flex-col items-center gap-3">
+                    <img src="img/throne.png" alt="Throne Science" class="sponsor-logo-light">
+                    <span class="text-[10px] uppercase tracking-widest text-wh-cream/30">Throne Science</span>
+                </div>
             </div>
         </div>
     </section>
@@ -191,13 +248,12 @@
     <!-- About / CTA -->
     <section id="about" class="py-28 px-6 bg-wh-cream">
         <div class="max-w-3xl mx-auto text-center">
+            <img src="img/willpower-full.png" alt="Willpower" class="h-16 mx-auto mb-10">
             <h2 class="font-display text-4xl md:text-5xl font-bold mb-8 tracking-tight text-wh-dark">About Willpower</h2>
             <p class="text-lg text-wh-dark/60 leading-relaxed mb-12">
                 Willpower brings together performance, wellness, and community through curated events and high-impact collaborations. We create spaces where ambitious individuals and brands can connect, grow, and push boundaries together — building ecosystems that inspire lasting progress.
             </p>
-            <div class="flex flex-col md:flex-row gap-5 justify-center">
-                <a href="https://luma.com/WellnessHouse" target="_blank" class="btn-wh">Join the Waitlist</a>
-            </div>
+            <a href="https://luma.com/WellnessHouse" target="_blank" class="btn-wh">Join the Waitlist</a>
         </div>
     </section>
 
@@ -213,7 +269,7 @@
     <!-- Footer -->
     <footer class="py-12 px-6 bg-wh-dark text-center">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="font-display font-bold text-xl italic text-wh-cream">WILLPOWER</div>
+            <img src="img/willpower-full.png" alt="Willpower" class="h-8 brightness-[10]">
             <div class="flex gap-6">
                 <a href="https://www.instagram.com/willpowerhq/" target="_blank" class="text-xs font-bold uppercase tracking-widest text-wh-cream/40 hover:text-wh-cream transition-colors">Instagram</a>
                 <a href="https://www.linkedin.com/company/willpowerd/" target="_blank" class="text-xs font-bold uppercase tracking-widest text-wh-cream/40 hover:text-wh-cream transition-colors">LinkedIn</a>
