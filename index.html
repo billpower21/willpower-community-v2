@@ -28,8 +28,8 @@
         a { text-decoration: none; color: inherit; }
 
         /* ── Font families ── */
-        .font-unbounded { font-family: 'Unbounded', sans-serif; }
-        .font-bricolage { font-family: 'Bricolage Grotesque', sans-serif; }
+        .font-unbounded { font-family: 'Unbounded', sans-serif; letter-spacing: -0.02em; }
+        .font-bricolage { font-family: 'Bricolage Grotesque', sans-serif; letter-spacing: -0.01em; }
         .font-montserrat { font-family: 'Montserrat', sans-serif; }
 
         /* ══════════════════════════════════════════════════════════════════
@@ -156,9 +156,24 @@
 
         @media (max-width: 900px) {
             .nav-links { display: none; }
-            .nav-hamburger { display: flex; }
+            .nav-hamburger { display: flex; z-index: 1001; }
             .main-nav { padding: 16px 24px; }
             .main-nav.scrolled { padding: 12px 24px; }
+            .nav-logo { height: 24px; }
+            .nav-cta { 
+                padding: 10px 24px; 
+                font-size: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .main-nav { padding: 14px 16px; }
+            .main-nav.scrolled { padding: 10px 16px; }
+            .nav-logo { height: 22px; }
+            .nav-cta { 
+                padding: 8px 20px; 
+                font-size: 9px;
+                letter-spacing: 0.08em;
+            }
         }
 
         /* ══════════════════════════════════════════════════════════════════
@@ -310,6 +325,7 @@
             position: relative;
             overflow: hidden;
             border: none; cursor: pointer;
+            min-height: 48px; /* Touch-friendly */
         }
         .btn-primary::after {
             content: '';
@@ -342,6 +358,7 @@
             backdrop-filter: blur(8px);
             background: rgba(255,255,255,0.03);
             cursor: pointer;
+            min-height: 48px; /* Touch-friendly */
         }
         .btn-outline-light:hover {
             border-color: rgba(255,255,255,0.5);
@@ -523,20 +540,21 @@
             font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.35em;
+            letter-spacing: 0.18em;
             margin-bottom: 16px;
         }
         .section-title {
             font-family: 'Bricolage Grotesque', sans-serif;
             font-weight: 800;
-            line-height: 1.1;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
             margin-bottom: 20px;
         }
         .section-subtitle {
             font-family: 'Montserrat', sans-serif;
             font-weight: 400;
             font-size: 16px;
-            line-height: 1.7;
+            line-height: 1.65;
             max-width: 640px;
         }
 
@@ -1974,6 +1992,15 @@
                 <span class="countdown-label">Days Until Wellness House</span>
             </div>
 
+            <div class="reveal delay-3" style="margin-bottom: 48px;">
+                <div style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 28px; border-radius: 999px; background: rgba(234, 131, 118, 0.15); backdrop-filter: blur(20px); border: 1px solid rgba(234, 131, 118, 0.25);">
+                    <svg width="16" height="16" fill="none" stroke="#EA8376" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2v20M2 12h20"/>
+                    </svg>
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.85);">Only 300 Spots Remaining</span>
+                </div>
+            </div>
+
             <div class="reveal delay-4 hero-ctas">
                 <a href="https://lu.ma/WellnessHouse" target="_blank" class="btn-primary btn-pulse"><span>Apply to Attend</span></a>
                 <a href="mailto:bill@willpowerhq.com" class="btn-outline-light">Partner With Us</a>
@@ -2547,28 +2574,59 @@
         @media (max-width: 768px) {
             .speakers-grid-clean {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 24px;
+                gap: 20px;
             }
 
             .speaker-card-clean {
-                padding: 20px;
+                padding: 16px;
             }
 
             .speaker-photo-clean {
-                width: 160px;
-                height: 160px;
+                width: 140px;
+                height: 140px;
             }
 
             .speaker-name-clean {
-                font-size: 18px;
+                font-size: 16px;
+                line-height: 1.3;
             }
 
             .speaker-title-clean {
-                font-size: 12px;
+                font-size: 11px;
+                line-height: 1.4;
             }
 
             .speaker-logo-clean {
-                height: 40px;
+                height: 32px;
+                max-width: 120px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .speakers-grid-clean {
+                gap: 16px;
+            }
+            
+            .speaker-card-clean {
+                padding: 14px;
+            }
+            
+            .speaker-photo-clean {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .speaker-name-clean {
+                font-size: 15px;
+            }
+            
+            .speaker-title-clean {
+                font-size: 10px;
+            }
+            
+            .speaker-logo-clean {
+                height: 28px;
+                max-width: 100px;
             }
         }
     </style>
@@ -2816,7 +2874,33 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         12. FAQ (Cream)
+         12. EMAIL CAPTURE / WAITLIST (Cream with Gradient Blob)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section class="section-cream section-padding" style="padding-top:100px;padding-bottom:100px;">
+        <div class="blob" style="width:500px;height:500px;background:linear-gradient(135deg, rgba(157,193,246,0.15), rgba(255,191,204,0.15));top:50%;left:50%;transform:translate(-50%, -50%);"></div>
+
+        <div class="section-inner" style="text-align:center;max-width:680px;">
+            <h2 class="reveal section-title font-unbounded" style="font-size:36px;margin-bottom:20px;line-height:1.2;">
+                Can't Make It?
+            </h2>
+            <p class="reveal section-subtitle" style="font-size:17px;margin:0 auto 40px;max-width:540px;color:rgba(31,35,26,0.55);">
+                Join the waitlist for future events and exclusive updates
+            </p>
+
+            <div class="reveal">
+                <a href="mailto:bill@willpowerhq.com?subject=Waitlist" class="btn-dark" style="padding:20px 56px;">
+                    <span>Get on the List</span>
+                </a>
+            </div>
+
+            <p class="reveal" style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:500;color:rgba(31,35,26,0.25);margin-top:24px;letter-spacing:0.02em;">
+                We respect your inbox. Updates only.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         13. FAQ (Cream)
          ═══════════════════════════════════════════════════════════════════ -->
     <section id="faq" class="section-cream section-padding" style="padding-top:0;">
         <div class="blob" style="width:350px;height:350px;background:#9DC1F6;bottom:0;right:-100px;"></div>
