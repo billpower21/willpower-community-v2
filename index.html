@@ -278,13 +278,18 @@
         }
 
         @media (max-width: 768px) {
-            .hero-lockup { max-height: 120px; }
-            .hero-tagline { font-size: 15px; }
-            .hero-pill { font-size: 9px; padding: 8px 18px; gap: 8px; flex-wrap: wrap; justify-content: center; }
+            .hero { min-height: 100svh; } /* Use svh for mobile viewport height */
+            .hero-lockup { max-height: 140px; margin-bottom: 32px; }
+            .hero-tagline { font-size: 16px; line-height: 1.6; padding: 0 12px; }
+            .hero-pill { font-size: 10px; padding: 10px 20px; gap: 10px; margin-bottom: 32px; }
+            .hero-pill .dot { width: 3px; height: 3px; }
             .hero-video-wrap iframe { width: 300vw; }
-            .countdown { padding: 20px 28px; }
-            .countdown-number { font-size: 48px; }
-            .countdown-label { font-size: 11px; }
+            .countdown { padding: 20px 24px; margin-bottom: 32px; }
+            .countdown-number { font-size: 52px; }
+            .countdown-label { font-size: 11px; letter-spacing: 0.12em; }
+            .hero-ctas { gap: 12px; padding: 0 12px; }
+            .hero-ctas .btn-primary { padding: 16px 40px; font-size: 11px; }
+            .hero-ctas .btn-outline-light { padding: 14px 36px; font-size: 11px; }
         }
 
         /* ══════════════════════════════════════════════════════════════════
@@ -1092,17 +1097,37 @@
         @media (max-width: 900px) {
             .speakers-grid { 
                 grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
+                gap: 28px;
             }
             .speaker-img-wrap {
-                width: 160px;
-                height: 160px;
+                width: 140px;
+                height: 140px;
             }
             .speaker-name {
-                font-size: 18px;
+                font-size: 16px;
             }
             .speaker-company-logo {
-                height: 40px;
+                height: 32px;
+                max-width: 120px;
+            }
+        }
+        @media (max-width: 480px) {
+            .speakers-grid { 
+                gap: 24px;
+            }
+            .speaker-img-wrap {
+                width: 130px;
+                height: 130px;
+            }
+            .speaker-name {
+                font-size: 15px;
+            }
+            .speaker-role {
+                font-size: 11px;
+            }
+            .speaker-company-logo {
+                height: 28px;
+                max-width: 100px;
             }
         }
 
@@ -1300,8 +1325,66 @@
             color: rgba(31, 35, 26, 0.5);
         }
         @media (max-width: 768px) {
-            .schedule-row { flex-direction: column; gap: 8px; }
-            .ongoing-grid { grid-template-columns: repeat(2, 1fr); }
+            .schedule-row { 
+                flex-direction: column; 
+                gap: 12px; 
+                padding: 20px 18px;
+            }
+            .schedule-time {
+                font-size: 14px;
+                min-width: auto;
+            }
+            .schedule-content h3 {
+                font-size: 20px;
+                line-height: 1.3;
+            }
+            .schedule-content p {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+            .pill {
+                font-size: 9px;
+                padding: 6px 12px;
+            }
+            .pill img {
+                height: 16px;
+                max-height: 18px;
+            }
+            .pill.accent {
+                font-size: 13px;
+                padding: 8px 14px;
+            }
+            .speaker-thumb {
+                width: 26px;
+                height: 26px;
+            }
+            .ongoing-grid { 
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .ongoing-card {
+                padding: 20px 12px;
+            }
+            .ongoing-card svg {
+                width: 28px;
+                height: 28px;
+            }
+            .ongoing-card p {
+                font-size: 11px;
+            }
+        }
+        @media (max-width: 480px) {
+            .pill-row {
+                gap: 8px;
+            }
+            .pill {
+                font-size: 8px;
+                padding: 5px 10px;
+            }
+            .pill img {
+                height: 14px;
+                max-height: 16px;
+            }
         }
 
         /* ══════════════════════════════════════════════════════════════════
@@ -1700,22 +1783,107 @@
         }
 
         /* ══════════════════════════════════════════════════════════════════
-           PULSE ANIMATION ON CTA
+           PREMIUM MICRO-INTERACTIONS
            ══════════════════════════════════════════════════════════════════ */
+        
+        /* 1. Primary CTA Buttons - Subtle Continuous Pulse */
         @keyframes pulse-ring {
-            0% { transform: scale(0.9); opacity: 0.6; }
-            80%, 100% { transform: scale(1.5); opacity: 0; }
+            0% { transform: scale(0.95); opacity: 0.5; }
+            50% { transform: scale(1.05); opacity: 0.3; }
+            100% { transform: scale(0.95); opacity: 0.5; }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(157, 193, 246, 0.3), 0 0 40px rgba(157, 193, 246, 0.15); }
+            50% { box-shadow: 0 0 30px rgba(157, 193, 246, 0.4), 0 0 60px rgba(157, 193, 246, 0.2); }
         }
         .btn-pulse {
             position: relative;
+            animation: pulse-glow 3s ease-in-out infinite;
         }
         .btn-pulse::before {
             content: '';
             position: absolute;
-            inset: -4px;
+            inset: -6px;
             border-radius: 999px;
-            border: 2px solid rgba(157, 193, 246, 0.4);
-            animation: pulse-ring 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            border: 2px solid rgba(157, 193, 246, 0.3);
+            animation: pulse-ring 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+        /* Enhanced hover glow for primary buttons */
+        .btn-primary:hover {
+            box-shadow: 0 16px 48px rgba(157,193,246,0.35), 0 4px 16px rgba(0,0,0,0.15), 0 0 40px rgba(157,193,246,0.25);
+        }
+        .btn-dark:hover {
+            box-shadow: 0 16px 48px rgba(234,131,118,0.35), 0 0 40px rgba(234,131,118,0.2);
+        }
+
+        /* 2. Brand Logos - Staggered Hover + Smooth Scale */
+        .logo-wall img {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: center;
+        }
+        /* Apply stagger delay via nth-child */
+        .logo-wall img:nth-child(1) { transition-delay: 0s; }
+        .logo-wall img:nth-child(2) { transition-delay: 0.03s; }
+        .logo-wall img:nth-child(3) { transition-delay: 0.06s; }
+        .logo-wall img:nth-child(4) { transition-delay: 0.09s; }
+        .logo-wall img:nth-child(5) { transition-delay: 0.12s; }
+        .logo-wall img:nth-child(6) { transition-delay: 0.15s; }
+        .logo-wall img:nth-child(7) { transition-delay: 0.18s; }
+        .logo-wall img:nth-child(8) { transition-delay: 0.21s; }
+        .logo-wall img:nth-child(9) { transition-delay: 0.24s; }
+        .logo-wall img:nth-child(10) { transition-delay: 0.27s; }
+        .logo-wall img:nth-child(n+11) { transition-delay: 0.3s; }
+
+        /* 3. Speaker Cards - Gentle Lift + Shadow Transition */
+        .speaker-card-clean {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .speaker-card-clean:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+        /* Also apply to old speaker cards if they exist */
+        .speaker-card {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .speaker-card:hover {
+            box-shadow: 0 12px 32px rgba(31, 35, 26, 0.15), 0 4px 16px rgba(31, 35, 26, 0.08);
+        }
+
+        /* 4. Page Load - Fade-in Hero Content + Stagger Sections */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-content > * {
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+        }
+        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+        .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+        .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+
+        /* 5. Scroll Indicator - Bounce Animation + Hide on Scroll */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        .hero-scroll {
+            animation: bounce 2s ease-in-out infinite;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        .hero-scroll.hidden {
+            opacity: 0;
+            visibility: hidden;
         }
 
         /* ══════════════════════════════════════════════════════════════════
@@ -2105,6 +2273,63 @@
                         <li>Private mastermind moments</li>
                         <li>The network you've been missing</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         6.75. PAST ATTENDEES (Cream Section)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section class="section-cream section-padding">
+        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:5%;left:-200px;"></div>
+        <div class="blob" style="width:400px;height:400px;background:#FFBFCC;bottom:10%;right:-150px;"></div>
+        <div class="blob" style="width:350px;height:350px;background:#FCD6A6;top:50%;right:20%;"></div>
+
+        <div class="section-inner" style="text-align:center;">
+            <div class="reveal section-label" style="color:#9DC1F6;">The Alumni</div>
+            <h2 class="reveal section-title" style="font-size:40px;">
+                Join <span class="gradient-text-dark">Previous Attendees</span>
+            </h2>
+            <p class="reveal section-subtitle" style="color:rgba(31,35,26,0.4);margin:0 auto 56px;">
+                Founders & leaders from these brands attended Wellness House 2025
+            </p>
+
+            <div class="reveal logo-wall" style="margin-bottom:48px;">
+                <img src="img/brands/bloom-nutrition.png" alt="Bloom Nutrition" style="height:36px">
+                <img src="img/brands/whoop.png" alt="WHOOP" style="height:22px">
+                <img src="img/brands/ag1.png" alt="AG1" style="height:28px">
+                <img src="img/brands/peloton.png" alt="Peloton" style="height:22px">
+                <img src="img/brands/oura.png" alt="OURA" style="height:28px">
+                <img src="img/brands/goodwipes.png" alt="Goodwipes" style="height:24px">
+                <img src="img/supercoffee.png" alt="Super Coffee" style="height:24px">
+                <img src="img/vollebak.png" alt="Vollebak" style="height:18px">
+                <img src="img/throne.png" alt="Throne Science" style="height:24px">
+                <img src="img/vivobarefoot.png" alt="Vivobarefoot" style="height:24px">
+            </div>
+
+            <!-- Optional testimonial quotes -->
+            <div class="reveal" style="max-width:800px;margin:0 auto;">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+                    <!-- Testimonial 1 -->
+                    <div style="background:rgba(31,35,26,0.02);border:1px solid rgba(31,35,26,0.06);border-radius:20px;padding:32px;text-align:left;">
+                        <p style="font-family:'Montserrat',sans-serif;font-size:15px;font-style:italic;color:rgba(31,35,26,0.55);line-height:1.7;margin-bottom:16px;">
+                            "The caliber of conversations and connections at Wellness House is unmatched. This is where real partnerships begin."
+                        </p>
+                        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;color:#EA8376;">
+                            — Wellness Brand Founder, 2025
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div style="background:rgba(31,35,26,0.02);border:1px solid rgba(31,35,26,0.06);border-radius:20px;padding:32px;text-align:left;">
+                        <p style="font-family:'Montserrat',sans-serif;font-size:15px;font-style:italic;color:rgba(31,35,26,0.55);line-height:1.7;margin-bottom:16px;">
+                            "Not your typical summit. Every session delivered actionable insights, and the community energy was electric."
+                        </p>
+                        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;color:#EA8376;">
+                            — CPG Operator, 2025
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2857,6 +3082,18 @@
         updateCountdown();
         // Update countdown daily at midnight
         setInterval(updateCountdown, 1000 * 60 * 60 * 24);
+
+        // ── Hide scroll indicator on scroll ──
+        const scrollIndicator = document.querySelector('.hero-scroll');
+        let hasScrolled = false;
+        window.addEventListener('scroll', () => {
+            if (!hasScrolled && window.scrollY > 100) {
+                hasScrolled = true;
+                if (scrollIndicator) {
+                    scrollIndicator.classList.add('hidden');
+                }
+            }
+        }, { passive: true });
     </script>
 
 </body>
