@@ -1253,7 +1253,7 @@
         }
         .schedule-row:hover {
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-            transform: translateY(-4px);
+            transform: translateY(-3px);
         }
         .schedule-row.highlight {
             background: linear-gradient(90deg, rgba(234,131,118,0.08) 0%, rgba(157,193,246,0.06) 100%);
@@ -1657,6 +1657,10 @@
         .btn-urgency:hover::before {
             opacity: 1;
         }
+        .btn-urgency:active {
+            transform: translateY(0) scale(0.98);
+            box-shadow: 0 8px 32px rgba(157, 193, 246, 0.15), 0 4px 16px rgba(255, 191, 204, 0.1);
+        }
         .btn-urgency span {
             position: relative;
             z-index: 1;
@@ -1906,10 +1910,11 @@
         }
         /* Also apply to old speaker cards if they exist */
         .speaker-card {
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .speaker-card:hover {
-            box-shadow: 0 12px 32px rgba(31, 35, 26, 0.15), 0 4px 16px rgba(31, 35, 26, 0.08);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(31, 35, 26, 0.25), 0 4px 16px rgba(31, 35, 26, 0.08);
         }
 
         /* 4. Page Load - Fade-in Hero Content + Stagger Sections */
@@ -1940,7 +1945,7 @@
         }
         .hero-scroll {
             animation: bounce 2s ease-in-out infinite;
-            transition: opacity 0.4s ease, visibility 0.4s ease;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .hero-scroll.hidden {
             opacity: 0;
