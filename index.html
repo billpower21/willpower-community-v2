@@ -227,6 +227,37 @@
             margin: 0 auto 48px;
             line-height: 1.7;
         }
+        .countdown {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            margin: 0 auto 48px;
+            padding: 24px 40px;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            max-width: fit-content;
+        }
+        .countdown-number {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(135deg, #9DC1F6 0%, #FFBFCC 45%, #FCD6A6 80%, #EA8376 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .countdown-label {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255,255,255,0.7);
+        }
         .hero-ctas {
             display: flex;
             gap: 16px;
@@ -251,6 +282,9 @@
             .hero-tagline { font-size: 15px; }
             .hero-pill { font-size: 9px; padding: 8px 18px; gap: 8px; flex-wrap: wrap; justify-content: center; }
             .hero-video-wrap iframe { width: 300vw; }
+            .countdown { padding: 20px 28px; }
+            .countdown-number { font-size: 48px; }
+            .countdown-label { font-size: 11px; }
         }
 
         /* ══════════════════════════════════════════════════════════════════
@@ -1226,6 +1260,14 @@
             background: rgba(157,193,246,0.08);
             color: #1F231A; 
         }
+        .speaker-thumb {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
         .ongoing-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -1615,7 +1657,12 @@
                 The wellness summit that redefines what's possible. 500 leaders. 30+ brands. One unforgettable day in Austin.
             </p>
 
-            <div class="reveal delay-3 hero-ctas">
+            <div class="reveal delay-3 countdown">
+                <span class="countdown-number">28</span>
+                <span class="countdown-label">Days Until Wellness House</span>
+            </div>
+
+            <div class="reveal delay-4 hero-ctas">
                 <a href="https://lu.ma/WellnessHouse" target="_blank" class="btn-primary btn-pulse"><span>Apply to Attend</span></a>
                 <a href="mailto:bill@willpowerhq.com" class="btn-outline-light">Partner With Us</a>
             </div>
@@ -2232,7 +2279,10 @@
                         <h3>Founders Rebuilding the Future of Health</h3>
                         <p>Reimagining accessible, proactive health and preventive care.</p>
                         <div class="pill-row">
-                            <span class="pill accent">Scott Hickle / Throne</span>
+                            <span class="pill accent">
+                                <img src="img/speakers/scott-hickle.jpg" class="speaker-thumb">
+                                Featuring Scott Hickle / Throne
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -2256,8 +2306,14 @@
                         <h3>🎤 Recharging Lunch + Wellness Roast</h3>
                         <p>Midday refuel with a live wellness brand roast.</p>
                         <div class="pill-row">
-                            <span class="pill accent">Jake DeCicco / Super Coffee</span>
-                            <span class="pill accent">Steve Tidball / Vollebak</span>
+                            <span class="pill accent">
+                                <img src="img/speakers/jake-decicco.jpg" class="speaker-thumb">
+                                Featuring Jake DeCicco / Super Coffee
+                            </span>
+                            <span class="pill accent">
+                                <img src="img/speakers/steve-tidball.jpg" class="speaker-thumb">
+                                Featuring Steve Tidball / Vollebak
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -2280,8 +2336,14 @@
                         <h3>Wellness at the Core of Community</h3>
                         <p>Building authentic wellness communities through connection, rituals, and experiences.</p>
                         <div class="pill-row">
-                            <span class="pill accent">Nicholas Charlier / Vivobarefoot</span>
-                            <span class="pill accent">Salar Shahini / Sweatpals</span>
+                            <span class="pill accent">
+                                <img src="img/speakers/nicholas-charlier.jpg" class="speaker-thumb">
+                                Featuring Nicholas Charlier / Vivobarefoot
+                            </span>
+                            <span class="pill accent">
+                                <img src="img/speakers/salar-shahini.jpg" class="speaker-thumb">
+                                Featuring Salar Shahini / Sweatpals
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -2292,7 +2354,10 @@
                         <h3>The New Rules of CPG</h3>
                         <p>Turning customers into loyalists across the modern CPG lifecycle.</p>
                         <div class="pill-row">
-                            <span class="pill accent">Sam Nebel / Goodwipes</span>
+                            <span class="pill accent">
+                                <img src="img/speakers/sam-nebel.jpg" class="speaker-thumb">
+                                Featuring Sam Nebel / Goodwipes
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -2303,7 +2368,10 @@
                         <h3>🔥 KEYNOTE: Founder Mode in Health &amp; Wellness</h3>
                         <p>Leading with integrity, performance, and long-term vision.</p>
                         <div class="pill-row">
-                            <span class="pill accent">Greg Lavecchia / Bloom</span>
+                            <span class="pill accent">
+                                <img src="img/speakers/greg-lavecchia.jpg" class="speaker-thumb">
+                                Featuring Greg Lavecchia / Bloom
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -2459,7 +2527,23 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         13. APPLY TO ATTEND
+         13. DON'T MISS OUT - URGENCY CTA
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section class="urgency-section">
+        <div class="urgency-inner">
+            <h2 class="reveal urgency-title">Don't Miss Out</h2>
+            <p class="reveal urgency-copy">
+                Limited to 500 attendees. Applications reviewed daily. Early bird pricing ends soon.
+            </p>
+            <div class="reveal urgency-stat">124 applications received</div>
+            <div class="reveal urgency-cta-wrap">
+                <a href="https://lu.ma/WellnessHouse" target="_blank" class="btn-urgency"><span>Apply to Attend</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         14. APPLY TO ATTEND
          ═══════════════════════════════════════════════════════════════════ -->
     <section class="apply-section" id="apply">
         <div class="apply-inner">
@@ -2626,6 +2710,21 @@
                 }
             });
         });
+
+        // ── Countdown Timer ──
+        function updateCountdown() {
+            const eventDate = new Date('2026-03-13T09:00:00-06:00');
+            const today = new Date();
+            const daysUntil = Math.ceil((eventDate - today) / (1000 * 60 * 60 * 24));
+            const countdownNumberEl = document.querySelector('.countdown-number');
+            if (countdownNumberEl) {
+                countdownNumberEl.textContent = daysUntil;
+            }
+        }
+        // Update countdown on page load
+        updateCountdown();
+        // Update countdown daily at midnight
+        setInterval(updateCountdown, 1000 * 60 * 60 * 24);
     </script>
 
 </body>
