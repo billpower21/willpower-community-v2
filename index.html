@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Wellness House 2026 |  Austin — By Willpower</title>
     <meta name="description" content="A one-day, invite-led wellness experience at the intersection of performance, consumer brands, and culture. March 13, 2026 — Austin, TX during .">
     <meta property="og:title" content="Wellness House 2026 |  Austin">
@@ -23,6 +23,8 @@
             color: #1F231A;
             overflow-x: hidden;
             line-height: 1.6;
+            -webkit-tap-highlight-color: rgba(157, 193, 246, 0.2);
+            touch-action: manipulation; /* Disable double-tap zoom on buttons */
         }
         img { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; color: inherit; }
@@ -130,10 +132,14 @@
             z-index: 999;
             background: rgba(239, 238, 223, 0.98);
             backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 32px;
+            padding: 80px 24px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
         .mobile-menu.open { display: flex; }
         .mobile-menu a {
@@ -143,16 +149,30 @@
             color: #1F231A;
             opacity: 0.6;
             transition: opacity 0.3s;
+            padding: 12px 24px;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .mobile-menu a:hover { opacity: 1; }
+        .mobile-menu a:hover,
+        .mobile-menu a:active { opacity: 1; }
         .mobile-close {
             position: absolute;
-            top: 24px; right: 40px;
-            font-size: 32px;
+            top: 24px; right: 24px;
+            font-size: 40px;
             cursor: pointer;
             color: #1F231A;
-            opacity: 0.4;
+            opacity: 0.6;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s;
         }
+        .mobile-close:hover,
+        .mobile-close:active { opacity: 1; }
 
         @media (max-width: 900px) {
             .nav-links { display: none; }
@@ -923,7 +943,8 @@
             font-weight: 800;
             color: #EFEEDF;
             margin-bottom: 24px;
-            line-height: 1.2;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
         }
         .why-attend-benefits {
             list-style: none;
@@ -938,7 +959,7 @@
             padding: 12px 0;
             padding-left: 28px;
             position: relative;
-            line-height: 1.6;
+            line-height: 1.65;
         }
         .why-attend-benefits li::before {
             content: '→';
@@ -1014,6 +1035,7 @@
             font-weight: 900;
             color: #1F231A;
             line-height: 1.1;
+            letter-spacing: -0.02em;
             margin-bottom: 8px;
         }
         .keynote-role {
@@ -1022,6 +1044,7 @@
             font-weight: 600;
             color: rgba(31, 35, 26, 0.5);
             margin-bottom: 4px;
+            line-height: 1.6;
         }
         .keynote-company {
             font-family: 'Bricolage Grotesque', sans-serif;
@@ -1029,13 +1052,15 @@
             font-weight: 700;
             color: #EA8376;
             margin-bottom: 24px;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
         }
         .keynote-desc {
             font-family: 'Montserrat', sans-serif;
             font-size: 15px;
             font-weight: 400;
             color: rgba(31, 35, 26, 0.45);
-            line-height: 1.7;
+            line-height: 1.65;
         }
         @media (max-width: 768px) {
             .keynote-card { flex-direction: column; }
@@ -1102,14 +1127,15 @@
             font-weight: 700;
             color: #1F231A;
             margin-bottom: 6px;
-            line-height: 1.2;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
         }
         .speaker-role {
             font-family: 'Montserrat', sans-serif;
             font-size: 12px;
             font-weight: 500;
             color: rgba(31, 35, 26, 0.5);
-            line-height: 1.4;
+            line-height: 1.6;
             margin-bottom: 12px;
         }
         .speaker-company-logo {
@@ -1253,6 +1279,7 @@
             min-width: 100px;
             flex-shrink: 0;
             padding-top: 2px;
+            letter-spacing: -0.02em;
         }
         .schedule-row.highlight .schedule-time { color: #EA8376; }
         .schedule-content h3 {
@@ -1261,7 +1288,8 @@
             font-weight: 700;
             color: #1F231A;
             margin-bottom: 8px;
-            line-height: 1.2;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
         }
         .schedule-content p {
             font-family: 'Montserrat', sans-serif;
@@ -1269,6 +1297,7 @@
             font-weight: 400;
             color: rgba(31, 35, 26, 0.45);
             margin-bottom: 16px;
+            line-height: 1.6;
         }
         .pill.accent {
             background: rgba(234,131,118,0.1);
@@ -1475,6 +1504,7 @@
             padding: 24px 0;
             cursor: pointer;
             transition: all 0.3s;
+            min-height: 48px;
         }
         .faq-toggle:hover h3 { color: #EA8376; }
         .faq-toggle h3 {
@@ -1483,6 +1513,8 @@
             font-weight: 700;
             color: #1F231A;
             transition: color 0.3s;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
         }
         .faq-icon {
             width: 32px; height: 32px;
@@ -1514,7 +1546,7 @@
             font-size: 14px;
             font-weight: 400;
             color: rgba(31, 35, 26, 0.45);
-            line-height: 1.7;
+            line-height: 1.65;
             padding-bottom: 24px;
         }
         .faq-answer a { color: #9DC1F6; text-decoration: underline; }
@@ -3225,8 +3257,20 @@
         updateNav();
 
         // ── Mobile menu ──
-        function toggleMobile() { document.getElementById('mobileMenu').classList.toggle('open'); }
-        function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+        function toggleMobile() { 
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('open');
+            // Prevent body scroll when menu is open
+            if (menu.classList.contains('open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+        function closeMobile() { 
+            document.getElementById('mobileMenu').classList.remove('open');
+            document.body.style.overflow = '';
+        }
 
         // ── Animated number counters ──
         let countersAnimated = false;
