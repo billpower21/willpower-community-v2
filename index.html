@@ -1889,6 +1889,43 @@
             .benefit-label {
                 font-size: 16px;
             }
+
+            /* Fix benefit grid gap on mobile */
+            .benefit-grid {
+                gap: 24px !important;
+            }
+
+            /* Fix hero padding on mobile */
+            .hero {
+                padding: 120px 20px 80px !important;
+            }
+
+            /* Fix schedule special session font sizes on mobile */
+            .schedule-content h3 {
+                font-size: 20px !important;
+                line-height: 1.3;
+            }
+
+            /* Fix stats grid for 5 items on mobile */
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 20px !important;
+            }
+            .stat-item:last-child {
+                grid-column: 1 / -1;
+            }
+
+            /* Why attend grid stack */
+            .why-attend-grid {
+                grid-template-columns: 1fr !important;
+                gap: 32px !important;
+            }
+
+            /* Speaker grid 2 columns */
+            .speakers-grid-clean {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 24px 16px !important;
+            }
             
         }
         
@@ -2049,7 +2086,7 @@
          4. STATS BAR
          ═══════════════════════════════════════════════════════════════════ -->
     <div class="stats-bar" id="statsBar">
-        <div class="stats-grid" style="grid-template-columns: repeat(5, 1fr);">
+        <div class="stats-grid">
             <div class="stat-item reveal">
                 <div class="stat-number" data-target="3">0</div>
                 <div class="stat-label">Annual Event</div>
