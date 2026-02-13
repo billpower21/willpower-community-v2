@@ -63,7 +63,7 @@
             --bg-light-blue: #F4F8FD;
             --bg-light-pink: #FFF6F8;
             --bg-light-peach: #FFF9F5;
-            --bg-dark: #1F231A;
+            --bg-dark: #1F231A; /* Footer only */
         }
 
         /* ══════════════════════════════════════════════════════════════════
@@ -98,8 +98,8 @@
             top: 0; left: 0; right: 0;
             z-index: 1001;
             height: 50px;
-            background: linear-gradient(135deg, #1F231A 0%, #2a2e23 100%);
-            border-bottom: 1px solid rgba(157, 193, 246, 0.15);
+            background: #EFEEDF;
+            border-bottom: 1px solid rgba(31, 35, 26, 0.08);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -111,7 +111,7 @@
             font-weight: 700;
             letter-spacing: 0.22em;
             text-transform: uppercase;
-            color: rgba(239, 238, 223, 0.85);
+            color: rgba(31, 35, 26, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -122,7 +122,7 @@
             font-family: 'Unbounded', sans-serif;
             font-size: 18px;
             font-weight: 900;
-            background: linear-gradient(135deg, #9DC1F6 0%, #FFBFCC 50%, #FCD6A6 100%);
+            background: linear-gradient(135deg, #9DC1F6 0%, #FFBFCC 50%, #EA8376 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -161,6 +161,9 @@
         }
         /* Logo swap: light on hero, dark when scrolled */
         .nav-logo-light, .nav-logo-dark { position: absolute; top: 0; left: 0; transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        /* Default state: show dark logo, hide light — safe fallback for cream bg */
+        .nav-logo-light { opacity: 0; }
+        .nav-logo-dark  { opacity: 1; }
         .main-nav a:first-child { position: relative; display: block; height: 28px; width: 104px; }
         .main-nav.hero-mode .nav-logo-light { opacity: 1; }
         .main-nav.hero-mode .nav-logo-dark { opacity: 0; }
@@ -546,7 +549,9 @@
            MARQUEE
            ══════════════════════════════════════════════════════════════════ */
         .marquee-section {
-            background: #1F231A;
+            background: #EFEEDF;
+            border-top: 1px solid rgba(31, 35, 26, 0.06);
+            border-bottom: 1px solid rgba(31, 35, 26, 0.06);
             padding: 20px 0;
             overflow: hidden;
             position: relative;
@@ -568,7 +573,7 @@
             font-family: 'Unbounded', sans-serif;
             font-size: 14px;
             font-weight: 700;
-            color: rgba(239, 238, 223, 0.18);
+            color: rgba(31, 35, 26, 0.15);
             text-transform: uppercase;
             letter-spacing: 0.12em;
             transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -577,7 +582,7 @@
         .marquee-dot {
             width: 5px; height: 5px;
             border-radius: 50%;
-            background: rgba(157, 193, 246, 0.3);
+            background: rgba(157, 193, 246, 0.35);
             flex-shrink: 0;
         }
         @keyframes marquee {
@@ -644,8 +649,8 @@
             overflow: hidden;
         }
         .section-dark {
-            background: #1F231A;
-            color: #EFEEDF;
+            background: #FFFFFF;
+            color: #1F231A;
             position: relative;
             overflow: hidden;
         }
@@ -697,7 +702,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 0;
             margin-bottom: 80px;
-            border: 2px solid rgba(157, 193, 246, 0.15);
+            border: 2px solid rgba(31, 35, 26, 0.08);
             border-radius: 24px;
             overflow: hidden;
         }
@@ -706,11 +711,11 @@
             position: relative;
         }
         .comparison-left {
-            background: rgba(157, 193, 246, 0.04);
-            border-right: 2px solid rgba(157, 193, 246, 0.15);
+            background: rgba(157, 193, 246, 0.06);
+            border-right: 2px solid rgba(31, 35, 26, 0.08);
         }
         .comparison-right {
-            background: rgba(239, 238, 223, 0.02);
+            background: rgba(31, 35, 26, 0.02);
         }
         .comparison-label {
             font-family: 'Montserrat', sans-serif;
@@ -722,7 +727,7 @@
             margin-bottom: 16px;
         }
         .comparison-right .comparison-label {
-            color: rgba(239, 238, 223, 0.25);
+            color: rgba(31, 35, 26, 0.25);
         }
         .comparison-number {
             font-family: 'Unbounded', sans-serif;
@@ -735,19 +740,19 @@
             opacity: 0.95;
         }
         .comparison-right .comparison-number {
-            color: rgba(239, 238, 223, 0.15);
+            color: rgba(31, 35, 26, 0.1);
         }
         .comparison-title {
             font-family: 'Bricolage Grotesque', sans-serif;
             font-size: 32px;
             font-weight: 800;
-            color: #EFEEDF;
+            color: #1F231A;
             margin-bottom: 20px;
             line-height: 1.15;
             letter-spacing: -0.02em;
         }
         .comparison-right .comparison-title {
-            color: rgba(239, 238, 223, 0.4);
+            color: rgba(31, 35, 26, 0.35);
         }
         .comparison-features {
             list-style: none;
@@ -758,9 +763,9 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 15px;
             font-weight: 500;
-            color: rgba(239, 238, 223, 0.65);
+            color: rgba(31, 35, 26, 0.6);
             padding: 12px 0;
-            border-bottom: 1px solid rgba(239, 238, 223, 0.05);
+            border-bottom: 1px solid rgba(31, 35, 26, 0.06);
             display: flex;
             align-items: flex-start;
             gap: 12px;
@@ -774,11 +779,11 @@
             flex-shrink: 0;
         }
         .comparison-right .comparison-features li {
-            color: rgba(239, 238, 223, 0.2);
+            color: rgba(31, 35, 26, 0.2);
         }
         .comparison-right .comparison-features li::before {
             content: '×';
-            color: rgba(239, 238, 223, 0.15);
+            color: rgba(31, 35, 26, 0.15);
         }
 
         /* ══════════════════════════════════════════════════════════════════
@@ -2252,33 +2257,7 @@
         </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════════════════════
-         4. STATS BAR
-         ═══════════════════════════════════════════════════════════════════ -->
-    <div class="stats-bar" id="statsBar">
-        <div class="stats-grid">
-            <div class="stat-item reveal">
-                <div class="stat-number" data-target="3">0</div>
-                <div class="stat-label">Annual Event</div>
-            </div>
-            <div class="stat-item reveal delay-1">
-                <div class="stat-number" data-target="4000" data-suffix="+">0</div>
-                <div class="stat-label">Guests &amp; Growing</div>
-            </div>
-            <div class="stat-item reveal delay-2">
-                <div class="stat-number" data-target="30" data-suffix="+">0</div>
-                <div class="stat-label">Top Brands</div>
-            </div>
-            <div class="stat-item reveal delay-3">
-                <div class="stat-number" data-target="1" data-prefix="$" data-suffix="M+">0</div>
-                <div class="stat-label">Revenue Generated</div>
-            </div>
-            <div class="stat-item reveal delay-4">
-                <div class="stat-number" data-target="124">0</div>
-                <div class="stat-label">Applications Received</div>
-            </div>
-        </div>
-    </div>
+    <!-- Stats bar removed — premium restraint over pitch-deck metrics -->
 
     <!-- ═══════════════════════════════════════════════════════════════════
          5. WHAT IS WELLNESS HOUSE (Dark)
@@ -3120,15 +3099,7 @@
                         <p>We collaborate with a select group of brands, speakers, and partners. Interested in sponsorships, programming, or media collaboration? Reach out via the "Partner With Us" button or email <a href="mailto:bill@willpowerhq.com">bill@willpowerhq.com</a>.</p>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-toggle" onclick="toggleFaq(this)">
-                        <h3>How many spots are left?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We're approaching capacity. With over 120 applications already received and limited space, we recommend applying soon to secure your spot.</p>
-                    </div>
-                </div>
+
                 <div class="faq-item">
                     <div class="faq-toggle" onclick="toggleFaq(this)">
                         <h3>What is Willpower?</h3>
@@ -3295,47 +3266,7 @@
         // ── Low-priority: Defer decorative effects to idle time ──
         (typeof requestIdleCallback === 'function' ? requestIdleCallback : setTimeout)(function() {
             // ── Animated number counters ──
-            var countersAnimated = false;
-            var statsBar = document.getElementById('statsBar');
-            if (statsBar) {
-                var statsObserver = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting && !countersAnimated) {
-                            countersAnimated = true;
-                            animateCounters();
-                        }
-                    });
-                }, { threshold: 0.3 });
-                statsObserver.observe(statsBar);
-            }
 
-            function animateCounters() {
-                document.querySelectorAll('.stat-number[data-target]').forEach(function(el) {
-                    var target = parseInt(el.dataset.target);
-                    var prefix = el.dataset.prefix || '';
-                    var suffix = el.dataset.suffix || '';
-                    var duration = 2000;
-                    var start = performance.now();
-
-                    function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
-
-                    function update(now) {
-                        var elapsed = now - start;
-                        var progress = Math.min(elapsed / duration, 1);
-                        var eased = easeOutExpo(progress);
-                        var current = Math.round(eased * target);
-
-                        if (target >= 1000) {
-                            el.textContent = prefix + current.toLocaleString() + suffix;
-                        } else {
-                            el.textContent = prefix + current + (target === 3 ? 'rd' : '') + suffix;
-                        }
-
-                        if (progress < 1) requestAnimationFrame(update);
-                    }
-                    requestAnimationFrame(update);
-                });
-            }
 
             // Parallax blobs removed for simplicity
         });
