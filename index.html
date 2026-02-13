@@ -502,56 +502,140 @@
         }
 
         /* ══════════════════════════════════════════════════════════════════
-           WHAT IS WELLNESS HOUSE (Dark Section)
+           WHAT IS WELLNESS HOUSE (Dark Section) - ARCHITECTURAL REDESIGN
            ══════════════════════════════════════════════════════════════════ */
-        .pillar-grid {
+        .experience-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-bottom: 80px;
+            border: 2px solid rgba(157, 193, 246, 0.15);
+            border-radius: 24px;
+            overflow: hidden;
+        }
+        .comparison-side {
+            padding: 64px 48px;
+            position: relative;
+        }
+        .comparison-left {
+            background: rgba(157, 193, 246, 0.04);
+            border-right: 2px solid rgba(157, 193, 246, 0.15);
+        }
+        .comparison-right {
+            background: rgba(239, 238, 223, 0.02);
+        }
+        .comparison-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #9DC1F6;
+            margin-bottom: 16px;
+        }
+        .comparison-right .comparison-label {
+            color: rgba(239, 238, 223, 0.25);
+        }
+        .comparison-number {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 120px;
+            font-weight: 900;
+            line-height: 0.9;
+            margin-bottom: 24px;
+            color: #9DC1F6;
+            opacity: 0.95;
+        }
+        .comparison-right .comparison-number {
+            color: rgba(239, 238, 223, 0.15);
+        }
+        .comparison-title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: #EFEEDF;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        .comparison-right .comparison-title {
+            color: rgba(239, 238, 223, 0.4);
+        }
+        .comparison-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .comparison-features li {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: rgba(239, 238, 223, 0.65);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(239, 238, 223, 0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .comparison-features li::before {
+            content: '✓';
+            color: #9DC1F6;
+            font-weight: 800;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .comparison-right .comparison-features li {
+            color: rgba(239, 238, 223, 0.2);
+        }
+        .comparison-right .comparison-features li::before {
+            content: '×';
+            color: rgba(239, 238, 223, 0.15);
+        }
+
+        .benefit-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 24px;
             margin-bottom: 64px;
         }
-        .pillar-card {
-            background: rgba(239, 238, 223, 0.03);
+        .benefit-card {
+            background: rgba(239, 238, 223, 0.02);
             border: 1px solid rgba(239, 238, 223, 0.06);
             border-radius: 20px;
-            padding: 36px 28px;
+            padding: 40px 32px;
+            text-align: center;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .pillar-card:hover {
-            background: rgba(239, 238, 223, 0.06);
+        .benefit-card:hover {
+            background: rgba(239, 238, 223, 0.05);
             border-color: rgba(157, 193, 246, 0.15);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
         }
-        .pillar-icon {
-            width: 56px; height: 56px;
-            border-radius: 50%;
-            border: 1.5px solid rgba(157, 193, 246, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
+        .benefit-number {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 72px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #9DC1F6, #FFBFCC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 16px;
         }
-        .pillar-icon svg {
-            width: 24px; height: 24px;
-            stroke: #9DC1F6;
-            stroke-width: 1.5;
-            fill: none;
-        }
-        .pillar-card h3 {
+        .benefit-label {
             font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 700;
             color: #EFEEDF;
             margin-bottom: 8px;
         }
-        .pillar-card p {
+        .benefit-desc {
             font-family: 'Montserrat', sans-serif;
             font-size: 13px;
             font-weight: 400;
             color: rgba(239, 238, 223, 0.35);
             line-height: 1.6;
         }
+
         .chip-row {
             display: flex;
             flex-wrap: wrap;
@@ -577,10 +661,15 @@
         }
 
         @media (max-width: 900px) {
-            .pillar-grid { grid-template-columns: repeat(2, 1fr); }
+            .experience-comparison { grid-template-columns: 1fr; }
+            .comparison-left { border-right: none; border-bottom: 2px solid rgba(157, 193, 246, 0.15); }
+            .comparison-side { padding: 40px 28px; }
+            .comparison-number { font-size: 80px; }
+            .comparison-title { font-size: 24px; }
+            .benefit-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
-            .pillar-grid { grid-template-columns: 1fr; }
+            .benefit-grid { grid-template-columns: 1fr; }
         }
 
         /* ══════════════════════════════════════════════════════════════════
@@ -697,29 +786,55 @@
         }
 
         /* ══════════════════════════════════════════════════════════════════
-           SPEAKER CARDS
+           SPEAKER CARDS - FLOATING ARTISTIC LAYOUT
            ══════════════════════════════════════════════════════════════════ */
+        .speakers-section-wrapper {
+            background: linear-gradient(135deg, #FFBFCC 0%, #9DC1F6 45%, #FCD6A6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .speakers-section-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(255,255,255,0.05) 100%);
+        }
         .speakers-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+            height: 900px;
         }
         .speaker-card {
-            position: relative;
-            border-radius: 24px;
+            position: absolute;
+            border-radius: 50%;
             overflow: hidden;
             background: #1F231A;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: default;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(31, 35, 26, 0.15);
         }
         .speaker-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 24px 64px rgba(31, 35, 26, 0.2);
+            transform: scale(1.08) rotate(0deg) !important;
+            z-index: 100 !important;
+            box-shadow: 0 32px 80px rgba(31, 35, 26, 0.3);
         }
+        /* Floating positions and varied sizes */
+        .speaker-card:nth-child(1) { width: 280px; height: 280px; top: 5%; left: 8%; transform: rotate(-3deg); z-index: 5; }
+        .speaker-card:nth-child(2) { width: 220px; height: 220px; top: 12%; right: 15%; transform: rotate(5deg); z-index: 3; }
+        .speaker-card:nth-child(3) { width: 260px; height: 260px; top: 38%; left: 18%; transform: rotate(2deg); z-index: 6; }
+        .speaker-card:nth-child(4) { width: 200px; height: 200px; top: 25%; right: 8%; transform: rotate(-4deg); z-index: 4; }
+        .speaker-card:nth-child(5) { width: 240px; height: 240px; top: 60%; left: 5%; transform: rotate(4deg); z-index: 7; }
+        .speaker-card:nth-child(6) { width: 210px; height: 210px; top: 55%; right: 20%; transform: rotate(-2deg); z-index: 2; }
+        .speaker-card:nth-child(7) { width: 190px; height: 190px; top: 72%; left: 35%; transform: rotate(6deg); z-index: 5; }
+        .speaker-card:nth-child(8) { width: 230px; height: 230px; top: 65%; right: 5%; transform: rotate(-5deg); z-index: 8; }
+        
         .speaker-img-wrap {
             position: relative;
             overflow: hidden;
-            aspect-ratio: 3/4;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
         }
         .speaker-img-wrap img {
             width: 100%;
@@ -730,54 +845,81 @@
         }
         .speaker-card:hover .speaker-img-wrap img {
             filter: grayscale(0%);
-            transform: scale(1.08);
+            transform: scale(1.15);
         }
         .speaker-img-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(0deg, rgba(31,35,26,0.9) 0%, rgba(31,35,26,0.1) 50%, transparent 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(31,35,26,0.4) 60%, rgba(31,35,26,0.95) 100%);
+            border-radius: 50%;
         }
         .speaker-info {
             position: absolute;
             bottom: 0; left: 0; right: 0;
-            padding: 24px 20px;
+            padding: 20px 16px;
             z-index: 2;
+            text-align: center;
         }
         .speaker-keynote-tag {
             display: inline-block;
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 6px;
             background: #EA8376;
             font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
+            font-size: 8px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: #fff;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .speaker-name {
             font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 700;
             color: #EFEEDF;
             margin-bottom: 2px;
+            line-height: 1.2;
         }
         .speaker-role {
             font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 500;
             color: rgba(239, 238, 223, 0.4);
+            line-height: 1.3;
         }
         .speaker-company {
             font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             color: #9DC1F6;
         }
 
         @media (max-width: 900px) {
-            .speakers-grid { grid-template-columns: repeat(2, 1fr); }
+            .speakers-grid { 
+                height: auto;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                padding: 40px 20px;
+            }
+            .speaker-card {
+                position: relative !important;
+                width: 100% !important;
+                height: auto !important;
+                aspect-ratio: 1;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                transform: none !important;
+                border-radius: 24px;
+            }
+            .speaker-img-wrap {
+                border-radius: 24px;
+            }
+            .speaker-img-overlay {
+                border-radius: 24px;
+            }
         }
 
         /* ══════════════════════════════════════════════════════════════════
@@ -827,7 +969,7 @@
         .play-btn svg { margin-left: 4px; }
 
         /* ══════════════════════════════════════════════════════════════════
-           SCHEDULE (Dark Section)
+           SCHEDULE (Light Cream Section)
            ══════════════════════════════════════════════════════════════════ */
         .schedule-timeline {
             max-width: 800px;
@@ -837,18 +979,18 @@
             display: flex;
             gap: 32px;
             padding: 28px 24px;
-            border-bottom: 1px solid rgba(239, 238, 223, 0.05);
+            border-bottom: 1px solid rgba(31, 35, 26, 0.06);
             transition: background 0.3s ease;
             border-radius: 16px;
             margin-bottom: 4px;
         }
         .schedule-row:hover {
-            background: rgba(239, 238, 223, 0.03);
+            background: rgba(31, 35, 26, 0.02);
         }
         .schedule-row.highlight {
-            background: linear-gradient(90deg, rgba(234,131,118,0.06) 0%, rgba(157,193,246,0.04) 100%);
-            border: 1px solid rgba(234,131,118,0.1);
-            border-bottom: 1px solid rgba(234,131,118,0.1);
+            background: linear-gradient(90deg, rgba(234,131,118,0.08) 0%, rgba(157,193,246,0.06) 100%);
+            border: 1px solid rgba(234,131,118,0.12);
+            border-bottom: 1px solid rgba(234,131,118,0.12);
         }
         .schedule-time {
             font-family: 'Unbounded', sans-serif;
@@ -864,23 +1006,26 @@
             font-family: 'Bricolage Grotesque', sans-serif;
             font-size: 16px;
             font-weight: 700;
-            color: #EFEEDF;
+            color: #1F231A;
             margin-bottom: 6px;
         }
         .schedule-content p {
             font-family: 'Montserrat', sans-serif;
             font-size: 13px;
             font-weight: 400;
-            color: rgba(239, 238, 223, 0.3);
+            color: rgba(31, 35, 26, 0.45);
             margin-bottom: 12px;
         }
         .pill-row {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
+            align-items: center;
         }
         .pill {
             display: inline-flex;
+            align-items: center;
+            gap: 6px;
             padding: 5px 14px;
             border-radius: 999px;
             font-family: 'Montserrat', sans-serif;
@@ -888,12 +1033,22 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.04em;
-            background: rgba(239, 238, 223, 0.04);
-            border: 1px solid rgba(239, 238, 223, 0.07);
-            color: rgba(239, 238, 223, 0.4);
+            background: rgba(31, 35, 26, 0.03);
+            border: 1px solid rgba(31, 35, 26, 0.08);
+            color: rgba(31, 35, 26, 0.5);
             transition: all 0.3s;
         }
-        .pill:hover { border-color: rgba(157,193,246,0.3); color: #9DC1F6; }
+        .pill img {
+            height: 12px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .pill:hover { 
+            border-color: rgba(157,193,246,0.3); 
+            background: rgba(157,193,246,0.08);
+            color: #1F231A; 
+        }
         .pill.accent {
             background: rgba(234,131,118,0.1);
             border-color: rgba(234,131,118,0.2);
@@ -909,11 +1064,14 @@
             text-align: center;
             padding: 28px 16px;
             border-radius: 20px;
-            background: rgba(239, 238, 223, 0.02);
-            border: 1px solid rgba(239, 238, 223, 0.04);
+            background: rgba(31, 35, 26, 0.02);
+            border: 1px solid rgba(31, 35, 26, 0.06);
             transition: all 0.3s;
         }
-        .ongoing-card:hover { border-color: rgba(239, 238, 223, 0.08); background: rgba(239, 238, 223, 0.04); }
+        .ongoing-card:hover { 
+            border-color: rgba(31, 35, 26, 0.1); 
+            background: rgba(31, 35, 26, 0.04); 
+        }
         .ongoing-card svg {
             width: 32px; height: 32px;
             stroke: #9DC1F6;
@@ -925,7 +1083,7 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 12px;
             font-weight: 600;
-            color: rgba(239, 238, 223, 0.35);
+            color: rgba(31, 35, 26, 0.5);
         }
         @media (max-width: 768px) {
             .schedule-row { flex-direction: column; gap: 8px; }
@@ -1385,57 +1543,55 @@
                 What is <span class="gradient-text">Wellness House</span>?
             </h2>
             <p class="reveal section-subtitle" style="color:rgba(239,238,223,0.4);margin:0 auto 64px;">
-                A curated, one-day experience blending programming, movement, recovery, and brand discovery into a single, fluid environment. Every element is intentional — from who's in the room to how the day unfolds.
+                A curated, one-day experience built for quality, depth, and real connection.
             </p>
 
-            <div class="pillar-grid">
-                <!-- Pillar 1 -->
-                <div class="reveal delay-1 pillar-card">
-                    <div class="pillar-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-                    </div>
-                    <h3>Executive-Led Panels</h3>
-                    <p>Candid conversations with founders and operators building the next generation of wellness brands.</p>
+            <!-- Comparison: Wellness House vs Traditional Events -->
+            <div class="reveal experience-comparison">
+                <div class="comparison-side comparison-left">
+                    <div class="comparison-label">Wellness House</div>
+                    <div class="comparison-number">500</div>
+                    <div class="comparison-title">Curated Community<br/>Over Mass Crowds</div>
+                    <ul class="comparison-features">
+                        <li>Invite-based, high-quality attendees</li>
+                        <li>Real conversations, not sales pitches</li>
+                        <li>Founders, operators & brand leaders</li>
+                        <li>Movement, panels & networking as one</li>
+                        <li>Intimate vendor village (30+ brands)</li>
+                        <li>Full-day immersion + evening social</li>
+                    </ul>
                 </div>
-                <!-- Pillar 2 -->
-                <div class="reveal delay-2 pillar-card">
-                    <div class="pillar-icon" style="border-color:rgba(234,131,118,0.2);">
-                        <svg viewBox="0 0 24 24" style="stroke:#EA8376;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h3>Networking-First Format</h3>
-                    <p>Real conversation and meaningful connection, without noise or transactional energy.</p>
+                <div class="comparison-side comparison-right">
+                    <div class="comparison-label">Traditional Summits</div>
+                    <div class="comparison-number">2000+</div>
+                    <div class="comparison-title">Generic Insights<br/>& Transactional Vibe</div>
+                    <ul class="comparison-features">
+                        <li>Open registration, diluted audience</li>
+                        <li>Vendor booths pushing product</li>
+                        <li>Stage-only format, passive learning</li>
+                        <li>Generic wellness platitudes</li>
+                        <li>Overcrowded expo halls</li>
+                        <li>Rushed networking, no depth</li>
+                    </ul>
                 </div>
-                <!-- Pillar 3 -->
-                <div class="reveal delay-3 pillar-card">
-                    <div class="pillar-icon" style="border-color:rgba(255,191,204,0.2);">
-                        <svg viewBox="0 0 24 24" style="stroke:#FFBFCC;"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/><circle cx="12" cy="2" r="1" fill="#FFBFCC" stroke="none"/></svg>
-                    </div>
-                    <h3>Morning Workout &amp; Recovery</h3>
-                    <p>Community run, movement, and recovery lounges with best-in-class wellness partners.</p>
+            </div>
+
+            <!-- Key Benefits -->
+            <div class="benefit-grid">
+                <div class="reveal delay-1 benefit-card">
+                    <div class="benefit-number">8+</div>
+                    <div class="benefit-label">Leading Speakers</div>
+                    <p class="benefit-desc">Founders from Bloom, Goodwipes, Super Coffee, Vollebak & more</p>
                 </div>
-                <!-- Pillar 4 -->
-                <div class="reveal delay-4 pillar-card">
-                    <div class="pillar-icon" style="border-color:rgba(252,214,166,0.2);">
-                        <svg viewBox="0 0 24 24" style="stroke:#FCD6A6;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <h3>VIP Lounge &amp; Curated Room</h3>
-                    <p>A brands-first room of founders, operators, athletes, and creators shaping performance culture.</p>
+                <div class="reveal delay-2 benefit-card">
+                    <div class="benefit-number">30+</div>
+                    <div class="benefit-label">Wellness Brands</div>
+                    <p class="benefit-desc">Curated vendor village + recovery activations</p>
                 </div>
-                <!-- Pillar 5 -->
-                <div class="reveal delay-5 pillar-card">
-                    <div class="pillar-icon" style="border-color:rgba(234,131,118,0.2);">
-                        <svg viewBox="0 0 24 24" style="stroke:#EA8376;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                    </div>
-                    <h3>Brand Discovery Village</h3>
-                    <p>Vendor village highlighting standout wellness, health tech, and better-for-you CPG brands.</p>
-                </div>
-                <!-- Pillar 6 -->
-                <div class="reveal delay-6 pillar-card">
-                    <div class="pillar-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-                    </div>
-                    <h3>Community Energy</h3>
-                    <p>Padel courts, live music, light bites, and social moments throughout the entire day.</p>
+                <div class="reveal delay-3 benefit-card">
+                    <div class="benefit-number">1</div>
+                    <div class="benefit-label">Unmissable Day</div>
+                    <p class="benefit-desc">Movement, panels, networking, music & social</p>
                 </div>
             </div>
 
@@ -1550,15 +1706,12 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         8. SPEAKERS (Cream)
+         8. SPEAKERS (Gradient Background - Floating Layout)
          ═══════════════════════════════════════════════════════════════════ -->
-    <section id="speakers" class="section-cream section-padding" style="padding-top:0;">
-        <div class="blob" style="width:450px;height:450px;background:#FFBFCC;bottom:-100px;left:-100px;"></div>
-        <div class="blob" style="width:350px;height:350px;background:#9DC1F6;top:30%;right:-100px;"></div>
-
+    <section id="speakers" class="speakers-section-wrapper section-padding" style="padding-top:80px;padding-bottom:80px;">
         <div class="section-inner">
-            <div class="reveal section-label" style="color:#EA8376;text-align:center;">On Stage</div>
-            <h2 class="reveal section-title" style="font-size:52px;text-align:center;margin-bottom:56px;">
+            <div class="reveal section-label" style="color:rgba(31,35,26,0.6);text-align:center;">On Stage</div>
+            <h2 class="reveal section-title" style="font-size:52px;text-align:center;margin-bottom:80px;color:#1F231A;">
                 Guest <span class="gradient-text-dark">Speakers</span>
             </h2>
 
@@ -1695,18 +1848,18 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         10. PROGRAMMING / SCHEDULE (Dark)
+         10. PROGRAMMING / SCHEDULE (Light Cream)
          ═══════════════════════════════════════════════════════════════════ -->
-    <section id="schedule" class="section-dark section-padding">
-        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:10%;right:-250px;opacity:0.06;"></div>
-        <div class="blob" style="width:400px;height:400px;background:#FCD6A6;bottom:5%;left:-200px;opacity:0.05;"></div>
+    <section id="schedule" class="section-cream section-padding" style="background:#EFEEDF;">
+        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:10%;right:-250px;"></div>
+        <div class="blob" style="width:400px;height:400px;background:#FCD6A6;bottom:5%;left:-200px;"></div>
 
         <div class="section-inner" style="text-align:center;">
             <div class="reveal section-label" style="color:#9DC1F6;">Friday, March 13</div>
-            <h2 class="reveal section-title" style="font-size:52px;color:#EFEEDF;margin-bottom:8px;">
-                Event <span class="gradient-text">Flow</span>
+            <h2 class="reveal section-title" style="font-size:52px;color:#1F231A;margin-bottom:8px;">
+                What's Happening <span class="gradient-text-dark">In The House</span>
             </h2>
-            <p class="reveal section-subtitle" style="color:rgba(239,238,223,0.25);margin:0 auto 56px;font-size:14px;">All times Central (CT). Schedule subject to updates.</p>
+            <p class="reveal section-subtitle" style="color:rgba(31,35,26,0.45);margin:0 auto 56px;font-size:14px;">All times Central (CT). Schedule subject to updates.</p>
 
             <div class="reveal schedule-timeline">
                 <!-- 9:00 AM -->
@@ -1716,11 +1869,11 @@
                         <h3>Run, Rox &amp; Recovery</h3>
                         <p>Community run, HYROX-style workout &amp; recovery with coffee.</p>
                         <div class="pill-row">
-                            <span class="pill">LSKD</span>
-                            <span class="pill">HYROX</span>
-                            <span class="pill">KetoneIQ</span>
-                            <span class="pill">Spurs</span>
-                            <span class="pill">KANE</span>
+                            <span class="pill"><img src="img/lskd.png" alt="LSKD"></span>
+                            <span class="pill"><img src="img/brands/hyrox.png" alt="HYROX"></span>
+                            <span class="pill"><img src="img/brands/ketoneiq.png" alt="KetoneIQ"></span>
+                            <span class="pill"><img src="img/brands/san-antonio-spurs.png" alt="Spurs"></span>
+                            <span class="pill"><img src="img/kane.png" alt="KANE"></span>
                         </div>
                     </div>
                 </div>
@@ -1743,8 +1896,8 @@
                         <p>How leading wellness brands build habit ecosystems and deeper engagement.</p>
                         <div class="pill-row">
                             <span class="pill">Garmin</span>
-                            <span class="pill">FORM</span>
-                            <span class="pill">Hyperice</span>
+                            <span class="pill"><img src="img/brands/form.png" alt="FORM"></span>
+                            <span class="pill"><img src="img/brands/hyperice.png" alt="Hyperice"></span>
                         </div>
                     </div>
                 </div>
@@ -1768,7 +1921,7 @@
                         <p>Sports storytelling beyond the game — loyalty, culture, and fan-driven worlds.</p>
                         <div class="pill-row">
                             <span class="pill accent">Brandon James / Spurs</span>
-                            <span class="pill">KANE</span>
+                            <span class="pill"><img src="img/kane.png" alt="KANE"></span>
                         </div>
                     </div>
                 </div>
@@ -1817,8 +1970,8 @@
             </div>
 
             <!-- Ongoing throughout -->
-            <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(239,238,223,0.06),transparent);margin:56px 0 40px;"></div>
-            <div class="reveal section-label" style="color:rgba(239,238,223,0.2);margin-bottom:24px;">Ongoing Throughout the Day</div>
+            <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(31,35,26,0.1),transparent);margin:56px 0 40px;"></div>
+            <div class="reveal section-label" style="color:rgba(31,35,26,0.3);margin-bottom:24px;">Ongoing Throughout the Day</div>
             <div class="ongoing-grid">
                 <div class="reveal delay-1 ongoing-card">
                     <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
