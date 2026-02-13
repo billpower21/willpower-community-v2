@@ -807,6 +807,84 @@
         }
 
         /* ══════════════════════════════════════════════════════════════════
+           WHY ATTEND SECTION
+           ══════════════════════════════════════════════════════════════════ */
+        .why-attend-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .why-attend-column {
+            background: rgba(239, 238, 223, 0.02);
+            border: 1px solid rgba(239, 238, 223, 0.06);
+            border-radius: 20px;
+            padding: 40px 32px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .why-attend-column::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(157, 193, 246, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .why-attend-column:hover::before {
+            opacity: 1;
+        }
+        .why-attend-column:hover {
+            background: rgba(239, 238, 223, 0.05);
+            border-color: rgba(157, 193, 246, 0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+        }
+        .why-attend-heading {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: #EFEEDF;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        .why-attend-benefits {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .why-attend-benefits li {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: rgba(239, 238, 223, 0.65);
+            padding: 12px 0;
+            padding-left: 28px;
+            position: relative;
+            line-height: 1.6;
+        }
+        .why-attend-benefits li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #9DC1F6;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        @media (max-width: 900px) {
+            .why-attend-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        /* ══════════════════════════════════════════════════════════════════
            KEYNOTE SPOTLIGHT
            ══════════════════════════════════════════════════════════════════ */
         .keynote-card {
@@ -1654,7 +1732,9 @@
                 <div class="timeline-container">
                     <div class="timeline-block">
                         <div class="timeline-time gradient-text">9AM</div>
-                        <div class="timeline-icon">🏃</div>
+                        <div class="timeline-preview gradient-circle" style="background: linear-gradient(135deg, #9DC1F6, #FFBFCC);">
+                            🏃
+                        </div>
                         <div class="timeline-title">Run Club</div>
                         <p class="timeline-desc">Start the day with movement & energy</p>
                     </div>
@@ -1663,7 +1743,9 @@
                     
                     <div class="timeline-block">
                         <div class="timeline-time gradient-text">10AM</div>
-                        <div class="timeline-icon">🎤</div>
+                        <div class="timeline-preview">
+                            <img src="img/speakers/scott-hickle.jpg" alt="Scott Hickle">
+                        </div>
                         <div class="timeline-title">Panels</div>
                         <p class="timeline-desc">Industry insights from brand leaders</p>
                     </div>
@@ -1672,7 +1754,9 @@
                     
                     <div class="timeline-block">
                         <div class="timeline-time gradient-text">12PM</div>
-                        <div class="timeline-icon">🍽️</div>
+                        <div class="timeline-preview gradient-circle" style="background: linear-gradient(135deg, #FCD6A6, #EA8376);">
+                            🍽️
+                        </div>
                         <div class="timeline-title">Lunch</div>
                         <p class="timeline-desc">Curated meals & deep conversations</p>
                     </div>
@@ -1681,7 +1765,9 @@
                     
                     <div class="timeline-block">
                         <div class="timeline-time gradient-text">2PM</div>
-                        <div class="timeline-icon">🔥</div>
+                        <div class="timeline-preview">
+                            <img src="img/speakers/greg-lavecchia.jpg" alt="Greg Lavecchia">
+                        </div>
                         <div class="timeline-title">Keynote</div>
                         <p class="timeline-desc">Fireside chats with top founders</p>
                     </div>
@@ -1690,7 +1776,9 @@
                     
                     <div class="timeline-block">
                         <div class="timeline-time gradient-text">4PM</div>
-                        <div class="timeline-icon">🎉</div>
+                        <div class="timeline-preview gradient-circle" style="background: linear-gradient(135deg, #FFBFCC, #9DC1F6);">
+                            🎉
+                        </div>
                         <div class="timeline-title">Social</div>
                         <p class="timeline-desc">Evening networking & music</p>
                     </div>
