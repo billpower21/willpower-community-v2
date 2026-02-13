@@ -107,14 +107,16 @@
         }
         .countdown-ticker-content {
             font-family: 'Unbounded', sans-serif;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 700;
-            letter-spacing: 0.18em;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
             color: rgba(239, 238, 223, 0.85);
             display: flex;
             align-items: center;
-            gap: 20px;
+            justify-content: center;
+            gap: 16px;
+            width: 100%;
         }
         .countdown-ticker-number {
             font-family: 'Unbounded', sans-serif;
@@ -157,16 +159,22 @@
             border-bottom: 1px solid rgba(31, 35, 26, 0.06);
             box-shadow: 0 1px 40px rgba(0,0,0,0.04);
         }
-        .main-nav.scrolled .nav-logo { filter: none; opacity: 1; }
+        /* Logo swap: light on hero, dark when scrolled */
+        .nav-logo-light, .nav-logo-dark { position: absolute; top: 0; left: 0; transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .main-nav a:first-child { position: relative; display: block; height: 28px; width: 104px; }
+        .main-nav.hero-mode .nav-logo-light { opacity: 1; }
+        .main-nav.hero-mode .nav-logo-dark { opacity: 0; }
+        .main-nav.scrolled .nav-logo-light { opacity: 0; }
+        .main-nav.scrolled .nav-logo-dark { opacity: 1; }
+
         .main-nav.scrolled .nav-links a { color: #1F231A; opacity: 0.5; }
         .main-nav.scrolled .nav-links a:hover { opacity: 1; }
         .main-nav.scrolled .nav-cta { background: #1F231A; color: #EFEEDF; }
         .main-nav.scrolled .nav-cta:hover { background: #EA8376; }
-        .main-nav.hero-mode .nav-logo { filter: none; opacity: 1; }
-        .main-nav.hero-mode .nav-links a { color: #1F231A; opacity: 0.5; }
+        .main-nav.hero-mode .nav-links a { color: #FFFFFF; opacity: 0.8; }
         .main-nav.hero-mode .nav-links a:hover { opacity: 1; }
-        .main-nav.hero-mode .nav-cta { background: rgba(255,255,255,0.35); color: #1F231A; border: 1px solid rgba(31, 35, 26, 0.1); backdrop-filter: blur(10px); }
-        .main-nav.hero-mode .nav-cta:hover { background: rgba(255,255,255,0.55); }
+        .main-nav.hero-mode .nav-cta { background: rgba(255,255,255,0.25); color: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); }
+        .main-nav.hero-mode .nav-cta:hover { background: rgba(255,255,255,0.4); }
 
         .nav-logo { height: 28px; width: auto; object-fit: contain; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         .nav-links { display: flex; gap: 36px; align-items: center; }
@@ -208,7 +216,8 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border-radius: 2px;
         }
-        .main-nav.hero-mode .nav-hamburger span { background: #1F231A; }
+        .main-nav.hero-mode .nav-hamburger span { background: #FFFFFF; }
+        .main-nav.scrolled .nav-hamburger span { background: #1F231A; }
         .mobile-menu {
             display: none;
             position: fixed;
@@ -264,6 +273,7 @@
             .main-nav { padding: 16px 24px; top: 44px; }
             .main-nav.scrolled { padding: 12px 24px; }
             .nav-logo { height: 24px; }
+            .main-nav a:first-child { height: 24px; width: 90px; }
             .nav-cta { 
                 padding: 10px 24px; 
                 font-size: 10px;
@@ -273,6 +283,7 @@
             .main-nav { padding: 14px 16px; top: 44px; }
             .main-nav.scrolled { padding: 10px 16px; }
             .nav-logo { height: 22px; }
+            .main-nav a:first-child { height: 22px; width: 82px; }
             .nav-cta { 
                 padding: 8px 20px; 
                 font-size: 9px;
@@ -1909,13 +1920,9 @@
          COUNTDOWN TICKER BANNER
          ═══════════════════════════════════════════════════════════════════ -->
     <div class="countdown-ticker">
-        <div class="countdown-ticker-content">
+        <div class="countdown-ticker-content" style="justify-content:center;width:100%;padding:0 24px;">
             <span class="countdown-ticker-number" id="tickerDays">28</span>
             <span>Days Until Wellness House</span>
-            <span class="countdown-ticker-dot"></span>
-            <span>March 13, 2026</span>
-            <span class="countdown-ticker-dot"></span>
-            <span>Austin, TX</span>
         </div>
     </div>
 
@@ -1924,7 +1931,8 @@
          ═══════════════════════════════════════════════════════════════════ -->
     <nav class="main-nav hero-mode" id="mainNav">
         <a href="#">
-            <img decoding="async" width="1500" height="405" src="img/willpower-dark.png" alt="Willpower" class="nav-logo">
+            <img decoding="async" width="1500" height="405" src="img/willpower-white.png" alt="Willpower" class="nav-logo nav-logo-light">
+            <img decoding="async" width="1500" height="405" src="img/willpower-dark.png" alt="Willpower" class="nav-logo nav-logo-dark">
         </a>
         <div class="nav-links">
             <a href="#about">About</a>
