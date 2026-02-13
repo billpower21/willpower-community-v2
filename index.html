@@ -1215,12 +1215,182 @@
             border-left: 4px solid #EA8376;
         }
         /* Panel rows - blue gradient */
-        .schedule-row:not(.highlight) {
+        .schedule-row:not(.highlight):not(.featured-run):not(.featured-comedy) {
             border-left: 4px solid #9DC1F6;
         }
         /* Social rows */
         .schedule-row:last-child {
             border-left: 4px solid #FFBFCC;
+        }
+
+        /* ── Featured Pop-Up Cards ── */
+        .schedule-row.featured-run,
+        .schedule-row.featured-comedy {
+            position: relative;
+            border-radius: 24px;
+            padding: 44px 40px;
+            margin-bottom: 28px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+            border: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* ── Run, Rox & Recovery ── */
+        .schedule-row.featured-run {
+            background: linear-gradient(135deg, rgba(157,193,246,0.18) 0%, rgba(157,193,246,0.04) 60%, #fff 100%);
+            border-left: 7px solid #9DC1F6 !important;
+        }
+        .schedule-row.featured-run::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #9DC1F6 0%, rgba(157,193,246,0.2) 100%);
+            border-radius: 24px 24px 0 0;
+        }
+        .schedule-row.featured-run::after {
+            content: '🏃‍♂️';
+            position: absolute;
+            top: 20px; right: 28px;
+            font-size: 48px;
+            opacity: 0.12;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .schedule-row.featured-run .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 22px;
+            background: rgba(157,193,246,0.2);
+            border: 1px solid rgba(157,193,246,0.35);
+            border-radius: 999px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+            color: #5a9af0;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 14px;
+        }
+        .schedule-row.featured-run .schedule-time {
+            font-size: 28px !important;
+        }
+        .schedule-row.featured-run .schedule-content h3 {
+            font-size: 30px !important;
+            font-weight: 900 !important;
+            letter-spacing: -0.02em !important;
+            margin-bottom: 14px !important;
+        }
+        .schedule-row.featured-run .schedule-content p {
+            font-size: 17px !important;
+            font-weight: 500;
+        }
+
+        /* ── CPG Comedy Roast ── */
+        .schedule-row.featured-comedy {
+            background: linear-gradient(135deg, rgba(255,191,204,0.2) 0%, rgba(255,191,204,0.05) 60%, #fff 100%);
+            border-left: 7px solid #FFBFCC !important;
+        }
+        .schedule-row.featured-comedy::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #FFBFCC 0%, rgba(255,191,204,0.2) 100%);
+            border-radius: 24px 24px 0 0;
+        }
+        .schedule-row.featured-comedy::after {
+            content: '🎤';
+            position: absolute;
+            top: 20px; right: 28px;
+            font-size: 48px;
+            opacity: 0.12;
+            z-index: 0;
+            pointer-events: none;
+            transform: rotate(-8deg);
+        }
+        .schedule-row.featured-comedy .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 22px;
+            background: rgba(255,191,204,0.25);
+            border: 1px solid rgba(255,191,204,0.45);
+            border-radius: 999px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+            color: #e07a90;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 14px;
+        }
+        .schedule-row.featured-comedy .schedule-time {
+            font-size: 28px !important;
+        }
+        .schedule-row.featured-comedy .schedule-content h3 {
+            font-size: 30px !important;
+            font-weight: 900 !important;
+            letter-spacing: -0.02em !important;
+            margin-bottom: 14px !important;
+        }
+        .schedule-row.featured-comedy .schedule-content p {
+            font-size: 17px !important;
+            font-weight: 500;
+        }
+        .schedule-row.featured-comedy .comedians-callout {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 20px;
+            background: rgba(255,191,204,0.18);
+            border: 1px solid rgba(255,191,204,0.35);
+            border-radius: 999px;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #EA8376;
+            letter-spacing: 0.02em;
+        }
+
+        /* Featured cards hover */
+        .schedule-row.featured-run:hover,
+        .schedule-row.featured-comedy:hover {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        /* Mobile featured cards */
+        @media (max-width: 768px) {
+            .schedule-row.featured-run,
+            .schedule-row.featured-comedy {
+                padding: 28px 20px !important;
+                border-radius: 20px;
+                margin-bottom: 24px;
+            }
+            .schedule-row.featured-run .schedule-time,
+            .schedule-row.featured-comedy .schedule-time {
+                font-size: 22px !important;
+            }
+            .schedule-row.featured-run .schedule-content h3,
+            .schedule-row.featured-comedy .schedule-content h3 {
+                font-size: 24px !important;
+            }
+            .schedule-row.featured-run .schedule-content p,
+            .schedule-row.featured-comedy .schedule-content p {
+                font-size: 15px !important;
+            }
+            .schedule-row.featured-run::after,
+            .schedule-row.featured-comedy::after {
+                font-size: 36px;
+                top: 14px; right: 16px;
+            }
+            .schedule-row.featured-run .featured-badge,
+            .schedule-row.featured-comedy .featured-badge {
+                font-size: 11px;
+                padding: 7px 16px;
+            }
         }
         .schedule-time {
             font-size: 24px;
@@ -2590,10 +2760,10 @@
                 <!-- ═══════════════════════════════════════════════════════════
                      9:00 AM — RUN, ROX & RECOVERY (HIGHLIGHT EXPERIENCE)
                      ═══════════════════════════════════════════════════════════ -->
-                <div class="schedule-row" style="border-left: 4px solid #9DC1F6;">
+                <div class="schedule-row featured-run">
                     <div class="schedule-time" style="color: #9DC1F6;">9:00 AM</div>
                     <div class="schedule-content">
-                        <div style="display:inline-block; padding:5px 12px; background:rgba(157,193,246,0.15); border-radius:999px; font-size:11px; font-weight:700; color:#9DC1F6; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">🏃 Movement</div>
+                        <div class="featured-badge">🏃 Movement</div>
                         <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 10px; line-height: 1.15; letter-spacing: -0.01em;">Run, Rox &amp; Recovery</h3>
                         <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); margin-bottom: 22px; line-height: 1.65; font-weight: 500;">Community run, HYROX-style workout &amp; recovery with coffee. Led by Eric Hinman, powered by HYROX &amp; LSKD. Recovery by San Antonio Spurs &amp; Kane Footwear.</p>
                         <div class="pill-row" style="gap: 12px;">
@@ -2642,10 +2812,10 @@
                 <!-- ═══════════════════════════════════════════════════════════
                      11:30 AM — CPG COMEDY ROAST (HIGHLIGHT EXPERIENCE)
                      ═══════════════════════════════════════════════════════════ -->
-                <div class="schedule-row" style="border-left: 4px solid #FFBFCC;">
+                <div class="schedule-row featured-comedy">
                     <div class="schedule-time" style="color: #FFBFCC;">11:30 AM</div>
                     <div class="schedule-content">
-                        <div style="display:inline-block; padding:5px 12px; background:rgba(157,193,246,0.15); border-radius:999px; font-size:11px; font-weight:700; color:#FFBFCC; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">🎤 Experience</div>
+                        <div class="featured-badge">🎤 Experience</div>
                         <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 10px; line-height: 1.15; letter-spacing: -0.01em;">CPG Comedy Roast</h3>
                         <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); margin-bottom: 22px; line-height: 1.65; font-weight: 500;">Wellness founders pitch their products and get roasted by 4 comedians. Midday refuel with a live wellness brand roast you won't forget.</p>
                         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
@@ -2653,7 +2823,7 @@
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Jake DeCicco, Super Coffee</span>
                             <img loading="lazy" decoding="async" width="69" height="36" src="img/speakers/steve-tidball.jpg" class="speaker-thumb" alt="Steve Tidball" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,191,204,0.5); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-left: 8px;">
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Steve Tidball, Vollebak</span>
-                            <span style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: rgba(31, 35, 26, 0.5); margin-left: 12px;">+ 4 Comedians</span>
+                            <span class="comedians-callout">🎭 + 4 Comedians</span>
                         </div>
                     </div>
                 </div>
