@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Wellness House 2026 |  Austin — By Willpower</title>
-    <meta name="description" content="A one-day, invite-led wellness experience at the intersection of performance, consumer brands, and culture. March 13, 2026 — Austin, TX during .">
+    <meta name="description" content="A one-day, invite-led wellness experience at the intersection of performance, consumer brands, and culture. March 13, 2026 — Austin, TX.">
     <meta property="og:title" content="Wellness House 2026 |  Austin">
     <meta property="og:description" content="A one-day, invite-led wellness summit at the intersection of performance, consumer brands, and culture. March 13, 2026.">
     <meta property="og:type" content="website">
@@ -1348,12 +1348,16 @@
             color: #1F231A; 
         }
         .speaker-thumb {
-            width: 30px;
-            height: 30px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             object-fit: cover;
-            margin-right: 8px;
-            vertical-align: middle;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        .speaker-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         .ongoing-grid {
             display: grid;
@@ -2833,7 +2837,7 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         10. PROGRAMMING / SCHEDULE (Light Cream)
+         10. PROGRAMMING / SCHEDULE (Light Cream) — EEE-STYLE REBUILD
          ═══════════════════════════════════════════════════════════════════ -->
     <section id="schedule" class="section-cream section-padding" style="background:#EFEEDF;">
         <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:10%;right:-250px;"></div>
@@ -2847,132 +2851,151 @@
             <p class="reveal section-subtitle" style="color:rgba(31,35,26,0.45);margin:0 auto 56px;font-size:14px;">All times Central (CT). Schedule subject to updates.</p>
 
             <div class="reveal schedule-timeline">
-                <!-- 9:00 AM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">9:00 AM</div>
+                
+                <!-- ═══════════════════════════════════════════════════════════
+                     9:00 AM — RUN, ROX & RECOVERY (HIGHLIGHT EXPERIENCE)
+                     ═══════════════════════════════════════════════════════════ -->
+                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(157,193,246,0.15) 0%, rgba(255,191,204,0.1) 100%); border: 2px solid rgba(157,193,246,0.25); border-left: 5px solid #9DC1F6; border-radius: 16px; padding: 36px 32px; margin-bottom: 16px; box-shadow: 0 4px 16px rgba(157,193,246,0.1);">
+                    <div class="schedule-time" style="color: #9DC1F6; font-size: 19px; font-weight: 900;">9:00 AM</div>
                     <div class="schedule-content">
-                        <h3>Run, Rox &amp; Recovery</h3>
-                        <p>Community run, HYROX-style workout &amp; recovery with coffee.</p>
-                        <div class="pill-row">
-                            <span class="pill"><img src="img/lskd.png" alt="LSKD"></span>
-                            <span class="pill"><img src="img/brands/hyrox.png" alt="HYROX"></span>
-                            <span class="pill"><img src="img/brands/ketoneiq.png" alt="KetoneIQ"></span>
-                            <span class="pill"><img src="img/brands/san-antonio-spurs.png" alt="Spurs"></span>
-                            <span class="pill"><img src="img/kane.png" alt="KANE"></span>
+                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; margin-bottom: 14px; line-height: 1.15; letter-spacing: -0.01em;">🏃 Run, Rox &amp; Recovery</h3>
+                        <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); margin-bottom: 22px; line-height: 1.65; font-weight: 500;">Community run, HYROX-style workout &amp; recovery with coffee. Led by Eric Hinman, powered by HYROX &amp; LSKD. Recovery by San Antonio Spurs &amp; Kane Footwear.</p>
+                        <div class="pill-row" style="gap: 12px;">
+                            <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img src="img/lskd.png" alt="LSKD" style="height: 20px; max-height: 20px;"></span>
+                            <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img src="img/brands/hyrox.png" alt="HYROX" style="height: 20px; max-height: 20px;"></span>
+                            <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img src="img/brands/san-antonio-spurs.png" alt="Spurs" style="height: 20px; max-height: 20px;"></span>
+                            <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img src="img/kane.png" alt="KANE" style="height: 20px; max-height: 20px;"></span>
+                            <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img src="img/brands/ketoneiq.png" alt="KetoneIQ" style="height: 20px; max-height: 20px;"></span>
                         </div>
                     </div>
                 </div>
-                <!-- 10:00 AM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">10:00 AM</div>
+
+                <!-- ═══════════════════════════════════════════════════════════
+                     10:00 AM — Panel Session
+                     ═══════════════════════════════════════════════════════════ -->
+                <div class="schedule-row" style="background: linear-gradient(90deg, rgba(157,193,246,0.06) 0%, transparent 100%); border-left: 4px solid #9DC1F6;">
+                    <div class="schedule-time" style="color: #9DC1F6; font-size: 16px;">10:00 AM</div>
                     <div class="schedule-content">
-                        <h3>Founders Rebuilding the Future of Health</h3>
-                        <p>Reimagining accessible, proactive health and preventive care.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">
-                                <img src="img/speakers/scott-hickle.jpg" class="speaker-thumb">
-                                Featuring Scott Hickle / Throne
-                            </span>
+                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 26px; font-weight: 700; margin-bottom: 10px; line-height: 1.2;">Founders Rebuilding the Future of Health</h3>
+                        <p style="font-size: 15px; color: rgba(31, 35, 26, 0.5); margin-bottom: 16px; line-height: 1.6;">Reimagining accessible, proactive health and preventive care.</p>
+                        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                            <img src="img/speakers/scott-hickle.jpg" class="speaker-thumb" alt="Scott Hickle" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(157,193,246,0.3); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Scott Hickle</span>
+                            <img src="img/throne.png" alt="Throne" style="height: 20px; max-height: 20px; margin-left: 4px; opacity: 0.7;">
                         </div>
                     </div>
                 </div>
-                <!-- 10:35 AM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">10:35 AM</div>
+
+                <!-- ═══════════════════════════════════════════════════════════
+                     10:35 AM — Panel Session
+                     ═══════════════════════════════════════════════════════════ -->
+                <div class="schedule-row" style="background: linear-gradient(90deg, rgba(157,193,246,0.06) 0%, transparent 100%); border-left: 4px solid #9DC1F6;">
+                    <div class="schedule-time" style="color: #9DC1F6; font-size: 16px;">10:35 AM</div>
                     <div class="schedule-content">
-                        <h3>The Power of Routine</h3>
-                        <p>How leading wellness brands build habit ecosystems and deeper engagement.</p>
-                        <div class="pill-row">
-                            <span class="pill">Garmin</span>
-                            <span class="pill"><img src="img/brands/form.png" alt="FORM"></span>
-                            <span class="pill"><img src="img/brands/hyperice.png" alt="Hyperice"></span>
+                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 26px; font-weight: 700; margin-bottom: 10px; line-height: 1.2;">The Power of Routine</h3>
+                        <p style="font-size: 15px; color: rgba(31, 35, 26, 0.5); margin-bottom: 16px; line-height: 1.6;">How leading wellness brands build habit ecosystems and deeper engagement.</p>
+                        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: rgba(31, 35, 26, 0.4); margin-right: 4px;">Featuring:</span>
+                            <img src="img/brands/form.png" alt="FORM" style="height: 20px; max-height: 20px; opacity: 0.7;">
+                            <img src="img/brands/hyperice.png" alt="Hyperice" style="height: 20px; max-height: 20px; opacity: 0.7;">
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; color: rgba(31, 35, 26, 0.6);">Garmin</span>
                         </div>
                     </div>
                 </div>
-                <!-- 11:30 AM — Lunch -->
-                <div class="schedule-row highlight">
-                    <div class="schedule-time">11:30 AM</div>
+
+                <!-- ═══════════════════════════════════════════════════════════
+                     11:30 AM — CPG COMEDY ROAST (HIGHLIGHT EXPERIENCE)
+                     ═══════════════════════════════════════════════════════════ -->
+                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(255,191,204,0.15) 0%, rgba(252,214,166,0.1) 100%); border: 2px solid rgba(255,191,204,0.3); border-left: 5px solid #FFBFCC; border-radius: 16px; padding: 36px 32px; margin-bottom: 16px; box-shadow: 0 4px 16px rgba(255,191,204,0.08);">
+                    <div class="schedule-time" style="color: #EA8376; font-size: 19px; font-weight: 900;">11:30 AM</div>
                     <div class="schedule-content">
-                        <h3>🎤 Recharging Lunch + Wellness Roast</h3>
-                        <p>Midday refuel with a live wellness brand roast.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">
-                                <img src="img/speakers/jake-decicco.jpg" class="speaker-thumb">
-                                Featuring Jake DeCicco / Super Coffee
-                            </span>
-                            <span class="pill accent">
-                                <img src="img/speakers/steve-tidball.jpg" class="speaker-thumb">
-                                Featuring Steve Tidball / Vollebak
-                            </span>
+                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; margin-bottom: 14px; line-height: 1.15; letter-spacing: -0.01em;">🎤 CPG Comedy Roast</h3>
+                        <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); margin-bottom: 22px; line-height: 1.65; font-weight: 500;">Wellness founders pitch their products and get roasted by 4 comedians. Midday refuel with a live wellness brand roast you won't forget.</p>
+                        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                            <img src="img/speakers/jake-decicco.jpg" class="speaker-thumb" alt="Jake DeCicco" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,191,204,0.5); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Jake DeCicco, Super Coffee</span>
+                            <img src="img/speakers/steve-tidball.jpg" class="speaker-thumb" alt="Steve Tidball" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,191,204,0.5); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-left: 8px;">
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Steve Tidball, Vollebak</span>
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: rgba(31, 35, 26, 0.5); margin-left: 12px;">+ 4 Comedians</span>
                         </div>
                     </div>
                 </div>
-                <!-- 12:45 PM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">12:45 PM</div>
+
+                <!-- ═══════════════════════════════════════════════════════════
+                     12:45 PM — Panel Session
+                     ═══════════════════════════════════════════════════════════ -->
+                <div class="schedule-row" style="background: linear-gradient(90deg, rgba(157,193,246,0.06) 0%, transparent 100%); border-left: 4px solid #9DC1F6;">
+                    <div class="schedule-time" style="color: #9DC1F6; font-size: 16px;">12:45 PM</div>
                     <div class="schedule-content">
-                        <h3>Building Worlds Through Sports</h3>
-                        <p>Sports storytelling beyond the game — loyalty, culture, and fan-driven worlds.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">Brandon James / Spurs</span>
-                            <span class="pill"><img src="img/kane.png" alt="KANE"></span>
+                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 26px; font-weight: 700; margin-bottom: 10px; line-height: 1.2;">Building Worlds Through Sports</h3>
+                        <p style="font-size: 15px; color: rgba(31, 35, 26, 0.5); margin-bottom: 16px; line-height: 1.6;">Sports storytelling beyond the game — loyalty, culture, and fan-driven worlds.</p>
+                        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Brandon James</span>
+                            <img src="img/brands/san-antonio-spurs.png" alt="Spurs" style="height: 20px; max-height: 20px; margin-left: 4px; opacity: 0.7;">
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: rgba(31, 35, 26, 0.4); margin-left: 8px; margin-right: 4px;">+</span>
+                            <img src="img/kane.png" alt="KANE" style="height: 20px; max-height: 20px; opacity: 0.7;">
                         </div>
                     </div>
                 </div>
-                <!-- 1:15 PM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">1:15 PM</div>
+
+                <!-- ═══════════════════════════════════════════════════════════
+                     1:15 PM — Panel Session
+                     ═══════════════════════════════════════════════════════════ -->
+                <div class="schedule-row" style="background: linear-gradient(90deg, rgba(157,193,246,0.06) 0%, transparent 100%); border-left: 4px solid #9DC1F6;">
+                    <div class="schedule-time" style="color: #9DC1F6; font-size: 16px;">1:15 PM</div>
                     <div class="schedule-content">
-                        <h3>Wellness at the Core of Community</h3>
-                        <p>Building authentic wellness communities through connection, rituals, and experiences.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">
-                                <img src="img/speakers/nicholas-charlier.jpg" class="speaker-thumb">
-                                Featuring Nicholas Charlier / Vivobarefoot
-                            </span>
-                            <span class="pill accent">
-                                <img src="img/speakers/salar-shahini.jpg" class="speaker-thumb">
-                                Featuring Salar Shahini / Sweatpals
-                            </span>
+                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 26px; font-weight: 700; margin-bottom: 10px; line-height: 1.2;">Wellness at the Core of Community</h3>
+                        <p style="font-size: 15px; color: rgba(31, 35, 26, 0.5); margin-bottom: 16px; line-height: 1.6;">Building authentic wellness communities through connection, rituals, and experiences.</p>
+                        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                            <img src="img/speakers/nicholas-charlier.jpg" class="speaker-thumb" alt="Nicholas Charlier" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(157,193,246,0.3); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Nicholas Charlier, Vivobarefoot</span>
+                            <img src="img/speakers/salar-shahini.jpg" class="speaker-thumb" alt="Salar Shahini" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(157,193,246,0.3); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-left: 6px;">
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Salar Shahini, Sweatpals</span>
                         </div>
                     </div>
                 </div>
-                <!-- 1:45 PM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">1:45 PM</div>
+
+                <!-- ═══════════════════════════════════════════════════════════
+                     1:45 PM — Panel Session
+                     ═══════════════════════════════════════════════════════════ -->
+                <div class="schedule-row" style="background: linear-gradient(90deg, rgba(157,193,246,0.06) 0%, transparent 100%); border-left: 4px solid #9DC1F6;">
+                    <div class="schedule-time" style="color: #9DC1F6; font-size: 16px;">1:45 PM</div>
                     <div class="schedule-content">
-                        <h3>The New Rules of CPG</h3>
-                        <p>Turning customers into loyalists across the modern CPG lifecycle.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">
-                                <img src="img/speakers/sam-nebel.jpg" class="speaker-thumb">
-                                Featuring Sam Nebel / Goodwipes
-                            </span>
+                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 26px; font-weight: 700; margin-bottom: 10px; line-height: 1.2;">The New Rules of CPG</h3>
+                        <p style="font-size: 15px; color: rgba(31, 35, 26, 0.5); margin-bottom: 16px; line-height: 1.6;">Turning customers into loyalists across the modern CPG lifecycle.</p>
+                        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                            <img src="img/speakers/sam-nebel.jpg" class="speaker-thumb" alt="Sam Nebel" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(157,193,246,0.3); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Sam Nebel, Goodwipes</span>
                         </div>
                     </div>
                 </div>
-                <!-- 2:30 PM — Keynote -->
-                <div class="schedule-row highlight" style="background:linear-gradient(90deg,rgba(234,131,118,0.08),rgba(157,193,246,0.04));border-color:rgba(234,131,118,0.15);">
-                    <div class="schedule-time" style="color:#EA8376;">2:30 PM</div>
+
+                <!-- ═══════════════════════════════════════════════════════════
+                     2:30 PM — KEYNOTE (HIGHLIGHT EXPERIENCE)
+                     ═══════════════════════════════════════════════════════════ -->
+                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(234,131,118,0.12) 0%, rgba(157,193,246,0.08) 100%); border: 2px solid rgba(234,131,118,0.25); border-left: 5px solid #EA8376; border-radius: 16px; padding: 36px 32px; margin-bottom: 16px; box-shadow: 0 4px 16px rgba(234,131,118,0.08);">
+                    <div class="schedule-time" style="color: #EA8376; font-size: 19px; font-weight: 900;">2:30 PM</div>
                     <div class="schedule-content">
-                        <h3>🔥 KEYNOTE: Founder Mode in Health &amp; Wellness</h3>
-                        <p>Leading with integrity, performance, and long-term vision.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">
-                                <img src="img/speakers/greg-lavecchia.jpg" class="speaker-thumb">
-                                Featuring Greg Lavecchia / Bloom
-                            </span>
+                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; margin-bottom: 14px; line-height: 1.15; letter-spacing: -0.01em;">🔥 KEYNOTE: Founder Mode in Health &amp; Wellness</h3>
+                        <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); margin-bottom: 22px; line-height: 1.65; font-weight: 500;">Leading with integrity, performance, and long-term vision. An intimate conversation with one of wellness's most successful founders.</p>
+                        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                            <img src="img/speakers/greg-lavecchia.jpg" class="speaker-thumb" alt="Greg Lavecchia" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(234,131,118,0.5); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Greg Lavecchia, Bloom</span>
                         </div>
                     </div>
                 </div>
-                <!-- 3:30 PM — Social -->
-                <div class="schedule-row highlight" style="background:linear-gradient(90deg,rgba(157,193,246,0.06),rgba(252,214,166,0.04));">
-                    <div class="schedule-time">3:30 PM</div>
+
+                <!-- ═══════════════════════════════════════════════════════════
+                     3:30 PM — EVENING SOCIAL (HIGHLIGHT EXPERIENCE)
+                     ═══════════════════════════════════════════════════════════ -->
+                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(252,214,166,0.15) 0%, rgba(157,193,246,0.1) 100%); border: 2px solid rgba(252,214,166,0.25); border-left: 5px solid #FCD6A6; border-radius: 16px; padding: 36px 32px; box-shadow: 0 4px 16px rgba(252,214,166,0.08);">
+                    <div class="schedule-time" style="color: #FCA65C; font-size: 19px; font-weight: 900;">3:30 PM</div>
                     <div class="schedule-content">
-                        <h3>🎉 Evening Social + Wellness Party on the Lawn</h3>
-                        <p>Music, light bites, recovery activations, casual play &amp; open networking.</p>
+                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; margin-bottom: 14px; line-height: 1.15; letter-spacing: -0.01em;">🎉 Evening Social + Wellness Party on the Lawn</h3>
+                        <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); line-height: 1.65; font-weight: 500;">Music, light bites, recovery activations, casual play &amp; open networking. Close the day with connections that matter.</p>
                     </div>
                 </div>
+
             </div>
 
             <!-- Ongoing throughout -->
@@ -3081,7 +3104,7 @@
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Wellness House is Willpower's flagship  gathering — a full-day, invite-led experience at the intersection of wellness, performance, and consumer brands. Now in its 3rd year, it brings together founders, operators, athletes, and brand leaders for panels, movement, recovery, and community.</p>
+                        <p>Wellness House is Willpower's flagship gathering — a full-day, invite-led experience at the intersection of wellness, performance, and consumer brands. Now in its 3rd year, it brings together founders, operators, athletes, and brand leaders for panels, movement, recovery, and community.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -3090,7 +3113,7 @@
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Friday, March 13, 2026 in Austin, TX during . Full day event running 9:00 AM to 4:00 PM, followed by an evening social on the lawn.</p>
+                        <p>Friday, March 13, 2026 in Austin, TX. Full day event running 9:00 AM to 4:00 PM, followed by an evening social on the lawn.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -3180,7 +3203,7 @@
             <img src="img/wh-lockup-white-final.png" alt="Wellness House" class="reveal apply-lockup">
             <h2 class="reveal apply-title">Ready?</h2>
             <p class="reveal apply-subtitle">
-                Attendance is approval-based. Apply now to secure your spot at the most anticipated wellness gathering during  2026.
+                Attendance is approval-based. Apply now to secure your spot at the most anticipated wellness gathering in 2026.
             </p>
             <p class="reveal apply-date">Friday, March 13, 2026 · Austin, TX · 9 AM – 4 PM</p>
             <div class="reveal apply-ctas">
@@ -3357,7 +3380,7 @@
         function updateCountdown() {
             const eventDate = new Date('2026-03-13T09:00:00-06:00');
             const today = new Date();
-            const daysUntil = Math.ceil((eventDate - today) / (1000 * 60 * 60 * 24));
+            const daysUntil = Math.floor((eventDate - today) / (1000 * 60 * 60 * 24));
             const countdownNumberEl = document.querySelector('.countdown-number');
             if (countdownNumberEl) {
                 countdownNumberEl.textContent = daysUntil;
