@@ -1217,7 +1217,7 @@
             background: rgba(31, 35, 26, 0.4);
             z-index: 5;
             cursor: pointer;
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .video-play-overlay:hover { background: rgba(31, 35, 26, 0.2); }
         .video-play-overlay:hover .play-btn { transform: scale(1.1); }
@@ -1321,7 +1321,7 @@
             background: rgba(31, 35, 26, 0.03);
             border: 1px solid rgba(31, 35, 26, 0.08);
             color: rgba(31, 35, 26, 0.5);
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .pill img {
             height: 18px;
@@ -1341,7 +1341,7 @@
             border-radius: 50%;
             object-fit: cover;
             flex-shrink: 0;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .speaker-thumb:hover {
             transform: scale(1.1);
@@ -1359,7 +1359,7 @@
             border-radius: 20px;
             background: rgba(31, 35, 26, 0.02);
             border: 1px solid rgba(31, 35, 26, 0.06);
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .ongoing-card:hover { 
             border-color: rgba(31, 35, 26, 0.1); 
@@ -1458,7 +1458,7 @@
             flex-direction: column;
             align-items: center;
             gap: 16px;
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .sponsor-item:hover { transform: translateY(-4px); }
         .sponsor-item img {
@@ -1466,7 +1466,7 @@
             width: auto;
             filter: grayscale(100%);
             opacity: 0.4;
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .sponsor-item:hover img {
             filter: grayscale(0%);
@@ -1479,7 +1479,7 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
             color: rgba(31, 35, 26, 0.15);
-            transition: color 0.3s;
+            transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .sponsor-item:hover span { color: rgba(31, 35, 26, 0.5); }
 
@@ -1498,7 +1498,7 @@
             gap: 16px;
             padding: 24px 0;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             min-height: 48px;
         }
         .faq-toggle:hover h3 { color: #EA8376; }
@@ -1507,7 +1507,7 @@
             font-size: 16px;
             font-weight: 700;
             color: #1F231A;
-            transition: color 0.3s;
+            transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             line-height: 1.15;
             letter-spacing: -0.01em;
         }
@@ -1648,7 +1648,7 @@
             border-radius: 999px;
             background: linear-gradient(135deg, #FCD6A6 0%, #FFBFCC 50%, #9DC1F6 100%);
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .btn-urgency:hover {
             transform: translateY(-4px) scale(1.03);
@@ -1767,7 +1767,7 @@
             align-items: center;
             justify-content: center;
             color: rgba(239, 238, 223, 0.3);
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .footer-social:hover {
             background: rgba(239, 238, 223, 0.08);
@@ -2586,7 +2586,7 @@
             border-radius: 20px;
             position: relative;
             z-index: 2;
-            transition: transform 0.4s ease;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .speaker-card-clean:hover .speaker-photo-clean img {
@@ -2682,7 +2682,7 @@
                 <!-- ═══════════════════════════════════════════════════════════
                      9:00 AM — RUN, ROX & RECOVERY (HIGHLIGHT EXPERIENCE)
                      ═══════════════════════════════════════════════════════════ -->
-                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(157,193,246,0.08) 0%, rgba(255,255,255,0.9) 100%); border-left: 5px solid #9DC1F6;">
+                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(157,193,246,0.08) 0%, rgba(255,255,255,0.9) 100%); border-left: 4px solid #9DC1F6;">
                     <div class="schedule-time" style="color: #9DC1F6;">9:00 AM</div>
                     <div class="schedule-content">
                         <div style="display:inline-block; padding:5px 12px; background:rgba(157,193,246,0.15); border-radius:999px; font-size:11px; font-weight:700; color:#9DC1F6; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">🏃 Movement</div>
@@ -2734,7 +2734,7 @@
                 <!-- ═══════════════════════════════════════════════════════════
                      11:30 AM — CPG COMEDY ROAST (HIGHLIGHT EXPERIENCE)
                      ═══════════════════════════════════════════════════════════ -->
-                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(255,191,204,0.08) 0%, rgba(255,255,255,0.9) 100%); border-left: 5px solid #FFBFCC;">
+                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(255,191,204,0.08) 0%, rgba(255,255,255,0.9) 100%); border-left: 4px solid #FFBFCC;">
                     <div class="schedule-time" style="color: #FFBFCC;">11:30 AM</div>
                     <div class="schedule-content">
                         <div style="display:inline-block; padding:5px 12px; background:rgba(157,193,246,0.15); border-radius:999px; font-size:11px; font-weight:700; color:#FFBFCC; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">🎤 Experience</div>
@@ -2802,7 +2802,7 @@
                 <!-- ═══════════════════════════════════════════════════════════
                      2:30 PM — KEYNOTE (HIGHLIGHT EXPERIENCE)
                      ═══════════════════════════════════════════════════════════ -->
-                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(234,131,118,0.08) 0%, rgba(255,255,255,0.9) 100%); border-left: 5px solid #EA8376;">
+                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(234,131,118,0.08) 0%, rgba(255,255,255,0.9) 100%); border-left: 4px solid #EA8376;">
                     <div class="schedule-time" style="color: #EA8376;">2:30 PM</div>
                     <div class="schedule-content">
                         <div style="display:inline-block; padding:5px 12px; background:rgba(157,193,246,0.15); border-radius:999px; font-size:11px; font-weight:700; color:#EA8376; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">🔥 Keynote</div>
@@ -2818,10 +2818,11 @@
                 <!-- ═══════════════════════════════════════════════════════════
                      3:30 PM — EVENING SOCIAL (HIGHLIGHT EXPERIENCE)
                      ═══════════════════════════════════════════════════════════ -->
-                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(252,214,166,0.15) 0%, rgba(157,193,246,0.1) 100%); border: 2px solid rgba(252,214,166,0.25); border-left: 5px solid #FCD6A6; border-radius: 16px; padding: 36px 32px; box-shadow: 0 4px 16px rgba(252,214,166,0.08);">
+                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(252,214,166,0.15) 0%, rgba(157,193,246,0.1) 100%); border: 2px solid rgba(252,214,166,0.25); border-left: 4px solid #FCD6A6; border-radius: 16px; padding: 36px 32px; box-shadow: 0 4px 16px rgba(252,214,166,0.08);">
                     <div class="schedule-time" style="color: #FCA65C; font-size: 19px; font-weight: 900;">3:30 PM</div>
                     <div class="schedule-content">
-                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; margin-bottom: 14px; line-height: 1.15; letter-spacing: -0.01em;">🎉 Evening Social + Wellness Party on the Lawn</h3>
+                        <div style="display:inline-block; padding:5px 12px; background:rgba(157,193,246,0.15); border-radius:999px; font-size:11px; font-weight:700; color:#FCA65C; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">🎉 Social</div>
+                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; margin-bottom: 14px; line-height: 1.15; letter-spacing: -0.01em;">Evening Social + Wellness Party on the Lawn</h3>
                         <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); line-height: 1.65; font-weight: 500;">Music, light bites, recovery activations, casual play &amp; open networking. Close the day with connections that matter.</p>
                     </div>
                 </div>
