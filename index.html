@@ -783,116 +783,6 @@
         /* ══════════════════════════════════════════════════════════════════
            TIMELINE - Day in the Life
            ══════════════════════════════════════════════════════════════════ */
-        .timeline-section {
-            margin-bottom: 80px;
-        }
-        .timeline-header {
-            text-align: center;
-        }
-        .timeline-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 0;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 48px 24px;
-            background: rgba(157, 193, 246, 0.03);
-            border-radius: 24px;
-            border: 1px solid rgba(157, 193, 246, 0.1);
-            position: relative;
-        }
-        .timeline-block {
-            flex: 1;
-            text-align: center;
-            padding: 0 12px;
-            position: relative;
-            z-index: 2;
-        }
-        .timeline-time {
-            font-family: 'Unbounded', sans-serif;
-            font-size: 28px;
-            font-weight: 900;
-            margin-bottom: 16px;
-            line-height: 1;
-            letter-spacing: -0.02em;
-        }
-        .timeline-preview {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 12px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid rgba(157, 193, 246, 0.2);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-        }
-        .timeline-preview img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .timeline-preview.gradient-circle {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            border: none;
-        }
-        .timeline-block:hover .timeline-preview {
-            transform: scale(1.08);
-            box-shadow: 0 6px 24px rgba(157, 193, 246, 0.3);
-        }
-        .timeline-icon {
-            font-size: 48px;
-            margin-bottom: 12px;
-            line-height: 1;
-            display: none; /* Hidden since we now have preview images */
-        }
-        .timeline-title {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            color: #EFEEDF;
-            margin-bottom: 8px;
-            line-height: 1.15;
-            letter-spacing: -0.01em;
-        }
-        .timeline-desc {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 400;
-            color: rgba(239, 238, 223, 0.4);
-            line-height: 1.6;
-            margin: 0;
-        }
-        .timeline-connector {
-            font-size: 24px;
-            color: rgba(157, 193, 246, 0.3);
-            flex-shrink: 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Mobile: vertical stack */
-        @media (max-width: 768px) {
-            .timeline-container {
-                flex-direction: column;
-                gap: 32px;
-            }
-            .timeline-connector {
-                transform: rotate(90deg);
-            }
-            .timeline-block {
-                padding: 24px;
-                width: 100%;
-            }
-            .timeline-preview {
-                width: 80px;
-                height: 80px;
-            }
-        }
-
         .benefit-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1201,6 +1091,7 @@
         }
         .speaker-card:hover {
             transform: translateY(-8px);
+            filter: drop-shadow(0 12px 32px rgba(31, 35, 26, 0.2));
         }
         
         .speaker-img-wrap {
@@ -1214,7 +1105,8 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .speaker-card:hover .speaker-img-wrap {
-            box-shadow: 0 16px 48px rgba(31, 35, 26, 0.25);
+            box-shadow: 0 20px 60px rgba(31, 35, 26, 0.3);
+            transform: scale(1.02);
         }
         .speaker-img-wrap img {
             width: 100%;
@@ -2154,18 +2046,6 @@
                 font-size: 16px;
             }
             
-            /* Timeline mobile adjustments */
-            .timeline-time {
-                font-size: 20px;
-            }
-            
-            .timeline-title {
-                font-size: 16px;
-            }
-            
-            .timeline-desc {
-                font-size: 12px;
-            }
         }
         
         /* Small mobile devices */
@@ -2377,68 +2257,6 @@
                 A curated, one-day experience built for quality, depth, and real connection.
             </p>
 
-            <!-- Day in the Life Timeline -->
-            <div class="reveal timeline-section">
-                <h3 class="timeline-header" style="font-family:'Unbounded',sans-serif;font-size:32px;font-weight:900;color:#EFEEDF;margin-bottom:48px;">
-                    A Day at Wellness House
-                </h3>
-                
-                <div class="timeline-container">
-                    <div class="timeline-block">
-                        <div class="timeline-time gradient-text">9AM</div>
-                        <div class="timeline-preview gradient-circle" style="background: linear-gradient(135deg, #9DC1F6, #FFBFCC);">
-                            🏃
-                        </div>
-                        <div class="timeline-title">Run Club</div>
-                        <p class="timeline-desc">Start the day with movement & energy</p>
-                    </div>
-                    
-                    <div class="timeline-connector">→</div>
-                    
-                    <div class="timeline-block">
-                        <div class="timeline-time gradient-text">10AM</div>
-                        <div class="timeline-preview">
-                            <img src="img/speakers/scott-hickle.jpg" alt="Scott Hickle">
-                        </div>
-                        <div class="timeline-title">Panels</div>
-                        <p class="timeline-desc">Industry insights from brand leaders</p>
-                    </div>
-                    
-                    <div class="timeline-connector">→</div>
-                    
-                    <div class="timeline-block">
-                        <div class="timeline-time gradient-text">12PM</div>
-                        <div class="timeline-preview gradient-circle" style="background: linear-gradient(135deg, #FCD6A6, #EA8376);">
-                            🍽️
-                        </div>
-                        <div class="timeline-title">Lunch</div>
-                        <p class="timeline-desc">Curated meals & deep conversations</p>
-                    </div>
-                    
-                    <div class="timeline-connector">→</div>
-                    
-                    <div class="timeline-block">
-                        <div class="timeline-time gradient-text">2PM</div>
-                        <div class="timeline-preview">
-                            <img src="img/speakers/greg-lavecchia.jpg" alt="Greg Lavecchia">
-                        </div>
-                        <div class="timeline-title">Keynote</div>
-                        <p class="timeline-desc">Fireside chats with top founders</p>
-                    </div>
-                    
-                    <div class="timeline-connector">→</div>
-                    
-                    <div class="timeline-block">
-                        <div class="timeline-time gradient-text">4PM</div>
-                        <div class="timeline-preview gradient-circle" style="background: linear-gradient(135deg, #FFBFCC, #9DC1F6);">
-                            🎉
-                        </div>
-                        <div class="timeline-title">Social</div>
-                        <p class="timeline-desc">Evening networking & music</p>
-                    </div>
-                </div>
-            </div>
-
             <!-- Key Benefits -->
             <div class="benefit-grid">
                 <div class="reveal delay-1 benefit-card">
@@ -2549,8 +2367,8 @@
 
         <div class="section-inner" style="text-align:center;">
             <div class="reveal section-label" style="color:#9DC1F6;">Why Come?</div>
-            <h2 class="reveal section-title" style="font-size:52px;color:#EFEEDF;margin-bottom:16px;">
-                Why <span class="gradient-text">Attend</span>
+            <h2 class="reveal section-title" style="font-size:var(--text-3xl);color:#EFEEDF;margin-bottom:16px;letter-spacing:-0.01em;">
+                <span style="font-weight:300;">Why</span> <span class="gradient-text" style="font-weight:800;">Attend</span>
             </h2>
             <p class="reveal section-subtitle" style="color:rgba(239,238,223,0.4);margin:0 auto 56px;">
                 Three reasons Wellness House isn't another conference.
@@ -2626,8 +2444,8 @@
         
         <div class="section-inner" style="position: relative; z-index: 2;">
             <div class="reveal section-label" style="color: rgba(255,255,255,0.7); text-align: center;">On Stage</div>
-            <h2 class="reveal section-title" style="font-size: 52px; text-align: center; margin-bottom: 80px; color: #fff; text-shadow: 0 2px 20px rgba(0,0,0,0.1);">
-                Guest Speakers
+            <h2 class="reveal section-title" style="font-size: var(--text-3xl); text-align: center; margin-bottom: 80px; color: #fff; text-shadow: 0 2px 20px rgba(0,0,0,0.1); letter-spacing:-0.01em;">
+                <span style="font-weight:300;">Guest</span> <span style="font-weight:800;">Speakers</span>
             </h2>
 
             <div class="speakers-grid-clean">
@@ -2846,79 +2664,6 @@
     </style>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         9. SEE IT IN ACTION - 2025 RECAP (Dark Cinematic)
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section class="section-dark section-padding" style="padding:140px 24px;">
-        <!-- Gradient blobs for depth -->
-        <div class="blob" style="width:600px;height:600px;background:#9DC1F6;top:-200px;left:-250px;opacity:0.12;"></div>
-        <div class="blob" style="width:500px;height:500px;background:#FFBFCC;bottom:-150px;right:-200px;opacity:0.10;"></div>
-        <div class="blob" style="width:400px;height:400px;background:#FCD6A6;top:40%;right:10%;opacity:0.08;"></div>
-
-        <div class="section-inner" style="text-align:center;">
-            <!-- Section header -->
-            <div class="reveal section-label" style="color:rgba(157,193,246,0.6);margin-bottom:20px;">See It In Action</div>
-            <h2 class="reveal section-title" style="font-size:56px;color:#EFEEDF;margin-bottom:16px;letter-spacing:-0.02em;">
-                2025 <span class="gradient-text">Recap</span>
-            </h2>
-            <p class="reveal section-subtitle" style="color:rgba(239,238,223,0.45);margin:0 auto 64px;max-width:560px;font-size:17px;">
-                A look back at Wellness House 2025
-            </p>
-
-            <!-- Cinematic video container -->
-            <div class="reveal-scale" style="max-width:900px;margin:0 auto;">
-                <div class="video-container" id="recapVideoContainer" style="box-shadow:0 40px 100px rgba(0,0,0,0.4);border-radius:28px;overflow:hidden;">
-                    <div class="video-play-overlay" id="recapVideoOverlay" onclick="playRecapVideo()" style="background:linear-gradient(135deg,rgba(31,35,26,0.5) 0%,rgba(31,35,26,0.3) 100%);">
-                        <div class="play-btn" style="width:90px;height:90px;box-shadow:0 12px 48px rgba(0,0,0,0.35);">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="#1F231A"><polygon points="6,3 20,12 6,21"/></svg>
-                        </div>
-                    </div>
-                    <iframe
-                        id="recapVideoEmbed"
-                        src="https://www.youtube.com/embed/30aSv-OTOSE?rel=0&modestbranding=1&color=white"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                    ></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         9.5. PREVIOUS ATTENDEES - 2025 (Cream Section)
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section class="section-cream section-padding" style="padding-top:100px;padding-bottom:100px;">
-        <div class="blob" style="width:400px;height:400px;background:#9DC1F6;top:10%;left:-150px;"></div>
-        <div class="blob" style="width:350px;height:350px;background:#FFBFCC;bottom:10%;right:-150px;"></div>
-
-        <div class="section-inner" style="text-align:center;">
-            <div class="reveal section-label" style="color:rgba(157,193,246,0.7);">The Alumni</div>
-            <h2 class="reveal section-title" style="font-size:44px;margin-bottom:16px;">
-                Wellness House <span class="gradient-text-dark">2025 Attendees</span>
-            </h2>
-            <p class="reveal section-subtitle" style="color:rgba(31,35,26,0.45);margin:0 auto 56px;max-width:600px;">
-                Founders and leaders from these brands joined us last year
-            </p>
-
-            <div class="reveal logo-wall" style="margin-bottom:0;">
-                <img src="img/brands/bloom-nutrition.png" alt="Bloom Nutrition" style="height:32px">
-                <img src="img/brands/whoop.png" alt="WHOOP" style="height:24px">
-                <img src="img/brands/ag1.png" alt="AG1" style="height:26px">
-                <img src="img/brands/peloton.png" alt="Peloton" style="height:24px">
-                <img src="img/brands/oura.png" alt="OURA" style="height:26px">
-                <img src="img/brands/goodwipes.png" alt="Goodwipes" style="height:26px">
-                <img src="img/supercoffee.png" alt="Super Coffee" style="height:26px">
-                <img src="img/vollebak.png" alt="Vollebak" style="height:20px">
-                <img src="img/throne.png" alt="Throne Science" style="height:26px">
-                <img src="img/vivobarefoot.png" alt="Vivobarefoot" style="height:26px">
-                <img src="img/brands/eight-sleep.png" alt="Eight Sleep" style="height:24px">
-                <img src="img/brands/hyrox.png" alt="HYROX" style="height:24px">
-                <img src="img/lskd.png" alt="LSKD" style="height:22px">
-                <img src="img/kane.png" alt="KANE" style="height:24px">
-            </div>
-        </div>
-    <!-- ═══════════════════════════════════════════════════════════════════
          10. PROGRAMMING / SCHEDULE (Light Cream) — EEE-STYLE REBUILD
          ═══════════════════════════════════════════════════════════════════ -->
     <section id="schedule" class="section-cream section-padding" style="background:#EFEEDF;">
@@ -2937,10 +2682,11 @@
                 <!-- ═══════════════════════════════════════════════════════════
                      9:00 AM — RUN, ROX & RECOVERY (HIGHLIGHT EXPERIENCE)
                      ═══════════════════════════════════════════════════════════ -->
-                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(157,193,246,0.15) 0%, rgba(255,191,204,0.1) 100%); border: 2px solid rgba(157,193,246,0.25); border-left: 5px solid #9DC1F6; border-radius: 16px; padding: 36px 32px; margin-bottom: 16px; box-shadow: 0 4px 16px rgba(157,193,246,0.1);">
-                    <div class="schedule-time" style="color: #9DC1F6; font-size: 19px; font-weight: 900;">9:00 AM</div>
+                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(157,193,246,0.08) 0%, rgba(255,255,255,0.9) 100%); border-left: 5px solid #9DC1F6;">
+                    <div class="schedule-time" style="color: #9DC1F6;">9:00 AM</div>
                     <div class="schedule-content">
-                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; margin-bottom: 14px; line-height: 1.15; letter-spacing: -0.01em;">🏃 Run, Rox &amp; Recovery</h3>
+                        <div style="display: inline-block; padding: 6px 14px; background: rgba(157,193,246,0.12); border-radius: 999px; font-size: 11px; font-weight: 700; color: #9DC1F6; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.08em;">🏃 Movement</div>
+                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 10px; line-height: 1.15; letter-spacing: -0.01em;">Run, Rox &amp; Recovery</h3>
                         <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); margin-bottom: 22px; line-height: 1.65; font-weight: 500;">Community run, HYROX-style workout &amp; recovery with coffee. Led by Eric Hinman, powered by HYROX &amp; LSKD. Recovery by San Antonio Spurs &amp; Kane Footwear.</p>
                         <div class="pill-row" style="gap: 12px;">
                             <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img src="img/lskd.png" alt="LSKD" style="height: 20px; max-height: 20px;"></span>
@@ -2988,10 +2734,11 @@
                 <!-- ═══════════════════════════════════════════════════════════
                      11:30 AM — CPG COMEDY ROAST (HIGHLIGHT EXPERIENCE)
                      ═══════════════════════════════════════════════════════════ -->
-                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(255,191,204,0.15) 0%, rgba(252,214,166,0.1) 100%); border: 2px solid rgba(255,191,204,0.3); border-left: 5px solid #FFBFCC; border-radius: 16px; padding: 36px 32px; margin-bottom: 16px; box-shadow: 0 4px 16px rgba(255,191,204,0.08);">
-                    <div class="schedule-time" style="color: #EA8376; font-size: 19px; font-weight: 900;">11:30 AM</div>
+                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(255,191,204,0.08) 0%, rgba(255,255,255,0.9) 100%); border-left: 5px solid #FFBFCC;">
+                    <div class="schedule-time" style="color: #FFBFCC;">11:30 AM</div>
                     <div class="schedule-content">
-                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; margin-bottom: 14px; line-height: 1.15; letter-spacing: -0.01em;">🎤 CPG Comedy Roast</h3>
+                        <div style="display: inline-block; padding: 6px 14px; background: rgba(255,191,204,0.12); border-radius: 999px; font-size: 11px; font-weight: 700; color: #FFBFCC; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.08em;">🎤 Experience</div>
+                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 10px; line-height: 1.15; letter-spacing: -0.01em;">CPG Comedy Roast</h3>
                         <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); margin-bottom: 22px; line-height: 1.65; font-weight: 500;">Wellness founders pitch their products and get roasted by 4 comedians. Midday refuel with a live wellness brand roast you won't forget.</p>
                         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
                             <img src="img/speakers/jake-decicco.jpg" class="speaker-thumb" alt="Jake DeCicco" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,191,204,0.5); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
@@ -3055,10 +2802,11 @@
                 <!-- ═══════════════════════════════════════════════════════════
                      2:30 PM — KEYNOTE (HIGHLIGHT EXPERIENCE)
                      ═══════════════════════════════════════════════════════════ -->
-                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(234,131,118,0.12) 0%, rgba(157,193,246,0.08) 100%); border: 2px solid rgba(234,131,118,0.25); border-left: 5px solid #EA8376; border-radius: 16px; padding: 36px 32px; margin-bottom: 16px; box-shadow: 0 4px 16px rgba(234,131,118,0.08);">
-                    <div class="schedule-time" style="color: #EA8376; font-size: 19px; font-weight: 900;">2:30 PM</div>
+                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(234,131,118,0.08) 0%, rgba(255,255,255,0.9) 100%); border-left: 5px solid #EA8376;">
+                    <div class="schedule-time" style="color: #EA8376;">2:30 PM</div>
                     <div class="schedule-content">
-                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; margin-bottom: 14px; line-height: 1.15; letter-spacing: -0.01em;">🔥 KEYNOTE: Founder Mode in Health &amp; Wellness</h3>
+                        <div style="display: inline-block; padding: 6px 14px; background: rgba(234,131,118,0.12); border-radius: 999px; font-size: 11px; font-weight: 700; color: #EA8376; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.08em;">🔥 Keynote</div>
+                        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 10px; line-height: 1.15; letter-spacing: -0.01em;">Founder Mode in Health &amp; Wellness</h3>
                         <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); margin-bottom: 22px; line-height: 1.65; font-weight: 500;">Leading with integrity, performance, and long-term vision. An intimate conversation with one of wellness's most successful founders.</p>
                         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
                             <img src="img/speakers/greg-lavecchia.jpg" class="speaker-thumb" alt="Greg Lavecchia" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(234,131,118,0.5); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
@@ -3100,6 +2848,70 @@
                     <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     <p>Open Networking</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         10.5. 2025 RECAP + ATTENDEES (Unified Cream Section)
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section class="section-cream section-padding" style="background:#EFEEDF;padding-top:0;padding-bottom:100px;">
+        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:-150px;left:-200px;opacity:0.08;"></div>
+        <div class="blob" style="width:400px;height:400px;background:#FFBFCC;bottom:-100px;right:-150px;opacity:0.06;"></div>
+
+        <div class="section-inner" style="text-align:center;">
+            <!-- 2025 Recap Video -->
+            <div class="reveal section-label" style="color:rgba(157,193,246,0.7);margin-bottom:20px;">See It In Action</div>
+            <h2 class="reveal section-title" style="font-size:52px;color:#1F231A;margin-bottom:16px;letter-spacing:-0.02em;">
+                2025 <span class="gradient-text-dark">Recap</span>
+            </h2>
+            <p class="reveal section-subtitle" style="color:rgba(31,35,26,0.45);margin:0 auto 64px;max-width:560px;font-size:17px;">
+                A look back at Wellness House 2025
+            </p>
+
+            <div class="reveal-scale" style="max-width:900px;margin:0 auto;">
+                <div class="video-container" id="recapVideoContainer" style="box-shadow:0 20px 60px rgba(0,0,0,0.12);border-radius:28px;overflow:hidden;">
+                    <div class="video-play-overlay" id="recapVideoOverlay" onclick="playRecapVideo()" style="background:linear-gradient(135deg,rgba(31,35,26,0.4) 0%,rgba(31,35,26,0.2) 100%);">
+                        <div class="play-btn" style="width:90px;height:90px;box-shadow:0 12px 48px rgba(0,0,0,0.25);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="#1F231A"><polygon points="6,3 20,12 6,21"/></svg>
+                        </div>
+                    </div>
+                    <iframe
+                        id="recapVideoEmbed"
+                        src="https://www.youtube.com/embed/30aSv-OTOSE?rel=0&modestbranding=1&color=white"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
+
+            <!-- Divider between recap and attendees -->
+            <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(31,35,26,0.08),transparent);margin:80px 0;"></div>
+
+            <!-- 2025 Attendees -->
+            <div class="reveal section-label" style="color:rgba(157,193,246,0.7);">The Alumni</div>
+            <h2 class="reveal section-title" style="font-size:44px;margin-bottom:16px;">
+                Wellness House <span class="gradient-text-dark">2025 Attendees</span>
+            </h2>
+            <p class="reveal section-subtitle" style="color:rgba(31,35,26,0.45);margin:0 auto 56px;max-width:600px;">
+                Founders and leaders from these brands joined us last year
+            </p>
+
+            <div class="reveal logo-wall" style="margin-bottom:0;">
+                <img src="img/brands/bloom-nutrition.png" alt="Bloom Nutrition" style="height:32px">
+                <img src="img/brands/whoop.png" alt="WHOOP" style="height:24px">
+                <img src="img/brands/ag1.png" alt="AG1" style="height:26px">
+                <img src="img/brands/peloton.png" alt="Peloton" style="height:24px">
+                <img src="img/brands/oura.png" alt="OURA" style="height:26px">
+                <img src="img/brands/goodwipes.png" alt="Goodwipes" style="height:26px">
+                <img src="img/supercoffee.png" alt="Super Coffee" style="height:26px">
+                <img src="img/vollebak.png" alt="Vollebak" style="height:20px">
+                <img src="img/throne.png" alt="Throne Science" style="height:26px">
+                <img src="img/vivobarefoot.png" alt="Vivobarefoot" style="height:26px">
+                <img src="img/brands/eight-sleep.png" alt="Eight Sleep" style="height:24px">
+                <img src="img/brands/hyrox.png" alt="HYROX" style="height:24px">
+                <img src="img/lskd.png" alt="LSKD" style="height:22px">
+                <img src="img/kane.png" alt="KANE" style="height:24px">
             </div>
         </div>
     </section>
@@ -3257,7 +3069,7 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         13. DON'T MISS OUT - URGENCY CTA
+         14. DON'T MISS OUT - URGENCY CTA
          ═══════════════════════════════════════════════════════════════════ -->
     <section class="urgency-section">
         <div class="urgency-inner">
@@ -3278,7 +3090,7 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         14. APPLY TO ATTEND
+         15. APPLY TO ATTEND
          ═══════════════════════════════════════════════════════════════════ -->
     <section class="apply-section" id="apply">
         <div class="apply-inner">
@@ -3296,7 +3108,7 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         14. FOOTER
+         16. FOOTER
          ═══════════════════════════════════════════════════════════════════ -->
     <footer class="site-footer">
         <div class="footer-label">Follow for Updates</div>
