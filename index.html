@@ -19,7 +19,7 @@
         html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         body {
             font-family: 'Montserrat', sans-serif;
-            background: #EFEEDF;
+            background: #EFEEDF; /* Primary Cream Background */
             color: #1F231A;
             overflow-x: hidden;
             line-height: 1.6;
@@ -27,10 +27,14 @@
         img { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; color: inherit; }
 
-        /* ── Font families ── */
-        .font-unbounded { font-family: 'Unbounded', sans-serif; }
-        .font-bricolage { font-family: 'Bricolage Grotesque', sans-serif; }
-        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        /* ── Typography (Official Brand Fonts) ── */
+        .font-unbounded { font-family: 'Unbounded', sans-serif; font-weight: 700; }
+        .font-bricolage { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; font-weight: 400; }
+        
+        h1 { font-family: 'Unbounded', sans-serif; font-weight: 900; }
+        h2, h3, h4 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; }
+        body, p, li { font-family: 'Montserrat', sans-serif; font-weight: 400; }
 
         /* ══════════════════════════════════════════════════════════════════
            CUSTOM SCROLLBAR
@@ -63,52 +67,48 @@
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 1000;
-            padding: 20px 40px;
+            padding: 24px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .main-nav.scrolled {
-            padding: 12px 40px;
-            background: rgba(239, 238, 223, 0.85);
-            backdrop-filter: blur(24px) saturate(180%);
-            -webkit-backdrop-filter: blur(24px) saturate(180%);
-            border-bottom: 1px solid rgba(31, 35, 26, 0.06);
-            box-shadow: 0 1px 40px rgba(0,0,0,0.04);
+            padding: 16px 60px;
+            background: rgba(239, 238, 223, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(31, 35, 26, 0.05);
         }
         .main-nav.scrolled .nav-logo { filter: none; opacity: 1; }
-        .main-nav.scrolled .nav-links a { color: #1F231A; opacity: 0.5; }
-        .main-nav.scrolled .nav-links a:hover { opacity: 1; }
+        .main-nav.scrolled .nav-links a { color: #1F231A; opacity: 0.6; }
+        .main-nav.scrolled .nav-links a:hover { opacity: 1; color: #EA8376; }
         .main-nav.scrolled .nav-cta { background: #1F231A; color: #EFEEDF; }
-        .main-nav.scrolled .nav-cta:hover { background: #EA8376; }
-        .main-nav.hero-mode .nav-logo { filter: brightness(0) invert(1); opacity: 0.85; }
-        .main-nav.hero-mode .nav-links a { color: #fff; opacity: 0.5; }
-        .main-nav.hero-mode .nav-links a:hover { opacity: 1; }
-        .main-nav.hero-mode .nav-cta { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); }
-        .main-nav.hero-mode .nav-cta:hover { background: rgba(255,255,255,0.25); }
 
-        .nav-logo { height: 28px; transition: all 0.4s ease; }
-        .nav-links { display: flex; gap: 36px; align-items: center; }
+        .main-nav.hero-mode .nav-logo { filter: brightness(0) invert(1); opacity: 0.9; }
+        .main-nav.hero-mode .nav-links a { color: #fff; opacity: 0.6; }
+        .main-nav.hero-mode .nav-links a:hover { opacity: 1; }
+        .main-nav.hero-mode .nav-cta { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px); }
+
+        .nav-logo { height: 24px; transition: all 0.4s ease; }
+        .nav-links { display: flex; gap: 40px; align-items: center; }
         .nav-links a {
-            font-family: 'Montserrat', sans-serif;
             font-size: 11px;
             font-weight: 700;
-            letter-spacing: 0.16em;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             transition: all 0.3s ease;
         }
         .nav-cta {
             display: inline-flex; align-items: center; justify-content: center;
-            padding: 12px 32px;
+            padding: 12px 36px;
             border-radius: 999px;
-            font-family: 'Montserrat', sans-serif;
             font-size: 11px;
             font-weight: 800;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s ease;
         }
+        /* ... hamburger & mobile menu styles ... */
         .nav-hamburger {
             display: none;
             flex-direction: column;
@@ -1235,7 +1235,7 @@
          ═══════════════════════════════════════════════════════════════════ -->
     <nav class="main-nav hero-mode" id="mainNav">
         <a href="#">
-            <img src="img/willpower-dark.png" alt="Willpower" class="nav-logo">
+            <img src="img/willpower-dark.png" alt="Willpower" class="nav-logo" id="navLogo">
         </a>
         <div class="nav-links">
             <a href="#about">About</a>
@@ -1705,123 +1705,183 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         10. PROGRAMMING / SCHEDULE (Dark)
+         10. PROGRAMMING / SCHEDULE (Screen-friendly Cream Grid)
          ═══════════════════════════════════════════════════════════════════ -->
-    <section id="schedule" class="section-dark section-padding">
-        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:10%;right:-250px;opacity:0.06;"></div>
-        <div class="blob" style="width:400px;height:400px;background:#FCD6A6;bottom:5%;left:-200px;opacity:0.05;"></div>
+    <section id="schedule" class="section-cream section-padding">
+        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:10%;right:-250px;opacity:0.2;"></div>
+        <div class="blob" style="width:400px;height:400px;background:#FCD6A6;bottom:5%;left:-200px;opacity:0.15;"></div>
 
         <div class="section-inner" style="text-align:center;">
-            <div class="reveal section-label" style="color:#9DC1F6;">Friday, March 13</div>
-            <h2 class="reveal section-title" style="font-size:52px;color:#EFEEDF;margin-bottom:8px;">
-                Event <span class="gradient-text">Flow</span>
+            <div class="reveal section-label" style="color:#EA8376;">Friday, March 13</div>
+            <h2 class="reveal section-title" style="font-size:52px;margin-bottom:8px;">
+                Event <span class="gradient-text-dark">Flow</span>
             </h2>
-            <p class="reveal section-subtitle" style="color:rgba(239,238,223,0.25);margin:0 auto 56px;font-size:14px;">All times Central (CT). Schedule subject to updates.</p>
+            <p class="reveal section-subtitle" style="color:rgba(31,35,26,0.4);margin:0 auto 56px;font-size:14px;">All times Central (CT). Schedule subject to updates.</p>
 
-            <div class="reveal schedule-timeline">
+            <div class="reveal schedule-grid-container">
+                <style>
+                    .schedule-grid-container {
+                        max-width: 900px;
+                        margin: 0 auto;
+                        background: #fff;
+                        border-radius: 24px;
+                        box-shadow: 0 40px 100px rgba(31, 35, 26, 0.05);
+                        overflow: hidden;
+                        border: 1px solid rgba(31, 35, 26, 0.03);
+                    }
+                    .schedule-grid-row {
+                        display: grid;
+                        grid-template-columns: 120px 1fr 180px;
+                        border-bottom: 1px solid rgba(31, 35, 26, 0.04);
+                        transition: background 0.3s ease;
+                        align-items: center;
+                    }
+                    .schedule-grid-row:last-child { border-bottom: none; }
+                    .schedule-grid-row:hover { background: rgba(157, 193, 246, 0.03); }
+                    .schedule-cell-time {
+                        padding: 32px 24px;
+                        font-family: 'Unbounded', sans-serif;
+                        font-size: 12px;
+                        font-weight: 700;
+                        color: #1F231A;
+                        background: rgba(31,35,26,0.01);
+                        border-right: 1px solid rgba(31, 35, 26, 0.04);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .schedule-cell-content {
+                        padding: 32px 32px;
+                        text-align: left;
+                    }
+                    .schedule-cell-content h3 {
+                        font-size: 17px;
+                        margin-bottom: 6px;
+                        color: #1F231A;
+                    }
+                    .schedule-cell-content p {
+                        font-size: 13px;
+                        color: rgba(31, 35, 26, 0.5);
+                        line-height: 1.5;
+                    }
+                    .schedule-cell-brands {
+                        padding: 24px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 12px;
+                        justify-content: center;
+                        align-items: center;
+                        background: rgba(31,35,26,0.005);
+                    }
+                    .schedule-brand-logo {
+                        height: 20px;
+                        width: auto;
+                        opacity: 0.8;
+                        transition: opacity 0.3s;
+                    }
+                    .schedule-brand-logo:hover { opacity: 1; }
+                    .schedule-grid-row.accent { background: rgba(234, 131, 118, 0.02); }
+                    .schedule-grid-row.accent .schedule-cell-time { color: #EA8376; background: rgba(234, 131, 118, 0.03); }
+
+                    @media (max-width: 768px) {
+                        .schedule-grid-row { grid-template-columns: 90px 1fr; }
+                        .schedule-cell-brands { grid-column: span 2; padding: 16px; border-top: 1px solid rgba(31,35,26,0.04); }
+                        .schedule-cell-time { padding: 20px; font-size: 10px; }
+                        .schedule-cell-content { padding: 20px; }
+                        .schedule-cell-content h3 { font-size: 15px; }
+                    }
+                </style>
                 <!-- 9:00 AM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">9:00 AM</div>
-                    <div class="schedule-content">
+                <div class="schedule-grid-row">
+                    <div class="schedule-cell-time">9:00 AM</div>
+                    <div class="schedule-cell-content">
                         <h3>Run, Rox &amp; Recovery</h3>
-                        <p>Community run, HYROX-style workout &amp; recovery with coffee.</p>
-                        <div class="pill-row">
-                            <span class="pill">LSKD</span>
-                            <span class="pill">HYROX</span>
-                            <span class="pill">KetoneIQ</span>
-                            <span class="pill">Spurs</span>
-                            <span class="pill">KANE</span>
-                        </div>
+                        <p>Morning movement session followed by functional recovery and functional coffee.</p>
+                    </div>
+                    <div class="schedule-cell-brands">
+                        <img src="img/lskd.png" class="schedule-brand-logo" alt="LSKD">
+                        <img src="img/brands/hyrox.png" class="schedule-brand-logo" alt="HYROX">
+                        <img src="img/brands/ketoneiq.png" class="schedule-brand-logo" alt="KetoneIQ">
                     </div>
                 </div>
                 <!-- 10:00 AM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">10:00 AM</div>
-                    <div class="schedule-content">
+                <div class="schedule-grid-row accent">
+                    <div class="schedule-cell-time">10:00 AM</div>
+                    <div class="schedule-cell-content">
                         <h3>Founders Rebuilding the Future of Health</h3>
-                        <p>Reimagining accessible, proactive health and preventive care.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">Scott Hickle / Throne</span>
-                        </div>
+                        <p>Reimagining accessible, proactive health. Featuring <strong>Scott Hickle</strong> (Founder, Throne Science).</p>
+                    </div>
+                    <div class="schedule-cell-brands">
+                        <img src="img/throne.png" class="schedule-brand-logo" alt="Throne">
                     </div>
                 </div>
-                <!-- 10:35 AM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">10:35 AM</div>
-                    <div class="schedule-content">
+                <!-- 10:45 AM -->
+                <div class="schedule-grid-row">
+                    <div class="schedule-cell-time">10:45 AM</div>
+                    <div class="schedule-cell-content">
                         <h3>The Power of Routine</h3>
-                        <p>How leading wellness brands build habit ecosystems and deeper engagement.</p>
-                        <div class="pill-row">
-                            <span class="pill">Garmin</span>
-                            <span class="pill">FORM</span>
-                            <span class="pill">Hyperice</span>
-                        </div>
+                        <p>Building habit ecosystems. Insights from leaders at <strong>FORM</strong> and <strong>Hyperice</strong>.</p>
+                    </div>
+                    <div class="schedule-cell-brands">
+                        <img src="img/brands/form.png" class="schedule-brand-logo" alt="FORM">
+                        <img src="img/brands/hyperice.png" class="schedule-brand-logo" alt="Hyperice">
                     </div>
                 </div>
-                <!-- 11:30 AM — Lunch -->
-                <div class="schedule-row highlight">
-                    <div class="schedule-time">11:30 AM</div>
-                    <div class="schedule-content">
-                        <h3>🎤 Recharging Lunch + Wellness Roast</h3>
-                        <p>Midday refuel with a live wellness brand roast.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">Jake DeCicco / Super Coffee</span>
-                            <span class="pill accent">Steve Tidball / Vollebak</span>
-                        </div>
+                <!-- 11:30 AM -->
+                <div class="schedule-grid-row accent">
+                    <div class="schedule-cell-time">11:30 AM</div>
+                    <div class="schedule-cell-content">
+                        <h3>Recharging Lunch + Wellness Roast</h3>
+                        <p>Midday refuel hosted by <strong>Jake DeCicco</strong> (Super Coffee) &amp; <strong>Steve Tidball</strong> (Vollebak).</p>
+                    </div>
+                    <div class="schedule-cell-brands">
+                        <img src="img/brands/super-coffee.png" class="schedule-brand-logo" alt="Super Coffee">
+                        <img src="img/vollebak.png" class="schedule-brand-logo" alt="Vollebak">
                     </div>
                 </div>
                 <!-- 12:45 PM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">12:45 PM</div>
-                    <div class="schedule-content">
+                <div class="schedule-grid-row">
+                    <div class="schedule-cell-time">12:45 PM</div>
+                    <div class="schedule-cell-content">
                         <h3>Building Worlds Through Sports</h3>
-                        <p>Sports storytelling beyond the game — loyalty, culture, and fan-driven worlds.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">Brandon James / Spurs</span>
-                            <span class="pill">KANE</span>
-                        </div>
+                        <p>Sports storytelling and fan culture with the <strong>San Antonio Spurs</strong>.</p>
+                    </div>
+                    <div class="schedule-cell-brands">
+                        <img src="img/brands/san-antonio-spurs.png" class="schedule-brand-logo" alt="Spurs">
                     </div>
                 </div>
-                <!-- 1:15 PM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">1:15 PM</div>
-                    <div class="schedule-content">
+                <!-- 1:30 PM -->
+                <div class="schedule-grid-row accent">
+                    <div class="schedule-cell-time">1:30 PM</div>
+                    <div class="schedule-cell-content">
                         <h3>Wellness at the Core of Community</h3>
-                        <p>Building authentic wellness communities through connection, rituals, and experiences.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">Nicholas Charlier / Vivobarefoot</span>
-                            <span class="pill accent">Salar Shahini / Sweatpals</span>
-                        </div>
+                        <p>Featuring <strong>Nicholas Charlier</strong> (Vivobarefoot) &amp; <strong>Salar Shahini</strong> (Sweatpals).</p>
+                    </div>
+                    <div class="schedule-cell-brands">
+                        <img src="img/vivobarefoot.png" class="schedule-brand-logo" alt="Vivobarefoot">
+                        <img src="img/brands/sweatpals.png" class="schedule-brand-logo" alt="Sweatpals">
                     </div>
                 </div>
-                <!-- 1:45 PM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">1:45 PM</div>
-                    <div class="schedule-content">
+                <!-- 2:15 PM -->
+                <div class="schedule-grid-row">
+                    <div class="schedule-cell-time">2:15 PM</div>
+                    <div class="schedule-cell-content">
                         <h3>The New Rules of CPG</h3>
-                        <p>Turning customers into loyalists across the modern CPG lifecycle.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">Sam Nebel / Goodwipes</span>
-                        </div>
+                        <p>Turning customers into loyalists. Featuring <strong>Sam Nebel</strong> (Co-Founder, Goodwipes).</p>
+                    </div>
+                    <div class="schedule-cell-brands">
+                        <img src="img/brands/goodwipes.png" class="schedule-brand-logo" alt="Goodwipes">
                     </div>
                 </div>
-                <!-- 2:30 PM — Keynote -->
-                <div class="schedule-row highlight" style="background:linear-gradient(90deg,rgba(234,131,118,0.08),rgba(157,193,246,0.04));border-color:rgba(234,131,118,0.15);">
-                    <div class="schedule-time" style="color:#EA8376;">2:30 PM</div>
-                    <div class="schedule-content">
-                        <h3>🔥 KEYNOTE: Founder Mode in Health &amp; Wellness</h3>
-                        <p>Leading with integrity, performance, and long-term vision.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">Greg Lavecchia / Bloom</span>
-                        </div>
+                <!-- 3:00 PM -->
+                <div class="schedule-grid-row accent" style="background:#1F231A;">
+                    <div class="schedule-cell-time" style="color:#9DC1F6;background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.05);">3:00 PM</div>
+                    <div class="schedule-cell-content">
+                        <h3 style="color:#EFEEDF;">🔥 CLOSING KEYNOTE: Founder Mode</h3>
+                        <p style="color:rgba(239,238,223,0.5);">"Founder Mode in Health &amp; Wellness" with <strong>Greg Lavecchia</strong> (CEO, Bloom Nutrition).</p>
                     </div>
-                </div>
-                <!-- 3:30 PM — Social -->
-                <div class="schedule-row highlight" style="background:linear-gradient(90deg,rgba(157,193,246,0.06),rgba(252,214,166,0.04));">
-                    <div class="schedule-time">3:30 PM</div>
-                    <div class="schedule-content">
-                        <h3>🎉 Evening Social + Wellness Party on the Lawn</h3>
-                        <p>Music, light bites, recovery activations, casual play &amp; open networking.</p>
+                    <div class="schedule-cell-brands" style="background:rgba(255,255,255,0.02);">
+                        <img src="img/brands/bloom-nutrition.png" class="schedule-brand-logo" alt="Bloom Nutrition" style="filter:brightness(0) invert(1);">
                     </div>
                 </div>
             </div>
@@ -1968,20 +2028,31 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════════════
-         13. APPLY TO ATTEND
+         13. APPLY TO ATTEND (Embedded Luma)
          ═══════════════════════════════════════════════════════════════════ -->
-    <section class="apply-section" id="apply">
-        <div class="apply-inner">
-            <img src="img/wh-lockup-white-final.png" alt="Wellness House" class="reveal apply-lockup">
-            <h2 class="reveal apply-title">Ready?</h2>
-            <p class="reveal apply-subtitle">
-                Attendance is approval-based. Apply now to secure your spot at the most anticipated wellness gathering during SXSW 2026.
+    <section class="apply-section" id="apply" style="background:#EFEEDF; padding: 120px 24px;">
+        <div class="apply-inner" style="max-width: 800px;">
+            <img src="img/wh-lockup-dark.png" alt="Wellness House" class="reveal apply-lockup" style="filter:none; height:60px; margin-bottom:24px;">
+            <h2 class="reveal apply-title" style="font-size:48px; margin-bottom:16px;">Secure Your Spot</h2>
+            <p class="reveal apply-subtitle" style="margin-bottom:48px;">
+                Attendance is approval-based. Applications are reviewed daily. Secure your spot at the intersection of wellness and culture.
             </p>
-            <p class="reveal apply-date">Friday, March 13, 2026 · Austin, TX · 9 AM – 4 PM</p>
-            <div class="reveal apply-ctas">
-                <a href="https://lu.ma/WellnessHouse" target="_blank" class="btn-dark"><span>Apply to Attend</span></a>
-                <a href="mailto:bill@willpowerhq.com" class="btn-outline-dark" style="border-color:rgba(31,35,26,0.2);color:#1F231A;">Partner With Us</a>
+            
+            <!-- Luma Embed -->
+            <div class="reveal luma-embed-container" style="background:#fff; border-radius:24px; overflow:hidden; box-shadow: 0 40px 100px rgba(31,35,26,0.08); border: 1px solid rgba(31,35,26,0.05);">
+                <iframe
+                    src="https://lu.ma/embed/checkout?event=evt-Y086xos9Xly2Tid&type=ticket"
+                    width="100%"
+                    height="600"
+                    frameborder="0"
+                    allowfullscreen=""
+                    aria-hidden="false"
+                    tabindex="0"
+                    style="border: none;"
+                ></iframe>
             </div>
+            
+            <p class="reveal apply-date" style="margin-top:40px;">Friday, March 13, 2026 · Austin, TX · 9 AM – 4 PM</p>
         </div>
     </section>
 
@@ -2014,21 +2085,22 @@
          SCRIPTS
          ═══════════════════════════════════════════════════════════════════ -->
     <script>
-        // ── FAQ Toggle ──
-        function toggleFaq(el) {
-            const answer = el.nextElementSibling;
-            const icon = el.querySelector('.faq-icon');
-            document.querySelectorAll('.faq-answer.open').forEach(a => {
-                if (a !== answer) {
-                    a.classList.remove('open');
-                    a.previousElementSibling.querySelector('.faq-icon').classList.remove('open');
-                }
-            });
-            answer.classList.toggle('open');
-            icon.classList.toggle('open');
-        }
+        // ... (existing toggleFaq function if present) ...
 
-        // ── Scroll Animations (IntersectionObserver) ──
+        const nav = document.getElementById('mainNav');
+        const navLogo = document.getElementById('navLogo');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+                nav.classList.remove('hero-mode');
+                navLogo.src = 'img/willpower-dark.png';
+            } else {
+                nav.classList.remove('scrolled');
+                nav.classList.add('hero-mode');
+                navLogo.src = 'img/willpower-dark.png'; // Handled by CSS filter brightness(0) invert(1)
+            }
+        });
         const observerOptions = { threshold: 0.08, rootMargin: '0px 0px -40px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
