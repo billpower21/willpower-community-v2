@@ -28,7 +28,8 @@
         html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         body {
             font-family: 'Montserrat', sans-serif;
-            background: #EFEEDF;
+            background: linear-gradient(180deg, #F2F0E4 0%, #EFEEDF 20%, #EBE8DD 50%, #F0EDE2 75%, #EDE9DE 100%);
+            background-attachment: fixed;
             color: #1F231A;
             overflow-x: hidden;
             line-height: 1.6;
@@ -98,8 +99,8 @@
             top: 0; left: 0; right: 0;
             z-index: 1001;
             height: 50px;
-            background: #EFEEDF;
-            border-bottom: 1px solid rgba(31, 35, 26, 0.08);
+            background: #1F231A;
+            border-bottom: none;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -111,7 +112,7 @@
             font-weight: 700;
             letter-spacing: 0.22em;
             text-transform: uppercase;
-            color: rgba(31, 35, 26, 0.5);
+            color: rgba(239, 238, 223, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -658,7 +659,7 @@
             display: none; /* Removed decorative blobs */
         }
         .section-padding {
-            padding: 140px 40px;
+            padding: 100px 40px;
         }
         .section-inner {
             max-width: 1280px;
@@ -877,11 +878,11 @@
             gap: 56px;
         }
         .logo-wall img {
-            height: 30px;
+            height: 34px;
             width: auto;
-            max-width: 120px;
-            filter: grayscale(100%);
-            opacity: 0.35;
+            max-width: 140px;
+            filter: grayscale(30%);
+            opacity: 0.75;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .logo-wall img:hover {
@@ -1307,7 +1308,7 @@
             border-radius: 24px 24px 0 0;
         }
         .schedule-row.featured-comedy::after {
-            content: '🎤';
+            content: '';
             position: absolute;
             top: 20px; right: 28px;
             font-size: 48px;
@@ -1970,7 +1971,7 @@
            RESPONSIVE
            ══════════════════════════════════════════════════════════════════ */
         @media (max-width: 768px) {
-            .section-padding { padding: 80px 20px; }
+            .section-padding { padding: 64px 20px; }
             .section-title { font-size: 36px !important; line-height: 1.15 !important; letter-spacing: -0.02em !important; }
             .section-subtitle { font-size: 15px; line-height: 1.65; }
             .section-label { font-size: 10px; letter-spacing: 0.18em; }
@@ -1984,7 +1985,7 @@
             .apply-lockup { height: 60px; }
         }
         @media (max-width: 480px) {
-            .section-padding { padding: 64px 16px; }
+            .section-padding { padding: 48px 16px; }
             .section-title { font-size: 28px !important; }
             .section-subtitle { font-size: 14px; }
             .logo-wall { gap: 16px 20px; }
@@ -2434,7 +2435,7 @@
                     <img loading="lazy" decoding="async" width="800" height="800" src="img/speakers/greg-lavecchia.jpg" alt="Greg Lavecchia">
                 </div>
                 <div class="keynote-info">
-                    <div class="keynote-badge">🔥 Closing Keynote</div>
+                    <div class="keynote-badge">Closing Keynote</div>
                     <div class="keynote-name">Greg Lavecchia</div>
                     <div class="keynote-role">Co-Founder &amp; CEO</div>
                     <div class="keynote-company">Bloom Nutrition</div>
@@ -2742,7 +2743,7 @@
                 <div class="schedule-row featured-run">
                     <div class="schedule-time" style="color: #9DC1F6;">9:00 AM</div>
                     <div class="schedule-content">
-                        <div class="featured-badge">🏃 Movement</div>
+                        <div class="featured-badge">Movement</div>
                         <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 10px; line-height: 1.15; letter-spacing: -0.01em;">Run, Rox &amp; Recovery</h3>
                         <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); margin-bottom: 22px; line-height: 1.65; font-weight: 500;">Community run, HYROX-style workout &amp; recovery with coffee. Led by Eric Hinman, powered by HYROX &amp; LSKD. Recovery by San Antonio Spurs &amp; Kane Footwear.</p>
                         <div class="pill-row" style="gap: 12px;">
@@ -2794,7 +2795,7 @@
                 <div class="schedule-row featured-comedy">
                     <div class="schedule-time" style="color: #FFBFCC;">11:30 AM</div>
                     <div class="schedule-content">
-                        <div class="featured-badge">🎤 Experience</div>
+                        <div class="featured-badge">Experience</div>
                         <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 10px; line-height: 1.15; letter-spacing: -0.01em;">CPG Comedy Roast</h3>
                         <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); margin-bottom: 22px; line-height: 1.65; font-weight: 500;">Wellness founders pitch their products and get roasted by 4 comedians. Midday refuel with a live wellness brand roast you won't forget.</p>
                         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
@@ -2802,7 +2803,7 @@
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Jake DeCicco, Super Coffee</span>
                             <img loading="lazy" decoding="async" width="69" height="36" src="img/speakers/steve-tidball.jpg" class="speaker-thumb" alt="Steve Tidball" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,191,204,0.5); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-left: 8px;">
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Steve Tidball, Vollebak</span>
-                            <span class="comedians-callout">🎭 + 4 Comedians</span>
+                            <span class="comedians-callout">+ 4 Comedians</span>
                         </div>
                     </div>
                 </div>
@@ -2862,7 +2863,7 @@
                 <div class="schedule-row" style="border-left: 4px solid #EA8376;">
                     <div class="schedule-time" style="color: #EA8376;">2:30 PM</div>
                     <div class="schedule-content">
-                        <div style="display:inline-block; padding:5px 12px; background:rgba(157,193,246,0.15); border-radius:999px; font-size:11px; font-weight:700; color:#EA8376; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">🔥 Keynote</div>
+                        <div style="display:inline-block; padding:5px 12px; background:rgba(157,193,246,0.15); border-radius:999px; font-size:11px; font-weight:700; color:#EA8376; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">Keynote</div>
                         <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 10px; line-height: 1.15; letter-spacing: -0.01em;">Founder Mode in Health &amp; Wellness</h3>
                         <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); margin-bottom: 22px; line-height: 1.65; font-weight: 500;">Leading with integrity, performance, and long-term vision. An intimate conversation with one of wellness's most successful founders.</p>
                         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
@@ -2878,7 +2879,7 @@
                 <div class="schedule-row" style="border-left: 4px solid #FCD6A6;">
                     <div class="schedule-time" style="color: #FCA65C; font-size: 19px; font-weight: 900;">3:30 PM</div>
                     <div class="schedule-content">
-                        <div style="display:inline-block; padding:5px 12px; background:rgba(157,193,246,0.15); border-radius:999px; font-size:11px; font-weight:700; color:#FCA65C; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">🎉 Social</div>
+                        <div style="display:inline-block; padding:5px 12px; background:rgba(157,193,246,0.15); border-radius:999px; font-size:11px; font-weight:700; color:#FCA65C; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">Social</div>
                         <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; margin-bottom: 14px; line-height: 1.15; letter-spacing: -0.01em;">Evening Social + Wellness Party on the Lawn</h3>
                         <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); line-height: 1.65; font-weight: 500;">Music, light bites, recovery activations, casual play &amp; open networking. Close the day with connections that matter.</p>
                     </div>
