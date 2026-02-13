@@ -5,2134 +5,349 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wellness House 2026 | SXSW Austin — By Willpower</title>
     <meta name="description" content="A one-day, invite-led wellness experience at the intersection of performance, consumer brands, and culture. March 13, 2026 — Austin, TX during SXSW.">
-    <meta property="og:title" content="Wellness House 2026 | SXSW Austin">
-    <meta property="og:description" content="A one-day, invite-led wellness summit at the intersection of performance, consumer brands, and culture. March 13, 2026.">
-    <meta property="og:type" content="website">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Bricolage+Grotesque:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        /* ══════════════════════════════════════════════════════════════════
-           RESET & BASE
-           ══════════════════════════════════════════════════════════════════ */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        :root {
+            --pink: #FFBFCC;
+            --blue: #9DC1F6;
+            --peach: #FCD6A6;
+            --cream: #EFEEDF;
+            --dark: #1F231A;
+            --brand-gradient: linear-gradient(135deg, var(--pink) 0%, var(--blue) 50%, var(--peach) 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
         body {
             font-family: 'Montserrat', sans-serif;
-            background: #EFEEDF;
-            color: #1F231A;
+            background: var(--cream);
+            color: var(--dark);
             overflow-x: hidden;
             line-height: 1.6;
         }
-        img { max-width: 100%; height: auto; display: block; }
-        a { text-decoration: none; color: inherit; }
 
-        /* ── Font families ── */
-        .font-unbounded { font-family: 'Unbounded', sans-serif; }
-        .font-bricolage { font-family: 'Bricolage Grotesque', sans-serif; }
-        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        h1 { font-family: 'Unbounded', sans-serif; }
+        h2 { font-family: 'Bricolage Grotesque', sans-serif; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; }
 
-        /* ══════════════════════════════════════════════════════════════════
-           CUSTOM SCROLLBAR
-           ══════════════════════════════════════════════════════════════════ */
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #EFEEDF; }
-        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #9DC1F6, #FFBFCC, #FCD6A6); border-radius: 10px; border: 2px solid #EFEEDF; }
-        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #7daee8, #f0a0b5, #f0c48a); }
-
-        /* ══════════════════════════════════════════════════════════════════
-           GRADIENT TEXT
-           ══════════════════════════════════════════════════════════════════ */
-        .gradient-text {
-            background: linear-gradient(135deg, #9DC1F6 0%, #FFBFCC 45%, #FCD6A6 80%, #EA8376 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .gradient-text-dark {
-            background: linear-gradient(135deg, #9DC1F6 0%, #FFBFCC 50%, #EA8376 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           NAVIGATION
-           ══════════════════════════════════════════════════════════════════ */
-        .main-nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .main-nav.scrolled {
-            padding: 12px 40px;
-            background: rgba(239, 238, 223, 0.85);
-            backdrop-filter: blur(24px) saturate(180%);
-            -webkit-backdrop-filter: blur(24px) saturate(180%);
-            border-bottom: 1px solid rgba(31, 35, 26, 0.06);
-            box-shadow: 0 1px 40px rgba(0,0,0,0.04);
-        }
-        .main-nav.scrolled .nav-logo { filter: none; opacity: 1; }
-        .main-nav.scrolled .nav-links a { color: #1F231A; opacity: 0.5; }
-        .main-nav.scrolled .nav-links a:hover { opacity: 1; }
-        .main-nav.scrolled .nav-cta { background: #1F231A; color: #EFEEDF; }
-        .main-nav.scrolled .nav-cta:hover { background: #EA8376; }
-        .main-nav.hero-mode .nav-logo { filter: brightness(0) invert(1); opacity: 0.85; }
-        .main-nav.hero-mode .nav-links a { color: #fff; opacity: 0.5; }
-        .main-nav.hero-mode .nav-links a:hover { opacity: 1; }
-        .main-nav.hero-mode .nav-cta { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); }
-        .main-nav.hero-mode .nav-cta:hover { background: rgba(255,255,255,0.25); }
-
-        .nav-logo { height: 28px; transition: all 0.4s ease; }
-        .nav-links { display: flex; gap: 36px; align-items: center; }
-        .nav-links a {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-        }
-        .nav-cta {
-            display: inline-flex; align-items: center; justify-content: center;
-            padding: 12px 32px;
-            border-radius: 999px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .nav-hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 8px;
-        }
-        .nav-hamburger span {
-            width: 22px; height: 2px;
-            background: #1F231A;
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
-        .main-nav.hero-mode .nav-hamburger span { background: #fff; }
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            z-index: 999;
-            background: rgba(239, 238, 223, 0.98);
-            backdrop-filter: blur(30px);
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 32px;
-        }
-        .mobile-menu.open { display: flex; }
-        .mobile-menu a {
-            font-family: 'Unbounded', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #1F231A;
-            opacity: 0.6;
-            transition: opacity 0.3s;
-        }
-        .mobile-menu a:hover { opacity: 1; }
-        .mobile-close {
-            position: absolute;
-            top: 24px; right: 40px;
-            font-size: 32px;
-            cursor: pointer;
-            color: #1F231A;
-            opacity: 0.4;
-        }
-
-        @media (max-width: 900px) {
-            .nav-links { display: none; }
-            .nav-hamburger { display: flex; }
-            .main-nav { padding: 16px 24px; }
-            .main-nav.scrolled { padding: 12px 24px; }
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           HERO
-           ══════════════════════════════════════════════════════════════════ */
+        /* HERO SECTION */
         .hero {
+            height: 100vh;
+            background: var(--brand-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
             overflow: hidden;
-            background: #1F231A;
         }
-        .hero-video-wrap {
-            position: absolute; inset: 0; z-index: 0; overflow: hidden;
-        }
-        .hero-video-wrap iframe {
-            position: absolute;
-            top: 50%; left: 50%;
-            width: 177.78vh; height: 100vh;
-            min-width: 100vw; min-height: 56.25vw;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-        }
-        .hero-overlay {
-            position: absolute; inset: 0; z-index: 1;
-            background:
-                linear-gradient(180deg, rgba(31,35,26,0.75) 0%, rgba(31,35,26,0.35) 40%, rgba(31,35,26,0.9) 100%);
-        }
-        .hero-content {
-            position: relative; z-index: 10;
-            max-width: 900px;
-            padding: 0 24px;
-        }
-        .hero-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 28px;
-            border-radius: 999px;
-            background: rgba(255,255,255,0.07);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.1);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.6);
-            margin-bottom: 48px;
-        }
-        .hero-pill .dot { width: 4px; height: 4px; border-radius: 50%; background: #9DC1F6; opacity: 0.6; }
-        .hero-lockup {
-            max-height: 200px;
-            margin: 0 auto 40px;
-            filter: drop-shadow(0 4px 60px rgba(0,0,0,0.3));
-        }
-        .hero-tagline {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
-            font-weight: 300;
-            color: rgba(255,255,255,0.5);
-            max-width: 560px;
-            margin: 0 auto 48px;
-            line-height: 1.7;
-        }
-        .hero-ctas {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .hero-scroll {
-            position: absolute;
-            bottom: 36px;
-            left: 50%;
-            transform: translateX(-50%);
+        .hero-logo {
+            width: 80%;
+            max-width: 600px;
             z-index: 10;
-            animation: float 2.5s ease-in-out infinite;
+            filter: brightness(0) invert(1);
+            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
-        @keyframes float {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-8px); }
-        }
+        .hero:hover .hero-logo { transform: scale(1.05); }
 
-        @media (max-width: 768px) {
-            .hero-lockup { max-height: 120px; }
-            .hero-tagline { font-size: 15px; }
-            .hero-pill { font-size: 9px; padding: 8px 18px; gap: 8px; flex-wrap: wrap; justify-content: center; }
-            .hero-video-wrap iframe { width: 300vw; }
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           BUTTONS
-           ══════════════════════════════════════════════════════════════════ */
-        .btn-primary {
-            display: inline-flex; align-items: center; justify-content: center;
-            padding: 18px 52px;
-            border-radius: 999px;
-            background: #fff;
-            color: #1F231A;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        /* SPEAKERS SECTION */
+        .speakers {
+            padding: 160px 0;
+            background: var(--brand-gradient);
             position: relative;
             overflow: hidden;
-            border: none; cursor: pointer;
+            min-height: 800px;
         }
-        .btn-primary::after {
-            content: '';
+        .speakers-title {
+            text-align: center;
+            font-size: 5rem;
+            color: white;
+            margin-bottom: 100px;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+        .floating-photos {
+            position: relative;
+            width: 100%;
+            height: 600px;
+        }
+        .floating-photo {
             position: absolute;
-            inset: 0;
-            border-radius: 999px;
-            background: linear-gradient(135deg, #9DC1F6, #FFBFCC, #FCD6A6);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 16px 48px rgba(157,193,246,0.25), 0 4px 16px rgba(0,0,0,0.1);
-        }
-        .btn-primary:hover::after { opacity: 1; }
-        .btn-primary span { position: relative; z-index: 1; }
-
-        .btn-outline-light {
-            display: inline-flex; align-items: center; justify-content: center;
-            padding: 16px 44px;
-            border-radius: 999px;
-            border: 2px solid rgba(255,255,255,0.2);
-            color: rgba(255,255,255,0.7);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(8px);
-            background: rgba(255,255,255,0.03);
-            cursor: pointer;
-        }
-        .btn-outline-light:hover {
-            border-color: rgba(255,255,255,0.5);
-            color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(255,255,255,0.08);
-        }
-
-        .btn-dark {
-            display: inline-flex; align-items: center; justify-content: center;
-            padding: 18px 52px;
-            border-radius: 999px;
-            background: #1F231A;
-            color: #EFEEDF;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            border: none;
-        }
-        .btn-dark:hover {
-            background: #EA8376;
-            color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 16px 48px rgba(234,131,118,0.25);
-        }
-
-        .btn-outline-dark {
-            display: inline-flex; align-items: center; justify-content: center;
-            padding: 16px 44px;
-            border-radius: 999px;
-            border: 2px solid rgba(31, 35, 26, 0.15);
-            color: #1F231A;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            background: transparent;
-            cursor: pointer;
-        }
-        .btn-outline-dark:hover {
-            border-color: #EA8376;
-            color: #EA8376;
-            transform: translateY(-2px);
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           MARQUEE
-           ══════════════════════════════════════════════════════════════════ */
-        .marquee-section {
-            background: #1F231A;
-            padding: 20px 0;
+            border-radius: 20px;
             overflow: hidden;
-            position: relative;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+            transition: transform 0.5s ease, z-index 0s;
+            cursor: pointer;
         }
-        .marquee-track {
+        .floating-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .floating-photo:hover { transform: scale(1.1) rotate(3deg); z-index: 50 !important; }
+
+        /* WHAT IS WELLNESS HOUSE */
+        .experience {
+            padding: 120px 0;
+            background: white;
+        }
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 40px;
+        }
+        .exp-card {
+            background: #f8f8f8;
+            padding: 60px;
+            border-radius: 40px;
+            transition: all 0.4s ease;
+        }
+        .exp-card:hover { background: #f0f0f0; transform: translateY(-10px); }
+        .exp-num { font-family: 'Unbounded'; font-size: 4rem; color: var(--blue); margin-bottom: 20px; font-weight: 900; }
+        .exp-title { font-size: 2.5rem; margin-bottom: 20px; line-height: 1.1; }
+        .exp-body { font-size: 1.1rem; color: #555; }
+        
+        .grid-large { grid-column: span 8; }
+        .grid-small { grid-column: span 4; }
+
+        /* PROGRAMMING (WHATS HAPPENING) */
+        .programming {
+            padding: 120px 0;
+            background: var(--cream);
+        }
+        .programming h2 {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 80px;
+            font-weight: 800;
+        }
+        .brand-pills {
             display: flex;
-            width: max-content;
-            animation: marquee 40s linear infinite;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
-        .marquee-track:hover { animation-play-state: paused; }
-        .marquee-item {
+        .brand-pill {
+            background: white;
+            padding: 12px 28px 12px 12px;
+            border-radius: 999px;
             display: flex;
             align-items: center;
-            gap: 40px;
-            padding: 0 40px;
+            gap: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .brand-pill:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .brand-pill img { width: 40px; height: 40px; object-fit: contain; }
+        .brand-pill span { font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* LOGO WALL PARALLAX */
+        .logo-wall-container {
+            padding: 80px 0;
+            background: white;
+            overflow: hidden;
+        }
+        .logo-row {
+            display: flex;
+            gap: 60px;
+            margin-bottom: 40px;
             white-space: nowrap;
-        }
-        .marquee-item span {
-            font-family: 'Unbounded', sans-serif;
-            font-size: 14px;
-            font-weight: 700;
-            color: rgba(239, 238, 223, 0.18);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            transition: color 0.3s;
-        }
-        .marquee-item span:hover { color: rgba(239, 238, 223, 0.5); }
-        .marquee-dot {
-            width: 5px; height: 5px;
-            border-radius: 50%;
-            background: rgba(157, 193, 246, 0.3);
-            flex-shrink: 0;
-        }
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           STATS BAR
-           ══════════════════════════════════════════════════════════════════ */
-        .stats-bar {
-            background: linear-gradient(135deg, #9DC1F6 0%, #FFBFCC 40%, #FCD6A6 70%, #EA8376 100%);
-            padding: 48px 24px;
-            position: relative;
-            overflow: hidden;
-        }
-        .stats-bar::before {
-            content: '';
-            position: absolute; inset: 0;
-            background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 100%);
-        }
-        .stats-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            position: relative;
-            z-index: 1;
-        }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-number {
-            font-family: 'Unbounded', sans-serif;
-            font-size: 48px;
-            font-weight: 900;
-            color: #1F231A;
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-        .stat-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            color: rgba(31, 35, 26, 0.5);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-        }
-        @media (max-width: 768px) {
-            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-            .stat-number { font-size: 36px; }
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           SECTION BASE & BLOBS
-           ══════════════════════════════════════════════════════════════════ */
-        .section-cream {
-            background: #EFEEDF;
-            position: relative;
-            overflow: hidden;
-        }
-        .section-dark {
-            background: #1F231A;
-            color: #EFEEDF;
-            position: relative;
-            overflow: hidden;
-        }
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(120px);
-            pointer-events: none;
-            opacity: 0.35;
             will-change: transform;
         }
-        .section-padding {
-            padding: 120px 24px;
-        }
-        .section-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
+        .logo-row img { height: 40px; filter: grayscale(1); opacity: 0.3; transition: 0.3s; }
+        .logo-row img:hover { filter: grayscale(0); opacity: 1; transform: scale(1.1); }
 
-        /* ══════════════════════════════════════════════════════════════════
-           SECTION HEADERS
-           ══════════════════════════════════════════════════════════════════ */
-        .section-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.35em;
-            margin-bottom: 16px;
-        }
-        .section-title {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-        .section-subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 1.7;
-            max-width: 640px;
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           WHAT IS WELLNESS HOUSE (Dark Section)
-           ══════════════════════════════════════════════════════════════════ */
-        .pillar-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 64px;
-        }
-        .pillar-card {
-            background: rgba(239, 238, 223, 0.03);
-            border: 1px solid rgba(239, 238, 223, 0.06);
-            border-radius: 20px;
-            padding: 36px 28px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .pillar-card:hover {
-            background: rgba(239, 238, 223, 0.06);
-            border-color: rgba(157, 193, 246, 0.15);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-        }
-        .pillar-icon {
-            width: 56px; height: 56px;
-            border-radius: 50%;
-            border: 1.5px solid rgba(157, 193, 246, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .pillar-icon svg {
-            width: 24px; height: 24px;
-            stroke: #9DC1F6;
-            stroke-width: 1.5;
-            fill: none;
-        }
-        .pillar-card h3 {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            color: #EFEEDF;
-            margin-bottom: 8px;
-        }
-        .pillar-card p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 400;
-            color: rgba(239, 238, 223, 0.35);
-            line-height: 1.6;
-        }
-        .chip-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-        .chip {
-            display: inline-flex;
-            padding: 10px 24px;
-            border-radius: 999px;
-            background: rgba(157, 193, 246, 0.06);
-            border: 1px solid rgba(157, 193, 246, 0.12);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 600;
-            color: rgba(157, 193, 246, 0.65);
-            transition: all 0.3s ease;
-        }
-        .chip:hover {
-            background: rgba(157, 193, 246, 0.12);
-            border-color: rgba(157, 193, 246, 0.3);
-            color: #9DC1F6;
-        }
-
-        @media (max-width: 900px) {
-            .pillar-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .pillar-grid { grid-template-columns: 1fr; }
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           BRAND LOGOS
-           ══════════════════════════════════════════════════════════════════ */
-        .logo-wall {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 40px 48px;
-        }
-        .logo-wall img {
-            height: 30px;
-            width: auto;
-            max-width: 120px;
-            filter: grayscale(100%);
-            opacity: 0.35;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .logo-wall img:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-            transform: scale(1.1);
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           KEYNOTE SPOTLIGHT
-           ══════════════════════════════════════════════════════════════════ */
-        .keynote-card {
-            display: flex;
-            background: rgba(31, 35, 26, 0.03);
-            border: 1px solid rgba(31, 35, 26, 0.06);
-            border-radius: 28px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-        }
-        .keynote-card:hover {
-            box-shadow: 0 24px 80px rgba(0,0,0,0.08);
-            transform: translateY(-2px);
-        }
-        .keynote-photo {
-            flex: 0 0 42%;
-            position: relative;
-            overflow: hidden;
-        }
-        .keynote-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .keynote-card:hover .keynote-photo img {
-            transform: scale(1.04);
-        }
-        .keynote-info {
-            flex: 1;
-            padding: 56px 48px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .keynote-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 20px;
-            border-radius: 999px;
-            background: rgba(234, 131, 118, 0.08);
-            border: 1px solid rgba(234, 131, 118, 0.15);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: #EA8376;
-            margin-bottom: 24px;
-            align-self: flex-start;
-        }
-        .keynote-name {
-            font-family: 'Unbounded', sans-serif;
-            font-size: 40px;
-            font-weight: 900;
-            color: #1F231A;
-            line-height: 1.1;
-            margin-bottom: 8px;
-        }
-        .keynote-role {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            color: rgba(31, 35, 26, 0.5);
-            margin-bottom: 4px;
-        }
-        .keynote-company {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            color: #EA8376;
-            margin-bottom: 24px;
-        }
-        .keynote-desc {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
-            font-weight: 400;
-            color: rgba(31, 35, 26, 0.45);
-            line-height: 1.7;
-        }
+        /* UTILS */
+        .parallax-target { transition: transform 0.1s ease-out; }
+        
         @media (max-width: 768px) {
-            .keynote-card { flex-direction: column; }
-            .keynote-photo { flex: none; height: 300px; }
-            .keynote-info { padding: 32px 24px; }
-            .keynote-name { font-size: 28px; }
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           SPEAKER CARDS
-           ══════════════════════════════════════════════════════════════════ */
-        .speakers-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-        .speaker-card {
-            position: relative;
-            border-radius: 24px;
-            overflow: hidden;
-            background: #1F231A;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: default;
-        }
-        .speaker-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 24px 64px rgba(31, 35, 26, 0.2);
-        }
-        .speaker-img-wrap {
-            position: relative;
-            overflow: hidden;
-            aspect-ratio: 3/4;
-        }
-        .speaker-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(100%);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .speaker-card:hover .speaker-img-wrap img {
-            filter: grayscale(0%);
-            transform: scale(1.08);
-        }
-        .speaker-img-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(0deg, rgba(31,35,26,0.9) 0%, rgba(31,35,26,0.1) 50%, transparent 100%);
-        }
-        .speaker-info {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            padding: 24px 20px;
-            z-index: 2;
-        }
-        .speaker-keynote-tag {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 6px;
-            background: #EA8376;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-        .speaker-name {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 17px;
-            font-weight: 700;
-            color: #EFEEDF;
-            margin-bottom: 2px;
-        }
-        .speaker-role {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            font-weight: 500;
-            color: rgba(239, 238, 223, 0.4);
-        }
-        .speaker-company {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            color: #9DC1F6;
-        }
-
-        @media (max-width: 900px) {
-            .speakers-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           CINEMATIC VIDEO
-           ══════════════════════════════════════════════════════════════════ */
-        .video-section {
-            position: relative;
-            overflow: hidden;
-        }
-        .video-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            border-radius: 28px;
-            overflow: hidden;
-            position: relative;
-            aspect-ratio: 16/9;
-            box-shadow: 0 32px 80px rgba(31, 35, 26, 0.12);
-            background: #1F231A;
-        }
-        .video-container iframe {
-            position: absolute; inset: 0;
-            width: 100%; height: 100%;
-            border: 0;
-        }
-        .video-play-overlay {
-            position: absolute; inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(31, 35, 26, 0.4);
-            z-index: 5;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-        .video-play-overlay:hover { background: rgba(31, 35, 26, 0.2); }
-        .video-play-overlay:hover .play-btn { transform: scale(1.1); }
-        .play-btn {
-            width: 80px; height: 80px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.95);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 40px rgba(0,0,0,0.2);
-        }
-        .play-btn svg { margin-left: 4px; }
-
-        /* ══════════════════════════════════════════════════════════════════
-           SCHEDULE (Dark Section)
-           ══════════════════════════════════════════════════════════════════ */
-        .schedule-timeline {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .schedule-row {
-            display: flex;
-            gap: 32px;
-            padding: 28px 24px;
-            border-bottom: 1px solid rgba(239, 238, 223, 0.05);
-            transition: background 0.3s ease;
-            border-radius: 16px;
-            margin-bottom: 4px;
-        }
-        .schedule-row:hover {
-            background: rgba(239, 238, 223, 0.03);
-        }
-        .schedule-row.highlight {
-            background: linear-gradient(90deg, rgba(234,131,118,0.06) 0%, rgba(157,193,246,0.04) 100%);
-            border: 1px solid rgba(234,131,118,0.1);
-            border-bottom: 1px solid rgba(234,131,118,0.1);
-        }
-        .schedule-time {
-            font-family: 'Unbounded', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            color: #9DC1F6;
-            min-width: 100px;
-            flex-shrink: 0;
-            padding-top: 2px;
-        }
-        .schedule-row.highlight .schedule-time { color: #EA8376; }
-        .schedule-content h3 {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            color: #EFEEDF;
-            margin-bottom: 6px;
-        }
-        .schedule-content p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 400;
-            color: rgba(239, 238, 223, 0.3);
-            margin-bottom: 12px;
-        }
-        .pill-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-        .pill {
-            display: inline-flex;
-            padding: 5px 14px;
-            border-radius: 999px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            background: rgba(239, 238, 223, 0.04);
-            border: 1px solid rgba(239, 238, 223, 0.07);
-            color: rgba(239, 238, 223, 0.4);
-            transition: all 0.3s;
-        }
-        .pill:hover { border-color: rgba(157,193,246,0.3); color: #9DC1F6; }
-        .pill.accent {
-            background: rgba(234,131,118,0.1);
-            border-color: rgba(234,131,118,0.2);
-            color: #EA8376;
-        }
-        .ongoing-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            margin-top: 64px;
-        }
-        .ongoing-card {
-            text-align: center;
-            padding: 28px 16px;
-            border-radius: 20px;
-            background: rgba(239, 238, 223, 0.02);
-            border: 1px solid rgba(239, 238, 223, 0.04);
-            transition: all 0.3s;
-        }
-        .ongoing-card:hover { border-color: rgba(239, 238, 223, 0.08); background: rgba(239, 238, 223, 0.04); }
-        .ongoing-card svg {
-            width: 32px; height: 32px;
-            stroke: #9DC1F6;
-            stroke-width: 1.5;
-            fill: none;
-            margin: 0 auto 12px;
-        }
-        .ongoing-card p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 600;
-            color: rgba(239, 238, 223, 0.35);
-        }
-        @media (max-width: 768px) {
-            .schedule-row { flex-direction: column; gap: 8px; }
-            .ongoing-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           SPONSORS
-           ══════════════════════════════════════════════════════════════════ */
-        .sponsor-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 56px;
-        }
-        .sponsor-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-            transition: all 0.4s ease;
-        }
-        .sponsor-item:hover { transform: translateY(-4px); }
-        .sponsor-item img {
-            height: 52px;
-            width: auto;
-            filter: grayscale(100%);
-            opacity: 0.4;
-            transition: all 0.4s ease;
-        }
-        .sponsor-item:hover img {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-        .sponsor-item span {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: rgba(31, 35, 26, 0.15);
-            transition: color 0.3s;
-        }
-        .sponsor-item:hover span { color: rgba(31, 35, 26, 0.5); }
-
-        /* ══════════════════════════════════════════════════════════════════
-           FAQ
-           ══════════════════════════════════════════════════════════════════ */
-        .faq-list { max-width: 720px; margin: 0 auto; }
-        .faq-item {
-            border-bottom: 1px solid rgba(31, 35, 26, 0.06);
-        }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-toggle {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            padding: 24px 0;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .faq-toggle:hover h3 { color: #EA8376; }
-        .faq-toggle h3 {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            color: #1F231A;
-            transition: color 0.3s;
-        }
-        .faq-icon {
-            width: 32px; height: 32px;
-            border-radius: 50%;
-            background: rgba(31, 35, 26, 0.04);
-            border: 1px solid rgba(31, 35, 26, 0.08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            font-size: 18px;
-            color: #1F231A;
-        }
-        .faq-icon.open {
-            transform: rotate(45deg);
-            background: rgba(234, 131, 118, 0.08);
-            border-color: rgba(234, 131, 118, 0.15);
-            color: #EA8376;
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s;
-        }
-        .faq-answer.open { max-height: 300px; }
-        .faq-answer p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            font-weight: 400;
-            color: rgba(31, 35, 26, 0.45);
-            line-height: 1.7;
-            padding-bottom: 24px;
-        }
-        .faq-answer a { color: #9DC1F6; text-decoration: underline; }
-
-        /* ══════════════════════════════════════════════════════════════════
-           APPLY / CTA SECTION
-           ══════════════════════════════════════════════════════════════════ */
-        .apply-section {
-            background: linear-gradient(135deg, #9DC1F6 0%, #FFBFCC 45%, #FCD6A6 100%);
-            position: relative;
-            overflow: hidden;
-            padding: 120px 24px;
-            text-align: center;
-        }
-        .apply-section::before {
-            content: '';
-            position: absolute; inset: 0;
-            background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(255,255,255,0.05) 100%);
-        }
-        .apply-inner {
-            max-width: 640px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-        .apply-lockup {
-            height: 80px;
-            margin: 0 auto 40px;
-            filter: drop-shadow(0 2px 20px rgba(0,0,0,0.1));
-        }
-        .apply-title {
-            font-family: 'Unbounded', sans-serif;
-            font-size: 48px;
-            font-weight: 900;
-            color: #1F231A;
-            margin-bottom: 16px;
-        }
-        .apply-subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            font-weight: 400;
-            color: rgba(31, 35, 26, 0.55);
-            line-height: 1.7;
-            margin-bottom: 8px;
-        }
-        .apply-date {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            color: rgba(31, 35, 26, 0.3);
-            margin-bottom: 40px;
-        }
-        .apply-ctas {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           FOOTER
-           ══════════════════════════════════════════════════════════════════ */
-        .site-footer {
-            background: #1F231A;
-            padding: 64px 24px;
-            text-align: center;
-        }
-        .footer-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.35em;
-            color: rgba(239, 238, 223, 0.2);
-            margin-bottom: 24px;
-        }
-        .footer-socials {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 40px;
-        }
-        .footer-social {
-            width: 44px; height: 44px;
-            border-radius: 50%;
-            background: rgba(239, 238, 223, 0.04);
-            border: 1px solid rgba(239, 238, 223, 0.08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(239, 238, 223, 0.3);
-            transition: all 0.3s ease;
-        }
-        .footer-social:hover {
-            background: rgba(239, 238, 223, 0.08);
-            border-color: rgba(239, 238, 223, 0.15);
-            color: #EFEEDF;
-        }
-        .footer-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent 0%, rgba(239, 238, 223, 0.06) 50%, transparent 100%);
-            margin-bottom: 32px;
-        }
-        .footer-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 20px;
-        }
-        .footer-logos img { height: 20px; opacity: 0.25; }
-        .footer-logos span { font-size: 10px; color: rgba(239, 238, 223, 0.08); }
-        .footer-copy {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: rgba(239, 238, 223, 0.12);
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           ANIMATIONS
-           ══════════════════════════════════════════════════════════════════ */
-        .reveal {
-            opacity: 0;
-            transform: translateY(48px);
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.96);
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .reveal-scale.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-        .delay-1 { transition-delay: 0.05s; }
-        .delay-2 { transition-delay: 0.1s; }
-        .delay-3 { transition-delay: 0.15s; }
-        .delay-4 { transition-delay: 0.2s; }
-        .delay-5 { transition-delay: 0.25s; }
-        .delay-6 { transition-delay: 0.3s; }
-        .delay-7 { transition-delay: 0.35s; }
-        .delay-8 { transition-delay: 0.4s; }
-
-        /* ══════════════════════════════════════════════════════════════════
-           SECTION TRANSITIONS
-           ══════════════════════════════════════════════════════════════════ */
-        .section-cream::before {
-            content: '';
-            position: absolute;
-            top: -60px; left: 0; right: 0;
-            height: 60px;
-            background: linear-gradient(180deg, transparent 0%, #EFEEDF 100%);
-            z-index: 1;
-            pointer-events: none;
-        }
-        .section-dark + .section-cream::before {
-            background: linear-gradient(180deg, #1F231A 0%, #EFEEDF 100%);
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           PULSE ANIMATION ON CTA
-           ══════════════════════════════════════════════════════════════════ */
-        @keyframes pulse-ring {
-            0% { transform: scale(0.9); opacity: 0.6; }
-            80%, 100% { transform: scale(1.5); opacity: 0; }
-        }
-        .btn-pulse {
-            position: relative;
-        }
-        .btn-pulse::before {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 999px;
-            border: 2px solid rgba(157, 193, 246, 0.4);
-            animation: pulse-ring 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
-        /* ══════════════════════════════════════════════════════════════════
-           RESPONSIVE
-           ══════════════════════════════════════════════════════════════════ */
-        @media (max-width: 768px) {
-            .section-padding { padding: 80px 20px; }
-            .section-title { font-size: 32px !important; }
-            .speakers-grid { gap: 12px; }
-            .logo-wall { gap: 24px 32px; }
-            .logo-wall img { height: 22px; }
-            .sponsor-row { gap: 32px; }
-            .apply-title { font-size: 32px; }
+            .experience-grid { grid-template-columns: 1fr; }
+            .grid-large, .grid-small { grid-column: span 1; }
+            .speakers-title { font-size: 3rem; }
+            .exp-card { padding: 40px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ═══════════════════════════════════════════════════════════════════
-         1. NAVIGATION
-         ═══════════════════════════════════════════════════════════════════ -->
-    <nav class="main-nav hero-mode" id="mainNav">
-        <a href="#">
-            <img src="img/willpower-dark.png" alt="Willpower" class="nav-logo">
-        </a>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#brands">Brands</a>
-            <a href="#speakers">Speakers</a>
-            <a href="#schedule">Schedule</a>
-            <a href="#faq">FAQ</a>
-        </div>
-        <a href="https://lu.ma/WellnessHouse" target="_blank" class="nav-cta">Apply</a>
-        <div class="nav-hamburger" onclick="toggleMobile()">
-            <span></span><span></span>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-close" onclick="closeMobile()">&times;</div>
-        <a href="#about" onclick="closeMobile()">About</a>
-        <a href="#brands" onclick="closeMobile()">Brands</a>
-        <a href="#speakers" onclick="closeMobile()">Speakers</a>
-        <a href="#schedule" onclick="closeMobile()">Schedule</a>
-        <a href="#faq" onclick="closeMobile()">FAQ</a>
-        <a href="https://lu.ma/WellnessHouse" target="_blank" class="btn-dark" style="margin-top:16px;font-size:14px;" onclick="closeMobile()">Apply to Attend</a>
-    </div>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         2. HERO
-         ═══════════════════════════════════════════════════════════════════ -->
+    <!-- HERO -->
     <section class="hero">
-        <div class="hero-video-wrap">
-            <iframe
-                id="heroVideo"
-                src="https://www.youtube.com/embed/30aSv-OTOSE?autoplay=1&mute=1&loop=1&playlist=30aSv-OTOSE&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1&vq=hd1080&start=10&end=45"
-                frameborder="0"
-                allow="autoplay; encrypted-media"
-                allowfullscreen
-            ></iframe>
-        </div>
-        <div class="hero-overlay"></div>
+        <img src="img/wellness-house-logo-white.png" alt="Wellness House" class="hero-logo">
+    </section>
 
-        <div class="hero-content">
-            <div class="reveal hero-pill">
-                <span>Friday, March 13, 2026</span>
-                <span class="dot"></span>
-                <span>Austin, TX</span>
-                <span class="dot"></span>
-                <span>SXSW</span>
-                <span class="dot"></span>
-                <span>9 AM – 4 PM</span>
+    <!-- SPEAKERS -->
+    <section class="speakers" id="speakers">
+        <div class="container">
+            <h2 class="speakers-title">The Collective</h2>
+            <div class="floating-photos" id="speakerScene">
+                <!-- Profile Photos will be injected here with varying sizes/z-index -->
+                <div class="floating-photo" style="width:280px; height:320px; top:10%; left:5%; z-index:10;" data-speed="2">
+                    <img src="img/speakers/bryan-guadagno.jpg" alt="Speaker">
+                </div>
+                <div class="floating-photo" style="width:200px; height:240px; top:50%; left:15%; z-index:5;" data-speed="4">
+                    <img src="img/speakers/greg-lavecchia.jpg" alt="Speaker">
+                </div>
+                <div class="floating-photo" style="width:320px; height:380px; top:5%; right:10%; z-index:15;" data-speed="1">
+                    <img src="img/speakers/jake-decicco.jpg" alt="Speaker">
+                </div>
+                <div class="floating-photo" style="width:240px; height:300px; bottom:10%; right:20%; z-index:8;" data-speed="3">
+                    <img src="img/speakers/nicholas-charlier.jpg" alt="Speaker">
+                </div>
+                <div class="floating-photo" style="width:180px; height:220px; top:40%; left:40%; z-index:2;" data-speed="5">
+                    <img src="img/speakers/noah-obstfeld.jpg" alt="Speaker">
+                </div>
+                <div class="floating-photo" style="width:260px; height:310px; bottom:5%; left:30%; z-index:12;" data-speed="2">
+                    <img src="img/speakers/salar-shahini.jpg" alt="Speaker">
+                </div>
+                <div class="floating-photo" style="width:220px; height:260px; top:15%; left:60%; z-index:6;" data-speed="4">
+                    <img src="img/speakers/sam-nebel.jpg" alt="Speaker">
+                </div>
+                <div class="floating-photo" style="width:290px; height:340px; top:50%; right:5%; z-index:11;" data-speed="1.5">
+                    <img src="img/speakers/scott-hickle.jpg" alt="Speaker">
+                </div>
             </div>
-
-            <div class="reveal delay-1">
-                <img src="img/wh-lockup-white-final.png" alt="Wellness House 2026" class="hero-lockup">
-            </div>
-
-            <p class="reveal delay-2 hero-tagline">
-                A one-day, invite-led summit at the intersection of wellness, performance, and consumer brands. Now in its 3rd year at SXSW.
-            </p>
-
-            <div class="reveal delay-3 hero-ctas">
-                <a href="https://lu.ma/WellnessHouse" target="_blank" class="btn-primary btn-pulse"><span>Apply to Attend</span></a>
-                <a href="mailto:bill@willpowerhq.com" class="btn-outline-light">Partner With Us</a>
-            </div>
-        </div>
-
-        <div class="hero-scroll">
-            <svg width="24" height="24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════════════
-         3. MARQUEE
-         ═══════════════════════════════════════════════════════════════════ -->
-    <div class="marquee-section">
-        <div class="marquee-track" id="marqueeTrack">
-            <div class="marquee-item">
-                <span>Bloom</span><div class="marquee-dot"></div>
-                <span>WHOOP</span><div class="marquee-dot"></div>
-                <span>AG1</span><div class="marquee-dot"></div>
-                <span>Eight Sleep</span><div class="marquee-dot"></div>
-                <span>Peloton</span><div class="marquee-dot"></div>
-                <span>OURA</span><div class="marquee-dot"></div>
-                <span>Adidas</span><div class="marquee-dot"></div>
-                <span>Olipop</span><div class="marquee-dot"></div>
-                <span>David</span><div class="marquee-dot"></div>
-                <span>Shopify</span><div class="marquee-dot"></div>
-                <span>Cadillac</span><div class="marquee-dot"></div>
-                <span>Dunkin'</span><div class="marquee-dot"></div>
-                <span>LSKD</span><div class="marquee-dot"></div>
-                <span>Vivobarefoot</span><div class="marquee-dot"></div>
-                <span>Super Coffee</span><div class="marquee-dot"></div>
-                <span>HYROX</span><div class="marquee-dot"></div>
-                <span>KetoneIQ</span><div class="marquee-dot"></div>
-                <span>Goodwipes</span><div class="marquee-dot"></div>
-                <span>Vollebak</span><div class="marquee-dot"></div>
-                <span>FORM</span><div class="marquee-dot"></div>
+    <!-- WHAT IS WELLNESS HOUSE (ARCHITECTURE LAYOUT) -->
+    <section class="experience" id="about">
+        <div class="container">
+            <div class="experience-grid">
+                <div class="exp-card grid-large">
+                    <div class="exp-num">01</div>
+                    <h2 class="exp-title">A Radical Collision of Vitality and Culture</h2>
+                    <p class="exp-body">Wellness House is not a conference. It is a carefully curated architectural experience designed to bridge the gap between human performance and the consumer landscape. We assemble the architects of tomorrow’s well-being in the heart of Austin.</p>
+                </div>
+                <div class="exp-card grid-small" style="background: var(--pink); color: white;">
+                    <div class="exp-num" style="color: white;">02</div>
+                    <h2 class="exp-title">Curated Access</h2>
+                    <p class="exp-body" style="color: white; opacity: 0.9;">100% Invite-led. No fluff. Just the founders, investors, and operators moving the needle in health and wellness.</p>
+                </div>
+                <div class="exp-card grid-small">
+                    <div class="exp-num">03</div>
+                    <h2 class="exp-title">Practical Knowledge</h2>
+                    <p class="exp-body">Deep-dive sessions on distribution, consumer psychology, and the future of longevity—delivered by those actually building it.</p>
+                </div>
+                <div class="exp-card grid-large" style="background: var(--dark); color: white;">
+                    <div class="exp-num" style="color: var(--peach);">04</div>
+                    <h2 class="exp-title">High-Performance Environment</h2>
+                    <p class="exp-body" style="color: rgba(255,255,255,0.7);">From ice baths to AG1-fueled networking, every square inch of the house is optimized for connection and recovery.</p>
+                </div>
             </div>
-            <div class="marquee-item">
-                <span>Bloom</span><div class="marquee-dot"></div>
-                <span>WHOOP</span><div class="marquee-dot"></div>
-                <span>AG1</span><div class="marquee-dot"></div>
-                <span>Eight Sleep</span><div class="marquee-dot"></div>
-                <span>Peloton</span><div class="marquee-dot"></div>
-                <span>OURA</span><div class="marquee-dot"></div>
-                <span>Adidas</span><div class="marquee-dot"></div>
-                <span>Olipop</span><div class="marquee-dot"></div>
-                <span>David</span><div class="marquee-dot"></div>
-                <span>Shopify</span><div class="marquee-dot"></div>
-                <span>Cadillac</span><div class="marquee-dot"></div>
-                <span>Dunkin'</span><div class="marquee-dot"></div>
-                <span>LSKD</span><div class="marquee-dot"></div>
-                <span>Vivobarefoot</span><div class="marquee-dot"></div>
-                <span>Super Coffee</span><div class="marquee-dot"></div>
-                <span>HYROX</span><div class="marquee-dot"></div>
-                <span>KetoneIQ</span><div class="marquee-dot"></div>
-                <span>Goodwipes</span><div class="marquee-dot"></div>
-                <span>Vollebak</span><div class="marquee-dot"></div>
-                <span>FORM</span><div class="marquee-dot"></div>
+        </div>
+    </section>
+
+    <!-- PROGRAMMING (WHATS HAPPENING) -->
+    <section class="programming" id="schedule">
+        <div class="container">
+            <h2>Whats Happening in the House</h2>
+            <div class="brand-pills">
+                <!-- Generated from brands list -->
+                <div class="brand-pill"><img src="img/brands/adidas.png" alt="adidas"><span>adidas</span></div>
+                <div class="brand-pill"><img src="img/brands/ag1.png" alt="ag1"><span>ag1</span></div>
+                <div class="brand-pill"><img src="img/brands/bloom-nutrition.png" alt="bloom nutrition"><span>bloom nutrition</span></div>
+                <div class="brand-pill"><img src="img/brands/cadillac.png" alt="cadillac"><span>cadillac</span></div>
+                <div class="brand-pill"><img src="img/brands/david.png" alt="david"><span>david</span></div>
+                <div class="brand-pill"><img src="img/brands/dollar-shave-club.png" alt="dollar shave club"><span>dollar shave club</span></div>
+                <div class="brand-pill"><img src="img/brands/dunkin.png" alt="dunkin"><span>dunkin</span></div>
+                <div class="brand-pill"><img src="img/brands/eight-sleep.png" alt="eight sleep"><span>eight sleep</span></div>
+                <div class="brand-pill"><img src="img/brands/everyday-dose.png" alt="everyday dose"><span>everyday dose</span></div>
+                <div class="brand-pill"><img src="img/brands/form.png" alt="form"><span>form</span></div>
+                <div class="brand-pill"><img src="img/brands/function-health.png" alt="function health"><span>function health</span></div>
+                <div class="brand-pill"><img src="img/brands/goodwipes.png" alt="goodwipes"><span>goodwipes</span></div>
+                <div class="brand-pill"><img src="img/brands/hyperice.png" alt="hyperice"><span>hyperice</span></div>
+                <div class="brand-pill"><img src="img/brands/hyrox.png" alt="hyrox"><span>hyrox</span></div>
+                <div class="brand-pill"><img src="img/brands/its-skinny.png" alt="its skinny"><span>its skinny</span></div>
+                <div class="brand-pill"><img src="img/brands/ketoneiq.png" alt="ketoneiq"><span>ketoneiq</span></div>
+                <div class="brand-pill"><img src="img/brands/kohler.png" alt="kohler"><span>kohler</span></div>
+                <div class="brand-pill"><img src="img/brands/olipop.png" alt="olipop"><span>olipop</span></div>
+                <div class="brand-pill"><img src="img/brands/oura.png" alt="oura"><span>oura</span></div>
+                <div class="brand-pill"><img src="img/brands/outdoor-voices.png" alt="outdoor voices"><span>outdoor voices</span></div>
+                <div class="brand-pill"><img src="img/brands/peloton.png" alt="peloton"><span>peloton</span></div>
+                <div class="brand-pill"><img src="img/brands/plunge.png" alt="plunge"><span>plunge</span></div>
+                <div class="brand-pill"><img src="img/brands/rythm.png" alt="rythm"><span>rythm</span></div>
+                <div class="brand-pill"><img src="img/brands/superpower.png" alt="superpower"><span>superpower</span></div>
+                <div class="brand-pill"><img src="img/brands/sweatpals.png" alt="sweatpals"><span>sweatpals</span></div>
+                <div class="brand-pill"><img src="img/brands/tecovas.png" alt="tecovas"><span>tecovas</span></div>
+                <div class="brand-pill"><img src="img/brands/tinyhealth.png" alt="tinyhealth"><span>tinyhealth</span></div>
+                <div class="brand-pill"><img src="img/brands/truemed.png" alt="truemed"><span>truemed</span></div>
+                <div class="brand-pill"><img src="img/brands/whoop.png" alt="whoop"><span>whoop</span></div>
+                <div class="brand-pill"><img src="img/brands/yeti.png" alt="yeti"><span>yeti</span></div>
             </div>
+        </div>
+    </section>
+
+    <!-- LOGO WALL (HORIZONTAL PARALLAX) -->
+    <div class="logo-wall-container">
+        <div class="logo-row" id="parallaxRow1">
+            <img src="img/brands/adidas.png">
+            <img src="img/brands/ag1.png">
+            <img src="img/brands/bloom-nutrition.png">
+            <img src="img/brands/david.png">
+            <img src="img/brands/eight-sleep.png">
+            <img src="img/brands/form.png">
+            <img src="img/brands/hyperice.png">
+            <img src="img/brands/olipop.png">
+            <img src="img/brands/oura.png">
+            <img src="img/brands/peloton.png">
+            <!-- Duplicate for loop if needed, but simple parallax here -->
+            <img src="img/brands/adidas.png">
+            <img src="img/brands/ag1.png">
+            <img src="img/brands/bloom-nutrition.png">
+            <img src="img/brands/david.png">
+        </div>
+        <div class="logo-row" id="parallaxRow2" style="margin-left: -500px;">
+            <img src="img/brands/whoop.png">
+            <img src="img/brands/yeti.png">
+            <img src="img/brands/truemed.png">
+            <img src="img/brands/tinyhealth.png">
+            <img src="img/brands/tecovas.png">
+            <img src="img/brands/sweatpals.png">
+            <img src="img/brands/superpower.png">
+            <img src="img/brands/rythm.png">
+            <img src="img/brands/plunge.png">
+            <img src="img/brands/outdoor-voices.png">
+            <img src="img/brands/whoop.png">
+            <img src="img/brands/yeti.png">
+            <img src="img/brands/truemed.png">
         </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════════════════════
-         4. STATS BAR
-         ═══════════════════════════════════════════════════════════════════ -->
-    <div class="stats-bar" id="statsBar">
-        <div class="stats-grid">
-            <div class="stat-item reveal">
-                <div class="stat-number" data-target="3">0</div>
-                <div class="stat-label">Annual Event</div>
-            </div>
-            <div class="stat-item reveal delay-1">
-                <div class="stat-number" data-target="4000" data-suffix="+">0</div>
-                <div class="stat-label">Guests &amp; Growing</div>
-            </div>
-            <div class="stat-item reveal delay-2">
-                <div class="stat-number" data-target="30" data-suffix="+">0</div>
-                <div class="stat-label">Top Brands</div>
-            </div>
-            <div class="stat-item reveal delay-3">
-                <div class="stat-number" data-target="1" data-prefix="$" data-suffix="M+">0</div>
-                <div class="stat-label">Revenue Generated</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         5. WHAT IS WELLNESS HOUSE (Dark)
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section id="about" class="section-dark section-padding">
-        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:-100px;right:-200px;opacity:0.08;"></div>
-        <div class="blob" style="width:400px;height:400px;background:#EA8376;bottom:-100px;left:-150px;opacity:0.05;"></div>
-
-        <div class="section-inner" style="text-align:center;">
-            <div class="reveal section-label" style="color:#9DC1F6;">The Experience</div>
-            <h2 class="reveal section-title" style="font-size:52px;color:#EFEEDF;">
-                What is <span class="gradient-text">Wellness House</span>?
-            </h2>
-            <p class="reveal section-subtitle" style="color:rgba(239,238,223,0.4);margin:0 auto 64px;">
-                A curated, one-day experience blending programming, movement, recovery, and brand discovery into a single, fluid environment. Every element is intentional — from who's in the room to how the day unfolds.
-            </p>
-
-            <div class="pillar-grid">
-                <!-- Pillar 1 -->
-                <div class="reveal delay-1 pillar-card">
-                    <div class="pillar-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-                    </div>
-                    <h3>Executive-Led Panels</h3>
-                    <p>Candid conversations with founders and operators building the next generation of wellness brands.</p>
-                </div>
-                <!-- Pillar 2 -->
-                <div class="reveal delay-2 pillar-card">
-                    <div class="pillar-icon" style="border-color:rgba(234,131,118,0.2);">
-                        <svg viewBox="0 0 24 24" style="stroke:#EA8376;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h3>Networking-First Format</h3>
-                    <p>Real conversation and meaningful connection, without noise or transactional energy.</p>
-                </div>
-                <!-- Pillar 3 -->
-                <div class="reveal delay-3 pillar-card">
-                    <div class="pillar-icon" style="border-color:rgba(255,191,204,0.2);">
-                        <svg viewBox="0 0 24 24" style="stroke:#FFBFCC;"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/><circle cx="12" cy="2" r="1" fill="#FFBFCC" stroke="none"/></svg>
-                    </div>
-                    <h3>Morning Workout &amp; Recovery</h3>
-                    <p>Community run, movement, and recovery lounges with best-in-class wellness partners.</p>
-                </div>
-                <!-- Pillar 4 -->
-                <div class="reveal delay-4 pillar-card">
-                    <div class="pillar-icon" style="border-color:rgba(252,214,166,0.2);">
-                        <svg viewBox="0 0 24 24" style="stroke:#FCD6A6;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <h3>VIP Lounge &amp; Curated Room</h3>
-                    <p>A brands-first room of founders, operators, athletes, and creators shaping performance culture.</p>
-                </div>
-                <!-- Pillar 5 -->
-                <div class="reveal delay-5 pillar-card">
-                    <div class="pillar-icon" style="border-color:rgba(234,131,118,0.2);">
-                        <svg viewBox="0 0 24 24" style="stroke:#EA8376;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                    </div>
-                    <h3>Brand Discovery Village</h3>
-                    <p>Vendor village highlighting standout wellness, health tech, and better-for-you CPG brands.</p>
-                </div>
-                <!-- Pillar 6 -->
-                <div class="reveal delay-6 pillar-card">
-                    <div class="pillar-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-                    </div>
-                    <h3>Community Energy</h3>
-                    <p>Padel courts, live music, light bites, and social moments throughout the entire day.</p>
-                </div>
-            </div>
-
-            <!-- Divider -->
-            <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(239,238,223,0.08),transparent);margin-bottom:48px;"></div>
-
-            <!-- Who it's for -->
-            <div class="reveal">
-                <div class="section-label" style="color:rgba(239,238,223,0.2);margin-bottom:20px;">Who It's For</div>
-                <div class="chip-row">
-                    <span class="chip">Founders &amp; CEOs</span>
-                    <span class="chip">Brand Operators</span>
-                    <span class="chip">Athletes &amp; Creators</span>
-                    <span class="chip">CPG &amp; DTC Leaders</span>
-                    <span class="chip">Retail &amp; Investment Partners</span>
-                    <span class="chip">Media Partners</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         6. BRANDS ATTENDING (Cream)
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section id="brands" class="section-cream section-padding">
-        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:5%;left:-200px;"></div>
-        <div class="blob" style="width:400px;height:400px;background:#FFBFCC;bottom:10%;right:-150px;"></div>
-        <div class="blob" style="width:350px;height:350px;background:#FCD6A6;top:50%;right:20%;"></div>
-
-        <div class="section-inner" style="text-align:center;">
-            <div class="reveal section-label" style="color:#EA8376;">The Room</div>
-            <h2 class="reveal section-title" style="font-size:52px;">
-                Brands <span class="gradient-text-dark">Attending</span>
-            </h2>
-            <p class="reveal section-subtitle" style="color:rgba(31,35,26,0.4);margin:0 auto 56px;">
-                A curated community of founders and operators from the most exciting brands in wellness, performance, and consumer.
-            </p>
-
-            <div class="reveal logo-wall" style="margin-bottom:32px;">
-                <img src="img/brands/bloom-nutrition.png" alt="Bloom Nutrition" style="height:36px">
-                <img src="img/brands/whoop.png" alt="WHOOP" style="height:22px">
-                <img src="img/brands/ag1.png" alt="AG1" style="height:28px">
-                <img src="img/brands/eight-sleep.png" alt="Eight Sleep" style="height:24px">
-                <img src="img/brands/peloton.png" alt="Peloton" style="height:22px">
-                <img src="img/brands/oura.png" alt="OURA" style="height:28px">
-                <img src="img/brands/adidas.png" alt="adidas" style="height:28px">
-                <img src="img/brands/olipop.png" alt="Olipop" style="height:28px">
-                <img src="img/brands/david.png" alt="David" style="height:24px">
-                <img src="img/brands/dollar-shave-club.png" alt="Dollar Shave Club" style="height:22px">
-                <img src="img/brands/dunkin.png" alt="Dunkin'" style="height:28px">
-                <img src="img/brands/outdoor-voices.png" alt="Outdoor Voices" style="height:26px">
-                <img src="img/brands/form.png" alt="FORM" style="height:22px">
-                <img src="img/brands/goodwipes.png" alt="Goodwipes" style="height:24px">
-                <img src="img/brands/cadillac.png" alt="Cadillac" style="height:28px">
-                <img src="img/brands/truemed.png" alt="Truemed" style="height:22px">
-                <img src="img/brands/kohler.png" alt="Kohler" style="height:24px">
-                <img src="img/brands/plunge.png" alt="Plunge" style="height:22px">
-                <img src="img/brands/everyday-dose.png" alt="Everyday Dose" style="height:24px">
-                <img src="img/brands/ketoneiq.png" alt="KetoneIQ" style="height:22px">
-                <img src="img/brands/function-health.png" alt="Function Health" style="height:26px">
-                <img src="img/brands/gardencup.png" alt="Gardencup" style="height:22px">
-                <img src="img/brands/sweatpals.png" alt="Sweatpals" style="height:22px">
-                <img src="img/brands/hyrox.png" alt="HYROX" style="height:22px">
-                <img src="img/brands/super-coffee.png" alt="Super Coffee" style="height:24px">
-                <img src="img/brands/tecovas.png" alt="Tecovas" style="height:28px">
-                <img src="img/brands/its-skinny.png" alt="It's Skinny" style="height:24px">
-                <img src="img/brands/tinyhealth.png" alt="tinyhealth" style="height:22px">
-                <img src="img/brands/rythm.png" alt="rythm" style="height:22px">
-                <img src="img/brands/well.png" alt="WELL" style="height:22px">
-                <img src="img/brands/hyperice.png" alt="Hyperice" style="height:22px">
-                <img src="img/brands/superpower.png" alt="Superpower" style="height:22px">
-                <img src="img/brands/yeti.png" alt="YETI" style="height:22px">
-                <img src="img/brands/san-antonio-spurs.png" alt="San Antonio Spurs" style="height:30px">
-                <img src="img/lskd.png" alt="LSKD" style="height:20px">
-                <img src="img/kane.png" alt="KANE" style="height:22px">
-                <img src="img/vivobarefoot.png" alt="Vivobarefoot" style="height:24px">
-                <img src="img/throne.png" alt="Throne" style="height:24px">
-                <img src="img/vollebak.png" alt="Vollebak" style="height:18px">
-            </div>
-
-            <p class="reveal" style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;font-style:italic;color:rgba(157,193,246,0.6);">+ more brands to be announced</p>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         7. KEYNOTE SPOTLIGHT (Cream)
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section class="section-cream section-padding" style="padding-top:0;">
-        <div class="blob" style="width:400px;height:400px;background:#FCD6A6;top:-100px;left:10%;"></div>
-
-        <div class="section-inner">
-            <div class="reveal section-label" style="color:#EA8376;text-align:center;">Keynote Speaker</div>
-            <h2 class="reveal section-title" style="font-size:44px;text-align:center;margin-bottom:48px;">
-                Closing <span class="gradient-text-dark">Keynote</span>
-            </h2>
-
-            <div class="reveal-scale keynote-card">
-                <div class="keynote-photo">
-                    <img src="img/speakers/greg-lavecchia.jpg" alt="Greg Lavecchia">
-                </div>
-                <div class="keynote-info">
-                    <div class="keynote-badge">🔥 Closing Keynote</div>
-                    <div class="keynote-name">Greg Lavecchia</div>
-                    <div class="keynote-role">Co-Founder &amp; CEO</div>
-                    <div class="keynote-company">Bloom Nutrition</div>
-                    <p class="keynote-desc">
-                        Closing out the day with <em style="color:rgba(31,35,26,0.65);">"Founder Mode in Health &amp; Wellness"</em> — leading with integrity, performance, and long-term vision. Greg has built Bloom into one of the fastest-growing wellness brands in the country.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         8. SPEAKERS (Cream)
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section id="speakers" class="section-cream section-padding" style="padding-top:0;">
-        <div class="blob" style="width:450px;height:450px;background:#FFBFCC;bottom:-100px;left:-100px;"></div>
-        <div class="blob" style="width:350px;height:350px;background:#9DC1F6;top:30%;right:-100px;"></div>
-
-        <div class="section-inner">
-            <div class="reveal section-label" style="color:#EA8376;text-align:center;">On Stage</div>
-            <h2 class="reveal section-title" style="font-size:52px;text-align:center;margin-bottom:56px;">
-                Guest <span class="gradient-text-dark">Speakers</span>
-            </h2>
-
-            <div class="speakers-grid">
-                <!-- Greg Lavecchia -->
-                <div class="reveal delay-1 speaker-card">
-                    <div class="speaker-img-wrap">
-                        <img src="img/speakers/greg-lavecchia.jpg" alt="Greg Lavecchia">
-                        <div class="speaker-img-overlay"></div>
-                        <div class="speaker-info">
-                            <div class="speaker-keynote-tag">Keynote</div>
-                            <div class="speaker-name">Greg Lavecchia</div>
-                            <div class="speaker-role">Co-Founder &amp; CEO</div>
-                            <div class="speaker-company">Bloom Nutrition</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Sam Nebel -->
-                <div class="reveal delay-2 speaker-card">
-                    <div class="speaker-img-wrap">
-                        <img src="img/speakers/sam-nebel.jpg" alt="Sam Nebel">
-                        <div class="speaker-img-overlay"></div>
-                        <div class="speaker-info">
-                            <div class="speaker-name">Sam Nebel</div>
-                            <div class="speaker-role">Co-Founder &amp; CCO</div>
-                            <div class="speaker-company">Goodwipes</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Bryan Guadagno -->
-                <div class="reveal delay-3 speaker-card">
-                    <div class="speaker-img-wrap">
-                        <img src="img/speakers/bryan-guadagno.jpg" alt="Bryan Guadagno">
-                        <div class="speaker-img-overlay"></div>
-                        <div class="speaker-info">
-                            <div class="speaker-name">Bryan Guadagno</div>
-                            <div class="speaker-role">Co-Founder &amp; CEO</div>
-                            <div class="speaker-company">It's Skinny</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Scott Hickle -->
-                <div class="reveal delay-4 speaker-card">
-                    <div class="speaker-img-wrap">
-                        <img src="img/speakers/scott-hickle.jpg" alt="Scott Hickle">
-                        <div class="speaker-img-overlay"></div>
-                        <div class="speaker-info">
-                            <div class="speaker-name">Scott Hickle</div>
-                            <div class="speaker-role">Co-Founder</div>
-                            <div class="speaker-company">Throne Science</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Nicholas Charlier -->
-                <div class="reveal delay-5 speaker-card">
-                    <div class="speaker-img-wrap">
-                        <img src="img/speakers/nicholas-charlier.jpg" alt="Nicholas Charlier">
-                        <div class="speaker-img-overlay"></div>
-                        <div class="speaker-info">
-                            <div class="speaker-name">Nicholas Charlier</div>
-                            <div class="speaker-role">GM, Americas</div>
-                            <div class="speaker-company">Vivobarefoot</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Salar Shahini -->
-                <div class="reveal delay-6 speaker-card">
-                    <div class="speaker-img-wrap">
-                        <img src="img/speakers/salar-shahini.jpg" alt="Salar Shahini">
-                        <div class="speaker-img-overlay"></div>
-                        <div class="speaker-info">
-                            <div class="speaker-name">Salar Shahini</div>
-                            <div class="speaker-role">Founder &amp; CEO</div>
-                            <div class="speaker-company">Sweatpals</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Jake DeCicco -->
-                <div class="reveal delay-7 speaker-card">
-                    <div class="speaker-img-wrap">
-                        <img src="img/speakers/jake-decicco.jpg" alt="Jake DeCicco">
-                        <div class="speaker-img-overlay"></div>
-                        <div class="speaker-info">
-                            <div class="speaker-name">Jake DeCicco</div>
-                            <div class="speaker-role">Chief Revenue Officer</div>
-                            <div class="speaker-company">Super Coffee</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Steve Tidball -->
-                <div class="reveal delay-8 speaker-card">
-                    <div class="speaker-img-wrap">
-                        <img src="img/speakers/steve-tidball.jpg" alt="Steve Tidball">
-                        <div class="speaker-img-overlay"></div>
-                        <div class="speaker-info">
-                            <div class="speaker-name">Steve Tidball</div>
-                            <div class="speaker-role">Founder &amp; CEO</div>
-                            <div class="speaker-company">Vollebak</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <p class="reveal" style="text-align:center;margin-top:40px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;font-style:italic;color:rgba(157,193,246,0.6);">+ more speakers to be announced</p>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         9. VIDEO REEL (Cream)
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section class="section-cream video-section section-padding" style="padding-top:0;">
-        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:-200px;right:-200px;"></div>
-
-        <div class="section-inner" style="text-align:center;">
-            <div class="reveal section-label" style="color:#9DC1F6;">See It In Action</div>
-            <h2 class="reveal section-title" style="font-size:44px;margin-bottom:48px;">
-                The <span class="gradient-text-dark">Experience</span>
-            </h2>
-
-            <div class="reveal-scale video-container" id="videoContainer">
-                <div class="video-play-overlay" id="videoOverlay" onclick="playVideo()">
-                    <div class="play-btn">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="#1F231A"><polygon points="6,3 20,12 6,21"/></svg>
-                    </div>
-                </div>
-                <iframe
-                    id="videoEmbed"
-                    src="https://www.youtube.com/embed/30aSv-OTOSE?rel=0&modestbranding=1"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                ></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         10. PROGRAMMING / SCHEDULE (Dark)
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section id="schedule" class="section-dark section-padding">
-        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:10%;right:-250px;opacity:0.06;"></div>
-        <div class="blob" style="width:400px;height:400px;background:#FCD6A6;bottom:5%;left:-200px;opacity:0.05;"></div>
-
-        <div class="section-inner" style="text-align:center;">
-            <div class="reveal section-label" style="color:#9DC1F6;">Friday, March 13</div>
-            <h2 class="reveal section-title" style="font-size:52px;color:#EFEEDF;margin-bottom:8px;">
-                Event <span class="gradient-text">Flow</span>
-            </h2>
-            <p class="reveal section-subtitle" style="color:rgba(239,238,223,0.25);margin:0 auto 56px;font-size:14px;">All times Central (CT). Schedule subject to updates.</p>
-
-            <div class="reveal schedule-timeline">
-                <!-- 9:00 AM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">9:00 AM</div>
-                    <div class="schedule-content">
-                        <h3>Run, Rox &amp; Recovery</h3>
-                        <p>Community run, HYROX-style workout &amp; recovery with coffee.</p>
-                        <div class="pill-row">
-                            <span class="pill">LSKD</span>
-                            <span class="pill">HYROX</span>
-                            <span class="pill">KetoneIQ</span>
-                            <span class="pill">Spurs</span>
-                            <span class="pill">KANE</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- 10:00 AM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">10:00 AM</div>
-                    <div class="schedule-content">
-                        <h3>Founders Rebuilding the Future of Health</h3>
-                        <p>Reimagining accessible, proactive health and preventive care.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">Scott Hickle / Throne</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- 10:35 AM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">10:35 AM</div>
-                    <div class="schedule-content">
-                        <h3>The Power of Routine</h3>
-                        <p>How leading wellness brands build habit ecosystems and deeper engagement.</p>
-                        <div class="pill-row">
-                            <span class="pill">Garmin</span>
-                            <span class="pill">FORM</span>
-                            <span class="pill">Hyperice</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- 11:30 AM — Lunch -->
-                <div class="schedule-row highlight">
-                    <div class="schedule-time">11:30 AM</div>
-                    <div class="schedule-content">
-                        <h3>🎤 Recharging Lunch + Wellness Roast</h3>
-                        <p>Midday refuel with a live wellness brand roast.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">Jake DeCicco / Super Coffee</span>
-                            <span class="pill accent">Steve Tidball / Vollebak</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- 12:45 PM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">12:45 PM</div>
-                    <div class="schedule-content">
-                        <h3>Building Worlds Through Sports</h3>
-                        <p>Sports storytelling beyond the game — loyalty, culture, and fan-driven worlds.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">Brandon James / Spurs</span>
-                            <span class="pill">KANE</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- 1:15 PM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">1:15 PM</div>
-                    <div class="schedule-content">
-                        <h3>Wellness at the Core of Community</h3>
-                        <p>Building authentic wellness communities through connection, rituals, and experiences.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">Nicholas Charlier / Vivobarefoot</span>
-                            <span class="pill accent">Salar Shahini / Sweatpals</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- 1:45 PM -->
-                <div class="schedule-row">
-                    <div class="schedule-time">1:45 PM</div>
-                    <div class="schedule-content">
-                        <h3>The New Rules of CPG</h3>
-                        <p>Turning customers into loyalists across the modern CPG lifecycle.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">Sam Nebel / Goodwipes</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- 2:30 PM — Keynote -->
-                <div class="schedule-row highlight" style="background:linear-gradient(90deg,rgba(234,131,118,0.08),rgba(157,193,246,0.04));border-color:rgba(234,131,118,0.15);">
-                    <div class="schedule-time" style="color:#EA8376;">2:30 PM</div>
-                    <div class="schedule-content">
-                        <h3>🔥 KEYNOTE: Founder Mode in Health &amp; Wellness</h3>
-                        <p>Leading with integrity, performance, and long-term vision.</p>
-                        <div class="pill-row">
-                            <span class="pill accent">Greg Lavecchia / Bloom</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- 3:30 PM — Social -->
-                <div class="schedule-row highlight" style="background:linear-gradient(90deg,rgba(157,193,246,0.06),rgba(252,214,166,0.04));">
-                    <div class="schedule-time">3:30 PM</div>
-                    <div class="schedule-content">
-                        <h3>🎉 Evening Social + Wellness Party on the Lawn</h3>
-                        <p>Music, light bites, recovery activations, casual play &amp; open networking.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Ongoing throughout -->
-            <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(239,238,223,0.06),transparent);margin:56px 0 40px;"></div>
-            <div class="reveal section-label" style="color:rgba(239,238,223,0.2);margin-bottom:24px;">Ongoing Throughout the Day</div>
-            <div class="ongoing-grid">
-                <div class="reveal delay-1 ongoing-card">
-                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                    <p>Vendor Village + Recovery Lounge</p>
-                </div>
-                <div class="reveal delay-2 ongoing-card">
-                    <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-                    <p>Live Music &amp; Light Bites</p>
-                </div>
-                <div class="reveal delay-3 ongoing-card">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="12" x2="16" y2="12"/></svg>
-                    <p>Open Padel Play &amp; Court Sessions</p>
-                </div>
-                <div class="reveal delay-4 ongoing-card">
-                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    <p>Open Networking</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         11. SPONSORS (Cream)
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section class="section-cream section-padding">
-        <div class="blob" style="width:400px;height:400px;background:#FCD6A6;top:-100px;left:40%;"></div>
-
-        <div class="section-inner" style="text-align:center;">
-            <div class="reveal section-label" style="color:rgba(31,35,26,0.25);">Strategic Partners</div>
-            <h2 class="reveal section-title" style="font-size:44px;margin-bottom:56px;">
-                Backed <span class="gradient-text-dark">By</span>
-            </h2>
-
-            <div class="reveal sponsor-row">
-                <div class="sponsor-item">
-                    <img src="img/shopify.png" alt="Shopify">
-                    <span>Shopify</span>
-                </div>
-                <div class="sponsor-item">
-                    <img src="img/postpilot.png" alt="PostPilot">
-                    <span>PostPilot</span>
-                </div>
-                <div class="sponsor-item">
-                    <img src="img/hotspex.png" alt="Hotspex Media">
-                    <span>Hotspex Media</span>
-                </div>
-                <div class="sponsor-item">
-                    <img src="img/vivobarefoot.png" alt="Vivobarefoot">
-                    <span>Vivobarefoot</span>
-                </div>
-                <div class="sponsor-item">
-                    <img src="img/throne.png" alt="Throne Science">
-                    <span>Throne Science</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         12. FAQ (Cream)
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section id="faq" class="section-cream section-padding" style="padding-top:0;">
-        <div class="blob" style="width:350px;height:350px;background:#9DC1F6;bottom:0;right:-100px;"></div>
-
-        <div class="section-inner" style="text-align:center;">
-            <div class="reveal section-label" style="color:#EA8376;">Questions?</div>
-            <h2 class="reveal section-title" style="font-size:44px;margin-bottom:48px;">
-                Frequently <span class="gradient-text-dark">Asked</span>
-            </h2>
-
-            <div class="reveal faq-list" style="text-align:left;">
-                <div class="faq-item">
-                    <div class="faq-toggle" onclick="toggleFaq(this)">
-                        <h3>What is Wellness House?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Wellness House is Willpower's flagship SXSW gathering — a full-day, invite-led experience at the intersection of wellness, performance, and consumer brands. Now in its 3rd year, it brings together founders, operators, athletes, and brand leaders for panels, movement, recovery, and community.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-toggle" onclick="toggleFaq(this)">
-                        <h3>When and where is the event?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Friday, March 13, 2026 in Austin, TX during SXSW. Full day event running 9:00 AM to 4:00 PM, followed by an evening social on the lawn.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-toggle" onclick="toggleFaq(this)">
-                        <h3>How do I attend?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Attendance is approval-based. Click "Apply to Attend" to submit your application. General Admission is $300, with limited Early Bird tickets at $150.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-toggle" onclick="toggleFaq(this)">
-                        <h3>Who should attend?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Founders, senior operators, and leaders from high-growth wellness, CPG, and consumer brands. Athletes, creators, and teams shaping performance culture. Retail, investment, and media partners.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-toggle" onclick="toggleFaq(this)">
-                        <h3>What's the vibe?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Think premium, not stuffy. The room is curated for quality over quantity — real conversations, not sales pitches. Start the morning moving, spend the day learning from founders, and end the afternoon connecting over music and recovery activations.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-toggle" onclick="toggleFaq(this)">
-                        <h3>How can my brand get involved?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We collaborate with a select group of brands, speakers, and partners. Interested in sponsorships, programming, or media collaboration? Reach out via the "Partner With Us" button or email <a href="mailto:bill@willpowerhq.com">bill@willpowerhq.com</a>.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-toggle" onclick="toggleFaq(this)">
-                        <h3>What is Willpower?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Willpower brings together performance, wellness, and community through curated events and high-impact collaborations. With 4,000+ leaders across Austin and NYC and 24+ curated gatherings hosted, Wellness House is our flagship annual gathering.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         13. APPLY TO ATTEND
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section class="apply-section" id="apply">
-        <div class="apply-inner">
-            <img src="img/wh-lockup-white-final.png" alt="Wellness House" class="reveal apply-lockup">
-            <h2 class="reveal apply-title">Ready?</h2>
-            <p class="reveal apply-subtitle">
-                Attendance is approval-based. Apply now to secure your spot at the most anticipated wellness gathering during SXSW 2026.
-            </p>
-            <p class="reveal apply-date">Friday, March 13, 2026 · Austin, TX · 9 AM – 4 PM</p>
-            <div class="reveal apply-ctas">
-                <a href="https://lu.ma/WellnessHouse" target="_blank" class="btn-dark"><span>Apply to Attend</span></a>
-                <a href="mailto:bill@willpowerhq.com" class="btn-outline-dark" style="border-color:rgba(31,35,26,0.2);color:#1F231A;">Partner With Us</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         14. FOOTER
-         ═══════════════════════════════════════════════════════════════════ -->
-    <footer class="site-footer">
-        <div class="footer-label">Follow for Updates</div>
-        <div class="footer-socials">
-            <a href="https://www.instagram.com/willpowerhq/" target="_blank" class="footer-social" aria-label="Instagram">
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/company/willpowerd/" target="_blank" class="footer-social" aria-label="LinkedIn">
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            <a href="https://willpower.community/" target="_blank" class="footer-social" aria-label="Community">
-                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            </a>
-        </div>
-        <div class="footer-divider"></div>
-        <div class="footer-logos">
-            <img src="img/willpower-white.png" alt="Willpower">
-            <span>×</span>
-            <img src="img/wh-lockup-white-final.png" alt="Wellness House">
-        </div>
-        <p class="footer-copy">&copy; 2026 Willpower. All rights reserved.</p>
-    </footer>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         SCRIPTS
-         ═══════════════════════════════════════════════════════════════════ -->
     <script>
-        // ── FAQ Toggle ──
-        function toggleFaq(el) {
-            const answer = el.nextElementSibling;
-            const icon = el.querySelector('.faq-icon');
-            document.querySelectorAll('.faq-answer.open').forEach(a => {
-                if (a !== answer) {
-                    a.classList.remove('open');
-                    a.previousElementSibling.querySelector('.faq-icon').classList.remove('open');
-                }
-            });
-            answer.classList.toggle('open');
-            icon.classList.toggle('open');
-        }
-
-        // ── Scroll Animations (IntersectionObserver) ──
-        const observerOptions = { threshold: 0.08, rootMargin: '0px 0px -40px 0px' };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-        document.querySelectorAll('.reveal, .reveal-scale').forEach(el => observer.observe(el));
-
-        // ── Nav: hero-mode vs scrolled ──
-        const nav = document.getElementById('mainNav');
-        const heroSection = document.querySelector('.hero');
-        function updateNav() {
-            const heroBottom = heroSection.getBoundingClientRect().bottom;
-            if (heroBottom <= 60) {
-                nav.classList.remove('hero-mode');
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.add('hero-mode');
-                nav.classList.remove('scrolled');
-            }
-        }
-        window.addEventListener('scroll', updateNav, { passive: true });
-        updateNav();
-
-        // ── Mobile menu ──
-        function toggleMobile() { document.getElementById('mobileMenu').classList.toggle('open'); }
-        function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
-
-        // ── Animated number counters ──
-        let countersAnimated = false;
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !countersAnimated) {
-                    countersAnimated = true;
-                    animateCounters();
-                }
-            });
-        }, { threshold: 0.3 });
-        const statsBar = document.getElementById('statsBar');
-        if (statsBar) statsObserver.observe(statsBar);
-
-        function animateCounters() {
-            document.querySelectorAll('.stat-number[data-target]').forEach(el => {
-                const target = parseInt(el.dataset.target);
-                const prefix = el.dataset.prefix || '';
-                const suffix = el.dataset.suffix || '';
-                const duration = 2000;
-                const start = performance.now();
-
-                function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
-
-                function update(now) {
-                    const elapsed = now - start;
-                    const progress = Math.min(elapsed / duration, 1);
-                    const eased = easeOutExpo(progress);
-                    const current = Math.round(eased * target);
-
-                    if (target >= 1000) {
-                        el.textContent = prefix + current.toLocaleString() + suffix;
-                    } else {
-                        el.textContent = prefix + current + (target === 3 ? 'rd' : '') + suffix;
-                    }
-
-                    if (progress < 1) requestAnimationFrame(update);
-                }
-                requestAnimationFrame(update);
-            });
-        }
-
-        // ── Parallax blobs ──
-        let blobTicking = false;
+        // PARALLAX FOR BRANDS
         window.addEventListener('scroll', () => {
-            if (!blobTicking) {
-                requestAnimationFrame(() => {
-                    const scrolled = window.scrollY;
-                    document.querySelectorAll('.blob').forEach((blob, i) => {
-                        const speed = ((i % 4) + 1) * 0.015;
-                        const direction = i % 2 === 0 ? 1 : -1;
-                        blob.style.transform = `translateY(${scrolled * speed * direction}px)`;
-                    });
-                    blobTicking = false;
-                });
-                blobTicking = true;
-            }
-        }, { passive: true });
+            const scrolled = window.pageYOffset;
+            const p1 = document.getElementById('parallaxRow1');
+            const p2 = document.getElementById('parallaxRow2');
+            
+            p1.style.transform = `translateX(${scrolled * 0.2}px)`;
+            p2.style.transform = `translateX(-${scrolled * 0.2}px)`;
 
-        // ── Video play overlay ──
-        function playVideo() {
-            const overlay = document.getElementById('videoOverlay');
-            const embed = document.getElementById('videoEmbed');
-            overlay.style.display = 'none';
-            embed.src = embed.src + '&autoplay=1';
-        }
+            // SPEAKER MOUSE PARALLAX (Subtle)
+            const speakers = document.querySelectorAll('.floating-photo');
+            speakers.forEach(card => {
+                const speed = card.getAttribute('data-speed');
+                const x = (window.innerWidth - window.event?.pageX * speed) / 100;
+                const y = (window.innerHeight - window.event?.pageY * speed) / 100;
+                // Only on hover or specific interaction if desired, 
+                // but let's do a simple scroll-based float for speakers too.
+                const st = scrolled * 0.05 * speed;
+                card.style.transform = `translateY(${st}px)`;
+            });
+        });
 
-        // ── Smooth scroll for anchor links ──
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
-                const target = document.querySelector(a.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+        // REFINED SPEAKER FLOATING (Animation)
+        const scene = document.getElementById('speakerScene');
+        window.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth) - 0.5;
+            const y = (e.clientY / window.innerHeight) - 0.5;
+            
+            const cards = document.querySelectorAll('.floating-photo');
+            cards.forEach(card => {
+                const speed = card.getAttribute('data-speed') || 2;
+                card.style.transform = `translate(${x * 50 * speed}px, ${y * 50 * speed}px)`;
             });
         });
     </script>
