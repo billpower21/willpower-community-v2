@@ -381,6 +381,7 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             border: none;
+            min-height: 48px; /* Touch-friendly */
         }
         .btn-dark:hover {
             background: #EA8376;
@@ -468,10 +469,10 @@
             background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 100%);
         }
         .stats-grid {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 24px;
             position: relative;
             z-index: 1;
@@ -494,6 +495,10 @@
             color: rgba(31, 35, 26, 0.5);
             text-transform: uppercase;
             letter-spacing: 0.12em;
+        }
+        @media (max-width: 900px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+            .stat-number { font-size: 36px; }
         }
         @media (max-width: 768px) {
             .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
@@ -598,6 +603,7 @@
             font-size: 120px;
             font-weight: 900;
             line-height: 0.9;
+            letter-spacing: -0.02em;
             margin-bottom: 24px;
             color: #9DC1F6;
             opacity: 0.95;
@@ -611,7 +617,8 @@
             font-weight: 800;
             color: #EFEEDF;
             margin-bottom: 20px;
-            line-height: 1.1;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
         }
         .comparison-right .comparison-title {
             color: rgba(239, 238, 223, 0.4);
@@ -631,6 +638,7 @@
             display: flex;
             align-items: flex-start;
             gap: 12px;
+            line-height: 1.6;
         }
         .comparison-features li::before {
             content: '✓';
@@ -682,6 +690,7 @@
             font-weight: 900;
             margin-bottom: 16px;
             line-height: 1;
+            letter-spacing: -0.02em;
         }
         .timeline-preview {
             width: 90px;
@@ -721,13 +730,15 @@
             font-weight: 700;
             color: #EFEEDF;
             margin-bottom: 8px;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
         }
         .timeline-desc {
             font-family: 'Montserrat', sans-serif;
             font-size: 13px;
             font-weight: 400;
             color: rgba(239, 238, 223, 0.4);
-            line-height: 1.5;
+            line-height: 1.6;
             margin: 0;
         }
         .timeline-connector {
@@ -786,6 +797,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             line-height: 1;
+            letter-spacing: -0.02em;
             margin-bottom: 16px;
         }
         .benefit-label {
@@ -794,6 +806,8 @@
             font-weight: 700;
             color: #EFEEDF;
             margin-bottom: 8px;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
         }
         .benefit-desc {
             font-family: 'Montserrat', sans-serif;
@@ -1928,6 +1942,115 @@
             .logo-wall { gap: 16px 20px; }
             .logo-wall img { height: 20px; max-width: 80px; }
         }
+        
+        /* ══════════════════════════════════════════════════════════════════
+           MOBILE-SPECIFIC OPTIMIZATIONS
+           ══════════════════════════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            /* Ensure all images scale properly */
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            /* Better mobile typography */
+            body {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            
+            /* Ensure CTAs stack properly */
+            .hero-ctas,
+            .apply-ctas {
+                flex-direction: column;
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+            
+            .hero-ctas a,
+            .apply-ctas a {
+                width: 100%;
+                text-align: center;
+            }
+            
+            /* Mobile-friendly FAQ */
+            .faq-toggle h3 {
+                font-size: 15px;
+                line-height: 1.4;
+            }
+            
+            .faq-icon {
+                width: 28px;
+                height: 28px;
+                font-size: 16px;
+            }
+            
+            .faq-answer p {
+                font-size: 13px;
+            }
+            
+            /* Mobile urgency section */
+            .urgency-title {
+                font-size: 40px;
+            }
+            
+            .urgency-copy {
+                font-size: 16px;
+            }
+            
+            /* Mobile keynote */
+            .keynote-name {
+                font-size: 28px;
+            }
+            
+            .keynote-company {
+                font-size: 18px;
+            }
+            
+            /* Mobile benefit cards */
+            .benefit-number {
+                font-size: 56px;
+            }
+            
+            .benefit-label {
+                font-size: 16px;
+            }
+            
+            /* Timeline mobile adjustments */
+            .timeline-time {
+                font-size: 20px;
+            }
+            
+            .timeline-title {
+                font-size: 16px;
+            }
+            
+            .timeline-desc {
+                font-size: 12px;
+            }
+        }
+        
+        /* Small mobile devices */
+        @media (max-width: 375px) {
+            .hero-lockup {
+                max-height: 100px;
+            }
+            
+            .countdown-number {
+                font-size: 40px;
+            }
+            
+            .urgency-title {
+                font-size: 32px;
+            }
+            
+            .btn-primary,
+            .btn-dark {
+                padding: 14px 36px;
+                font-size: 11px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2068,7 +2191,7 @@
          4. STATS BAR
          ═══════════════════════════════════════════════════════════════════ -->
     <div class="stats-bar" id="statsBar">
-        <div class="stats-grid">
+        <div class="stats-grid" style="grid-template-columns: repeat(5, 1fr);">
             <div class="stat-item reveal">
                 <div class="stat-number" data-target="3">0</div>
                 <div class="stat-label">Annual Event</div>
@@ -2084,6 +2207,10 @@
             <div class="stat-item reveal delay-3">
                 <div class="stat-number" data-target="1" data-prefix="$" data-suffix="M+">0</div>
                 <div class="stat-label">Revenue Generated</div>
+            </div>
+            <div class="stat-item reveal delay-4">
+                <div class="stat-number" data-target="124">0</div>
+                <div class="stat-label">Applications Received</div>
             </div>
         </div>
     </div>
@@ -2968,6 +3095,15 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-toggle" onclick="toggleFaq(this)">
+                        <h3>How many spots are left?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We're approaching capacity. With over 120 applications already received and limited space, we recommend applying soon to secure your spot.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-toggle" onclick="toggleFaq(this)">
                         <h3>What is Willpower?</h3>
                         <span class="faq-icon">+</span>
                     </div>
@@ -2986,9 +3122,14 @@
         <div class="urgency-inner">
             <h2 class="reveal urgency-title">Don't Miss Out</h2>
             <p class="reveal urgency-copy">
-                Limited to 500 attendees. Applications reviewed daily. Early bird pricing ends soon.
+                Limited to 500 attendees. Applications reviewed daily. <strong style="color: rgba(239, 238, 223, 0.85);">Applications close Friday, February 28.</strong>
             </p>
-            <div class="reveal urgency-stat">124 applications received</div>
+            <div class="reveal" style="display: flex; flex-direction: column; gap: 12px; align-items: center; margin-bottom: 48px;">
+                <div class="urgency-stat">124 Applications Received</div>
+                <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; font-weight: 700; color: #EA8376; padding: 12px 28px; display: inline-block; border-radius: 999px; background: rgba(234, 131, 118, 0.12); border: 1px solid rgba(234, 131, 118, 0.2);">
+                    Last 150 Tickets Available
+                </div>
+            </div>
             <div class="reveal urgency-cta-wrap">
                 <a href="https://lu.ma/WellnessHouse" target="_blank" class="btn-urgency"><span>Apply to Attend</span></a>
             </div>
