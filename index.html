@@ -168,7 +168,7 @@
         .main-nav.hero-mode .nav-cta { background: rgba(255,255,255,0.35); color: #1F231A; border: 1px solid rgba(31, 35, 26, 0.1); backdrop-filter: blur(10px); }
         .main-nav.hero-mode .nav-cta:hover { background: rgba(255,255,255,0.55); }
 
-        .nav-logo { height: 28px; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .nav-logo { height: 28px; width: auto; object-fit: contain; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         .nav-links { display: flex; gap: 36px; align-items: center; }
         .nav-links a {
             font-family: 'Montserrat', sans-serif;
@@ -191,12 +191,10 @@
             box-shadow: 0 2px 8px rgba(31, 35, 26, 0.15);
         }
         .nav-cta:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 24px rgba(234, 131, 118, 0.3);
+            opacity: 0.9;
         }
         .nav-cta:active {
-            transform: translateY(0) scale(0.98);
-            box-shadow: 0 2px 8px rgba(31, 35, 26, 0.2);
+            opacity: 0.8;
         }
         .nav-hamburger {
             display: none;
@@ -348,6 +346,9 @@
         .hero-pill .dot { width: 4px; height: 4px; border-radius: 50%; background: #9DC1F6; opacity: 0.6; }
         .hero-lockup {
             max-height: 200px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
             margin: 0 auto 40px;
             filter: drop-shadow(0 4px 60px rgba(0,0,0,0.3));
         }
@@ -447,22 +448,13 @@
             box-shadow: 0 2px 8px rgba(31, 35, 26, 0.15);
         }
         .btn-primary::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 999px;
-            background: linear-gradient(135deg, #9DC1F6, #FFBFCC, #FCD6A6);
-            opacity: 0;
-            transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: none;
         }
         .btn-primary:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 24px rgba(157,193,246,0.3);
+            opacity: 0.9;
         }
-        .btn-primary:hover::after { opacity: 1; }
         .btn-primary:active {
-            transform: translateY(0) scale(0.98);
-            box-shadow: 0 2px 8px rgba(31, 35, 26, 0.2);
+            opacity: 0.8;
         }
         .btn-primary span { position: relative; z-index: 1; }
 
@@ -487,12 +479,10 @@
         .btn-outline-light:hover {
             border-color: rgba(255,255,255,0.5);
             color: #fff;
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 24px rgba(255,255,255,0.15);
+            opacity: 0.9;
         }
         .btn-outline-light:active {
-            transform: translateY(0) scale(0.98);
-            box-shadow: 0 2px 8px rgba(255,255,255,0.08);
+            opacity: 0.8;
         }
 
         .btn-dark {
@@ -515,12 +505,10 @@
         .btn-dark:hover {
             background: #EA8376;
             color: #fff;
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 24px rgba(234,131,118,0.3);
+            opacity: 0.9;
         }
         .btn-dark:active {
-            transform: translateY(0) scale(0.98);
-            box-shadow: 0 2px 8px rgba(31, 35, 26, 0.2);
+            opacity: 0.8;
         }
 
         .btn-outline-dark {
@@ -542,12 +530,10 @@
         .btn-outline-dark:hover {
             border-color: #EA8376;
             color: #EA8376;
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 24px rgba(234,131,118,0.2);
+            opacity: 0.9;
         }
         .btn-outline-dark:active {
-            transform: translateY(0) scale(0.98);
-            box-shadow: 0 2px 8px rgba(31, 35, 26, 0.1);
+            opacity: 0.8;
         }
 
         /* ══════════════════════════════════════════════════════════════════
@@ -660,12 +646,7 @@
             overflow: hidden;
         }
         .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(120px);
-            pointer-events: none;
-            opacity: 0.35;
-            will-change: transform;
+            display: none; /* Removed decorative blobs */
         }
         .section-padding {
             padding: 140px 40px;
@@ -806,27 +787,21 @@
             margin-bottom: 64px;
         }
         .benefit-card {
-            background: rgba(239, 238, 223, 0.02);
-            border: 1px solid rgba(239, 238, 223, 0.06);
+            background: #EFEEDF;
+            border: 1px solid rgba(31, 35, 26, 0.06);
             border-radius: 20px;
             padding: 40px 32px;
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.3s ease;
         }
         .benefit-card:hover {
-            background: rgba(239, 238, 223, 0.05);
-            border-color: rgba(157, 193, 246, 0.15);
-            transform: translateY(-6px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+            opacity: 0.85;
         }
         .benefit-number {
             font-family: 'Unbounded', sans-serif;
             font-size: 72px;
             font-weight: 900;
-            background: linear-gradient(135deg, #9DC1F6, #FFBFCC);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #EA8376;
             line-height: 1;
             letter-spacing: -0.02em;
             margin-bottom: 16px;
@@ -835,7 +810,7 @@
             font-family: 'Bricolage Grotesque', sans-serif;
             font-size: 18px;
             font-weight: 700;
-            color: #EFEEDF;
+            color: #1F231A;
             margin-bottom: 8px;
             line-height: 1.15;
             letter-spacing: -0.01em;
@@ -844,7 +819,7 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 13px;
             font-weight: 400;
-            color: rgba(239, 238, 223, 0.35);
+            color: rgba(31, 35, 26, 0.45);
             line-height: 1.6;
         }
 
@@ -858,18 +833,16 @@
             display: inline-flex;
             padding: 10px 24px;
             border-radius: 999px;
-            background: rgba(157, 193, 246, 0.06);
-            border: 1px solid rgba(157, 193, 246, 0.12);
+            background: rgba(31, 35, 26, 0.03);
+            border: 1px solid rgba(31, 35, 26, 0.08);
             font-family: 'Montserrat', sans-serif;
             font-size: 12px;
             font-weight: 600;
-            color: rgba(157, 193, 246, 0.65);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: rgba(31, 35, 26, 0.5);
+            transition: opacity 0.3s ease;
         }
         .chip:hover {
-            background: rgba(157, 193, 246, 0.12);
-            border-color: rgba(157, 193, 246, 0.3);
-            color: #9DC1F6;
+            opacity: 0.7;
         }
 
         @media (max-width: 900px) {
@@ -919,40 +892,22 @@
             margin: 0 auto;
         }
         .why-attend-column {
-            background: rgba(239, 238, 223, 0.02);
-            border: 1px solid rgba(239, 238, 223, 0.06);
+            background: #FFFFFF;
+            border: 1px solid rgba(31, 35, 26, 0.06);
             border-radius: 20px;
             padding: 40px 32px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-        .why-attend-column::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(157, 193, 246, 0.06) 0%, transparent 70%);
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .why-attend-column:hover::before {
-            opacity: 1;
-        }
         .why-attend-column:hover {
-            background: rgba(239, 238, 223, 0.05);
-            border-color: rgba(157, 193, 246, 0.15);
-            transform: translateY(-6px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+            opacity: 0.85;
         }
         .why-attend-heading {
             font-family: 'Bricolage Grotesque', sans-serif;
             font-size: 24px;
             font-weight: 800;
-            color: #EFEEDF;
+            color: #1F231A;
             margin-bottom: 24px;
             line-height: 1.15;
             letter-spacing: -0.01em;
@@ -966,7 +921,7 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 15px;
             font-weight: 500;
-            color: rgba(239, 238, 223, 0.65);
+            color: rgba(31, 35, 26, 0.6);
             padding: 12px 0;
             padding-left: 28px;
             position: relative;
@@ -976,7 +931,7 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: #9DC1F6;
+            color: #EA8376;
             font-weight: 700;
             font-size: 16px;
         }
@@ -999,8 +954,7 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .keynote-card:hover {
-            box-shadow: 0 24px 80px rgba(0,0,0,0.08);
-            transform: translateY(-2px);
+            opacity: 0.95;
         }
         .keynote-photo {
             flex: 0 0 42%;
@@ -1014,7 +968,7 @@
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .keynote-card:hover .keynote-photo img {
-            transform: scale(1.04);
+            /* clean — no transform */
         }
         .keynote-info {
             flex: 1;
@@ -1268,23 +1222,18 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .schedule-row:hover {
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-            transform: translateY(-3px);
+            opacity: 0.9;
         }
         .schedule-row.highlight {
-            background: linear-gradient(90deg, rgba(234,131,118,0.08) 0%, rgba(157,193,246,0.06) 100%);
-            border: 1px solid rgba(234,131,118,0.12);
-            border-bottom: 1px solid rgba(234,131,118,0.12);
             border-left: 4px solid #EA8376;
         }
         /* Panel rows - blue gradient */
         .schedule-row:not(.highlight) {
             border-left: 4px solid #9DC1F6;
         }
-        /* Social rows - pink gradient */
+        /* Social rows */
         .schedule-row:last-child {
             border-left: 4px solid #FFBFCC;
-            background: linear-gradient(90deg, rgba(255,191,204,0.06) 0%, transparent 100%);
         }
         .schedule-time {
             font-size: 24px;
@@ -1720,7 +1669,10 @@
             z-index: 2;
         }
         .apply-lockup {
-            height: 80px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
             margin: 0 auto 40px;
             filter: drop-shadow(0 2px 20px rgba(0,0,0,0.1));
         }
@@ -1806,7 +1758,7 @@
             gap: 16px;
             margin-bottom: 20px;
         }
-        .footer-logos img { height: 20px; opacity: 0.25; }
+        .footer-logos img { height: 20px; width: auto; object-fit: contain; opacity: 0.25; }
         .footer-logos span { font-size: 10px; color: rgba(239, 238, 223, 0.08); }
         .footer-copy {
             font-family: 'Montserrat', sans-serif;
@@ -1932,97 +1884,41 @@
         .sponsor-row .sponsor-item:nth-child(4) { transition-delay: 0.3s; }
         .sponsor-row .sponsor-item:nth-child(5) { transition-delay: 0.4s; }
 
-        /* ══════════════════════════════════════════════════════════════════
-           SECTION TRANSITIONS
-           ══════════════════════════════════════════════════════════════════ */
-        .section-cream::before {
-            content: '';
-            position: absolute;
-            top: -60px; left: 0; right: 0;
-            height: 60px;
-            background: linear-gradient(180deg, transparent 0%, #EFEEDF 100%);
-            z-index: 1;
-            pointer-events: none;
-        }
-        .section-dark + .section-cream::before {
-            background: linear-gradient(180deg, #1F231A 0%, #EFEEDF 100%);
-        }
+        /* Section transitions removed for clean simplicity */
 
         /* ══════════════════════════════════════════════════════════════════
-           PREMIUM MICRO-INTERACTIONS
+           SIMPLIFIED MICRO-INTERACTIONS
            ══════════════════════════════════════════════════════════════════ */
         
-        /* 1. Primary CTA Buttons - Subtle Continuous Pulse */
-        @keyframes pulse-ring {
-            0% { transform: scale(0.95); opacity: 0.5; }
-            50% { transform: scale(1.05); opacity: 0.3; }
-            100% { transform: scale(0.95); opacity: 0.5; }
-        }
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(157, 193, 246, 0.3), 0 0 40px rgba(157, 193, 246, 0.15); }
-            50% { box-shadow: 0 0 30px rgba(157, 193, 246, 0.4), 0 0 60px rgba(157, 193, 246, 0.2); }
-        }
+        /* Pulse removed — clean buttons only */
         .btn-pulse {
             position: relative;
-            animation: pulse-glow 3s ease-in-out infinite;
         }
         .btn-pulse::before {
-            content: '';
-            position: absolute;
-            inset: -6px;
-            border-radius: 999px;
-            border: 2px solid rgba(157, 193, 246, 0.3);
-            animation: pulse-ring 3s ease-in-out infinite;
-            pointer-events: none;
+            display: none;
         }
-        /* Enhanced hover glow for primary buttons */
+
+        /* Simple hover states */
         .btn-primary:hover {
-            box-shadow: 0 16px 48px rgba(157,193,246,0.35), 0 4px 16px rgba(0,0,0,0.15), 0 0 40px rgba(157,193,246,0.25);
+            opacity: 0.9;
         }
         .btn-dark:hover {
-            box-shadow: 0 16px 48px rgba(234,131,118,0.35), 0 0 40px rgba(234,131,118,0.2);
+            opacity: 0.9;
         }
 
-        /* 2. Brand Logos - Staggered Hover + Smooth Scale */
-        .logo-wall img {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-origin: center;
-        }
-        /* Apply stagger delay via nth-child */
-        .logo-wall img:nth-child(1) { transition-delay: 0s; }
-        .logo-wall img:nth-child(2) { transition-delay: 0.03s; }
-        .logo-wall img:nth-child(3) { transition-delay: 0.06s; }
-        .logo-wall img:nth-child(4) { transition-delay: 0.09s; }
-        .logo-wall img:nth-child(5) { transition-delay: 0.12s; }
-        .logo-wall img:nth-child(6) { transition-delay: 0.15s; }
-        .logo-wall img:nth-child(7) { transition-delay: 0.18s; }
-        .logo-wall img:nth-child(8) { transition-delay: 0.21s; }
-        .logo-wall img:nth-child(9) { transition-delay: 0.24s; }
-        .logo-wall img:nth-child(10) { transition-delay: 0.27s; }
-        .logo-wall img:nth-child(n+11) { transition-delay: 0.3s; }
-
-        /* 3. Speaker Cards - Gentle Lift + Shadow Transition */
+        /* Speaker cards - subtle lift */
         .speaker-card-clean {
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.3s ease;
         }
         .speaker-card-clean:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08);
-        }
-        /* Also apply to old speaker cards if they exist */
-        .speaker-card {
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .speaker-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 60px rgba(31, 35, 26, 0.25), 0 4px 16px rgba(31, 35, 26, 0.08);
+            opacity: 0.85;
         }
 
-        /* 4. Page Load - Fade-in Hero Content + Stagger Sections */
+        /* Page Load - Fade-in Hero Content */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -2038,15 +1934,10 @@
         .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
         .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
 
-        /* 5. Scroll Indicator - Bounce Animation + Hide on Scroll */
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
-        }
+        /* Scroll Indicator */
         .hero-scroll {
-            animation: bounce 2s ease-in-out infinite;
-            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: float 2.5s ease-in-out infinite;
+            transition: opacity 0.4s ease;
         }
         .hero-scroll.hidden {
             opacity: 0;
@@ -2350,16 +2241,14 @@
     <!-- ═══════════════════════════════════════════════════════════════════
          5. WHAT IS WELLNESS HOUSE (Dark)
          ═══════════════════════════════════════════════════════════════════ -->
-    <section id="about" class="section-dark section-padding" style="background: #1C2228;">
-        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:-100px;right:-200px;opacity:0.08;"></div>
-        <div class="blob" style="width:400px;height:400px;background:#EA8376;bottom:-100px;left:-150px;opacity:0.05;"></div>
+    <section id="about" class="section-cream section-padding" style="background: #FFFFFF;">
 
         <div class="section-inner" style="text-align:center;">
-            <div class="reveal section-label" style="color:#9DC1F6;">The Experience</div>
-            <h2 class="reveal section-title" style="font-size:var(--text-3xl);color:#EFEEDF;letter-spacing:-0.02em;">
-                <span style="font-weight:300;">What is</span> <span class="gradient-text" style="font-weight:800;">Wellness House</span><span style="font-weight:300;">?</span>
+            <div class="reveal section-label" style="color:#EA8376;">The Experience</div>
+            <h2 class="reveal section-title" style="font-size:var(--text-3xl);color:#1F231A;letter-spacing:-0.02em;">
+                <span style="font-weight:300;">What is</span> <span class="gradient-text-dark" style="font-weight:800;">Wellness House</span><span style="font-weight:300;">?</span>
             </h2>
-            <p class="reveal section-subtitle" style="color:rgba(239,238,223,0.4);margin:0 auto 64px;">
+            <p class="reveal section-subtitle" style="color:rgba(31,35,26,0.45);margin:0 auto 64px;">
                 A curated, one-day experience built for quality, depth, and real connection.
             </p>
 
@@ -2383,11 +2272,11 @@
             </div>
 
             <!-- Divider -->
-            <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(239,238,223,0.08),transparent);margin-bottom:48px;"></div>
+            <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(31,35,26,0.08),transparent);margin-bottom:48px;"></div>
 
             <!-- Who it's for -->
             <div class="reveal">
-                <div class="section-label" style="color:rgba(239,238,223,0.2);margin-bottom:20px;">Who It's For</div>
+                <div class="section-label" style="color:rgba(31,35,26,0.3);margin-bottom:20px;">Who It's For</div>
                 <div class="chip-row">
                     <span class="chip">Founders &amp; CEOs</span>
                     <span class="chip">Brand Operators</span>
@@ -2403,10 +2292,7 @@
     <!-- ═══════════════════════════════════════════════════════════════════
          6. BRANDS ATTENDING (Cream)
          ═══════════════════════════════════════════════════════════════════ -->
-    <section id="brands" class="section-cream section-padding" style="background: var(--bg-light-pink);">
-        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:5%;left:-200px;"></div>
-        <div class="blob" style="width:400px;height:400px;background:#FFBFCC;bottom:10%;right:-150px;"></div>
-        <div class="blob" style="width:350px;height:350px;background:#FCD6A6;top:50%;right:20%;"></div>
+    <section id="brands" class="section-cream section-padding" style="background: #EFEEDF;">
 
         <div class="section-inner" style="text-align:center;">
             <div class="reveal section-label" style="color:#EA8376;">The Room</div>
@@ -2466,17 +2352,14 @@
     <!-- ═══════════════════════════════════════════════════════════════════
          6.5. WHY ATTEND (Dark Section)
          ═══════════════════════════════════════════════════════════════════ -->
-    <section class="section-dark section-padding" style="background: #28211C;">
-        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:-150px;left:-200px;opacity:0.08;"></div>
-        <div class="blob" style="width:400px;height:400px;background:#FFBFCC;bottom:-100px;right:-150px;opacity:0.06;"></div>
-        <div class="blob" style="width:350px;height:350px;background:#FCD6A6;top:50%;left:50%;opacity:0.05;"></div>
+    <section class="section-cream section-padding" style="background: #EFEEDF;">
 
         <div class="section-inner" style="text-align:center;">
-            <div class="reveal section-label" style="color:#9DC1F6;">Why Come?</div>
-            <h2 class="reveal section-title" style="font-size:var(--text-3xl);color:#EFEEDF;margin-bottom:16px;letter-spacing:-0.02em;">
-                <span style="font-weight:300;">Why</span> <span class="gradient-text" style="font-weight:800;">Attend</span>
+            <div class="reveal section-label" style="color:#EA8376;">Why Come?</div>
+            <h2 class="reveal section-title" style="font-size:var(--text-3xl);color:#1F231A;margin-bottom:16px;letter-spacing:-0.02em;">
+                <span style="font-weight:300;">Why</span> <span class="gradient-text-dark" style="font-weight:800;">Attend</span>
             </h2>
-            <p class="reveal section-subtitle" style="color:rgba(239,238,223,0.4);margin:0 auto 56px;">
+            <p class="reveal section-subtitle" style="color:rgba(31,35,26,0.45);margin:0 auto 56px;">
                 Three reasons Wellness House isn't another conference.
             </p>
 
@@ -2517,8 +2400,7 @@
     <!-- ═══════════════════════════════════════════════════════════════════
          7. KEYNOTE SPOTLIGHT (Cream)
          ═══════════════════════════════════════════════════════════════════ -->
-    <section class="section-cream section-padding" style="padding-top:0;">
-        <div class="blob" style="width:400px;height:400px;background:#FCD6A6;top:-100px;left:10%;"></div>
+    <section class="section-cream section-padding" style="padding-top:0;background:#EFEEDF;">
 
         <div class="section-inner">
             <div class="reveal section-label" style="color:#EA8376;text-align:center;">Keynote Speaker</div>
@@ -2546,14 +2428,12 @@
     <!-- ═══════════════════════════════════════════════════════════════════
          8. SPEAKERS (Gradient Container Style)
          ═══════════════════════════════════════════════════════════════════ -->
-    <section id="speakers" class="speakers-section-wrapper section-padding" style="background: linear-gradient(135deg, #FF8FB8 0%, #6BAAFF 45%, #FFB56B 80%, #EA8376 100%); position: relative; overflow: hidden;">
-        <!-- Overlay for depth -->
-        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 50%, rgba(255,255,255,0.05) 100%); pointer-events: none;"></div>
+    <section id="speakers" class="section-cream section-padding" style="background: #FFFFFF; position: relative; overflow: hidden;">
         
         <div class="section-inner" style="position: relative; z-index: 2;">
-            <div class="reveal section-label" style="color: rgba(255,255,255,0.7); text-align: center;">On Stage</div>
-            <h2 class="reveal section-title" style="font-size: var(--text-3xl); text-align: center; margin-bottom: 80px; color: #fff; text-shadow: 0 2px 20px rgba(0,0,0,0.1); letter-spacing:-0.02em;">
-                <span style="font-weight:300;">Guest</span> <span style="font-weight:800;">Speakers</span>
+            <div class="reveal section-label" style="color: #EA8376; text-align: center;">On Stage</div>
+            <h2 class="reveal section-title" style="font-size: var(--text-3xl); text-align: center; margin-bottom: 80px; color: #1F231A; letter-spacing:-0.02em;">
+                <span style="font-weight:300;">Guest</span> <span class="gradient-text-dark" style="font-weight:800;">Speakers</span>
             </h2>
 
             <div class="speakers-grid-clean">
@@ -2630,12 +2510,12 @@
                 </div>
             </div>
 
-            <p class="reveal" style="text-align: center; margin-top: 48px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; font-style: italic; color: rgba(255,255,255,0.7); text-shadow: 0 1px 8px rgba(0,0,0,0.1);">+ more speakers to be announced</p>
+            <p class="reveal" style="text-align: center; margin-top: 48px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; font-style: italic; color: rgba(31,35,26,0.4);">+ more speakers to be announced</p>
         </div>
     </section>
 
     <style>
-        /* Gradient Container Speakers Section */
+        /* Clean Speakers Section — Large photos on white */
         .speakers-grid-clean {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -2646,79 +2526,47 @@
 
         .speaker-card-clean {
             text-align: center;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.3s ease;
         }
 
         .speaker-card-clean:hover {
-            transform: translateY(-8px);
+            opacity: 0.85;
         }
 
         .speaker-photo-clean {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             margin: 0 auto 20px;
-            border-radius: 24px;
+            border-radius: 50%;
             overflow: hidden;
             position: relative;
-            padding: 4px;
-            background: linear-gradient(135deg, #6BAAFF 0%, #FF8FB8 50%, #FFB56B 100%);
-            box-shadow: 
-                0 8px 24px rgba(0, 0, 0, 0.15),
-                0 0 0 1px rgba(255, 255, 255, 0.1),
-                0 0 20px rgba(107, 170, 255, 0.3);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .speaker-card-clean:hover .speaker-photo-clean {
-            box-shadow: 
-                0 12px 32px rgba(0, 0, 0, 0.2),
-                0 0 0 1px rgba(255, 255, 255, 0.2),
-                0 0 32px rgba(107, 170, 255, 0.5),
-                0 0 48px rgba(255, 139, 184, 0.3);
-            transform: scale(1.03);
-        }
-
-        .speaker-photo-clean::before {
-            content: '';
-            position: absolute;
-            inset: 4px;
-            border-radius: 20px;
-            background: #fff;
-            z-index: 1;
         }
 
         .speaker-photo-clean img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 50%;
             position: relative;
             z-index: 2;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .speaker-card-clean:hover .speaker-photo-clean img {
-            transform: scale(1.02);
         }
 
         .speaker-name-clean {
             font-family: 'Unbounded', sans-serif;
             font-weight: 700;
             font-size: 18px;
-            color: #fff;
+            color: #1F231A;
             margin-bottom: 6px;
             line-height: 1.3;
             letter-spacing: -0.01em;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
         }
 
         .speaker-title-clean {
             font-family: 'Montserrat', sans-serif;
             font-size: 14px;
             font-weight: 500;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(31, 35, 26, 0.5);
             line-height: 1.5;
-            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
         }
 
         @media (max-width: 1024px) {
@@ -2735,8 +2583,8 @@
             }
 
             .speaker-photo-clean {
-                width: 160px;
-                height: 160px;
+                width: 150px;
+                height: 150px;
             }
 
             .speaker-name-clean {
@@ -2750,23 +2598,21 @@
         
         @media (max-width: 480px) {
             .speakers-grid-clean {
-                grid-template-columns: 1fr;
-                gap: 32px;
-                max-width: 280px;
-                margin: 0 auto;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 28px 20px;
             }
             
             .speaker-photo-clean {
-                width: 200px;
-                height: 200px;
+                width: 140px;
+                height: 140px;
             }
             
             .speaker-name-clean {
-                font-size: 17px;
+                font-size: 15px;
             }
             
             .speaker-title-clean {
-                font-size: 14px;
+                font-size: 12px;
             }
         }
     </style>
@@ -2775,8 +2621,6 @@
          10. PROGRAMMING / SCHEDULE (Light Cream) — EEE-STYLE REBUILD
          ═══════════════════════════════════════════════════════════════════ -->
     <section id="schedule" class="section-cream section-padding" style="background:#EFEEDF;">
-        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:10%;right:-250px;"></div>
-        <div class="blob" style="width:400px;height:400px;background:#FCD6A6;bottom:5%;left:-200px;"></div>
 
         <div class="section-inner" style="text-align:center;">
             <div class="reveal section-label" style="color:#9DC1F6;">Friday, March 13</div>
@@ -2790,7 +2634,7 @@
                 <!-- ═══════════════════════════════════════════════════════════
                      9:00 AM — RUN, ROX & RECOVERY (HIGHLIGHT EXPERIENCE)
                      ═══════════════════════════════════════════════════════════ -->
-                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(157,193,246,0.08) 0%, rgba(255,255,255,0.9) 100%); border-left: 4px solid #9DC1F6;">
+                <div class="schedule-row" style="border-left: 4px solid #9DC1F6;">
                     <div class="schedule-time" style="color: #9DC1F6;">9:00 AM</div>
                     <div class="schedule-content">
                         <div style="display:inline-block; padding:5px 12px; background:rgba(157,193,246,0.15); border-radius:999px; font-size:11px; font-weight:700; color:#9DC1F6; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">🏃 Movement</div>
@@ -2842,7 +2686,7 @@
                 <!-- ═══════════════════════════════════════════════════════════
                      11:30 AM — CPG COMEDY ROAST (HIGHLIGHT EXPERIENCE)
                      ═══════════════════════════════════════════════════════════ -->
-                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(255,191,204,0.08) 0%, rgba(255,255,255,0.9) 100%); border-left: 4px solid #FFBFCC;">
+                <div class="schedule-row" style="border-left: 4px solid #FFBFCC;">
                     <div class="schedule-time" style="color: #FFBFCC;">11:30 AM</div>
                     <div class="schedule-content">
                         <div style="display:inline-block; padding:5px 12px; background:rgba(157,193,246,0.15); border-radius:999px; font-size:11px; font-weight:700; color:#FFBFCC; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">🎤 Experience</div>
@@ -2910,7 +2754,7 @@
                 <!-- ═══════════════════════════════════════════════════════════
                      2:30 PM — KEYNOTE (HIGHLIGHT EXPERIENCE)
                      ═══════════════════════════════════════════════════════════ -->
-                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(234,131,118,0.08) 0%, rgba(255,255,255,0.9) 100%); border-left: 4px solid #EA8376;">
+                <div class="schedule-row" style="border-left: 4px solid #EA8376;">
                     <div class="schedule-time" style="color: #EA8376;">2:30 PM</div>
                     <div class="schedule-content">
                         <div style="display:inline-block; padding:5px 12px; background:rgba(157,193,246,0.15); border-radius:999px; font-size:11px; font-weight:700; color:#EA8376; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">🔥 Keynote</div>
@@ -2926,7 +2770,7 @@
                 <!-- ═══════════════════════════════════════════════════════════
                      3:30 PM — EVENING SOCIAL (HIGHLIGHT EXPERIENCE)
                      ═══════════════════════════════════════════════════════════ -->
-                <div class="schedule-row" style="background: linear-gradient(135deg, rgba(252,214,166,0.15) 0%, rgba(157,193,246,0.1) 100%); border: 2px solid rgba(252,214,166,0.25); border-left: 4px solid #FCD6A6; border-radius: 16px; padding: 36px 32px; box-shadow: 0 4px 16px rgba(252,214,166,0.08);">
+                <div class="schedule-row" style="border-left: 4px solid #FCD6A6;">
                     <div class="schedule-time" style="color: #FCA65C; font-size: 19px; font-weight: 900;">3:30 PM</div>
                     <div class="schedule-content">
                         <div style="display:inline-block; padding:5px 12px; background:rgba(157,193,246,0.15); border-radius:999px; font-size:11px; font-weight:700; color:#FCA65C; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">🎉 Social</div>
@@ -2964,9 +2808,7 @@
     <!-- ═══════════════════════════════════════════════════════════════════
          10.5. 2025 RECAP + ATTENDEES (Unified Cream Section)
          ═══════════════════════════════════════════════════════════════════ -->
-    <section class="section-cream section-padding" style="background:#EFEEDF;padding-top:0;padding-bottom:100px;">
-        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:-150px;left:-200px;opacity:0.08;"></div>
-        <div class="blob" style="width:400px;height:400px;background:#FFBFCC;bottom:-100px;right:-150px;opacity:0.06;"></div>
+    <section class="section-cream section-padding" style="background:#FFFFFF;padding-top:0;padding-bottom:100px;">
 
         <div class="section-inner" style="text-align:center;">
             <!-- 2025 Recap Video -->
@@ -3028,8 +2870,7 @@
     <!-- ═══════════════════════════════════════════════════════════════════
          11. SPONSORS (Cream)
          ═══════════════════════════════════════════════════════════════════ -->
-    <section class="section-cream section-padding">
-        <div class="blob" style="width:400px;height:400px;background:#FCD6A6;top:-100px;left:40%;"></div>
+    <section class="section-cream section-padding" style="background:#EFEEDF;">
 
         <div class="section-inner" style="text-align:center;">
             <div class="reveal section-label" style="color:rgba(31,35,26,0.25);">Strategic Partners</div>
