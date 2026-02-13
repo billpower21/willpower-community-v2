@@ -590,6 +590,85 @@
             color: rgba(239, 238, 223, 0.15);
         }
 
+        /* ══════════════════════════════════════════════════════════════════
+           TIMELINE - Day in the Life
+           ══════════════════════════════════════════════════════════════════ */
+        .timeline-section {
+            margin-bottom: 80px;
+        }
+        .timeline-header {
+            text-align: center;
+        }
+        .timeline-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 48px 24px;
+            background: rgba(157, 193, 246, 0.03);
+            border-radius: 24px;
+            border: 1px solid rgba(157, 193, 246, 0.1);
+            position: relative;
+        }
+        .timeline-block {
+            flex: 1;
+            text-align: center;
+            padding: 0 12px;
+            position: relative;
+            z-index: 2;
+        }
+        .timeline-time {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            line-height: 1;
+        }
+        .timeline-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+        .timeline-title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #EFEEDF;
+            margin-bottom: 8px;
+        }
+        .timeline-desc {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: rgba(239, 238, 223, 0.4);
+            line-height: 1.5;
+            margin: 0;
+        }
+        .timeline-connector {
+            font-size: 24px;
+            color: rgba(157, 193, 246, 0.3);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Mobile: vertical stack */
+        @media (max-width: 768px) {
+            .timeline-container {
+                flex-direction: column;
+                gap: 32px;
+            }
+            .timeline-connector {
+                transform: rotate(90deg);
+            }
+            .timeline-block {
+                padding: 24px;
+                width: 100%;
+            }
+        }
+
         .benefit-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1546,33 +1625,55 @@
                 A curated, one-day experience built for quality, depth, and real connection.
             </p>
 
-            <!-- Comparison: Wellness House vs Traditional Events -->
-            <div class="reveal experience-comparison">
-                <div class="comparison-side comparison-left">
-                    <div class="comparison-label">Wellness House</div>
-                    <div class="comparison-number">500</div>
-                    <div class="comparison-title">Curated Community<br/>Over Mass Crowds</div>
-                    <ul class="comparison-features">
-                        <li>Invite-based, high-quality attendees</li>
-                        <li>Real conversations, not sales pitches</li>
-                        <li>Founders, operators & brand leaders</li>
-                        <li>Movement, panels & networking as one</li>
-                        <li>Intimate vendor village (30+ brands)</li>
-                        <li>Full-day immersion + evening social</li>
-                    </ul>
-                </div>
-                <div class="comparison-side comparison-right">
-                    <div class="comparison-label">Traditional Summits</div>
-                    <div class="comparison-number">2000+</div>
-                    <div class="comparison-title">Generic Insights<br/>& Transactional Vibe</div>
-                    <ul class="comparison-features">
-                        <li>Open registration, diluted audience</li>
-                        <li>Vendor booths pushing product</li>
-                        <li>Stage-only format, passive learning</li>
-                        <li>Generic wellness platitudes</li>
-                        <li>Overcrowded expo halls</li>
-                        <li>Rushed networking, no depth</li>
-                    </ul>
+            <!-- Day in the Life Timeline -->
+            <div class="reveal timeline-section">
+                <h3 class="timeline-header" style="font-family:'Unbounded',sans-serif;font-size:32px;font-weight:900;color:#EFEEDF;margin-bottom:48px;">
+                    A Day at Wellness House
+                </h3>
+                
+                <div class="timeline-container">
+                    <div class="timeline-block">
+                        <div class="timeline-time gradient-text">9AM</div>
+                        <div class="timeline-icon">🏃</div>
+                        <div class="timeline-title">Run Club</div>
+                        <p class="timeline-desc">Start the day with movement & energy</p>
+                    </div>
+                    
+                    <div class="timeline-connector">→</div>
+                    
+                    <div class="timeline-block">
+                        <div class="timeline-time gradient-text">10AM</div>
+                        <div class="timeline-icon">🎤</div>
+                        <div class="timeline-title">Panels</div>
+                        <p class="timeline-desc">Industry insights from brand leaders</p>
+                    </div>
+                    
+                    <div class="timeline-connector">→</div>
+                    
+                    <div class="timeline-block">
+                        <div class="timeline-time gradient-text">12PM</div>
+                        <div class="timeline-icon">🍽️</div>
+                        <div class="timeline-title">Lunch</div>
+                        <p class="timeline-desc">Curated meals & deep conversations</p>
+                    </div>
+                    
+                    <div class="timeline-connector">→</div>
+                    
+                    <div class="timeline-block">
+                        <div class="timeline-time gradient-text">2PM</div>
+                        <div class="timeline-icon">🔥</div>
+                        <div class="timeline-title">Keynote</div>
+                        <p class="timeline-desc">Fireside chats with top founders</p>
+                    </div>
+                    
+                    <div class="timeline-connector">→</div>
+                    
+                    <div class="timeline-block">
+                        <div class="timeline-time gradient-text">4PM</div>
+                        <div class="timeline-icon">🎉</div>
+                        <div class="timeline-title">Social</div>
+                        <p class="timeline-desc">Evening networking & music</p>
+                    </div>
                 </div>
             </div>
 
