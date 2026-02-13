@@ -48,6 +48,13 @@
             --text-3xl: 56px;   /* H2 */
             --text-4xl: 72px;   /* H1 */
             --text-5xl: 96px;   /* Hero */
+
+            /* Section background palette */
+            --bg-cream: #EFEEDF;
+            --bg-light-blue: #F4F8FD;
+            --bg-light-pink: #FFF6F8;
+            --bg-light-peach: #FFF9F5;
+            --bg-dark: #1F231A;
         }
 
         /* ══════════════════════════════════════════════════════════════════
@@ -1802,23 +1809,25 @@
         }
 
         /* ══════════════════════════════════════════════════════════════════
-           ANIMATIONS
+           ANIMATIONS — Scroll Reveal System
            ══════════════════════════════════════════════════════════════════ */
         .reveal {
             opacity: 0;
-            transform: translateY(48px);
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .reveal.visible {
+        .reveal.visible,
+        .reveal.revealed {
             opacity: 1;
             transform: translateY(0);
         }
         .reveal-scale {
             opacity: 0;
             transform: scale(0.96);
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .reveal-scale.visible {
+        .reveal-scale.visible,
+        .reveal-scale.revealed {
             opacity: 1;
             transform: scale(1);
         }
@@ -1830,6 +1839,89 @@
         .delay-6 { transition-delay: 0.3s; }
         .delay-7 { transition-delay: 0.35s; }
         .delay-8 { transition-delay: 0.4s; }
+
+        /* Staggered reveals for speaker grid items */
+        .speakers-grid .reveal:nth-child(2),
+        .speakers-grid-clean .reveal:nth-child(2) { transition-delay: 0.1s; }
+        .speakers-grid .reveal:nth-child(3),
+        .speakers-grid-clean .reveal:nth-child(3) { transition-delay: 0.2s; }
+        .speakers-grid .reveal:nth-child(4),
+        .speakers-grid-clean .reveal:nth-child(4) { transition-delay: 0.3s; }
+        .speakers-grid .reveal:nth-child(5),
+        .speakers-grid-clean .reveal:nth-child(5) { transition-delay: 0.15s; }
+        .speakers-grid .reveal:nth-child(6),
+        .speakers-grid-clean .reveal:nth-child(6) { transition-delay: 0.25s; }
+        .speakers-grid .reveal:nth-child(7),
+        .speakers-grid-clean .reveal:nth-child(7) { transition-delay: 0.35s; }
+        .speakers-grid .reveal:nth-child(8),
+        .speakers-grid-clean .reveal:nth-child(8) { transition-delay: 0.45s; }
+
+        /* Staggered reveals for brand logos */
+        .logo-wall.reveal img:nth-child(n) { 
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .logo-wall.reveal.visible img,
+        .logo-wall.reveal.revealed img {
+            opacity: 0.35;
+            transform: translateY(0);
+        }
+        .logo-wall.reveal img:nth-child(1) { transition-delay: 0s; }
+        .logo-wall.reveal img:nth-child(2) { transition-delay: 0.03s; }
+        .logo-wall.reveal img:nth-child(3) { transition-delay: 0.06s; }
+        .logo-wall.reveal img:nth-child(4) { transition-delay: 0.09s; }
+        .logo-wall.reveal img:nth-child(5) { transition-delay: 0.12s; }
+        .logo-wall.reveal img:nth-child(6) { transition-delay: 0.15s; }
+        .logo-wall.reveal img:nth-child(7) { transition-delay: 0.18s; }
+        .logo-wall.reveal img:nth-child(8) { transition-delay: 0.21s; }
+        .logo-wall.reveal img:nth-child(9) { transition-delay: 0.24s; }
+        .logo-wall.reveal img:nth-child(10) { transition-delay: 0.27s; }
+        .logo-wall.reveal img:nth-child(n+11) { transition-delay: 0.3s; }
+
+        /* Staggered reveals for benefit cards */
+        .benefit-grid .reveal:nth-child(1) { transition-delay: 0s; }
+        .benefit-grid .reveal:nth-child(2) { transition-delay: 0.12s; }
+        .benefit-grid .reveal:nth-child(3) { transition-delay: 0.24s; }
+
+        /* Staggered reveals for why-attend columns */
+        .why-attend-grid .why-attend-column:nth-child(1) { transition-delay: 0s; }
+        .why-attend-grid .why-attend-column:nth-child(2) { transition-delay: 0.12s; }
+        .why-attend-grid .why-attend-column:nth-child(3) { transition-delay: 0.24s; }
+
+        /* Staggered reveals for schedule rows */
+        .schedule-timeline .schedule-row { 
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .schedule-timeline.revealed .schedule-row,
+        .schedule-timeline.visible .schedule-row {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .schedule-timeline .schedule-row:nth-child(1) { transition-delay: 0s; }
+        .schedule-timeline .schedule-row:nth-child(2) { transition-delay: 0.08s; }
+        .schedule-timeline .schedule-row:nth-child(3) { transition-delay: 0.16s; }
+        .schedule-timeline .schedule-row:nth-child(4) { transition-delay: 0.24s; }
+        .schedule-timeline .schedule-row:nth-child(5) { transition-delay: 0.32s; }
+        .schedule-timeline .schedule-row:nth-child(6) { transition-delay: 0.40s; }
+        .schedule-timeline .schedule-row:nth-child(7) { transition-delay: 0.48s; }
+        .schedule-timeline .schedule-row:nth-child(8) { transition-delay: 0.56s; }
+        .schedule-timeline .schedule-row:nth-child(9) { transition-delay: 0.64s; }
+
+        /* Staggered reveals for ongoing cards */
+        .ongoing-grid .reveal:nth-child(1) { transition-delay: 0s; }
+        .ongoing-grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+        .ongoing-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+        .ongoing-grid .reveal:nth-child(4) { transition-delay: 0.24s; }
+
+        /* Staggered reveals for sponsor items */
+        .sponsor-row .sponsor-item:nth-child(1) { transition-delay: 0s; }
+        .sponsor-row .sponsor-item:nth-child(2) { transition-delay: 0.1s; }
+        .sponsor-row .sponsor-item:nth-child(3) { transition-delay: 0.2s; }
+        .sponsor-row .sponsor-item:nth-child(4) { transition-delay: 0.3s; }
+        .sponsor-row .sponsor-item:nth-child(5) { transition-delay: 0.4s; }
 
         /* ══════════════════════════════════════════════════════════════════
            SECTION TRANSITIONS
@@ -2096,7 +2188,7 @@
          ═══════════════════════════════════════════════════════════════════ -->
     <nav class="main-nav hero-mode" id="mainNav">
         <a href="#">
-            <img src="img/willpower-dark.png" alt="Willpower" class="nav-logo">
+            <img decoding="async" width="1500" height="405" src="img/willpower-dark.png" alt="Willpower" class="nav-logo">
         </a>
         <div class="nav-links">
             <a href="#about">About</a>
@@ -2139,7 +2231,7 @@
             </div>
 
             <div class="reveal delay-1">
-                <img src="img/wh-lockup-white-final.png" alt="Wellness House 2026" class="hero-lockup">
+                <img decoding="async" width="1557" height="476" src="img/wh-lockup-white-final.png" alt="Wellness House 2026" class="hero-lockup">
             </div>
 
             <p class="reveal delay-2 hero-tagline">
@@ -2249,7 +2341,7 @@
     <!-- ═══════════════════════════════════════════════════════════════════
          5. WHAT IS WELLNESS HOUSE (Dark)
          ═══════════════════════════════════════════════════════════════════ -->
-    <section id="about" class="section-dark section-padding">
+    <section id="about" class="section-dark section-padding" style="background: #1C2228;">
         <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:-100px;right:-200px;opacity:0.08;"></div>
         <div class="blob" style="width:400px;height:400px;background:#EA8376;bottom:-100px;left:-150px;opacity:0.05;"></div>
 
@@ -2317,45 +2409,45 @@
             </p>
 
             <div class="reveal logo-wall" style="margin-bottom:32px;">
-                <img src="img/brands/bloom-nutrition.png" alt="Bloom Nutrition" style="height:36px">
-                <img src="img/brands/whoop.png" alt="WHOOP" style="height:22px">
-                <img src="img/brands/ag1.png" alt="AG1" style="height:28px">
-                <img src="img/brands/eight-sleep.png" alt="Eight Sleep" style="height:24px">
-                <img src="img/brands/peloton.png" alt="Peloton" style="height:22px">
-                <img src="img/brands/oura.png" alt="OURA" style="height:28px">
-                <img src="img/brands/adidas.png" alt="adidas" style="height:28px">
-                <img src="img/brands/olipop.png" alt="Olipop" style="height:28px">
-                <img src="img/brands/david.png" alt="David" style="height:24px">
-                <img src="img/brands/dollar-shave-club.png" alt="Dollar Shave Club" style="height:22px">
-                <img src="img/brands/dunkin.png" alt="Dunkin'" style="height:28px">
-                <img src="img/brands/outdoor-voices.png" alt="Outdoor Voices" style="height:26px">
-                <img src="img/brands/form.png" alt="FORM" style="height:22px">
-                <img src="img/brands/goodwipes.png" alt="Goodwipes" style="height:24px">
-                <img src="img/brands/cadillac.png" alt="Cadillac" style="height:28px">
-                <img src="img/brands/truemed.png" alt="Truemed" style="height:22px">
-                <img src="img/brands/kohler.png" alt="Kohler" style="height:24px">
-                <img src="img/brands/plunge.png" alt="Plunge" style="height:22px">
-                <img src="img/brands/everyday-dose.png" alt="Everyday Dose" style="height:24px">
-                <img src="img/brands/ketoneiq.png" alt="KetoneIQ" style="height:22px">
-                <img src="img/brands/function-health.png" alt="Function Health" style="height:26px">
-                <img src="img/brands/gardencup.png" alt="Gardencup" style="height:22px">
-                <img src="img/brands/sweatpals.png" alt="Sweatpals" style="height:22px">
-                <img src="img/brands/hyrox.png" alt="HYROX" style="height:22px">
-                <img src="img/brands/super-coffee.png" alt="Super Coffee" style="height:24px">
-                <img src="img/brands/tecovas.png" alt="Tecovas" style="height:28px">
-                <img src="img/brands/its-skinny.png" alt="It's Skinny" style="height:24px">
-                <img src="img/brands/tinyhealth.png" alt="tinyhealth" style="height:22px">
-                <img src="img/brands/rythm.png" alt="rythm" style="height:22px">
-                <img src="img/brands/well.png" alt="WELL" style="height:22px">
-                <img src="img/brands/hyperice.png" alt="Hyperice" style="height:22px">
-                <img src="img/brands/superpower.png" alt="Superpower" style="height:22px">
-                <img src="img/brands/yeti.png" alt="YETI" style="height:22px">
-                <img src="img/brands/san-antonio-spurs.png" alt="San Antonio Spurs" style="height:30px">
-                <img src="img/lskd.png" alt="LSKD" style="height:20px">
-                <img src="img/kane.png" alt="KANE" style="height:22px">
-                <img src="img/vivobarefoot.png" alt="Vivobarefoot" style="height:24px">
-                <img src="img/throne.png" alt="Throne" style="height:24px">
-                <img src="img/vollebak.png" alt="Vollebak" style="height:18px">
+                <img loading="lazy" decoding="async" width="99" height="36" src="img/brands/bloom-nutrition.png" alt="Bloom Nutrition" style="height:36px">
+                <img loading="lazy" decoding="async" width="134" height="22" src="img/brands/whoop.png" alt="WHOOP" style="height:22px">
+                <img loading="lazy" decoding="async" width="28" height="28" src="img/brands/ag1.png" alt="AG1" style="height:28px">
+                <img loading="lazy" decoding="async" width="57" height="24" src="img/brands/eight-sleep.png" alt="Eight Sleep" style="height:24px">
+                <img loading="lazy" decoding="async" width="79" height="22" src="img/brands/peloton.png" alt="Peloton" style="height:22px">
+                <img loading="lazy" decoding="async" width="90" height="28" src="img/brands/oura.png" alt="OURA" style="height:28px">
+                <img loading="lazy" decoding="async" width="41" height="28" src="img/brands/adidas.png" alt="adidas" style="height:28px">
+                <img loading="lazy" decoding="async" width="81" height="28" src="img/brands/olipop.png" alt="Olipop" style="height:28px">
+                <img loading="lazy" decoding="async" width="59" height="24" src="img/brands/david.png" alt="David" style="height:24px">
+                <img loading="lazy" decoding="async" width="91" height="22" src="img/brands/dollar-shave-club.png" alt="Dollar Shave Club" style="height:22px">
+                <img loading="lazy" decoding="async" width="154" height="28" src="img/brands/dunkin.png" alt="Dunkin'" style="height:28px">
+                <img loading="lazy" decoding="async" width="26" height="26" src="img/brands/outdoor-voices.png" alt="Outdoor Voices" style="height:26px">
+                <img loading="lazy" decoding="async" width="108" height="22" src="img/brands/form.png" alt="FORM" style="height:22px">
+                <img loading="lazy" decoding="async" width="119" height="24" src="img/brands/goodwipes.png" alt="Goodwipes" style="height:24px">
+                <img loading="lazy" decoding="async" width="56" height="28" src="img/brands/cadillac.png" alt="Cadillac" style="height:28px">
+                <img loading="lazy" decoding="async" width="119" height="22" src="img/brands/truemed.png" alt="Truemed" style="height:22px">
+                <img loading="lazy" decoding="async" width="79" height="24" src="img/brands/kohler.png" alt="Kohler" style="height:24px">
+                <img loading="lazy" decoding="async" width="91" height="22" src="img/brands/plunge.png" alt="Plunge" style="height:22px">
+                <img loading="lazy" decoding="async" width="52" height="24" src="img/brands/everyday-dose.png" alt="Everyday Dose" style="height:24px">
+                <img loading="lazy" decoding="async" width="103" height="22" src="img/brands/ketoneiq.png" alt="KetoneIQ" style="height:22px">
+                <img loading="lazy" decoding="async" width="128" height="26" src="img/brands/function-health.png" alt="Function Health" style="height:26px">
+                <img loading="lazy" decoding="async" width="22" height="22" src="img/brands/gardencup.png" alt="Gardencup" style="height:22px">
+                <img loading="lazy" decoding="async" width="150" height="22" src="img/brands/sweatpals.png" alt="Sweatpals" style="height:22px">
+                <img loading="lazy" decoding="async" width="159" height="22" src="img/brands/hyrox.png" alt="HYROX" style="height:22px">
+                <img loading="lazy" decoding="async" width="55" height="24" src="img/brands/super-coffee.png" alt="Super Coffee" style="height:24px">
+                <img loading="lazy" decoding="async" width="38" height="28" src="img/brands/tecovas.png" alt="Tecovas" style="height:28px">
+                <img loading="lazy" decoding="async" width="46" height="24" src="img/brands/its-skinny.png" alt="It's Skinny" style="height:24px">
+                <img loading="lazy" decoding="async" width="106" height="22" src="img/brands/tinyhealth.png" alt="tinyhealth" style="height:22px">
+                <img loading="lazy" decoding="async" width="27" height="22" src="img/brands/rythm.png" alt="rythm" style="height:22px">
+                <img loading="lazy" decoding="async" width="22" height="22" src="img/brands/well.png" alt="WELL" style="height:22px">
+                <img loading="lazy" decoding="async" width="29" height="22" src="img/brands/hyperice.png" alt="Hyperice" style="height:22px">
+                <img loading="lazy" decoding="async" width="164" height="22" src="img/brands/superpower.png" alt="Superpower" style="height:22px">
+                <img loading="lazy" decoding="async" width="22" height="22" src="img/brands/yeti.png" alt="YETI" style="height:22px">
+                <img loading="lazy" decoding="async" width="66" height="30" src="img/brands/san-antonio-spurs.png" alt="San Antonio Spurs" style="height:30px">
+                <img loading="lazy" decoding="async" width="20" height="20" src="img/lskd.png" alt="LSKD" style="height:20px">
+                <img loading="lazy" decoding="async" width="22" height="22" src="img/kane.png" alt="KANE" style="height:22px">
+                <img loading="lazy" decoding="async" width="24" height="24" src="img/vivobarefoot.png" alt="Vivobarefoot" style="height:24px">
+                <img loading="lazy" decoding="async" width="24" height="24" src="img/throne.png" alt="Throne" style="height:24px">
+                <img loading="lazy" decoding="async" width="18" height="18" src="img/vollebak.png" alt="Vollebak" style="height:18px">
             </div>
 
             <p class="reveal" style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;font-style:italic;color:rgba(157,193,246,0.6);">+ more brands to be announced</p>
@@ -2365,7 +2457,7 @@
     <!-- ═══════════════════════════════════════════════════════════════════
          6.5. WHY ATTEND (Dark Section)
          ═══════════════════════════════════════════════════════════════════ -->
-    <section class="section-dark section-padding">
+    <section class="section-dark section-padding" style="background: #28211C;">
         <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:-150px;left:-200px;opacity:0.08;"></div>
         <div class="blob" style="width:400px;height:400px;background:#FFBFCC;bottom:-100px;right:-150px;opacity:0.06;"></div>
         <div class="blob" style="width:350px;height:350px;background:#FCD6A6;top:50%;left:50%;opacity:0.05;"></div>
@@ -2379,9 +2471,9 @@
                 Three reasons Wellness House isn't another conference.
             </p>
 
-            <div class="reveal why-attend-grid">
+            <div class="why-attend-grid">
                 <!-- Column 1: Tactical Strategy -->
-                <div class="why-attend-column delay-1">
+                <div class="reveal why-attend-column">
                     <h3 class="why-attend-heading">Tactical Strategy</h3>
                     <ul class="why-attend-benefits">
                         <li>Frameworks from 8+ proven founders</li>
@@ -2391,7 +2483,7 @@
                 </div>
 
                 <!-- Column 2: Curated Access -->
-                <div class="why-attend-column delay-2">
+                <div class="reveal why-attend-column">
                     <h3 class="why-attend-heading">Curated Access</h3>
                     <ul class="why-attend-benefits">
                         <li>500 invite-only leaders</li>
@@ -2401,7 +2493,7 @@
                 </div>
 
                 <!-- Column 3: Lasting Impact -->
-                <div class="why-attend-column delay-3">
+                <div class="reveal why-attend-column">
                     <h3 class="why-attend-heading">Lasting Impact</h3>
                     <ul class="why-attend-benefits">
                         <li>Relationships that compound</li>
@@ -2425,7 +2517,7 @@
 
             <div class="reveal-scale keynote-card">
                 <div class="keynote-photo">
-                    <img src="img/speakers/greg-lavecchia.jpg" alt="Greg Lavecchia">
+                    <img loading="lazy" decoding="async" width="800" height="800" src="img/speakers/greg-lavecchia.jpg" alt="Greg Lavecchia">
                 </div>
                 <div class="keynote-info">
                     <div class="keynote-badge">🔥 Closing Keynote</div>
@@ -2457,7 +2549,7 @@
                 <!-- Greg Lavecchia -->
                 <div class="reveal delay-1 speaker-card-clean">
                     <div class="speaker-photo-clean">
-                        <img src="img/speakers/greg-lavecchia.jpg" alt="Greg Lavecchia">
+                        <img loading="lazy" decoding="async" width="800" height="800" src="img/speakers/greg-lavecchia.jpg" alt="Greg Lavecchia">
                     </div>
                     <div class="speaker-name-clean">Greg Lavecchia</div>
                     <div class="speaker-title-clean">Co-Founder &amp; CEO, Bloom Nutrition</div>
@@ -2466,7 +2558,7 @@
                 <!-- Sam Nebel -->
                 <div class="reveal delay-2 speaker-card-clean">
                     <div class="speaker-photo-clean">
-                        <img src="img/speakers/sam-nebel.jpg" alt="Sam Nebel">
+                        <img loading="lazy" decoding="async" width="1600" height="1067" src="img/speakers/sam-nebel.jpg" alt="Sam Nebel">
                     </div>
                     <div class="speaker-name-clean">Sam Nebel</div>
                     <div class="speaker-title-clean">Co-Founder &amp; CCO, Goodwipes</div>
@@ -2475,7 +2567,7 @@
                 <!-- Bryan Guadagno -->
                 <div class="reveal delay-3 speaker-card-clean">
                     <div class="speaker-photo-clean">
-                        <img src="img/speakers/bryan-guadagno.jpg" alt="Bryan Guadagno">
+                        <img loading="lazy" decoding="async" width="535" height="800" src="img/speakers/bryan-guadagno.jpg" alt="Bryan Guadagno">
                     </div>
                     <div class="speaker-name-clean">Bryan Guadagno</div>
                     <div class="speaker-title-clean">Co-Founder &amp; CEO, It's Skinny</div>
@@ -2484,7 +2576,7 @@
                 <!-- Scott Hickle -->
                 <div class="reveal delay-4 speaker-card-clean">
                     <div class="speaker-photo-clean">
-                        <img src="img/speakers/scott-hickle.jpg" alt="Scott Hickle">
+                        <img loading="lazy" decoding="async" width="314" height="400" src="img/speakers/scott-hickle.jpg" alt="Scott Hickle">
                     </div>
                     <div class="speaker-name-clean">Scott Hickle</div>
                     <div class="speaker-title-clean">Co-Founder, Throne Science</div>
@@ -2493,7 +2585,7 @@
                 <!-- Nicholas Charlier -->
                 <div class="reveal delay-5 speaker-card-clean">
                     <div class="speaker-photo-clean">
-                        <img src="img/speakers/nicholas-charlier.jpg" alt="Nicholas Charlier">
+                        <img loading="lazy" decoding="async" width="1200" height="600" src="img/speakers/nicholas-charlier.jpg" alt="Nicholas Charlier">
                     </div>
                     <div class="speaker-name-clean">Nicholas Charlier</div>
                     <div class="speaker-title-clean">GM Americas, Vivobarefoot</div>
@@ -2502,7 +2594,7 @@
                 <!-- Salar Shahini -->
                 <div class="reveal delay-6 speaker-card-clean">
                     <div class="speaker-photo-clean">
-                        <img src="img/speakers/salar-shahini.jpg" alt="Salar Shahini">
+                        <img loading="lazy" decoding="async" width="1366" height="2048" src="img/speakers/salar-shahini.jpg" alt="Salar Shahini">
                     </div>
                     <div class="speaker-name-clean">Salar Shahini</div>
                     <div class="speaker-title-clean">Founder &amp; CEO, Sweatpals</div>
@@ -2511,7 +2603,7 @@
                 <!-- Jake DeCicco -->
                 <div class="reveal delay-7 speaker-card-clean">
                     <div class="speaker-photo-clean">
-                        <img src="img/speakers/jake-decicco.jpg" alt="Jake DeCicco">
+                        <img loading="lazy" decoding="async" width="800" height="800" src="img/speakers/jake-decicco.jpg" alt="Jake DeCicco">
                     </div>
                     <div class="speaker-name-clean">Jake DeCicco</div>
                     <div class="speaker-title-clean">Chief Revenue Officer, Super Coffee</div>
@@ -2520,7 +2612,7 @@
                 <!-- Steve Tidball -->
                 <div class="reveal delay-8 speaker-card-clean">
                     <div class="speaker-photo-clean">
-                        <img src="img/speakers/steve-tidball.jpg" alt="Steve Tidball">
+                        <img loading="lazy" decoding="async" width="1200" height="630" src="img/speakers/steve-tidball.jpg" alt="Steve Tidball">
                     </div>
                     <div class="speaker-name-clean">Steve Tidball</div>
                     <div class="speaker-title-clean">Founder &amp; CEO, Vollebak</div>
@@ -2682,7 +2774,7 @@
             </h2>
             <p class="reveal section-subtitle" style="color:rgba(31,35,26,0.45);margin:0 auto 56px;font-size:14px;">All times Central (CT). Schedule subject to updates.</p>
 
-            <div class="reveal schedule-timeline">
+            <div class="reveal schedule-timeline" id="scheduleTimeline">
                 
                 <!-- ═══════════════════════════════════════════════════════════
                      9:00 AM — RUN, ROX & RECOVERY (HIGHLIGHT EXPERIENCE)
@@ -2694,11 +2786,11 @@
                         <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 10px; line-height: 1.15; letter-spacing: -0.01em;">Run, Rox &amp; Recovery</h3>
                         <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); margin-bottom: 22px; line-height: 1.65; font-weight: 500;">Community run, HYROX-style workout &amp; recovery with coffee. Led by Eric Hinman, powered by HYROX &amp; LSKD. Recovery by San Antonio Spurs &amp; Kane Footwear.</p>
                         <div class="pill-row" style="gap: 12px;">
-                            <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img src="img/lskd.png" alt="LSKD" style="height: 20px; max-height: 20px;"></span>
-                            <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img src="img/brands/hyrox.png" alt="HYROX" style="height: 20px; max-height: 20px;"></span>
-                            <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img src="img/brands/san-antonio-spurs.png" alt="Spurs" style="height: 20px; max-height: 20px;"></span>
-                            <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img src="img/kane.png" alt="KANE" style="height: 20px; max-height: 20px;"></span>
-                            <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img src="img/brands/ketoneiq.png" alt="KetoneIQ" style="height: 20px; max-height: 20px;"></span>
+                            <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img loading="lazy" decoding="async" width="20" height="20" src="img/lskd.png" alt="LSKD" style="height: 20px; max-height: 20px;"></span>
+                            <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img loading="lazy" decoding="async" width="144" height="20" src="img/brands/hyrox.png" alt="HYROX" style="height: 20px; max-height: 20px;"></span>
+                            <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img loading="lazy" decoding="async" width="44" height="20" src="img/brands/san-antonio-spurs.png" alt="Spurs" style="height: 20px; max-height: 20px;"></span>
+                            <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img loading="lazy" decoding="async" width="20" height="20" src="img/kane.png" alt="KANE" style="height: 20px; max-height: 20px;"></span>
+                            <span class="pill" style="padding: 10px 20px; background: rgba(157,193,246,0.08); border-color: rgba(157,193,246,0.2);"><img loading="lazy" decoding="async" width="94" height="20" src="img/brands/ketoneiq.png" alt="KetoneIQ" style="height: 20px; max-height: 20px;"></span>
                         </div>
                     </div>
                 </div>
@@ -2712,9 +2804,9 @@
                         <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 26px; font-weight: 700; margin-bottom: 10px; line-height: 1.2;">Founders Rebuilding the Future of Health</h3>
                         <p style="font-size: 15px; color: rgba(31, 35, 26, 0.5); margin-bottom: 16px; line-height: 1.6;">Reimagining accessible, proactive health and preventive care.</p>
                         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-                            <img src="img/speakers/scott-hickle.jpg" class="speaker-thumb" alt="Scott Hickle" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(157,193,246,0.3); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <img loading="lazy" decoding="async" width="28" height="36" src="img/speakers/scott-hickle.jpg" class="speaker-thumb" alt="Scott Hickle" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(157,193,246,0.3); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Scott Hickle</span>
-                            <img src="img/throne.png" alt="Throne" style="height: 20px; max-height: 20px; margin-left: 4px; opacity: 0.7;">
+                            <img loading="lazy" decoding="async" width="20" height="20" src="img/throne.png" alt="Throne" style="height: 20px; max-height: 20px; margin-left: 4px; opacity: 0.7;">
                         </div>
                     </div>
                 </div>
@@ -2729,8 +2821,8 @@
                         <p style="font-size: 15px; color: rgba(31, 35, 26, 0.5); margin-bottom: 16px; line-height: 1.6;">How leading wellness brands build habit ecosystems and deeper engagement.</p>
                         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: rgba(31, 35, 26, 0.4); margin-right: 4px;">Featuring:</span>
-                            <img src="img/brands/form.png" alt="FORM" style="height: 20px; max-height: 20px; opacity: 0.7;">
-                            <img src="img/brands/hyperice.png" alt="Hyperice" style="height: 20px; max-height: 20px; opacity: 0.7;">
+                            <img loading="lazy" decoding="async" width="98" height="20" src="img/brands/form.png" alt="FORM" style="height: 20px; max-height: 20px; opacity: 0.7;">
+                            <img loading="lazy" decoding="async" width="27" height="20" src="img/brands/hyperice.png" alt="Hyperice" style="height: 20px; max-height: 20px; opacity: 0.7;">
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; color: rgba(31, 35, 26, 0.6);">Garmin</span>
                         </div>
                     </div>
@@ -2746,9 +2838,9 @@
                         <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 10px; line-height: 1.15; letter-spacing: -0.01em;">CPG Comedy Roast</h3>
                         <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); margin-bottom: 22px; line-height: 1.65; font-weight: 500;">Wellness founders pitch their products and get roasted by 4 comedians. Midday refuel with a live wellness brand roast you won't forget.</p>
                         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-                            <img src="img/speakers/jake-decicco.jpg" class="speaker-thumb" alt="Jake DeCicco" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,191,204,0.5); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <img loading="lazy" decoding="async" width="36" height="36" src="img/speakers/jake-decicco.jpg" class="speaker-thumb" alt="Jake DeCicco" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,191,204,0.5); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Jake DeCicco, Super Coffee</span>
-                            <img src="img/speakers/steve-tidball.jpg" class="speaker-thumb" alt="Steve Tidball" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,191,204,0.5); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-left: 8px;">
+                            <img loading="lazy" decoding="async" width="69" height="36" src="img/speakers/steve-tidball.jpg" class="speaker-thumb" alt="Steve Tidball" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,191,204,0.5); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-left: 8px;">
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Steve Tidball, Vollebak</span>
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: rgba(31, 35, 26, 0.5); margin-left: 12px;">+ 4 Comedians</span>
                         </div>
@@ -2765,9 +2857,9 @@
                         <p style="font-size: 15px; color: rgba(31, 35, 26, 0.5); margin-bottom: 16px; line-height: 1.6;">Sports storytelling beyond the game — loyalty, culture, and fan-driven worlds.</p>
                         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Brandon James</span>
-                            <img src="img/brands/san-antonio-spurs.png" alt="Spurs" style="height: 20px; max-height: 20px; margin-left: 4px; opacity: 0.7;">
+                            <img loading="lazy" decoding="async" width="44" height="20" src="img/brands/san-antonio-spurs.png" alt="Spurs" style="height: 20px; max-height: 20px; margin-left: 4px; opacity: 0.7;">
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: rgba(31, 35, 26, 0.4); margin-left: 8px; margin-right: 4px;">+</span>
-                            <img src="img/kane.png" alt="KANE" style="height: 20px; max-height: 20px; opacity: 0.7;">
+                            <img loading="lazy" decoding="async" width="20" height="20" src="img/kane.png" alt="KANE" style="height: 20px; max-height: 20px; opacity: 0.7;">
                         </div>
                     </div>
                 </div>
@@ -2781,9 +2873,9 @@
                         <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 26px; font-weight: 700; margin-bottom: 10px; line-height: 1.2;">Wellness at the Core of Community</h3>
                         <p style="font-size: 15px; color: rgba(31, 35, 26, 0.5); margin-bottom: 16px; line-height: 1.6;">Building authentic wellness communities through connection, rituals, and experiences.</p>
                         <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                            <img src="img/speakers/nicholas-charlier.jpg" class="speaker-thumb" alt="Nicholas Charlier" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(157,193,246,0.3); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <img loading="lazy" decoding="async" width="72" height="36" src="img/speakers/nicholas-charlier.jpg" class="speaker-thumb" alt="Nicholas Charlier" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(157,193,246,0.3); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Nicholas Charlier, Vivobarefoot</span>
-                            <img src="img/speakers/salar-shahini.jpg" class="speaker-thumb" alt="Salar Shahini" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(157,193,246,0.3); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-left: 6px;">
+                            <img loading="lazy" decoding="async" width="24" height="36" src="img/speakers/salar-shahini.jpg" class="speaker-thumb" alt="Salar Shahini" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(157,193,246,0.3); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-left: 6px;">
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Salar Shahini, Sweatpals</span>
                         </div>
                     </div>
@@ -2798,7 +2890,7 @@
                         <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 26px; font-weight: 700; margin-bottom: 10px; line-height: 1.2;">The New Rules of CPG</h3>
                         <p style="font-size: 15px; color: rgba(31, 35, 26, 0.5); margin-bottom: 16px; line-height: 1.6;">Turning customers into loyalists across the modern CPG lifecycle.</p>
                         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-                            <img src="img/speakers/sam-nebel.jpg" class="speaker-thumb" alt="Sam Nebel" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(157,193,246,0.3); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <img loading="lazy" decoding="async" width="54" height="36" src="img/speakers/sam-nebel.jpg" class="speaker-thumb" alt="Sam Nebel" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(157,193,246,0.3); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Sam Nebel, Goodwipes</span>
                         </div>
                     </div>
@@ -2814,7 +2906,7 @@
                         <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 10px; line-height: 1.15; letter-spacing: -0.01em;">Founder Mode in Health &amp; Wellness</h3>
                         <p style="font-size: 16px; color: rgba(31, 35, 26, 0.6); margin-bottom: 22px; line-height: 1.65; font-weight: 500;">Leading with integrity, performance, and long-term vision. An intimate conversation with one of wellness's most successful founders.</p>
                         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-                            <img src="img/speakers/greg-lavecchia.jpg" class="speaker-thumb" alt="Greg Lavecchia" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(234,131,118,0.5); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <img loading="lazy" decoding="async" width="36" height="36" src="img/speakers/greg-lavecchia.jpg" class="speaker-thumb" alt="Greg Lavecchia" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(234,131,118,0.5); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                             <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: rgba(31, 35, 26, 0.7);">Greg Lavecchia, Bloom</span>
                         </div>
                     </div>
@@ -2904,20 +2996,20 @@
             </p>
 
             <div class="reveal logo-wall" style="margin-bottom:0;">
-                <img src="img/brands/bloom-nutrition.png" alt="Bloom Nutrition" style="height:32px">
-                <img src="img/brands/whoop.png" alt="WHOOP" style="height:24px">
-                <img src="img/brands/ag1.png" alt="AG1" style="height:26px">
-                <img src="img/brands/peloton.png" alt="Peloton" style="height:24px">
-                <img src="img/brands/oura.png" alt="OURA" style="height:26px">
-                <img src="img/brands/goodwipes.png" alt="Goodwipes" style="height:26px">
-                <img src="img/supercoffee.png" alt="Super Coffee" style="height:26px">
-                <img src="img/vollebak.png" alt="Vollebak" style="height:20px">
-                <img src="img/throne.png" alt="Throne Science" style="height:26px">
-                <img src="img/vivobarefoot.png" alt="Vivobarefoot" style="height:26px">
-                <img src="img/brands/eight-sleep.png" alt="Eight Sleep" style="height:24px">
-                <img src="img/brands/hyrox.png" alt="HYROX" style="height:24px">
-                <img src="img/lskd.png" alt="LSKD" style="height:22px">
-                <img src="img/kane.png" alt="KANE" style="height:24px">
+                <img loading="lazy" decoding="async" width="88" height="32" src="img/brands/bloom-nutrition.png" alt="Bloom Nutrition" style="height:32px">
+                <img loading="lazy" decoding="async" width="147" height="24" src="img/brands/whoop.png" alt="WHOOP" style="height:24px">
+                <img loading="lazy" decoding="async" width="26" height="26" src="img/brands/ag1.png" alt="AG1" style="height:26px">
+                <img loading="lazy" decoding="async" width="86" height="24" src="img/brands/peloton.png" alt="Peloton" style="height:24px">
+                <img loading="lazy" decoding="async" width="83" height="26" src="img/brands/oura.png" alt="OURA" style="height:26px">
+                <img loading="lazy" decoding="async" width="129" height="26" src="img/brands/goodwipes.png" alt="Goodwipes" style="height:26px">
+                <img loading="lazy" decoding="async" width="26" height="26" src="img/supercoffee.png" alt="Super Coffee" style="height:26px">
+                <img loading="lazy" decoding="async" width="20" height="20" src="img/vollebak.png" alt="Vollebak" style="height:20px">
+                <img loading="lazy" decoding="async" width="26" height="26" src="img/throne.png" alt="Throne Science" style="height:26px">
+                <img loading="lazy" decoding="async" width="26" height="26" src="img/vivobarefoot.png" alt="Vivobarefoot" style="height:26px">
+                <img loading="lazy" decoding="async" width="57" height="24" src="img/brands/eight-sleep.png" alt="Eight Sleep" style="height:24px">
+                <img loading="lazy" decoding="async" width="173" height="24" src="img/brands/hyrox.png" alt="HYROX" style="height:24px">
+                <img loading="lazy" decoding="async" width="22" height="22" src="img/lskd.png" alt="LSKD" style="height:22px">
+                <img loading="lazy" decoding="async" width="24" height="24" src="img/kane.png" alt="KANE" style="height:24px">
             </div>
         </div>
     </section>
@@ -2936,23 +3028,23 @@
 
             <div class="reveal sponsor-row">
                 <div class="sponsor-item">
-                    <img src="img/shopify.png" alt="Shopify">
+                    <img loading="lazy" decoding="async" width="128" height="128" src="img/shopify.png" alt="Shopify">
                     <span>Shopify</span>
                 </div>
                 <div class="sponsor-item">
-                    <img src="img/postpilot.png" alt="PostPilot">
+                    <img loading="lazy" decoding="async" width="128" height="128" src="img/postpilot.png" alt="PostPilot">
                     <span>PostPilot</span>
                 </div>
                 <div class="sponsor-item">
-                    <img src="img/hotspex.png" alt="Hotspex Media">
+                    <img loading="lazy" decoding="async" width="128" height="128" src="img/hotspex.png" alt="Hotspex Media">
                     <span>Hotspex Media</span>
                 </div>
                 <div class="sponsor-item">
-                    <img src="img/vivobarefoot.png" alt="Vivobarefoot">
+                    <img loading="lazy" decoding="async" width="32" height="32" src="img/vivobarefoot.png" alt="Vivobarefoot">
                     <span>Vivobarefoot</span>
                 </div>
                 <div class="sponsor-item">
-                    <img src="img/throne.png" alt="Throne Science">
+                    <img loading="lazy" decoding="async" width="128" height="128" src="img/throne.png" alt="Throne Science">
                     <span>Throne Science</span>
                 </div>
             </div>
@@ -3100,7 +3192,7 @@
          ═══════════════════════════════════════════════════════════════════ -->
     <section class="apply-section" id="apply">
         <div class="apply-inner">
-            <img src="img/wh-lockup-white-final.png" alt="Wellness House" class="reveal apply-lockup">
+            <img loading="lazy" decoding="async" width="1557" height="476" src="img/wh-lockup-white-final.png" alt="Wellness House" class="reveal apply-lockup">
             <h2 class="reveal apply-title">Ready?</h2>
             <p class="reveal apply-subtitle">
                 Attendance is approval-based. Apply now to secure your spot at the most anticipated wellness gathering in 2026.
@@ -3131,9 +3223,9 @@
         </div>
         <div class="footer-divider"></div>
         <div class="footer-logos">
-            <img src="img/willpower-white.png" alt="Willpower">
+            <img loading="lazy" decoding="async" width="1500" height="405" src="img/willpower-white.png" alt="Willpower">
             <span>×</span>
-            <img src="img/wh-lockup-white-final.png" alt="Wellness House">
+            <img loading="lazy" decoding="async" width="1557" height="476" src="img/wh-lockup-white-final.png" alt="Wellness House">
         </div>
         <p class="footer-copy">&copy; 2026 Willpower. All rights reserved.</p>
     </footer>
@@ -3157,11 +3249,12 @@
         }
 
         // ── Scroll Animations (IntersectionObserver) ──
-        const observerOptions = { threshold: 0.08, rootMargin: '0px 0px -40px 0px' };
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -80px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    entry.target.classList.add('revealed');
                 }
             });
         }, observerOptions);
