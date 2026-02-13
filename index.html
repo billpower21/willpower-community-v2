@@ -1891,12 +1891,24 @@
            ══════════════════════════════════════════════════════════════════ */
         @media (max-width: 768px) {
             .section-padding { padding: 80px 20px; }
-            .section-title { font-size: 32px !important; }
+            .section-title { font-size: 36px !important; line-height: 1.2 !important; }
+            .section-subtitle { font-size: 15px; line-height: 1.6; }
+            .section-label { font-size: 10px; letter-spacing: 0.3em; }
             .speakers-grid { gap: 12px; }
-            .logo-wall { gap: 24px 32px; }
-            .logo-wall img { height: 22px; }
-            .sponsor-row { gap: 32px; }
-            .apply-title { font-size: 32px; }
+            .logo-wall { gap: 20px 24px; }
+            .logo-wall img { height: 24px; max-width: 100px; }
+            .sponsor-row { gap: 28px; flex-direction: column; }
+            .sponsor-item img { height: 40px; }
+            .apply-title { font-size: 36px; line-height: 1.2; }
+            .apply-subtitle { font-size: 15px; }
+            .apply-lockup { height: 60px; }
+        }
+        @media (max-width: 480px) {
+            .section-padding { padding: 64px 16px; }
+            .section-title { font-size: 28px !important; }
+            .section-subtitle { font-size: 14px; }
+            .logo-wall { gap: 16px 20px; }
+            .logo-wall img { height: 20px; max-width: 80px; }
         }
     </style>
 </head>
