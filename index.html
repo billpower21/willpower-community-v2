@@ -2153,6 +2153,20 @@
 <body>
 
     <!-- ═══════════════════════════════════════════════════════════════════
+         COUNTDOWN TICKER BANNER
+         ═══════════════════════════════════════════════════════════════════ -->
+    <div class="countdown-ticker">
+        <div class="countdown-ticker-content">
+            <span class="countdown-ticker-number" id="tickerDays">28</span>
+            <span>Days Until Wellness House</span>
+            <span class="countdown-ticker-dot"></span>
+            <span>March 13, 2026</span>
+            <span class="countdown-ticker-dot"></span>
+            <span>Austin, TX</span>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
          1. NAVIGATION
          ═══════════════════════════════════════════════════════════════════ -->
     <nav class="main-nav hero-mode" id="mainNav">
@@ -2206,11 +2220,6 @@
             <p class="reveal delay-2 hero-tagline">
                 The wellness summit that redefines what's possible. 500 leaders. 30+ brands. One unforgettable day in Austin.
             </p>
-
-            <div class="reveal delay-3 countdown">
-                <span class="countdown-number">28</span>
-                <span class="countdown-label">Days Until Wellness House</span>
-            </div>
 
             <div class="reveal delay-3" style="margin-bottom: 48px;">
                 <div style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 28px; border-radius: 999px; background: rgba(234, 131, 118, 0.15); backdrop-filter: blur(20px); border: 1px solid rgba(234, 131, 118, 0.25);">
@@ -2540,65 +2549,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
-         6.75. PAST ATTENDEES (Cream Section)
-         ═══════════════════════════════════════════════════════════════════ -->
-    <section class="section-cream section-padding">
-        <div class="blob" style="width:500px;height:500px;background:#9DC1F6;top:5%;left:-200px;"></div>
-        <div class="blob" style="width:400px;height:400px;background:#FFBFCC;bottom:10%;right:-150px;"></div>
-        <div class="blob" style="width:350px;height:350px;background:#FCD6A6;top:50%;right:20%;"></div>
-
-        <div class="section-inner" style="text-align:center;">
-            <div class="reveal section-label" style="color:#9DC1F6;">The Alumni</div>
-            <h2 class="reveal section-title" style="font-size:40px;">
-                Join <span class="gradient-text-dark">Previous Attendees</span>
-            </h2>
-            <p class="reveal section-subtitle" style="color:rgba(31,35,26,0.4);margin:0 auto 56px;">
-                Founders & leaders from these brands attended Wellness House 2025
-            </p>
-
-            <div class="reveal logo-wall" style="margin-bottom:48px;">
-                <img src="img/brands/bloom-nutrition.png" alt="Bloom Nutrition" style="height:36px">
-                <img src="img/brands/whoop.png" alt="WHOOP" style="height:22px">
-                <img src="img/brands/ag1.png" alt="AG1" style="height:28px">
-                <img src="img/brands/peloton.png" alt="Peloton" style="height:22px">
-                <img src="img/brands/oura.png" alt="OURA" style="height:28px">
-                <img src="img/brands/goodwipes.png" alt="Goodwipes" style="height:24px">
-                <img src="img/supercoffee.png" alt="Super Coffee" style="height:24px">
-                <img src="img/vollebak.png" alt="Vollebak" style="height:18px">
-                <img src="img/throne.png" alt="Throne Science" style="height:24px">
-                <img src="img/vivobarefoot.png" alt="Vivobarefoot" style="height:24px">
-            </div>
-
-            <!-- Optional testimonial quotes -->
-            <div class="reveal" style="max-width:800px;margin:0 auto;">
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-                    <!-- Testimonial 1 -->
-                    <div style="background:rgba(31,35,26,0.02);border:1px solid rgba(31,35,26,0.06);border-radius:20px;padding:32px;text-align:left;">
-                        <p style="font-family:'Montserrat',sans-serif;font-size:15px;font-style:italic;color:rgba(31,35,26,0.55);line-height:1.7;margin-bottom:16px;">
-                            "The caliber of conversations and connections at Wellness House is unmatched. This is where real partnerships begin."
-                        </p>
-                        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;color:#EA8376;">
-                            — Wellness Brand Founder, 2025
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 2 -->
-                    <div style="background:rgba(31,35,26,0.02);border:1px solid rgba(31,35,26,0.06);border-radius:20px;padding:32px;text-align:left;">
-                        <p style="font-family:'Montserrat',sans-serif;font-size:15px;font-style:italic;color:rgba(31,35,26,0.55);line-height:1.7;margin-bottom:16px;">
-                            "Not your typical summit. Every session delivered actionable insights, and the community energy was electric."
-                        </p>
-                        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;color:#EA8376;">
-                            — CPG Operator, 2025
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════════════
          7. KEYNOTE SPOTLIGHT (Cream)
          ═══════════════════════════════════════════════════════════════════ -->
     <section class="section-cream section-padding" style="padding-top:0;">
@@ -3439,6 +3389,14 @@
             const eventDate = new Date('2026-03-13T09:00:00-06:00');
             const today = new Date();
             const daysUntil = Math.floor((eventDate - today) / (1000 * 60 * 60 * 24));
+            
+            // Update ticker banner countdown
+            const tickerDaysEl = document.getElementById('tickerDays');
+            if (tickerDaysEl) {
+                tickerDaysEl.textContent = daysUntil;
+            }
+            
+            // Update hero countdown (if exists - legacy support)
             const countdownNumberEl = document.querySelector('.countdown-number');
             if (countdownNumberEl) {
                 countdownNumberEl.textContent = daysUntil;
