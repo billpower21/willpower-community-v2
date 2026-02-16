@@ -1,0 +1,54 @@
+{
+  "project": "Wellness House 2026",
+  "last_updated": "2026-02-16",
+  "guidelines": {
+    "palette": {
+      "cream_base": "#EFEEDF",
+      "text_dark": "#1F231A",
+      "gradients": {
+        "primary": "linear-gradient(135deg, #9DC1F6 0%, #FFBFCC 45%, #FCD6A6 80%, #EA8376 100%)",
+        "soft_pink": "rgba(255, 191, 204, 0.4)",
+        "soft_blue": "rgba(157, 193, 246, 0.4)",
+        "soft_peach": "rgba(252, 214, 166, 0.35)"
+      }
+    },
+    "typography": {
+      "hero": "Unbounded Bold",
+      "headers": "Bricolage Grotesque",
+      "body": "Montserrat"
+    }
+  },
+  "assets": {
+    "branding": {
+      "wh_dark": "https://billpower21.github.io/willpower-community-v2/img/wh-lockup-dark.png",
+      "wh_white": "https://billpower21.github.io/willpower-community-v2/img/wh-lockup-white-final.png",
+      "willpower_dark": "https://billpower21.github.io/willpower-community-v2/img/willpower-dark.png",
+      "willpower_white": "https://billpower21.github.io/willpower-community-v2/img/willpower-white.png"
+    },
+    "video_recap": "https://youtu.be/30aSv-OTOSE",
+    "speakers": [
+      { "name": "Greg Lavecchia", "role": "Co-Founder & CEO, Bloom Nutrition", "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/greg-lavecchia.jpg" },
+      { "name": "Sam Nebel", "role": "Co-Founder & CCO, Goodwipes", "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/sam-nebel.jpg" },
+      { "name": "Jake DeCicco", "role": "Chief Revenue Officer, Super Coffee", "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/jake-decicco.jpg" },
+      { "name": "Steve Tidball", "role": "Founder & CEO, Vollebak", "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/steve-tidball.jpg" },
+      { "name": "Bryan Guadagno", "role": "Co-Founder & CEO, It's Skinny", "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/bryan-guadagno.jpg" },
+      { "name": "Scott Hickle", "role": "Co-Founder, Throne Science", "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/scott-hickle.jpg" },
+      { "name": "Nicholas Charlier", "role": "GM Americas, Vivobarefoot", "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/nicholas-charlier.jpg" },
+      { "name": "Salar Shahini", "role": "Founder & CEO, Sweatpals", "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/salar-shahini.jpg" }
+    ],
+    "confirmed_brands": [
+      { "name": "Bloom Nutrition", "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/bloom-nutrition.png" },
+      { "name": "WHOOP", "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/whoop.png" },
+      { "name": "AG1", "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/ag1.png" },
+      { "name": "Eight Sleep", "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/eight-sleep.png" },
+      { "name": "Peloton", "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/peloton.png" },
+      { "name": "OURA", "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/oura.png" },
+      { "name": "Adidas", "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/adidas.png" },
+      { "name": "Olipop", "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/olipop.png" },
+      { "name": "Shopify", "logo": "https://billpower21.github.io/willpower-community-v2/img/shopify.png" },
+      { "name": "Vivobarefoot", "logo": "https://billpower21.github.io/willpower-community-v2/img/vivobarefoot.png" },
+      { "name": "Vollebak", "logo": "https://billpower21.github.io/willpower-community-v2/img/vollebak.png" },
+      { "name": "Super Coffee", "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/super-coffee.png" }
+    ]
+  }
+}
