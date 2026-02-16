@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness House 2026 | SXSW Austin — By Willpower</title>
+    <!-- Fonts from Brand Guide -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Bricolage+Grotesque:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'wh-cream': '#EFEEDF',
+                        'wh-dark': '#1F231A',
+                        'wh-coral': '#EA8376',
+                        'wh-peach': '#FCD6A6',
+                        'wh-pink': '#FFBFCC',
+                        'wh-blue': '#9DC1F6',
+                    },
+                    fontFamily: {
+                        display: ['Unbounded', 'sans-serif'],
+                        heading: ['"Bricolage Grotesque"', 'sans-serif'],
+                        body: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #EFEEDF; color: #1F231A; overflow-x: hidden; }
+        .font-display { font-family: 'Unbounded', sans-serif; }
+        .font-heading { font-family: 'Bricolage Grotesque', sans-serif; }
+        
+        /* Smooth Entrance Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Marquee */
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .animate-marquee { animation: marquee 30s linear infinite; }
+        
+        /* Floating Blobs */
+        .blob { position: absolute; filter: blur(80px); opacity: 0.3; pointer-events: none; z-index: 1; }
+        
+        /* Video Section */
+        .video-container { position: relative; width: 100%; height: 100vh; overflow: hidden; background: #000; }
+        .video-container iframe { position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; transform: translate(-50%, -50%); pointer-events: none; }
+        .video-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 2; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #EFEEDF; }
+        ::-webkit-scrollbar-thumb { background: #EA8376; border-radius: 4px; }
+
+        /* Links & Buttons */
+        .nav-link { font-family: 'Unbounded'; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; transition: opacity 0.3s; }
+        .nav-link:hover { opacity: 1; }
+        .btn-premium { font-family: 'Unbounded'; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; transition: all 0.3s cubic-bezier(0.2,1,0.3,1); }
+        .btn-premium:hover { transform: scale(1.05); }
+
+        /* Schedule Grid */
+        .schedule-row { border-bottom: 1px solid rgba(31,35,26,0.1); transition: background 0.3s; }
+        .schedule-row:hover { background: rgba(255,255,255,0.4); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 py-6 px-8 flex justify-between items-center mix-blend-difference text-white">
+        <a href="#" class="h-6">
+            <img src="img/willpower-white.png" alt="Willpower" class="h-full">
+        </a>
+        <div class="hidden md:flex gap-10">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#brands" class="nav-link">Brands</a>
+            <a href="#speakers" class="nav-link">Speakers</a>
+            <a href="#schedule" class="nav-link">Schedule</a>
+            <a href="#faq" class="nav-link">FAQ</a>
+        </div>
+        <a href="https://lu.ma/WellnessHouse" target="_blank" class="btn-premium px-8 py-3 bg-white text-wh-dark rounded-full">Apply</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/30aSv-OTOSE?autoplay=1&mute=1&loop=1&playlist=30aSv-OTOSE&controls=0&showinfo=0&rel=0&start=10&end=45" 
+            frameborder="0">
+        </iframe>
+        <div class="video-overlay"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center h-full px-6">
+            <img src="img/wh-lockup-white-final.png" alt="Wellness House 2026" class="w-full max-w-2xl mb-8 reveal" id="hero-logo">
+            <div class="reveal delay-100 flex flex-col items-center text-white">
+                <p class="font-display font-bold text-sm tracking-[0.2em] mb-4">AUSTIN, TX • FRIDAY, MARCH 13 • 9AM - 4PM</p>
+                <p class="font-body text-lg max-w-xl opacity-70 mb-10">An invite-led summit at the intersection of wellness, performance, and consumer brands.</p>
+                <div class="flex gap-4">
+                    <a href="https://lu.ma/WellnessHouse" target="_blank" class="btn-premium px-10 py-5 bg-white text-wh-dark rounded-full">Apply to Attend</a>
+                    <a href="mailto:bill@willpowerhq.com" class="btn-premium px-10 py-5 border border-white text-white rounded-full bg-white/10 backdrop-blur-md">Partner with Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAND MARQUEE -->
+    <div class="bg-wh-dark py-6 overflow-hidden">
+        <div class="flex animate-marquee whitespace-nowrap gap-12 font-display text-white text-[10px] uppercase font-bold tracking-[0.3em] opacity-40">
+            <span>Bloom Nutrition • WHOOP • AG1 • Eight Sleep • Peloton • OURA • Adidas • Olipop • David • Shopify • Cadillac • Dunkin' • LSKD • Vivobarefoot • Super Coffee • HYROX • KetoneIQ • Goodwipes • Vollebak • FORM</span>
+            <span>Bloom Nutrition • WHOOP • AG1 • Eight Sleep • Peloton • OURA • Adidas • Olipop • David • Shopify • Cadillac • Dunkin' • LSKD • Vivobarefoot • Super Coffee • HYROX • KetoneIQ • Goodwipes • Vollebak • FORM</span>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <section class="py-20 px-6 bg-wh-cream relative overflow-hidden">
+        <div class="blob w-[500px] h-[500px] bg-wh-blue -top-40 -left-40"></div>
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center relative z-10">
+            <div class="reveal">
+                <div class="font-display text-5xl font-black mb-2">3rd</div>
+                <div class="font-heading text-xs uppercase tracking-widest opacity-50">Annual Event</div>
+            </div>
+            <div class="reveal delay-100">
+                <div class="font-display text-5xl font-black mb-2">4,000+</div>
+                <div class="font-heading text-xs uppercase tracking-widest opacity-50">Community Guests</div>
+            </div>
+            <div class="reveal delay-200">
+                <div class="font-display text-5xl font-black mb-2">30+</div>
+                <div class="font-heading text-xs uppercase tracking-widest opacity-50">Iconic Brands</div>
+            </div>
+            <div class="reveal delay-300">
+                <div class="font-display text-5xl font-black mb-2">$1M+</div>
+                <div class="font-heading text-xs uppercase tracking-widest opacity-50">Revenue Generated</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT IS WELLNESS HOUSE -->
+    <section id="about" class="py-32 px-6 bg-wh-dark text-white relative">
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="mb-20 text-center">
+                <h2 class="reveal font-heading text-5xl md:text-7xl mb-8 leading-[0.9]">Experience <br> Wellness House.</h2>
+                <p class="reveal delay-100 font-body text-xl text-white/50 max-w-2xl mx-auto leading-relaxed">
+                    A curated, one-day experience blending programming, movement, recovery, and brand discovery into a single, fluid environment.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="reveal p-10 bg-white/5 rounded-3xl border border-white/10 hover:border-wh-blue transition-colors">
+                    <div class="w-12 h-12 mb-6 flex items-center justify-center rounded-full border border-wh-blue/40 text-wh-blue">🎤</div>
+                    <h3 class="font-heading text-xl mb-4">Executive Panels</h3>
+                    <p class="font-body text-sm text-white/40">Candid conversations with founders and operators building modern wellness brands.</p>
+                </div>
+                <!-- Mini repeat for other 5 pillars -->
+                <div class="reveal delay-100 p-10 bg-white/5 rounded-3xl border border-white/10">
+                    <div class="w-12 h-12 mb-6 flex items-center justify-center rounded-full border border-wh-pink/40 text-wh-pink">🤝</div>
+                    <h3 class="font-heading text-xl mb-4">Networking First</h3>
+                    <p class="font-body text-sm text-white/40">Real conversation and meaningful connection, without the noise.</p>
+                </div>
+                <!-- ... other pillars simplified for brevity ... -->
+                <div class="reveal delay-200 p-10 bg-white/5 rounded-3xl border border-white/10">
+                    <div class="w-12 h-12 mb-6 flex items-center justify-center rounded-full border border-wh-coral/40 text-wh-coral">💪</div>
+                    <h3 class="font-heading text-xl mb-4">Workout+Recovery</h3>
+                    <p class="font-body text-sm text-white/40">Community run, movement, and recovery lounges with best-in-class partners.</p>
+                </div>
+            </div>
+
+            <!-- WHO IT'S FOR CHIPS -->
+            <div class="mt-20 flex flex-wrap justify-center gap-4 reveal">
+                <span class="px-6 py-3 rounded-full bg-white/10 border border-white/10 text-xs font-heading tracking-widest uppercase">Founders & CEOs</span>
+                <span class="px-6 py-3 rounded-full bg-white/10 border border-white/10 text-xs font-heading tracking-widest uppercase">Brand Operators</span>
+                <span class="px-6 py-3 rounded-full bg-white/10 border border-white/10 text-xs font-heading tracking-widest uppercase">Athletes & Creators</span>
+                <span class="px-6 py-3 rounded-full bg-white/10 border border-white/10 text-xs font-heading tracking-widest uppercase">Investors</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRANDS WALL -->
+    <section id="brands" class="py-32 px-6 bg-wh-cream relative overflow-hidden">
+        <div class="blob w-[600px] h-[600px] bg-wh-pink -bottom-40 -right-40"></div>
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <h2 class="reveal font-heading text-4xl mb-16 tracking-tight">The community <br> in the room.</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-8 gap-y-16 items-center opacity-30 reveal">
+                <img src="img/brands/bloom-nutrition.png" class="h-10 mx-auto transition-all hover:scale-110 grayscale hover:grayscale-0 cursor-pointer">
+                <img src="img/brands/whoop.png" class="h-6 mx-auto transition-all hover:scale-110 grayscale hover:grayscale-0 cursor-pointer">
+                <img src="img/brands/ag1.png" class="h-8 mx-auto transition-all hover:scale-110 grayscale hover:grayscale-0 cursor-pointer">
+                <img src="img/brands/eight-sleep.png" class="h-7 mx-auto transition-all hover:scale-110 grayscale hover:grayscale-0 cursor-pointer">
+                <img src="img/brands/peloton.png" class="h-6 mx-auto transition-all hover:scale-110 grayscale hover:grayscale-0 cursor-pointer">
+                <img src="img/brands/oura.png" class="h-8 mx-auto transition-all hover:scale-110 grayscale hover:grayscale-0 cursor-pointer">
+                <img src="img/brands/adidas.png" class="h-8 mx-auto transition-all hover:scale-110 grayscale hover:grayscale-0 cursor-pointer">
+                <img src="img/brands/olipop.png" class="h-8 mx-auto transition-all hover:scale-110 grayscale hover:grayscale-0 cursor-pointer">
+                <img src="img/brands/david.png" class="h-7 mx-auto transition-all hover:scale-110 grayscale hover:grayscale-0 cursor-pointer">
+                <img src="img/brands/dollar-shave-club.png" class="h-6 mx-auto transition-all hover:scale-110 grayscale hover:grayscale-0 cursor-pointer">
+                <img src="img/brands/dunkin.png" class="h-8 mx-auto transition-all hover:scale-110 grayscale hover:grayscale-0 cursor-pointer">
+                <img src="img/brands/outdoor-voices.png" class="h-8 mx-auto transition-all hover:scale-110 grayscale hover:grayscale-0 cursor-pointer">
+            </div>
+            <p class="mt-20 font-heading text-sm text-wh-coral reveal">AND 30+ MORE INNOVATIVE BRANDS</p>
+        </div>
+    </section>
+
+    <!-- KEYNOTE SPOTLIGHT -->
+    <section class="py-40 px-6 bg-wh-dark text-white overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-20 items-center">
+            <div class="w-full md:w-1/2 relative reveal">
+                <div class="absolute -inset-4 border border-wh-blue rounded-3xl opacity-30"></div>
+                <img src="img/speakers/greg-lavecchia.jpg" alt="Greg Lavecchia" class="w-full rounded-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-700">
+            </div>
+            <div class="w-full md:w-1/2 reveal delay-100">
+                <div class="px-6 py-2 rounded-full border border-wh-blue/40 text-wh-blue inline-block mb-8 font-display text-[10px] tracking-widest uppercase">Closing Keynote</div>
+                <h2 class="font-heading text-6xl mb-6">Greg <br> Lavecchia</h2>
+                <div class="flex items-center gap-4 mb-8">
+                    <img src="img/brands/bloom-nutrition.png" class="h-8 brightness-0 invert opacity-40">
+                    <div class="w-px h-6 bg-white/20"></div>
+                    <p class="font-body text-lg opacity-50">CEO, Bloom Nutrition</p>
+                </div>
+                <p class="font-body text-xl leading-relaxed text-white/40 mb-12 italic">
+                    "Founder Mode in Health & Wellness: Leading with integrity, performance, and long-term vision in the fastest-growing category corner."
+                </p>
+                <a href="https://lu.ma/WellnessHouse" target="_blank" class="btn-premium px-10 py-5 bg-white text-wh-dark rounded-full">Register to Attend</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPEAKERS GRID -->
+    <section id="speakers" class="py-32 px-6 bg-wh-cream">
+        <div class="max-w-6xl mx-auto text-center mb-20">
+            <h2 class="font-heading text-6xl reveal">On Stage.</h2>
+        </div>
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
+            <!-- Sam -->
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-3xl overflow-hidden mb-6 bg-wh-dark">
+                    <img src="img/speakers/sam-nebel.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                </div>
+                <p class="font-heading text-lg">Sam Nebel</p>
+                <p class="font-body text-xs opacity-50 uppercase tracking-widest mt-1">Founders, Goodwipes</p>
+            </div>
+            <!-- Bryan -->
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-3xl overflow-hidden mb-6 bg-wh-dark">
+                    <img src="img/speakers/bryan-guadagno.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                </div>
+                <p class="font-heading text-lg">Bryan Guadagno</p>
+                <p class="font-body text-xs opacity-50 uppercase tracking-widest mt-1">CEO, It's Skinny</p>
+            </div>
+            <!-- Scott -->
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-3xl overflow-hidden mb-6 bg-wh-dark">
+                    <img src="img/speakers/scott-hickle.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                </div>
+                <p class="font-heading text-lg">Scott Hickle</p>
+                <p class="font-body text-xs opacity-50 uppercase tracking-widest mt-1">Founder, Throne Science</p>
+            </div>
+            <!-- Salar -->
+            <div class="group cursor-pointer">
+                <div class="aspect-square rounded-3xl overflow-hidden mb-6 bg-wh-dark">
+                    <img src="img/speakers/salar-shahini.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500">
+                </div>
+                <p class="font-heading text-lg">Salar Shahini</p>
+                <p class="font-body text-xs opacity-50 uppercase tracking-widest mt-1">CEO, Sweatpals</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHEDULE (EEE MIAMI STYLE) -->
+    <section id="schedule" class="py-32 px-6 bg-wh-dark text-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-heading text-6xl text-center mb-24 reveal tracking-tight italic uppercase">The Event Flow</h2>
+            
+            <div class="grid gap-0 reveal">
+                <!-- Row 1 -->
+                <div class="schedule-row py-8 flex flex-col md:flex-row md:items-center gap-6">
+                    <div class="font-display text-wh-blue w-24">09:00 AM</div>
+                    <div class="flex-1">
+                        <h3 class="font-heading text-2xl group flex items-center gap-4">
+                            Run, Rox & Recovery
+                            <div class="flex gap-2 opacity-30">
+                                <img src="img/lskd.png" class="h-4 brightness-0 invert">
+                                <img src="img/brands/hyrox.png" class="h-4 brightness-0 invert">
+                            </div>
+                        </h3>
+                        <p class="font-body text-sm opacity-40 mt-2">Morning movement session followed by functional recovery and coffee.</p>
+                    </div>
+                    <div class="font-body text-xs uppercase tracking-widest opacity-20">Stage 01</div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="schedule-row py-8 flex flex-col md:flex-row md:items-center gap-6">
+                    <div class="font-display text-wh-blue w-24">10:00 AM</div>
+                    <div class="flex-1">
+                        <h3 class="font-heading text-2xl group flex items-center gap-4">
+                            Future of Health
+                            <img src="img/throne.png" class="h-4 brightness-0 invert opacity-30">
+                        </h3>
+                        <p class="font-body text-sm opacity-40 mt-2">Scott Hickle (Throne Science) — Reimagining accessible, proactive health.</p>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="schedule-row py-8 flex flex-col md:flex-row md:items-center gap-6">
+                    <div class="font-display text-wh-blue w-24">11:30 AM</div>
+                    <div class="flex-1">
+                        <h3 class="font-heading text-2xl group flex items-center gap-4 text-wh-coral">
+                            Wellness Roast
+                            <div class="flex gap-2">
+                                <img src="img/supercoffee.png" class="h-4 brightness-0 invert opacity-30">
+                                <img src="img/vollebak.png" class="h-4 brightness-0 invert opacity-30">
+                            </div>
+                        </h3>
+                        <p class="font-body text-sm opacity-40 mt-2">Live podcast roast feat. Jake DeCicco & Steve Tidball. Lunch included.</p>
+                    </div>
+                </div>
+
+                <p class="mt-12 text-center font-heading text-xs uppercase tracking-[0.2em] opacity-30 italic">+ FULL AFTERNOON PROGRAMMING UNTIL 4:00 PM</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPLY (EMBEDDED) -->
+    <section class="py-32 px-6 bg-wh-cream relative overflow-hidden" id="apply">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="reveal font-heading text-7xl mb-6 tracking-tight leading-[0.8] mb-12">Submit Your <br> Application.</h2>
+            <div class="reveal delay-100 rounded-3xl overflow-hidden border border-wh-dark/10 shadow-huge bg-white p-2">
+                <iframe src="https://lu.ma/embed/checkout/evt-H2x58877eab/buy" width="100%" height="600" frameborder="0" style="border: none;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <p class="mt-8 font-body text-xs opacity-50 uppercase tracking-widest">Attendance is approval-based. Applications reviewed daily.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-32 px-6 bg-wh-dark text-white">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="font-heading text-4xl mb-16 text-center italic reveal">FAQ.</h2>
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="reveal border-b border-white/5 pb-6 cursor-pointer group" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-heading text-lg">What is Wellness House?</h3>
+                        <span class="text-wh-blue">+</span>
+                    </div>
+                    <div class="ans hidden mt-6 font-body text-sm text-white/40 leading-relaxed">Willpower's flagship SXSW gathering — a full-day, invite-led experience at the intersection of wellness and commerce.</div>
+                </div>
+                <!-- Mini repeat 2 more -->
+                <div class="reveal delay-100 border-b border-white/5 pb-6 cursor-pointer group" onclick="this.querySelector('.ans').classList.toggle('hidden')">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-heading text-lg">When and where?</h3>
+                        <span class="text-wh-blue">+</span>
+                    </div>
+                    <div class="ans hidden mt-6 font-body text-sm text-white/40 leading-relaxed">Friday, March 13th in Austin, TX. Location details sent upon approval.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-20 px-8 bg-wh-dark text-white border-t border-white/5">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div>
+                <img src="img/willpower-white.png" class="h-8 mb-8 opacity-40 hover:opacity-100 transition-opacity">
+                <p class="font-body text-xs tracking-widest uppercase opacity-20 italic">Designed by Klaus • Building the future of wellness.</p>
+            </div>
+            <div class="flex gap-20">
+                <div>
+                    <h4 class="font-heading text-xs uppercase tracking-widest opacity-30 mb-6">Social</h4>
+                    <a href="https://instagram.com/willpowerhq" target="_blank" class="block font-heading text-lg mb-2 hover:text-wh-blue">Instagram</a>
+                    <a href="https://linkedin.com/company/willpowerd" target="_blank" class="block font-heading text-lg hover:text-wh-blue">LinkedIn</a>
+                </div>
+                <div>
+                    <h4 class="font-heading text-xs uppercase tracking-widest opacity-30 mb-6">Willpower</h4>
+                    <a href="https://willpower.community" target="_blank" class="block font-heading text-lg hover:text-wh-blue">Home Site</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Intersection Observer Script -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
