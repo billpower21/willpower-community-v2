@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Bricolage+Grotesque:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+/**
+ * WELLNESS HOUSE 2026 - LOVABLE DESIGN THEME
+ * 🎨 Root Variables & Design System
+ */
+:root {
+  /* Core Palette */
+  --wh-cream: #EFEEDF;
+  --wh-dark: #1F231A;
+  
+  /* Brand Gradients */
+  --wh-gradient-primary: linear-gradient(135deg, #9DC1F6 0%, #FFBFCC 45%, #FCD6A6 80%, #EA8376 100%);
+  --wh-gradient-soft: linear-gradient(180deg, rgba(255, 191, 204, 0.4) 0%, rgba(157, 193, 246, 0.4) 100%);
+  
+  /* Component Colors */
+  --background: 60 30% 96%; /* #EFEEDF HSL approx */
+  --foreground: 86 15% 12%; /* #1F231A HSL approx */
+  
+  --card: 0 0% 100%;
+  --card-foreground: 86 15% 12%;
+  
+  --primary: 345 100% 86%; /* Pink Accent */
+  --primary-foreground: 86 15% 12%;
+  
+  --radius: 1.25rem;
+}
+
+/**
+ * 🖋️ Typography System
+ */
+.h1-hero {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+}
+
+.h2-section {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.body-ui {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+}
+
+/**
+ * ✨ UI Utility Classes for Lovable
+ */
+
+/* Full-Bleed Animated Background */
+.wh-bg-gradient {
+  background: var(--wh-gradient-primary);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Premium Glassmorphism Card */
+.wh-glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 35, 26, 0.05);
+}
+
+/* Speaker Glow Aura (Site C style) */
+.wh-speaker-aura {
+  position: relative;
+}
+.wh-speaker-aura::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%; height: 120%;
+  background: var(--wh-gradient-primary);
+  filter: blur(40px);
+  opacity: 0.15;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+/* Custom Button Lift */
+.wh-btn-hover {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.wh-btn-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Logo Containment Fix */
+.wh-logo-fix {
+  object-fit: contain;
+  width: auto;
+}
