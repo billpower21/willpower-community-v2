@@ -8,40 +8,223 @@
     },
     "confirmed_brands": [
       {
-        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/bloom-nutrition.png",
-        "name": "Bloom Nutrition"
-      },
-      {
-        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/whoop.png",
-        "name": "WHOOP"
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/adidas.png",
+        "name": "Adidas"
       },
       {
         "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/ag1.png",
         "name": "AG1"
       },
       {
+        "name": "AstraZeneca"
+      },
+      {
+        "name": "Austin FC"
+      },
+      {
+        "name": "Beardbrand"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/bloom-nutrition.png",
+        "name": "Bloom Nutrition"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/cadillac.png",
+        "name": "Cadillac"
+      },
+      {
+        "name": "Caldera + Lab"
+      },
+      {
+        "name": "CatSpring Yaupon"
+      },
+      {
+        "name": "CLEAN Cause"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/david.png",
+        "name": "David"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/dollar-shave-club.png",
+        "name": "Dollar Shave Club"
+      },
+      {
+        "name": "DONNI"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/dunkin.png",
+        "name": "Dunkin'"
+      },
+      {
         "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/eight-sleep.png",
         "name": "Eight Sleep"
       },
       {
-        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/peloton.png",
-        "name": "Peloton"
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/everyday-dose.png",
+        "name": "Everyday Dose"
       },
       {
-        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/oura.png",
-        "name": "OURA"
+        "name": "Favor Delivery"
       },
       {
-        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/adidas.png",
-        "name": "Adidas"
+        "name": "FloSports"
+      },
+      {
+        "name": "Force of Nature Meats"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/form.png",
+        "name": "FORM"
+      },
+      {
+        "name": "Fracture Inc"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/function-health.png",
+        "name": "Function Health"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/gardencup.png",
+        "name": "Gardencup"
+      },
+      {
+        "name": "Higher Dose"
+      },
+      {
+        "name": "Hometown Hero"
+      },
+      {
+        "name": "Houston Texans"
+      },
+      {
+        "name": "Huckberry"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/hyperice.png",
+        "name": "Hyperice"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/hyrox.png",
+        "name": "HYROX"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/its-skinny.png",
+        "name": "It's Skinny"
+      },
+      {
+        "name": "It's That Simple"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/kane.png",
+        "name": "Kane Footwear"
+      },
+      {
+        "name": "Kendra Scott"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/ketoneiq.png",
+        "name": "KetoneIQ"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/kohler.png",
+        "name": "Kohler"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/lskd.png",
+        "name": "LSKD"
+      },
+      {
+        "name": "Momofuku Goods"
       },
       {
         "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/olipop.png",
         "name": "Olipop"
       },
       {
+        "name": "ONNIT Labs"
+      },
+      {
+        "name": "OSHUN"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/oura.png",
+        "name": "Oura"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/outdoor-voices.png",
+        "name": "Outdoor Voices"
+      },
+      {
+        "name": "Outdoorsy"
+      },
+      {
+        "name": "Pacifica Beauty"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/peloton.png",
+        "name": "Peloton"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/plunge.png",
+        "name": "Plunge"
+      },
+      {
+        "name": "Purely Elizabeth"
+      },
+      {
+        "name": "Red Bull"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/rythm.png",
+        "name": "Rythm"
+      },
+      {
+        "name": "Saatva Mattress"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/san-antonio-spurs.png",
+        "name": "San Antonio Spurs"
+      },
+      {
         "logo": "https://billpower21.github.io/willpower-community-v2/img/shopify.png",
         "name": "Shopify"
+      },
+      {
+        "name": "Skout Organic"
+      },
+      {
+        "name": "Soho House"
+      },
+      {
+        "name": "Soul"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/super-coffee.png",
+        "name": "Super Coffee"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/superpower.png",
+        "name": "Superpower"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/sweatpals.png",
+        "name": "Sweatpals"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/tecovas.png",
+        "name": "Tecovas"
+      },
+      {
+        "name": "Throne Science"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/tinyhealth.png",
+        "name": "Tiny Health"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/truemed.png",
+        "name": "Truemed"
       },
       {
         "logo": "https://billpower21.github.io/willpower-community-v2/img/vivobarefoot.png",
@@ -52,15 +235,60 @@
         "name": "Vollebak"
       },
       {
-        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/super-coffee.png",
-        "name": "Super Coffee"
+        "name": "Waterboy"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/well.png",
+        "name": "WELL"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/whoop.png",
+        "name": "Whoop"
+      },
+      {
+        "name": "Willpower"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/yeti.png",
+        "name": "YETI"
+      },
+      {
+        "name": "AION"
+      },
+      {
+        "name": "437 Swimwear"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/goodwipes.png",
+        "name": "Goodwipes"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/klaviyo.png",
+        "name": "Klaviyo"
+      },
+      {
+        "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/hotspex-media.png",
+        "name": "Hotspex Media"
+      },
+      {
+        "name": "C4 Energy"
       }
     ],
     "speakers": [
       {
+        "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/bill-murphy.jpg",
+        "name": "Bill Murphy",
+        "role": "Founder, Willpower"
+      },
+      {
+        "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/bryan-guadagno.jpg",
+        "name": "Bryan Guadagno",
+        "role": "Founder & CEO, It's Skinny"
+      },
+      {
         "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/greg-lavecchia.jpg",
         "name": "Greg Lavecchia",
-        "role": "Co-Founder & CEO, Bloom Nutrition"
+        "role": "CEO & Co-Founder, Bloom Nutrition"
       },
       {
         "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/sam-nebel.jpg",
@@ -68,14 +296,14 @@
         "role": "Co-Founder & CCO, Goodwipes"
       },
       {
-        "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/jake-decicco.jpg",
-        "name": "Jake DeCicco",
-        "role": "Chief Revenue Officer, Super Coffee"
-      },
-      {
         "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/steve-tidball.jpg",
         "name": "Steve Tidball",
         "role": "Founder & CEO, Vollebak"
+      },
+      {
+        "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/jake-decicco.jpg",
+        "name": "Jake DeCicco",
+        "role": "Chief Revenue Officer, Super Coffee"
       },
       {
         "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/scott-hickle.jpg",
@@ -91,6 +319,31 @@
         "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/salar-shahini.jpg",
         "name": "Salar Shahini",
         "role": "Founder & CEO, Sweatpals"
+      },
+      {
+        "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/noah-obstfeld.jpg",
+        "name": "Noah Obstfeld",
+        "role": "Founder, OSHUN"
+      },
+      {
+        "name": "Krista Dalton",
+        "role": "CMO & CDO, Tecovas"
+      },
+      {
+        "name": "Brent Yates",
+        "role": "Founder & CEO, AION"
+      },
+      {
+        "name": "Hyla Nayeri",
+        "role": "Co-Founder, 437 Swimwear"
+      },
+      {
+        "name": "John Sullivan",
+        "role": "CMO, WHOOP"
+      },
+      {
+        "name": "Eric Hinman",
+        "role": "Host & Fitness Leader"
       }
     ],
     "video_recap": "https://youtu.be/30aSv-OTOSE"
@@ -112,6 +365,6 @@
       "hero": "Unbounded Bold"
     }
   },
-  "last_updated": "2026-02-20",
+  "last_updated": "2026-02-27",
   "project": "Wellness House 2026"
 }
