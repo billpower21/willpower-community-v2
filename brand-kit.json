@@ -82,7 +82,8 @@
       { "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/klaviyo.png", "name": "Klaviyo" },
       { "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/hotspex-media.png", "name": "Hotspex Media" },
       { "name": "C4 Energy" },
-      { "name": "Flex" }
+      { "name": "Flex" },
+      { "name": "Supergut" }
     ],
     "speakers": [
       { "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/bill-murphy.jpg", "name": "Bill Murphy", "role": "Founder, Willpower" },
@@ -122,6 +123,6 @@
       "hero": "Unbounded Bold"
     }
   },
-  "last_updated": "2026-03-03",
+  "last_updated": "2026-03-04",
   "project": "Wellness House 2026"
 }
