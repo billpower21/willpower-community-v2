@@ -83,7 +83,9 @@
       { "logo": "https://billpower21.github.io/willpower-community-v2/img/brands/hotspex-media.png", "name": "Hotspex Media" },
       { "name": "C4 Energy" },
       { "name": "Flex" },
-      { "name": "Supergut" }
+      { "name": "Supergut" },
+      { "name": "Loftie" },
+      { "name": "Kintsugi" }
     ],
     "speakers": [
       { "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/bill-murphy.jpg", "name": "Bill Murphy", "role": "Founder, Willpower" },
