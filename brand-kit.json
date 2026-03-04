@@ -102,6 +102,7 @@
       { "name": "John Sullivan", "role": "CMO, WHOOP" },
       { "name": "Joe Cannon", "role": "SVP, Hyperice" },
       { "name": "Brandon James", "role": "SVP, San Antonio Spurs" },
+      { "img": "https://billpower21.github.io/willpower-community-v2/img/speakers/pranitha-patil.jpg", "name": "Pranitha Patil", "role": "Co-Founder & CBO, Function Health" },
       { "name": "Eric Hinman", "role": "Host & Fitness Leader" }
     ],
     "video_recap": "https://youtu.be/30aSv-OTOSE"
